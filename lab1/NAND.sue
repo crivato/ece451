@@ -1,0 +1,28 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_NAND {} {
+  make nmos -origin {460 400}
+  make pmos -origin {420 320}
+  make global -orient RXY -name VDD -origin {450 280}
+  make global -name GND -origin {460 530}
+  make pmos -orient RXY -origin {470 320}
+  make nmos -orient RXY -origin {460 480}
+  make input -name a -origin {340 360}
+  make input -orient RXY -name b -origin {610 480}
+  make output -name out -origin {480 360}
+  make_wire 460 520 460 530
+  make_wire 520 480 600 480
+  make_wire 600 480 610 480
+  make_wire 530 320 600 320
+  make_wire 600 320 600 480
+  make_wire 420 360 460 360
+  make_wire 340 400 400 400
+  make_wire 340 320 360 320
+  make_wire 340 320 340 360
+  make_wire 340 360 340 400
+  make_wire 450 280 470 280
+  make_wire 420 280 450 280
+  make_wire 460 360 470 360
+  make_wire 470 360 480 360
+}
+

@@ -1,0 +1,56 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_XOR2 {} {
+  make nmos -origin {380 310}
+  make nmos -origin {540 310}
+  make pmos -origin {450 120}
+  make pmos -origin {450 200}
+  make pmos -origin {700 120}
+  make pmos -origin {880 120}
+  make pmos -origin {780 220}
+  make nmos -origin {750 300}
+  make nmos -origin {920 300}
+  make nmos -origin {920 380}
+  make global -orient RXY -name VDD -origin {620 80}
+  make global -name GND -origin {650 420}
+  make input -name a -origin {390 120}
+  make input -name b -origin {390 200}
+  make input -name a -origin {320 310}
+  make input -name b -origin {480 310}
+  make input -name a -origin {640 120}
+  make input -name b -origin {820 120}
+  make input -name a -origin {860 300}
+  make input -name b -origin {860 380}
+  make output -name out -origin {920 260}
+  make_wire 450 270 540 270
+  make_wire 450 240 450 270
+  make_wire 380 270 450 270
+  make_wire 680 220 720 220
+  make_wire 540 270 680 270
+  make_wire 750 260 780 260
+  make_wire 780 260 920 260
+  make_wire 750 420 920 420
+  make_wire 750 340 750 420
+  make_wire 690 300 680 300
+  make_wire 680 270 680 220
+  make_wire 680 270 680 300
+  make_wire 540 350 540 420
+  make_wire 380 420 540 420
+  make_wire 380 350 380 420
+  make_wire 700 80 880 80
+  make_wire 780 160 780 180
+  make_wire 700 160 780 160
+  make_wire 780 160 880 160
+  make_wire 650 420 540 420
+  make_wire 650 420 750 420
+  make_wire 620 80 700 80
+  make_wire 620 80 450 80
+}
+
+proc ICON_XOR2 args {
+  icon_setup $args {{origin {0 0}} {orient R0}}
+  icon_term -type input -origin {0 0} -name a
+  icon_term -type input -origin {0 0} -name b
+  icon_term -type output -origin {0 0} -name out
+}
+

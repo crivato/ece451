@@ -1,0 +1,13 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_INV {} {
+  make nmos -origin {490 340}
+  make pmos -origin {490 260}
+  make global -orient RXY -name vdd -origin {490 220}
+  make global -name gnd -origin {490 380}
+  make output -name out -origin {490 300}
+  make input -name a -origin {430 300}
+  make_wire 430 300 430 260
+  make_wire 430 300 430 340
+}
+

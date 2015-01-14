@@ -1,0 +1,22 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_NOR {} {
+  make pmos -origin {560 370}
+  make nmos -origin {550 530}
+  make global -orient RXY -name VDD -origin {560 330}
+  make global -name GND -origin {560 570}
+  make nmos -orient RXY -origin {570 530}
+  make output -name out -origin {570 490}
+  make pmos -orient RXY -origin {560 450}
+  make input -orient RXY -name b -origin {650 530}
+  make input -name a -origin {490 530}
+  make_wire 550 570 560 570
+  make_wire 560 570 570 570
+  make_wire 560 490 550 490
+  make_wire 560 490 570 490
+  make_wire 620 450 650 450
+  make_wire 500 370 500 530
+  make_wire 630 530 650 530
+  make_wire 650 450 650 530
+}
+
