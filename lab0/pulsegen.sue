@@ -1,0 +1,46 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_pulsegen {} {
+  make inverter -origin {20 280}
+  make inverter -origin {-110 280}
+  make pulse -origin {-200 400}
+  make inverter -WP 8 -WN 4 -origin {150 280}
+  make global -name gnd -origin {-200 460}
+  make nand2 -origin {330 300}
+  make input -name in -origin {-210 280}
+  make output -name out0_h -origin {300 240}
+  make output -name out1_h -origin {420 300}
+  make pulsegen -my_name Cristian -origin {400 650}
+  make title_bar -owner valent39 -last_modified_by valent39 -origin {-30 840}
+  make_wire -200 320 310 320
+  make_wire 400 300 420 300
+  make_wire 250 240 300 240
+  make_wire 250 240 250 280
+  make_wire 200 280 250 280
+  make_wire 250 280 310 280
+  make_wire 70 280 120 280
+  make_wire -60 280 -10 280
+  make_wire -210 280 -200 280
+  make_wire -200 280 -140 280
+  make_wire -200 440 -200 460
+  make_wire -200 280 -200 320
+  make_wire -200 320 -200 360
+}
+
+proc ICON_pulsegen args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}} {my_name Bob}}
+  icon_term -type input -origin {-140 0} -name in
+  icon_term -type output -origin {140 -20} -name out0_h
+  icon_term -type output -origin {140 0} -name out1_h
+  icon_property -origin {-60 -60} -size large -anchor center -label pulsegen
+  icon_line -140 -80 140 -80 140 80 -140 80 -140 -80
+  icon_property -origin {-130 0} -label in
+  icon_property -origin {130 -20} -anchor e -label out0_h
+  icon_property -origin {130 0} -anchor e -label out1_h
+  icon_property -origin {-140 260} -type user -name name
+  icon_property -origin {-140 280} -type user -name M
+  icon_property -origin {-140 300} -type user -name dpc
+  icon_property -origin {-140 320} -type user -name my_name -default Bob
+  icon_property -origin {-20 60} -label {I'm $my_name}
+}
+

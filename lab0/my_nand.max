@@ -1,0 +1,224 @@
+# MAX version Max5.7.11 OpenGL Accelerated , compiled 11:21:30  Jul  8 2011.
+
+# WARNING:
+#
+# The .max file format continues to evolve.
+#
+# Micro Magic, Inc. recommends you do not write or parse .max files directly.
+# Instead use the Max API (e.g. 'db_search' and 'db_paint' commands).
+# The API is also easier to interface to.  See 'Text Commands/Variables' under
+# the Max 'Help' menu for full documentation on the API.
+
+max 5
+tech mmi18
+resolution 0.001
+
+
+DEF #fet!-fingers!2!-width!2.0!-_version!1939193767 "nfet (S)" "2 X 2.0/0.18"
+
+SECTION VERSIONS {
+vMAIN 1420935797 6
+vDRC 1939193767 1000
+vBBOX 1420935797 6
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer ndif
+-480 0 1090 2000
+layer poly
+0 -250 180 2250
+430 -250 610 2250
+layer ct
+-380 1595 -160 1815
+770 1595 990 1815
+-380 1125 -160 1345
+770 1125 990 1345
+-380 655 -160 875
+770 655 990 875
+-380 185 -160 405
+770 185 990 405
+layer m1
+-440 40 -100 1960
+710 40 1050 1960
+} SECTION RECTS
+
+SECTION LABELS {
+lab ndif 880 1000 880 1000 0 1 d
+lab ndif -270 1000 -270 1000 0 1 s
+lab poly 90 2125 90 2125 0 1 gn
+lab poly 90 -125 90 -125 0 1 gs
+} SECTION LABELS
+
+
+DEF #fet!-type!pfet!-fingers!2!-contacts!all!-width!4.0!-_version!1228383192 "pfet (S)" "2 X 4.0/0.18"
+
+SECTION VERSIONS {
+vMAIN 1420936336 6
+vDRC 1228383192 1000
+vBBOX 1420936336 6
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer pdif
+-480 0 1380 4000
+layer poly
+0 -250 180 4250
+720 -250 900 4250
+layer ct
+-380 3535 -160 3755
+340 3535 560 3755
+1060 3535 1280 3755
+-380 3065 -160 3285
+340 3065 560 3285
+1060 3065 1280 3285
+-380 2595 -160 2815
+340 2595 560 2815
+1060 2595 1280 2815
+-380 2125 -160 2345
+340 2125 560 2345
+1060 2125 1280 2345
+-380 1655 -160 1875
+340 1655 560 1875
+1060 1655 1280 1875
+-380 1185 -160 1405
+340 1185 560 1405
+1060 1185 1280 1405
+-380 715 -160 935
+340 715 560 935
+1060 715 1280 935
+-380 245 -160 465
+340 245 560 465
+1060 245 1280 465
+layer m1
+-440 40 -100 3960
+280 40 620 3960
+1000 40 1340 3960
+} SECTION RECTS
+
+SECTION LABELS {
+lab pdif 1170 2000 1170 2000 0 1 d
+lab pdif -270 2000 -270 2000 0 1 s
+lab poly 90 4125 90 4125 0 1 gn
+lab poly 90 -125 90 -125 0 1 gs
+} SECTION LABELS
+
+
+DEF #via!-type!ct_poly!-_version!1263890102 "via (S)" "ct_poly"
+
+SECTION VERSIONS {
+vMAIN 1420937498 28
+vDRC 1263890102 1000
+vBBOX 1420937498 28
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer poly
+-210 -210 210 210
+layer ct
+-110 -110 110 110
+layer m1
+-170 -170 170 170
+} SECTION RECTS
+
+SECTION LABELS {
+lab poly 0 0 0 0 0 1 bot
+lab m1 0 0 0 0 0 1 top
+} SECTION LABELS
+
+
+DEF #via!-type!v12!-_version!593674368 "via (S)" "v12"
+
+SECTION VERSIONS {
+vMAIN 1420937587 532
+vDRC 593674368 1000
+vBBOX 1420937587 532
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer m1
+-190 -190 190 190
+layer v12
+-130 -130 130 130
+layer m2
+-190 -190 190 190
+} SECTION RECTS
+
+SECTION LABELS {
+lab m1 0 0 0 0 0 1 bot
+lab m2 0 0 0 0 0 1 top
+} SECTION LABELS
+
+
+DEF
+
+SECTION VERSIONS {
+vMAIN 1420938287 2
+vDRC 1420938287 1
+vBBOX 1420938287 2
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer checkpaint
+-7360 -14720 7360 7360
+layer poly
+20 2310 200 5025
+740 2335 920 5020
+20 -2380 200 -1760
+740 -2150 920 -1870
+450 -2330 920 -2150
+450 -2480 630 -2330
+layer m1
+-570 4460 -340 5675
+10 5025 240 5675
+-5 4795 240 5025
+720 5020 950 5675
+715 4790 950 5020
+-570 4230 -155 4460
+-385 1825 -155 4230
+300 1775 640 2940
+-365 -1980 -135 -1240
+1070 -1980 1300 -1255
+-365 -2210 1300 -1980
+-365 -2945 -135 -2210
+730 -5170 1070 -4055
+layer m2
+-1405 2500 2595 4500
+-1700 -6740 2300 -4740
+} SECTION RECTS
+
+SECTION LABELS {
+lab space -15 -5760 -15 -5760 3 3 GND
+lab space 1500 3630 1500 3630 3 3 VDD
+lab m1 -455 5335 -455 5335 1 2 Out
+lab m1 120 5355 120 5355 1 2 In1
+lab m1 840 5370 840 5370 1 2 In2
+} SECTION LABELS
+
+SECTION INSTANCES {
+gcell 1939193767 #fet!-fingers!2!-width!2.0
+bbox -480 -250 1090 2250
+bbox_user -480 -250 1090 2250
+uses {
+	/#fet_99 1 0 20 0 1 -4550
+}
+gcell 1228383192 #fet!-type!pfet!-fingers!2!-contacts!all!-width!4.0
+bbox -480 -250 1380 4250
+bbox_user -480 -250 1380 4250
+uses {
+	/#fet!-fingers!2!-width!2.0_0 1 0 20 0 1 -1690
+}
+gcell 1263890102 #via!-type!ct_poly
+bbox -210 -210 210 210
+bbox_user -210 -210 210 210
+uses {
+	_78 1 0 110 0 1 4910
+	_79 1 0 830 0 1 4905
+}
+gcell 593674368 #via!-type!v12
+bbox -190 -190 190 190
+bbox_user -190 -190 190 190
+uses {
+	_90 1 0 900 0 1 -5000
+	_91 1 0 470 0 1 2770
+}
+} SECTION INSTANCES

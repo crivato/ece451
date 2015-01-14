@@ -1,0 +1,29 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_irsim_logic {} {
+  make pmos -origin {410 400}
+  make pmos -origin {410 480}
+  make pmos -orient RXY -origin {540 430}
+  make nmos -origin {410 560}
+  make nmos -orient RXY -origin {540 560}
+  make nmos -origin {470 670}
+  make global -name gnd -origin {470 710}
+  make input -name a -origin {350 400}
+  make input -name b -origin {350 480}
+  make input -orient RXY -name c -origin {600 430}
+  make input -name a -origin {350 560}
+  make input -name c -origin {410 670}
+  make input -orient RXY -name b -origin {600 560}
+  make output -name out -origin {540 500}
+  make global -orient RXY -name vdd -origin {470 360}
+  make_wire 470 600 470 630
+  make_wire 410 600 470 600
+  make_wire 470 600 540 600
+  make_wire 410 520 540 520
+  make_wire 540 360 540 390
+  make_wire 540 500 540 470
+  make_wire 540 500 540 520
+  make_wire 410 360 470 360
+  make_wire 540 360 470 360
+}
+
