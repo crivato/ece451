@@ -1,0 +1,12 @@
+# Created by https://www.gitignore.io
+
+### Linux ###
+*~
+*BAK
+
+# KDE directory preferences
+.directory
+
+#sue
+*.sim
+*.sp
