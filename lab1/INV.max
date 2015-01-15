@@ -1,0 +1,145 @@
+# MAX version Max5.7.11 OpenGL Accelerated , compiled 11:21:30  Jul  8 2011.
+
+# WARNING:
+#
+# The .max file format continues to evolve.
+#
+# Micro Magic, Inc. recommends you do not write or parse .max files directly.
+# Instead use the Max API (e.g. 'db_search' and 'db_paint' commands).
+# The API is also easier to interface to.  See 'Text Commands/Variables' under
+# the Max 'Help' menu for full documentation on the API.
+
+max 5
+tech mmi25
+resolution 0.001
+
+
+DEF #via!-type!ct_poly!-_version!686360247 "via (S)" "ct_poly"
+
+SECTION VERSIONS {
+vMAIN 1421287103 212
+vDRC 686360247 1000
+vBBOX 1421287103 212
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer poly
+-290 -290 290 290
+layer ct
+-150 -150 150 150
+layer m1
+-240 -240 240 240
+} SECTION RECTS
+
+SECTION LABELS {
+lab poly 0 0 0 0 0 1 bot
+lab m1 0 0 0 0 0 1 top
+} SECTION LABELS
+
+
+DEF #fet!-type!pfet!-width!2.0!-_version!408821719 "pfet (S)" "2.0/0.24"
+
+SECTION VERSIONS {
+vMAIN 1421286244 6
+vDRC 408821719 1000
+vBBOX 1421286244 6
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer pdif
+-660 0 900 2000
+layer poly
+0 -360 240 2360
+layer ct
+-520 1450 -220 1750
+460 1450 760 1750
+-520 850 -220 1150
+460 850 760 1150
+-520 250 -220 550
+460 250 760 550
+layer m1
+-610 50 -130 1950
+370 50 850 1950
+} SECTION RECTS
+
+SECTION LABELS {
+lab pdif 610 1000 610 1000 0 1 d
+lab pdif -370 1000 -370 1000 0 1 s
+lab poly 120 2180 120 2180 0 1 gn
+lab poly 120 -180 120 -180 0 1 gs
+} SECTION LABELS
+
+
+DEF #fet!-_version!171640903 "nfet (S)" "1/0.24"
+
+SECTION VERSIONS {
+vMAIN 1421284094 1
+vDRC 171640903 1000
+vBBOX 1421284094 1
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer ndif
+-660 0 900 1000
+layer poly
+0 -360 240 1360
+layer ct
+-520 350 -220 650
+460 350 760 650
+layer m1
+-610 50 -130 950
+370 50 850 950
+} SECTION RECTS
+
+SECTION LABELS {
+lab ndif 610 500 610 500 0 1 d
+lab ndif -370 500 -370 500 0 1 s
+lab poly 120 1180 120 1180 0 1 gn
+lab poly 120 -180 120 -180 0 1 gs
+} SECTION LABELS
+
+
+DEF
+
+SECTION VERSIONS {
+vMAIN 1421287175 14
+vDRC 1421287175 14
+vBBOX 1421287175 14
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer poly
+-160 -40 80 470
+-1050 -280 80 -40
+-160 -940 80 -280
+layer m1
+-1560 -320 -730 0
+260 -10 580 1350
+260 -330 1270 -10
+260 -1470 580 -330
+260 -1790 600 -1470
+} SECTION RECTS
+
+SECTION GROUPS {
+} SECTION GROUPS
+
+SECTION INSTANCES {
+gcell 686360247 #via!-type!ct_poly
+bbox -290 -290 290 290
+bbox_user -290 -290 290 290
+uses {
+	_87 1 0 -890 0 1 -160
+}
+gcell 408821719 #fet!-type!pfet!-width!2.0
+bbox -660 -360 900 2360
+bbox_user -660 -360 900 2360
+uses {
+	/#fet_91 1 0 -160 0 1 740
+}
+gcell 171640903 #fet
+bbox -660 -360 900 1360
+bbox_user -660 -360 900 1360
+uses {
+	_95 1 0 -160 0 1 -2140
+}
+} SECTION INSTANCES
