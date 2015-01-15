@@ -1,8 +1,6 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_XOR2 {} {
-  make nmos -origin {920 300}
-  make nmos -origin {920 380}
   make global -orient RXY -name VDD -origin {620 80}
   make global -name GND -origin {650 420}
   make input -name a -origin {390 120}
@@ -16,20 +14,20 @@ proc SCHEMATIC_XOR2 {} {
   make output -name out -origin {920 260}
   make nmos -origin {380 310}
   make nmos -origin {550 310}
-  make pmos -origin {880 120}
-  make pmos -origin {700 120}
-  make pmos -origin {780 230}
+  make nmos -origin {780 300}
   make pmos -W 4 -origin {450 120}
   make pmos -W 4 -origin {450 200}
-  make nmos -origin {780 300}
+  make nmos -W 2 -origin {920 300}
+  make nmos -W 2 -origin {920 380}
+  make pmos -W 4 -origin {780 230}
+  make pmos -W 4 -origin {880 120}
+  make pmos -W 4 -origin {700 120}
   make_wire 450 240 450 270
   make_wire 380 270 450 270
   make_wire 780 260 920 260
   make_wire 380 350 380 420
-  make_wire 700 80 880 80
   make_wire 700 160 780 160
   make_wire 780 160 880 160
-  make_wire 620 80 700 80
   make_wire 620 80 450 80
   make_wire 550 270 680 270
   make_wire 550 270 450 270
@@ -46,6 +44,8 @@ proc SCHEMATIC_XOR2 {} {
   make_wire 680 230 680 270
   make_wire 680 270 680 300
   make_wire 780 160 780 190
+  make_wire 700 80 880 80
+  make_wire 700 80 620 80
 }
 
 proc ICON_XOR2 args {
