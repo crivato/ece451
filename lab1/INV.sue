@@ -6,8 +6,20 @@ proc SCHEMATIC_INV {} {
   make global -orient RXY -name vdd -origin {490 220}
   make global -name gnd -origin {490 380}
   make output -name out -origin {490 300}
-  make input -name a -origin {430 300}
-  make_wire 430 300 430 260
-  make_wire 430 300 430 340
+  make input -name a -origin {430 340}
+  make input -name a -origin {430 260}
+}
+
+proc ICON_INV args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-80 0} -name a
+  icon_term -type output -origin {80 0} -name out
+  icon_property -origin {0 0} -size large -anchor center -label INV
+  icon_line -80 -40 80 -40 80 40 -80 40 -80 -40
+  icon_property -origin {-70 0} -label a
+  icon_property -origin {70 0} -anchor e -label out
+  icon_property -origin {-80 260} -type user -name name
+  icon_property -origin {-80 280} -type user -name M
+  icon_property -origin {-80 300} -type user -name dpc
 }
 

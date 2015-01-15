@@ -1,14 +1,6 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_XOR2 {} {
-  make nmos -origin {380 310}
-  make nmos -origin {540 310}
-  make pmos -origin {450 120}
-  make pmos -origin {450 200}
-  make pmos -origin {700 120}
-  make pmos -origin {880 120}
-  make pmos -origin {780 220}
-  make nmos -origin {750 300}
   make nmos -origin {920 300}
   make nmos -origin {920 380}
   make global -orient RXY -name VDD -origin {620 80}
@@ -22,35 +14,52 @@ proc SCHEMATIC_XOR2 {} {
   make input -name a -origin {860 300}
   make input -name b -origin {860 380}
   make output -name out -origin {920 260}
-  make_wire 450 270 540 270
+  make nmos -origin {380 310}
+  make nmos -origin {550 310}
+  make pmos -origin {880 120}
+  make pmos -origin {700 120}
+  make pmos -origin {780 230}
+  make pmos -W 4 -origin {450 120}
+  make pmos -W 4 -origin {450 200}
+  make nmos -origin {780 300}
   make_wire 450 240 450 270
   make_wire 380 270 450 270
-  make_wire 680 220 720 220
-  make_wire 540 270 680 270
-  make_wire 750 260 780 260
   make_wire 780 260 920 260
-  make_wire 750 420 920 420
-  make_wire 750 340 750 420
-  make_wire 690 300 680 300
-  make_wire 680 270 680 220
-  make_wire 680 270 680 300
-  make_wire 540 350 540 420
-  make_wire 380 420 540 420
   make_wire 380 350 380 420
   make_wire 700 80 880 80
-  make_wire 780 160 780 180
   make_wire 700 160 780 160
   make_wire 780 160 880 160
-  make_wire 650 420 540 420
-  make_wire 650 420 750 420
   make_wire 620 80 700 80
   make_wire 620 80 450 80
+  make_wire 550 270 680 270
+  make_wire 550 270 450 270
+  make_wire 480 310 490 310
+  make_wire 550 350 550 420
+  make_wire 550 420 650 420
+  make_wire 550 420 380 420
+  make_wire 680 300 720 300
+  make_wire 780 340 780 420
+  make_wire 780 420 920 420
+  make_wire 650 420 780 420
+  make_wire 780 260 780 270
+  make_wire 680 230 720 230
+  make_wire 680 230 680 270
+  make_wire 680 270 680 300
+  make_wire 780 160 780 190
 }
 
 proc ICON_XOR2 args {
-  icon_setup $args {{origin {0 0}} {orient R0}}
-  icon_term -type input -origin {0 0} -name a
-  icon_term -type input -origin {0 0} -name b
-  icon_term -type output -origin {0 0} -name out
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-80 -20} -name a
+  icon_term -type input -origin {-80 0} -name b
+  icon_term -type output -origin {80 0} -name out
+  icon_property -origin {0 0} -size large -anchor center -label XOR2
+  icon_line -80 -40 80 -40 80 40 -80 40 -80 -40
+  icon_property -origin {-70 -20} -label a
+  icon_property -origin {-70 0} -label b
+  icon_property -origin {70 0} -anchor e -label out
+  icon_property -origin {-80 260} -type user -name name
+  icon_property -origin {-80 280} -type user -name M
+  icon_property -origin {-80 300} -type user -name dpc
 }
 
