@@ -3,14 +3,6 @@
 proc SCHEMATIC_XOR2 {} {
   make global -orient RXY -name VDD -origin {620 80}
   make global -name GND -origin {650 420}
-  make input -name a -origin {390 120}
-  make input -name b -origin {390 200}
-  make input -name a -origin {320 310}
-  make input -name b -origin {480 310}
-  make input -name a -origin {640 120}
-  make input -name b -origin {820 120}
-  make input -name a -origin {860 300}
-  make input -name b -origin {860 380}
   make output -name out -origin {920 260}
   make nmos -origin {380 310}
   make nmos -origin {550 310}
@@ -22,6 +14,14 @@ proc SCHEMATIC_XOR2 {} {
   make pmos -W 4 -origin {780 230}
   make pmos -W 4 -origin {880 120}
   make pmos -W 4 -origin {700 120}
+  make input -name b -origin {390 200}
+  make input -name a -origin {390 120}
+  make input -name a -origin {320 310}
+  make input -name b -origin {480 310}
+  make input -name a -origin {860 380}
+  make input -name b -origin {860 300}
+  make input -name a -origin {820 120}
+  make input -name b -origin {640 120}
   make_wire 450 240 450 270
   make_wire 380 270 450 270
   make_wire 780 260 920 260
