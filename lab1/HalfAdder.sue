@@ -1,0 +1,32 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_HalfAdder {} {
+  make NAND -origin {320 310}
+  make XOR2 -origin {320 220}
+  make output -name Sum -origin {440 220}
+  make output -name !Carry -origin {440 310}
+  make input -name a -origin {240 200}
+  make input -name b -origin {240 220}
+  make input -name a -origin {240 290}
+  make input -name b -origin {240 310}
+  make_wire 400 310 440 310
+  make_wire 400 220 440 220
+}
+
+proc ICON_HalfAdder args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-150 -20} -name a
+  icon_term -type input -origin {-150 0} -name b
+  icon_term -type output -origin {150 -20} -name Sum
+  icon_term -type output -origin {150 0} -name !Carry
+  icon_property -origin {0 0} -size large -anchor center -label HalfAdder
+  icon_line -150 -40 150 -40 150 40 -150 40 -150 -40
+  icon_property -origin {-140 -20} -label a
+  icon_property -origin {-140 0} -label b
+  icon_property -origin {140 -20} -anchor e -label Sum
+  icon_property -origin {140 0} -anchor e -label !Carry
+  icon_property -origin {-150 260} -type user -name name
+  icon_property -origin {-150 280} -type user -name M
+  icon_property -origin {-150 300} -type user -name dpc
+}
+

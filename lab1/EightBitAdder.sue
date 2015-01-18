@@ -1,0 +1,49 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_EightBitAdder {} {
+  make FullAdder -origin {60 410}
+  make FullAdder -origin {430 430}
+  make FullAdder -origin {790 450}
+  make FullAdder -origin {1150 460}
+  make FullAdder -origin {1500 480}
+  make FullAdder -origin {1860 500}
+  make FullAdder -origin {2210 520}
+  make FullAdder -origin {2560 540}
+  make output -name Sum0 -origin {190 390}
+  make output -name Sum1 -origin {560 410}
+  make output -name Sum2 -origin {920 430}
+  make output -name Sum3 -origin {1280 440}
+  make output -name Sum4 -origin {1630 460}
+  make output -name Sum5 -origin {1990 480}
+  make output -name Sum6 -origin {2340 500}
+  make output -name Sum7 -origin {2690 520}
+  make output -name Cout -origin {2690 540}
+  make input -name Cin -origin {-70 390}
+  make input -name A0 -origin {-70 410}
+  make input -name B0 -origin {-70 430}
+  make input -name A1 -origin {300 430}
+  make input -name B1 -origin {300 450}
+  make input -name A2 -origin {660 450}
+  make input -name B2 -origin {660 470}
+  make input -name A3 -origin {1020 460}
+  make input -name B3 -origin {1020 480}
+  make input -name A4 -origin {1350 480}
+  make input -name B4 -origin {1350 500}
+  make input -name A5 -origin {1730 500}
+  make input -name B5 -origin {1730 520}
+  make input -name A6 -origin {2080 520}
+  make input -name B6 -origin {2080 540}
+  make input -name A7 -origin {2430 540}
+  make input -name B7 -origin {2430 560}
+  make_wire 300 410 190 410
+  make_wire 1020 440 1020 450
+  make_wire 560 430 660 430
+  make_wire 1020 450 920 450
+  make_wire 1350 480 1370 480
+  make_wire 1350 500 1370 500
+  make_wire 1280 460 1370 460
+  make_wire 1730 480 1630 480
+  make_wire 2080 500 1990 500
+  make_wire 2340 520 2430 520
+}
+
