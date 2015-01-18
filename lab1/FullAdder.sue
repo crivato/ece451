@@ -9,31 +9,31 @@ proc SCHEMATIC_FullAdder {} {
   make input -name A -origin {40 270}
   make input -name B -origin {450 270}
   make output -name Cn -origin {990 290}
-  make_wire 340 250 450 250
-  make_wire 360 270 360 350
   make_wire 360 350 780 350
-  make_wire 340 270 360 270
   make_wire 750 270 830 270
   make_wire 780 290 830 290
   make_wire 780 290 780 350
+  make_wire 340 250 450 250
+  make_wire 340 270 360 270
+  make_wire 360 270 360 350
 }
 
 proc ICON_FullAdder args {
   icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
-  icon_term -type output -origin {130 -20} -name Sum
-  icon_term -type input -origin {-130 -20} -name Cin
-  icon_term -type input -origin {-130 0} -name A
-  icon_term -type input -origin {-130 20} -name B
-  icon_term -type output -origin {130 0} -name Cn
+  icon_term -type input -origin {-120 -20} -name Cin
+  icon_term -type input -origin {-120 0} -name A
+  icon_term -type input -origin {-120 20} -name B
+  icon_term -type output -origin {120 -20} -name Sum
+  icon_term -type output -origin {120 0} -name Cn
   icon_property -origin {0 0} -size large -anchor center -label FullAdder
-  icon_line -130 -60 130 -60 130 60 -130 60 -130 -60
-  icon_property -origin {-120 -20} -label Cn_1
-  icon_property -origin {-120 0} -label a
-  icon_property -origin {-120 20} -label b
-  icon_property -origin {120 -20} -anchor e -label Sum
-  icon_property -origin {120 0} -anchor e -label Cn
-  icon_property -origin {-130 280} -type user -name name
-  icon_property -origin {-130 300} -type user -name M
-  icon_property -origin {-130 320} -type user -name dpc
+  icon_line -120 -60 120 -60 120 60 -120 60 -120 -60
+  icon_property -origin {-110 -20} -label Cin
+  icon_property -origin {-110 0} -label A
+  icon_property -origin {-110 20} -label B
+  icon_property -origin {110 -20} -anchor e -label Sum
+  icon_property -origin {110 0} -anchor e -label Cn
+  icon_property -origin {-120 280} -type user -name name
+  icon_property -origin {-120 300} -type user -name M
+  icon_property -origin {-120 320} -type user -name dpc
 }
 

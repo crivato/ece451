@@ -1,0 +1,57 @@
+# MAX version Max5.7.11 OpenGL Accelerated , compiled 11:21:30  Jul  8 2011.
+
+# WARNING:
+#
+# The .max file format continues to evolve.
+#
+# Micro Magic, Inc. recommends you do not write or parse .max files directly.
+# Instead use the Max API (e.g. 'db_search' and 'db_paint' commands).
+# The API is also easier to interface to.  See 'Text Commands/Variables' under
+# the Max 'Help' menu for full documentation on the API.
+
+max 5
+tech mmi25
+resolution 0.001
+
+
+DEF
+
+SECTION VERSIONS {
+vMAIN 1421547978 7
+vDRC 1421547978 7
+vBBOX 1421547978 7
+} SECTION VERSIONS
+
+SECTION RECTS {
+} SECTION RECTS
+
+SECTION LABELS {
+lab m1 12760 16010 12760 16010 1 2 Bin
+lab m1 13740 16140 13740 16140 1 2 Ain
+lab m1 15210 -9580 15210 -9580 3 2 !Carry
+lab m1 18920 4690 18920 4690 3 2 Sum
+} SECTION LABELS
+
+SECTION GROUPS {
+} SECTION GROUPS
+
+SECTION INSTANCES {
+def XOR2
+vMAIN 1421543519 5
+vDRC 1421543632 1
+vBBOX 1421543519 5
+bbox 11370 -3470 19060 16280
+bbox_user 11370 -3470 19060 16280
+uses {
+	_95 1 0 0 0 1 0
+}
+def NAND
+vMAIN 1421543456 4
+vDRC 1421543459 1
+vBBOX 1421543456 4
+bbox -1660 -8660 2340 11150
+bbox_user -1660 -8660 2340 11150
+uses {
+	_91 1 0 13030 0 -1 -10060
+}
+} SECTION INSTANCES

@@ -15,18 +15,14 @@ proc SCHEMATIC_HalfAdder {} {
 
 proc ICON_HalfAdder args {
   icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
-  icon_term -type input -origin {-150 -20} -name a
-  icon_term -type input -origin {-150 0} -name b
+  icon_term -type input -origin {-150 -20} -name Bin
+  icon_term -type input -origin {-150 0} -name Ain
   icon_term -type output -origin {150 -20} -name Sum
   icon_term -type output -origin {150 0} -name !Carry
-  icon_term -type input -origin {0 0} -name B
-  icon_term -type input -origin {0 0} -name A
-  icon_term -type input -origin {0 0} -name Ain
-  icon_term -type input -origin {0 0} -name Bin
   icon_property -origin {0 0} -size large -anchor center -label HalfAdder
   icon_line -150 -40 150 -40 150 40 -150 40 -150 -40
-  icon_property -origin {-140 -20} -label a
-  icon_property -origin {-140 0} -label b
+  icon_property -origin {-140 -20} -label Bin
+  icon_property -origin {-140 0} -label Ain
   icon_property -origin {140 -20} -anchor e -label Sum
   icon_property -origin {140 0} -anchor e -label !Carry
   icon_property -origin {-150 260} -type user -name name
