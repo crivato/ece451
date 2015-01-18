@@ -1,0 +1,5697 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 35 36 575 755
+%%Pages: 0
+%%Creator: (BLT 2.4 Graph)
+%%CreationDate: (Sat Jan 17 18:57:15 2015)
+%%Title: (.nst.graph0001)
+%%DocumentData: Clean7Bit
+%%Orientation: Landscape
+%%DocumentNeededResources: font Helvetica Courier
+%%EndComments
+
+
+% including file "/usr/lib/blt2.4/bltGraph.pro"
+
+%%BeginProlog
+%
+% PostScript prolog file of the BLT graph widget.
+%
+% Copyright 1989-1992 Regents of the University of California.
+% Permission to use, copy, modify, and distribute this
+% software and its documentation for any purpose and without
+% fee is hereby granted, provided that the above copyright
+% notice appear in all copies.  The University of California
+% makes no representations about the suitability of this
+% software for any purpose.  It is provided "as is" without
+% express or implied warranty.
+%
+% Copyright 1991-1997 Bell Labs Innovations for Lucent Technologies.
+%
+% Permission to use, copy, modify, and distribute this software and its
+% documentation for any purpose and without fee is hereby granted, provided
+% that the above copyright notice appear in all copies and that both that the
+% copyright notice and warranty disclaimer appear in supporting documentation,
+% and that the names of Lucent Technologies any of their entities not be used
+% in advertising or publicity pertaining to distribution of the software
+% without specific, written prior permission.
+%
+% Lucent Technologies disclaims all warranties with regard to this software,
+% including all implied warranties of merchantability and fitness.  In no event
+% shall Lucent Technologies be liable for any special, indirect or
+% consequential damages or any damages whatsoever resulting from loss of use,
+% data or profits, whether in an action of contract, negligence or other
+% tortuous action, arising out of or in connection with the use or performance
+% of this software.
+%
+
+200 dict begin
+
+/BaseRatio 1.3467736870885982 def	% Ratio triangle base / symbol size
+/BgColorProc 0 def			% Background color routine (symbols)
+/DrawSymbolProc 0 def			% Routine to draw symbol outline/fill
+/StippleProc 0 def			% Stipple routine (bar segments)
+/DashesProc 0 def			% Dashes routine (line segments)
+  
+% Define the array ISOLatin1Encoding (which specifies how characters are 
+% encoded for ISO-8859-1 fonts), if it isn't already present (Postscript 
+% level 2 is supposed to define it, but level 1 doesn't). 
+ 
+systemdict /ISOLatin1Encoding known not { 
+  /ISOLatin1Encoding [ 
+    /space /space /space /space /space /space /space /space 
+    /space /space /space /space /space /space /space /space 
+    /space /space /space /space /space /space /space /space 
+    /space /space /space /space /space /space /space /space 
+    /space /exclam /quotedbl /numbersign /dollar /percent /ampersand 
+    /quoteright 
+    /parenleft /parenright /asterisk /plus /comma /minus /period /slash 
+    /zero /one /two /three /four /five /six /seven 
+    /eight /nine /colon /semicolon /less /equal /greater /question 
+    /at /A /B /C /D /E /F /G 
+    /H /I /J /K /L /M /N /O 
+    /P /Q /R /S /T /U /V /W 
+    /X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore 
+    /quoteleft /a /b /c /d /e /f /g 
+    /h /i /j /k /l /m /n /o 
+    /p /q /r /s /t /u /v /w 
+    /x /y /z /braceleft /bar /braceright /asciitilde /space 
+    /space /space /space /space /space /space /space /space 
+    /space /space /space /space /space /space /space /space 
+    /dotlessi /grave /acute /circumflex /tilde /macron /breve /dotaccent 
+    /dieresis /space /ring /cedilla /space /hungarumlaut /ogonek /caron 
+    /space /exclamdown /cent /sterling /currency /yen /brokenbar /section 
+    /dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen 
+    /registered /macron 
+    /degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph 
+    /periodcentered 
+    /cedillar /onesuperior /ordmasculine /guillemotright /onequarter 
+    /onehalf /threequarters /questiondown 
+    /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla 
+    /Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex 
+    /Idieresis 
+    /Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply 
+    /Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn 
+    /germandbls 
+    /agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla 
+    /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex 
+    /idieresis 
+    /eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide 
+    /oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn 
+    /ydieresis 
+  ] def 
+} if 
+
+% font ISOEncode font 
+% This procedure changes the encoding of a font from the default 
+% Postscript encoding to ISOLatin1.  It is typically invoked just 
+% before invoking "setfont".  The body of this procedure comes from 
+% Section 5.6.1 of the Postscript book. 
+
+/ISOEncode { 
+  dup length dict
+  begin 
+    {1 index /FID ne {def} {pop pop} ifelse} forall 
+    /Encoding ISOLatin1Encoding def 
+    currentdict 
+  end 
+
+  % I'm not sure why it's necessary to use "definefont" on this new 
+  % font, but it seems to be important; just use the name "Temporary" 
+  % for the font. 
+
+  /Temporary exch definefont 
+} bind def 
+
+/Stroke {
+  gsave
+    stroke
+  grestore
+} def
+
+/Fill {
+  gsave
+    fill
+  grestore
+} def
+
+/SetFont { 	
+  % Stack: pointSize fontName
+  findfont exch scalefont ISOEncode setfont
+} def
+
+/Box {
+  % Stack: x y width height
+  newpath
+  exch 4 2 roll moveto
+  dup 0 rlineto
+  exch 0 exch rlineto
+  neg 0 rlineto
+  closepath
+} def
+
+/SetFgColor {
+  % Stack: red green blue
+  CL 0 eq { 
+    pop pop pop 0 0 0 
+  } if
+  setrgbcolor
+  CL 1 eq { 
+    currentgray setgray 
+  } if
+} def
+
+/SetBgColor {
+  % Stack: red green blue
+  CL 0 eq { 
+    pop pop pop 1 1 1 
+  } if
+  setrgbcolor
+  CL 1 eq { 
+    currentgray setgray 
+  } if
+} def
+
+% The next two definitions are taken from "$tk_library/prolog.ps"
+
+% desiredSize EvenPixels closestSize
+%
+% The procedure below is used for stippling.  Given the optimal size
+% of a dot in a stipple pattern in the current user coordinate system,
+% compute the closest size that is an exact multiple of the device's
+% pixel size.  This allows stipple patterns to be displayed without
+% aliasing effects.
+
+/EvenPixels {
+  % Compute exact number of device pixels per stipple dot.
+  dup 0 matrix currentmatrix dtransform
+  dup mul exch dup mul add sqrt
+
+  % Round to an integer, make sure the number is at least 1, and compute
+  % user coord distance corresponding to this.
+  dup round dup 1 lt {pop 1} if
+  exch div mul
+} bind def
+
+% width height string filled StippleFill --
+%
+% Given a path and other graphics information already set up, this
+% procedure will fill the current path in a stippled fashion.  "String"
+% contains a proper image description of the stipple pattern and
+% "width" and "height" give its dimensions.  If "filled" is true then
+% it means that the area to be stippled is gotten by filling the
+% current path (e.g. the interior of a polygon); if it's false, the
+% area is gotten by stroking the current path (e.g. a wide line).
+% Each stipple dot is assumed to be about one unit across in the
+% current user coordinate system.
+
+% width height string StippleFill --
+%
+% Given a path already set up and a clipping region generated from
+% it, this procedure will fill the clipping region with a stipple
+% pattern.  "String" contains a proper image description of the
+% stipple pattern and "width" and "height" give its dimensions.  Each
+% stipple dot is assumed to be about one unit across in the current
+% user coordinate system.  This procedure trashes the graphics state.
+
+/StippleFill {
+    % The following code is needed to work around a NeWSprint bug.
+
+    /tmpstip 1 index def
+
+    % Change the scaling so that one user unit in user coordinates
+    % corresponds to the size of one stipple dot.
+    1 EvenPixels dup scale
+
+    % Compute the bounding box occupied by the path (which is now
+    % the clipping region), and round the lower coordinates down
+    % to the nearest starting point for the stipple pattern.  Be
+    % careful about negative numbers, since the rounding works
+    % differently on them.
+
+    pathbbox
+    4 2 roll
+    5 index div dup 0 lt {1 sub} if cvi 5 index mul 4 1 roll
+    6 index div dup 0 lt {1 sub} if cvi 6 index mul 3 2 roll
+
+    % Stack now: width height string y1 y2 x1 x2
+    % Below is a doubly-nested for loop to iterate across this area
+    % in units of the stipple pattern size, going up columns then
+    % across rows, blasting out a stipple-pattern-sized rectangle at
+    % each position
+
+    6 index exch {
+	2 index 5 index 3 index {
+	    % Stack now: width height string y1 y2 x y
+
+	    gsave
+	    1 index exch translate
+	    5 index 5 index true matrix tmpstip imagemask
+	    grestore
+	} for
+	pop
+    } for
+    pop pop pop pop pop
+} bind def
+
+
+/LS {	% Stack: x1 y1 x2 y2
+  newpath 4 2 roll moveto lineto stroke
+} def
+
+/EndText {
+  %Stack :
+  grestore
+} def
+
+/BeginText {
+  %Stack :  w h theta centerX centerY
+  gsave
+    % Translate the origin to the center of bounding box and rotate
+    translate neg rotate
+    % Translate back to the origin of the text region
+    -0.5 mul exch -0.5 mul exch translate
+} def
+
+/DrawAdjText {
+  %Stack : str strWidth x y
+  moveto				% Go to the text position
+  exch dup dup 4 2 roll
+
+  % Adjust character widths to get desired overall string width
+  % adjust X = (desired width - real width)/#chars
+
+  stringwidth pop sub exch
+  length div
+  0 3 -1 roll
+
+  % Flip back the scale so that the string is not drawn in reverse
+
+  gsave
+    1 -1 scale
+    ashow
+  grestore
+} def
+
+/DrawBitmap {
+  % Stack: ?bgColorProc? boolean centerX centerY width height theta imageStr
+  gsave
+    6 -2 roll translate			% Translate to center of bounding box
+    4 1 roll neg rotate			% Rotate by theta
+    
+    % Find upperleft corner of bounding box
+    
+    2 copy -.5 mul exch -.5 mul exch translate
+    2 copy scale			% Make pixel unit scale
+    newpath
+    0 0 moveto 0 1 lineto 1 1 lineto 1 0 lineto
+    closepath
+    
+    % Fill rectangle with background color
+    
+    4 -1 roll { 
+      gsave 
+	4 -1 roll exec fill 
+      grestore 
+    } if
+    
+    % Paint the image string into the unit rectangle
+    
+    2 copy true 3 -1 roll 0 0 5 -1 roll 0 0 6 array astore 5 -1 roll
+    imagemask
+  grestore
+} def
+
+% Symbols:
+
+% Skinny-cross
+/Sc {
+  % Stack: x y symbolSize
+  gsave
+    3 -2 roll translate 45 rotate
+    0 0 3 -1 roll Sp
+  grestore
+} def
+
+% Skinny-plus
+/Sp {
+  % Stack: x y symbolSize
+  gsave
+    3 -2 roll translate
+    2 idiv
+    dup 2 copy
+    newpath neg 0 moveto 0 lineto
+    DrawSymbolProc
+    newpath neg 0 exch moveto 0 exch lineto
+    DrawSymbolProc
+  grestore
+} def
+
+% Cross
+/Cr {
+  % Stack: x y symbolSize
+  gsave
+    3 -2 roll translate 45 rotate
+    0 0 3 -1 roll Pl
+  grestore
+} def
+
+% Plus
+/Pl {
+  % Stack: x y symbolSize
+  gsave
+    3 -2 roll translate
+    dup 2 idiv
+    exch 6 idiv
+
+    %
+    %          2   3		The plus/cross symbol is a
+    %				closed polygon of 12 points.
+    %      0   1   4    5	The diagram to the left
+    %           x,y		represents the positions of
+    %     11  10   7    6	the points which are computed
+    %				below.
+    %          9   8
+    %
+
+    newpath
+    2 copy exch neg exch neg moveto dup neg dup lineto
+    2 copy neg exch neg lineto 2 copy exch neg lineto
+    dup dup neg lineto 2 copy neg lineto 2 copy lineto
+    dup dup lineto 2 copy exch lineto 2 copy neg exch lineto
+    dup dup neg exch lineto exch neg exch lineto
+    closepath
+    DrawSymbolProc
+  grestore
+} def
+
+% Circle
+/Ci {
+  % Stack: x y symbolSize
+  gsave
+    3 copy pop
+    moveto newpath
+    2 div 0 360 arc
+    closepath DrawSymbolProc
+  grestore
+} def
+
+% Square
+/Sq {
+  % Stack: x y symbolSize
+  gsave
+    dup dup 2 div dup
+    6 -1 roll exch sub exch
+    5 -1 roll exch sub 4 -2 roll Box
+    DrawSymbolProc
+  grestore
+} def
+
+% Line
+/Li {
+  % Stack: x y symbolSize
+  gsave
+    3 1 roll exch 3 -1 roll 2 div 3 copy
+    newpath
+    sub exch moveto add exch lineto
+    stroke
+  grestore
+} def
+
+% Diamond
+/Di {
+  % Stack: x y symbolSize
+  gsave
+    3 1 roll translate 45 rotate 0 0 3 -1 roll Sq
+  grestore
+} def
+    
+% Triangle
+/Tr {
+  % Stack: x y symbolSize
+  gsave
+    3 -2 roll translate
+    BaseRatio mul 0.5 mul		% Calculate 1/2 base
+    dup 0 exch 30 cos mul		% h1 = height above center point
+    neg					% b2 0 -h1
+    newpath moveto			% point 1;  b2
+    dup 30 sin 30 cos div mul		% h2 = height below center point
+    2 copy lineto			% point 2;  b2 h2
+    exch neg exch lineto		% 
+    closepath
+    DrawSymbolProc
+  grestore
+} def
+
+% Arrow
+/Ar {
+  % Stack: x y symbolSize
+  gsave
+    3 -2 roll translate
+    BaseRatio mul 0.5 mul		% Calculate 1/2 base
+    dup 0 exch 30 cos mul		% h1 = height above center point
+					% b2 0 h1
+    newpath moveto			% point 1;  b2
+    dup 30 sin 30 cos div mul		% h2 = height below center point
+    neg					% -h2 b2
+    2 copy lineto			% point 2;  b2 h2
+    exch neg exch lineto		% 
+    closepath
+    DrawSymbolProc
+  grestore
+} def
+
+% Bitmap
+/Bm {
+  % Stack: x y symbolSize
+  gsave
+    3 1 roll translate pop DrawSymbolProc
+  grestore
+} def
+
+%%EndProlog
+
+%%BeginSetup
+gsave					% Save the graphics state
+
+% Default line/text style parameters
+
+1 setlinewidth				% width
+1 setlinejoin				% join
+0 setlinecap				% cap
+[] 0 setdash				% dashes
+
+/CL 0 def				% Set color level mode
+0 0 0 setrgbcolor			% color
+
+% Transform coordinate system to use X11 coordinates
+
+% 1. Flip y-axis over by reversing the scale,
+% 2. Translate the origin to the other side of the page,
+%    making the origin the upper left corner
+0.748524 -0.747416 scale
+0 -1058 translate
+
+% User defined page layout
+
+% Set color level
+/CL 0 def
+
+% Set origin
+48 48 translate
+
+% Landscape orientation
+0 962 translate
+-90 rotate
+
+%%EndSetup
+
+9 /Helvetica-Bold SetFont
+53 4 817 685 Box
+
+ 1.0 1.0 1.0 SetBgColor
+Fill
+gsave clip
+
+0 setlinejoin
+0 setlinecap
+0.639216 0.639216 0.639216 SetFgColor
+1 setlinewidth
+[  1 10] 0 setdash
+/DashesProc {} def
+186 4 moveto
+ 186 688 lineto
+DashesProc stroke
+61 4 moveto
+ 61 688 lineto
+DashesProc stroke
+436 4 moveto
+ 436 688 lineto
+DashesProc stroke
+311 4 moveto
+ 311 688 lineto
+DashesProc stroke
+686 4 moveto
+ 686 688 lineto
+DashesProc stroke
+561 4 moveto
+ 561 688 lineto
+DashesProc stroke
+811 4 moveto
+ 811 688 lineto
+DashesProc stroke
+53 543.368 moveto
+ 869 543.368 lineto
+DashesProc stroke
+53 669.392 moveto
+ 869 669.392 lineto
+DashesProc stroke
+53 291.322 moveto
+ 869 291.322 lineto
+DashesProc stroke
+53 417.345 moveto
+ 869 417.345 lineto
+DashesProc stroke
+53 39.2751 moveto
+ 869 39.2751 lineto
+DashesProc stroke
+53 165.298 moveto
+ 869 165.298 lineto
+DashesProc stroke
+
+% Element "out"
+
+0 setlinejoin
+0 setlinecap
+1 0.752941 0.796078 SetFgColor
+1 setlinewidth
+[ ] 0 setdash
+/DashesProc {} def
+/DashesProc {} def
+ newpath 61 39.2753 moveto
+ 61.005 39.1746 lineto
+DashesProc stroke
+ newpath  61.005 39.1746 moveto
+ 61.01 39.0744 lineto
+ 61.02 38.8746 lineto
+ 61.04 38.48 lineto
+ 61.08 37.7101 lineto
+ 61.16 36.2432 lineto
+ 61.32 33.5758 lineto
+ 61.64 29.1312 lineto
+ 62.14 23.9612 lineto
+ 62.64 20.2742 lineto
+ 63.14 17.4861 lineto
+ 63.64 15.1944 lineto
+ 64.14 13.1987 lineto
+ 64.64 12 lineto
+ 65.14 12.8585 lineto
+ 65.64 16.7037 lineto
+ 66.14 23.6005 lineto
+ 66.64 33.3196 lineto
+ 67.14 45.4703 lineto
+ 67.64 60.9619 lineto
+ 68.14 83.9021 lineto
+ 68.64 116.231 lineto
+ 69.14 157.456 lineto
+ 69.64 207.47 lineto
+ 70.14 265.02 lineto
+ 70.64 327.999 lineto
+ 71 372.969 lineto
+ 71.05 379.772 lineto
+ 71.15 393.121 lineto
+ 71.35 418.366 lineto
+ 71.75 463.103 lineto
+ 72.25 509.063 lineto
+ 72.75 545.52 lineto
+ 73.25 574.23 lineto
+ 73.75 596.669 lineto
+ 74.25 614.064 lineto
+ 74.75 627.448 lineto
+ 75.25 637.682 lineto
+ 75.75 645.47 lineto
+ 76.25 651.375 lineto
+ 76.75 655.84 lineto
+ 77.25 659.208 lineto
+ 77.75 661.743 lineto
+ 78.25 663.65 lineto
+ 78.75 665.084 lineto
+ 79.25 666.16 lineto
+ 79.75 666.968 lineto
+ 80.25 667.574 lineto
+ 80.75 668.029 lineto
+ 81.25 668.37 lineto
+ 81.75 668.626 lineto
+ 82.25 668.817 lineto
+ 82.75 668.961 lineto
+ 83.25 669.069 lineto
+ 83.75 669.15 lineto
+ 84.25 669.21 lineto
+ 84.75 669.256 lineto
+ 85.25 669.29 lineto
+ 85.75 669.315 lineto
+ 86.25 669.334 lineto
+ 86.75 669.349 lineto
+ 87.25 669.359 lineto
+ 87.75 669.367 lineto
+ 88.25 669.373 lineto
+ 88.75 669.378 lineto
+ 89.25 669.381 lineto
+ 89.75 669.384 lineto
+ 90.25 669.386 lineto
+ 90.75 669.387 lineto
+ 91.25 669.388 lineto
+ 91.75 669.389 lineto
+ 92.25 669.39 lineto
+ 92.75 669.39 lineto
+ 93.25 669.391 lineto
+ 93.75 669.391 lineto
+ 94.25 669.391 lineto
+ 94.75 669.391 lineto
+ 95.25 669.391 lineto
+ 95.75 669.391 lineto
+ 96.25 669.391 lineto
+ 96.75 669.391 lineto
+ 97.25 669.391 lineto
+ 97.75 669.391 lineto
+ 98.25 669.391 lineto
+ 98.75 669.391 lineto
+ 99.25 669.391 lineto
+ 99.75 669.392 lineto
+ 100.25 669.392 lineto
+ 100.75 669.392 lineto
+ 101.25 669.392 lineto
+ 101.75 669.392 lineto
+ 102.25 669.392 lineto
+ 102.75 669.392 lineto
+ 103.25 669.392 lineto
+ 103.75 669.392 lineto
+ 104.25 669.392 lineto
+ 104.75 669.392 lineto
+ 105.25 669.392 lineto
+ 105.75 669.392 lineto
+ 106.25 669.392 lineto
+ 106.75 669.392 lineto
+ 107.25 669.392 lineto
+ 107.75 669.392 lineto
+ 108.25 669.392 lineto
+ 108.75 669.392 lineto
+ 109.25 669.392 lineto
+ 109.75 669.392 lineto
+ 110.25 669.392 lineto
+ 110.75 669.392 lineto
+ 111.25 669.392 lineto
+ 111.75 669.392 lineto
+ 112.25 669.392 lineto
+ 112.75 669.392 lineto
+ 113.25 669.392 lineto
+ 113.75 669.392 lineto
+ 114.25 669.392 lineto
+ 114.75 669.392 lineto
+ 115.25 669.392 lineto
+ 115.75 669.392 lineto
+ 116.25 669.392 lineto
+ 116.75 669.392 lineto
+ 117.25 669.392 lineto
+ 117.75 669.392 lineto
+ 118.25 669.392 lineto
+ 118.75 669.392 lineto
+ 119.25 669.392 lineto
+ 119.75 669.392 lineto
+ 120.25 669.392 lineto
+ 120.75 669.392 lineto
+ 121.25 669.392 lineto
+ 121.75 669.392 lineto
+ 122.25 669.392 lineto
+ 122.75 669.392 lineto
+ 123.25 669.392 lineto
+ 123.75 669.392 lineto
+ 124.25 669.392 lineto
+ 124.75 669.392 lineto
+ 125.25 669.392 lineto
+ 125.75 669.392 lineto
+ 126.25 669.392 lineto
+ 126.75 669.392 lineto
+ 127.25 669.392 lineto
+ 127.75 669.392 lineto
+ 128.25 669.392 lineto
+ 128.75 669.392 lineto
+ 129.25 669.392 lineto
+ 129.75 669.392 lineto
+ 130.25 669.392 lineto
+ 130.75 669.392 lineto
+ 131.25 669.392 lineto
+ 131.75 669.392 lineto
+ 132.25 669.392 lineto
+ 132.75 669.392 lineto
+ 133.25 669.392 lineto
+ 133.75 669.392 lineto
+ 134.25 669.392 lineto
+ 134.75 669.392 lineto
+ 135.25 669.392 lineto
+ 135.75 669.392 lineto
+ 136.25 669.392 lineto
+ 136.75 669.392 lineto
+ 137.25 669.392 lineto
+ 137.75 669.392 lineto
+ 138.25 669.392 lineto
+ 138.75 669.392 lineto
+ 139.25 669.392 lineto
+ 139.75 669.392 lineto
+ 140.25 669.392 lineto
+ 140.75 669.392 lineto
+ 141.25 669.392 lineto
+ 141.75 669.392 lineto
+ 142.25 669.392 lineto
+ 142.75 669.392 lineto
+ 143.25 669.392 lineto
+ 143.75 669.392 lineto
+ 144.25 669.392 lineto
+ 144.75 669.392 lineto
+ 145.25 669.392 lineto
+ 145.75 669.392 lineto
+ 146.25 669.392 lineto
+ 146.75 669.392 lineto
+ 147.25 669.392 lineto
+ 147.75 669.392 lineto
+ 148.25 669.392 lineto
+ 148.75 669.392 lineto
+ 149.25 669.392 lineto
+ 149.75 669.392 lineto
+ 150.25 669.392 lineto
+ 150.75 669.392 lineto
+ 151.25 669.392 lineto
+ 151.75 669.392 lineto
+ 152.25 669.392 lineto
+ 152.75 669.392 lineto
+ 153.25 669.392 lineto
+ 153.75 669.392 lineto
+ 154.25 669.392 lineto
+ 154.75 669.392 lineto
+ 155.25 669.392 lineto
+ 155.75 669.392 lineto
+ 156.25 669.392 lineto
+ 156.75 669.392 lineto
+ 157.25 669.392 lineto
+ 157.75 669.392 lineto
+ 158.25 669.392 lineto
+ 158.75 669.392 lineto
+ 159.25 669.392 lineto
+ 159.75 669.392 lineto
+ 160.25 669.392 lineto
+ 160.75 669.392 lineto
+ 161.25 669.392 lineto
+ 161.75 669.392 lineto
+ 162.25 669.392 lineto
+ 162.75 669.392 lineto
+ 163.25 669.392 lineto
+ 163.75 669.392 lineto
+ 164.25 669.392 lineto
+ 164.75 669.392 lineto
+ 165.25 669.392 lineto
+ 165.75 669.392 lineto
+ 166.25 669.392 lineto
+ 166.75 669.392 lineto
+ 167.25 669.392 lineto
+ 167.75 669.392 lineto
+ 168.25 669.392 lineto
+ 168.75 669.392 lineto
+ 169.25 669.392 lineto
+ 169.75 669.392 lineto
+ 170.25 669.392 lineto
+ 170.75 669.392 lineto
+ 171.25 669.392 lineto
+ 171.75 669.392 lineto
+ 172.25 669.392 lineto
+ 172.75 669.392 lineto
+ 173.25 669.392 lineto
+ 173.75 669.392 lineto
+ 174.25 669.392 lineto
+ 174.75 669.392 lineto
+ 175.25 669.392 lineto
+ 175.75 669.392 lineto
+ 176.25 669.392 lineto
+ 176.75 669.392 lineto
+ 177.25 669.392 lineto
+ 177.75 669.392 lineto
+ 178.25 669.392 lineto
+ 178.75 669.392 lineto
+ 179.25 669.392 lineto
+ 179.75 669.392 lineto
+ 180.25 669.392 lineto
+ 180.75 669.392 lineto
+ 181.25 669.392 lineto
+ 181.75 669.392 lineto
+ 182.25 669.392 lineto
+ 182.75 669.392 lineto
+ 183.25 669.392 lineto
+ 183.75 669.392 lineto
+ 184.25 669.392 lineto
+ 184.75 669.392 lineto
+ 185.25 669.392 lineto
+ 185.75 669.392 lineto
+ 186.25 669.392 lineto
+ 186.75 669.392 lineto
+ 187.25 669.392 lineto
+ 187.75 669.392 lineto
+ 188.25 669.392 lineto
+ 188.75 669.392 lineto
+ 189.25 669.392 lineto
+ 189.75 669.392 lineto
+ 190.25 669.392 lineto
+ 190.75 669.392 lineto
+ 191.25 669.392 lineto
+ 191.75 669.392 lineto
+ 192.25 669.392 lineto
+ 192.75 669.392 lineto
+ 193.25 669.392 lineto
+ 193.75 669.392 lineto
+ 194.25 669.392 lineto
+ 194.75 669.392 lineto
+ 195.25 669.392 lineto
+ 195.75 669.392 lineto
+ 196.25 669.392 lineto
+ 196.75 669.392 lineto
+ 197.25 669.392 lineto
+ 197.75 669.392 lineto
+ 198.25 669.392 lineto
+ 198.75 669.392 lineto
+ 199.25 669.392 lineto
+ 199.75 669.392 lineto
+ 200.25 669.392 lineto
+ 200.75 669.392 lineto
+ 201.25 669.392 lineto
+ 201.75 669.392 lineto
+ 202.25 669.392 lineto
+ 202.75 669.392 lineto
+ 203.25 669.392 lineto
+ 203.75 669.392 lineto
+ 204.25 669.392 lineto
+ 204.75 669.392 lineto
+ 205.25 669.392 lineto
+ 205.75 669.392 lineto
+ 206.25 669.392 lineto
+ 206.75 669.392 lineto
+ 207.25 669.392 lineto
+ 207.75 669.392 lineto
+ 208.25 669.392 lineto
+ 208.75 669.392 lineto
+ 209.25 669.392 lineto
+ 209.75 669.392 lineto
+ 210.25 669.392 lineto
+ 210.75 669.392 lineto
+ 211.25 669.392 lineto
+ 211.75 669.392 lineto
+ 212.25 669.392 lineto
+ 212.75 669.392 lineto
+ 213.25 669.392 lineto
+ 213.75 669.392 lineto
+ 214.25 669.392 lineto
+ 214.75 669.392 lineto
+ 215.25 669.392 lineto
+ 215.75 669.392 lineto
+ 216.25 669.392 lineto
+ 216.75 669.392 lineto
+ 217.25 669.392 lineto
+ 217.75 669.392 lineto
+ 218.25 669.392 lineto
+ 218.75 669.392 lineto
+ 219.25 669.392 lineto
+ 219.75 669.392 lineto
+ 220.25 669.392 lineto
+ 220.75 669.392 lineto
+ 221 669.392 lineto
+ 221.05 669.622 lineto
+ 221.15 670.108 lineto
+ 221.35 671.16 lineto
+ 221.75 673.2 lineto
+ 222.25 675.362 lineto
+ 222.75 677.143 lineto
+ 223.25 678.823 lineto
+ 223.75 679.978 lineto
+ 224.25 680 lineto
+ 224.75 678.754 lineto
+ 225.25 676.267 lineto
+ 225.75 672.494 lineto
+ 226.25 667.432 lineto
+ 226.75 661.062 lineto
+ 227.25 653.332 lineto
+ 227.75 644.11 lineto
+ 228.25 633.056 lineto
+ 228.75 619.504 lineto
+ 229.25 602.833 lineto
+ 229.75 582.983 lineto
+ 230.25 560.205 lineto
+ 230.75 534.648 lineto
+ 231 520.834 lineto
+ 231.05 517.674 lineto
+ 231.15 511.382 lineto
+ 231.35 498.936 lineto
+ 231.75 474.324 lineto
+ 232.25 443.769 lineto
+ 232.75 413.36 lineto
+ 233.25 383.254 lineto
+ 233.75 353.681 lineto
+ 234.25 324.84 lineto
+ 234.75 296.861 lineto
+ 235.25 269.817 lineto
+ 235.75 243.803 lineto
+ 236.25 219.025 lineto
+ 236.75 195.804 lineto
+ 237.25 174.519 lineto
+ 237.75 155.429 lineto
+ 238.25 138.601 lineto
+ 238.75 123.957 lineto
+ 239.25 111.335 lineto
+ 239.75 100.534 lineto
+ 240.25 91.3379 lineto
+ 240.75 83.5388 lineto
+ 241.25 76.9424 lineto
+ 241.75 71.3735 lineto
+ 242.25 66.6781 lineto
+ 242.75 62.7219 lineto
+ 243.25 59.3894 lineto
+ 243.75 56.5821 lineto
+ 244.25 54.2162 lineto
+ 244.75 52.2209 lineto
+ 245.25 50.5366 lineto
+ 245.75 49.1131 lineto
+ 246.25 47.9081 lineto
+ 246.75 46.8866 lineto
+ 247.25 46.0189 lineto
+ 247.75 45.2802 lineto
+ 248.25 44.65 lineto
+ 248.75 44.1108 lineto
+ 249.25 43.6483 lineto
+ 249.75 43.2504 lineto
+ 250.25 42.9068 lineto
+ 250.75 42.6093 lineto
+ 251.25 42.3507 lineto
+ 251.75 42.125 lineto
+ 252.25 41.9274 lineto
+ 252.75 41.7535 lineto
+ 253.25 41.6 lineto
+ 253.75 41.4638 lineto
+ 254.25 41.3425 lineto
+ 254.75 41.2341 lineto
+ 255.25 41.1367 lineto
+ 255.75 41.0488 lineto
+ 256.25 40.9692 lineto
+ 256.75 40.8968 lineto
+ 257.25 40.8307 lineto
+ 257.75 40.7701 lineto
+ 258.25 40.7144 lineto
+ 258.75 40.663 lineto
+ 259.25 40.6153 lineto
+ 259.75 40.5711 lineto
+ 260.25 40.5298 lineto
+ 260.75 40.4913 lineto
+ 261.25 40.4552 lineto
+ 261.75 40.4213 lineto
+ 262.25 40.3894 lineto
+ 262.75 40.3593 lineto
+ 263.25 40.3308 lineto
+ 263.75 40.3038 lineto
+ 264.25 40.2782 lineto
+ 264.75 40.2539 lineto
+ 265.25 40.2308 lineto
+ 265.75 40.2087 lineto
+ 266.25 40.1876 lineto
+ 266.75 40.1676 lineto
+ 267.25 40.1483 lineto
+ 267.75 40.1299 lineto
+ 268.25 40.1122 lineto
+ 268.75 40.0952 lineto
+ 269.25 40.0789 lineto
+ 269.75 40.0632 lineto
+ 270.25 40.0482 lineto
+ 270.75 40.0336 lineto
+ 271.25 40.0196 lineto
+ 271.75 40.0062 lineto
+ 272.25 39.9931 lineto
+ 272.75 39.9806 lineto
+ 273.25 39.9684 lineto
+ 273.75 39.9566 lineto
+ 274.25 39.9452 lineto
+ 274.75 39.9342 lineto
+ 275.25 39.9236 lineto
+ 275.75 39.9132 lineto
+ 276.25 39.9032 lineto
+ 276.75 39.8935 lineto
+ 277.25 39.884 lineto
+ 277.75 39.8749 lineto
+ 278.25 39.866 lineto
+ 278.75 39.8574 lineto
+ 279.25 39.849 lineto
+ 279.75 39.8408 lineto
+ 280.25 39.8329 lineto
+ 280.75 39.8252 lineto
+ 281.25 39.8176 lineto
+ 281.75 39.8103 lineto
+ 282.25 39.8032 lineto
+ 282.75 39.7962 lineto
+ 283.25 39.7895 lineto
+ 283.75 39.7828 lineto
+ 284.25 39.7764 lineto
+ 284.75 39.7701 lineto
+ 285.25 39.764 lineto
+ 285.75 39.758 lineto
+ 286.25 39.7521 lineto
+ 286.75 39.7464 lineto
+ 287.25 39.7408 lineto
+ 287.75 39.7354 lineto
+ 288.25 39.73 lineto
+ 288.75 39.7249 lineto
+ 289.25 39.7197 lineto
+ 289.75 39.7148 lineto
+ 290.25 39.7099 lineto
+ 290.75 39.7051 lineto
+ 291.25 39.7004 lineto
+ 291.75 39.6958 lineto
+ 292.25 39.6914 lineto
+ 292.75 39.687 lineto
+ 293.25 39.6827 lineto
+ 293.75 39.6785 lineto
+ 294.25 39.6743 lineto
+ 294.75 39.6703 lineto
+ 295.25 39.6663 lineto
+ 295.75 39.6624 lineto
+ 296.25 39.6586 lineto
+ 296.75 39.6548 lineto
+ 297.25 39.6512 lineto
+ 297.75 39.6476 lineto
+ 298.25 39.644 lineto
+ 298.75 39.6405 lineto
+ 299.25 39.6371 lineto
+ 299.75 39.6338 lineto
+ 300.25 39.6305 lineto
+ 300.75 39.6273 lineto
+ 301.25 39.6241 lineto
+ 301.75 39.621 lineto
+ 302.25 39.6179 lineto
+ 302.75 39.6149 lineto
+ 303.25 39.6119 lineto
+ 303.75 39.6091 lineto
+ 304.25 39.6062 lineto
+ 304.75 39.6033 lineto
+ 305.25 39.6006 lineto
+ 305.75 39.5979 lineto
+ 306.25 39.5952 lineto
+ 306.75 39.5925 lineto
+ 307.25 39.5899 lineto
+ 307.75 39.5874 lineto
+ 308.25 39.5849 lineto
+ 308.75 39.5824 lineto
+ 309.25 39.58 lineto
+ 309.75 39.5776 lineto
+ 310.25 39.5752 lineto
+ 310.75 39.5729 lineto
+ 311.25 39.5706 lineto
+ 311.75 39.5683 lineto
+ 312.25 39.5661 lineto
+ 312.75 39.5639 lineto
+ 313.25 39.5618 lineto
+ 313.75 39.5596 lineto
+ 314.25 39.5575 lineto
+ 314.75 39.5555 lineto
+ 315.25 39.5534 lineto
+ 315.75 39.5514 lineto
+ 316.25 39.5494 lineto
+ 316.75 39.5475 lineto
+ 317.25 39.5455 lineto
+ 317.75 39.5437 lineto
+ 318.25 39.5418 lineto
+ 318.75 39.54 lineto
+ 319.25 39.5381 lineto
+ 319.75 39.5363 lineto
+ 320.25 39.5345 lineto
+ 320.75 39.5328 lineto
+ 321.25 39.5311 lineto
+ 321.75 39.5293 lineto
+ 322.25 39.5276 lineto
+ 322.75 39.526 lineto
+ 323.25 39.5243 lineto
+ 323.75 39.5227 lineto
+ 324.25 39.5211 lineto
+ 324.75 39.5195 lineto
+ 325.25 39.518 lineto
+ 325.75 39.5165 lineto
+ 326.25 39.515 lineto
+ 326.75 39.5135 lineto
+ 327.25 39.5119 lineto
+ 327.75 39.5104 lineto
+ 328.25 39.509 lineto
+ 328.75 39.5076 lineto
+ 329.25 39.5062 lineto
+ 329.75 39.5048 lineto
+ 330.25 39.5034 lineto
+ 330.75 39.502 lineto
+ 331.25 39.5007 lineto
+ 331.75 39.4993 lineto
+ 332.25 39.498 lineto
+ 332.75 39.4967 lineto
+ 333.25 39.4954 lineto
+ 333.75 39.4942 lineto
+ 334.25 39.4929 lineto
+ 334.75 39.4916 lineto
+ 335.25 39.4904 lineto
+ 335.75 39.4892 lineto
+ 336.25 39.488 lineto
+ 336.75 39.4868 lineto
+ 337.25 39.4856 lineto
+ 337.75 39.4845 lineto
+ 338.25 39.4833 lineto
+ 338.75 39.4822 lineto
+ 339.25 39.4811 lineto
+ 339.75 39.4799 lineto
+ 340.25 39.4788 lineto
+ 340.75 39.4778 lineto
+ 341.25 39.4767 lineto
+ 341.75 39.4756 lineto
+ 342.25 39.4745 lineto
+ 342.75 39.4735 lineto
+ 343.25 39.4724 lineto
+ 343.75 39.4714 lineto
+ 344.25 39.4704 lineto
+ 344.75 39.4694 lineto
+ 345.25 39.4684 lineto
+ 345.75 39.4674 lineto
+ 346.25 39.4664 lineto
+ 346.75 39.4654 lineto
+ 347.25 39.4645 lineto
+ 347.75 39.4636 lineto
+ 348.25 39.4626 lineto
+ 348.75 39.4617 lineto
+ 349.25 39.4608 lineto
+ 349.75 39.4598 lineto
+ 350.25 39.4589 lineto
+ 350.75 39.458 lineto
+ 351.25 39.4571 lineto
+ 351.75 39.4563 lineto
+ 352.25 39.4554 lineto
+ 352.75 39.4546 lineto
+ 353.25 39.4537 lineto
+ 353.75 39.4529 lineto
+ 354.25 39.452 lineto
+ 354.75 39.4512 lineto
+ 355.25 39.4504 lineto
+ 355.75 39.4496 lineto
+ 356.25 39.4487 lineto
+ 356.75 39.448 lineto
+ 357.25 39.4472 lineto
+ 357.75 39.4464 lineto
+ 358.25 39.4456 lineto
+ 358.75 39.4448 lineto
+ 359.25 39.444 lineto
+ 359.75 39.4433 lineto
+ 360.25 39.4425 lineto
+ 360.75 39.4418 lineto
+ 361 39.4415 lineto
+ 361.05 39.0494 lineto
+ 361.15 38.2636 lineto
+ 361.35 36.7851 lineto
+ 361.75 34.1537 lineto
+ 362.25 31.3714 lineto
+ 362.75 29.0272 lineto
+ 363.25 27.008 lineto
+ 363.75 25.2216 lineto
+ 364.25 23.5917 lineto
+ 364.75 22.0364 lineto
+ 365.25 20.3652 lineto
+ 365.75 18.6762 lineto
+ 366.25 19.6333 lineto
+ 366.75 26.7246 lineto
+ 367.25 41.4183 lineto
+ 367.75 63.8575 lineto
+ 368.25 97.5232 lineto
+ 368.75 142.205 lineto
+ 369.25 196.587 lineto
+ 369.75 258.352 lineto
+ 370.25 323.248 lineto
+ 370.75 385.092 lineto
+ 371 413.473 lineto
+ 371.05 419.772 lineto
+ 371.15 432.164 lineto
+ 371.35 455.695 lineto
+ 371.75 497.709 lineto
+ 372.25 541.203 lineto
+ 372.75 575.87 lineto
+ 373.25 603.4 lineto
+ 373.75 624.668 lineto
+ 374.25 640.134 lineto
+ 374.75 650.557 lineto
+ 375.25 656.679 lineto
+ 375.75 659.095 lineto
+ 376.25 658.207 lineto
+ 376.75 654.171 lineto
+ 377.25 646.76 lineto
+ 377.75 634.94 lineto
+ 378.25 616.226 lineto
+ 378.75 590.024 lineto
+ 379.25 557.486 lineto
+ 379.75 519.449 lineto
+ 380.25 476.708 lineto
+ 380.75 429.914 lineto
+ 381 405.309 lineto
+ 381.05 399.706 lineto
+ 381.15 388.575 lineto
+ 381.35 366.767 lineto
+ 381.75 325.355 lineto
+ 382.25 278.601 lineto
+ 382.75 238.246 lineto
+ 383.25 204.145 lineto
+ 383.75 175.53 lineto
+ 384.25 151.629 lineto
+ 384.75 131.744 lineto
+ 385.25 115.263 lineto
+ 385.75 101.653 lineto
+ 386.25 90.4399 lineto
+ 386.75 81.2182 lineto
+ 387.25 73.644 lineto
+ 387.75 67.4289 lineto
+ 388.25 62.3325 lineto
+ 388.75 58.1556 lineto
+ 389.25 54.7335 lineto
+ 389.75 51.9306 lineto
+ 390.25 49.6353 lineto
+ 390.75 47.7559 lineto
+ 391.25 46.2171 lineto
+ 391.75 44.9575 lineto
+ 392.25 43.9264 lineto
+ 392.75 43.0823 lineto
+ 393.25 42.3913 lineto
+ 393.75 41.8259 lineto
+ 394.25 41.363 lineto
+ 394.75 40.9842 lineto
+ 395.25 40.674 lineto
+ 395.75 40.4202 lineto
+ 396.25 40.2125 lineto
+ 396.75 40.0425 lineto
+ 397.25 39.9034 lineto
+ 397.75 39.7895 lineto
+ 398.25 39.6963 lineto
+ 398.75 39.62 lineto
+ 399.25 39.5576 lineto
+ 399.75 39.5065 lineto
+ 400.25 39.4647 lineto
+ 400.75 39.4304 lineto
+ 401.25 39.4024 lineto
+ 401.75 39.3794 lineto
+ 402.25 39.3607 lineto
+ 402.75 39.3453 lineto
+ 403.25 39.3328 lineto
+ 403.75 39.3225 lineto
+ 404.25 39.3141 lineto
+ 404.75 39.3072 lineto
+ 405.25 39.3015 lineto
+ 405.75 39.2969 lineto
+ 406.25 39.2932 lineto
+ 406.75 39.29 lineto
+ 407.25 39.2875 lineto
+ 407.75 39.2855 lineto
+ 408.25 39.2837 lineto
+ 408.75 39.2823 lineto
+ 409.25 39.2813 lineto
+ 409.75 39.2803 lineto
+ 410.25 39.2795 lineto
+ 410.75 39.2789 lineto
+ 411.25 39.2784 lineto
+ 411.75 39.278 lineto
+ 412.25 39.2776 lineto
+ 412.75 39.2773 lineto
+ 413.25 39.2771 lineto
+ 413.75 39.2769 lineto
+ 414.25 39.2768 lineto
+ 414.75 39.2767 lineto
+ 415.25 39.2766 lineto
+ 415.75 39.2765 lineto
+ 416.25 39.2764 lineto
+ 416.75 39.2764 lineto
+ 417.25 39.2763 lineto
+ 417.75 39.2763 lineto
+ 418.25 39.2763 lineto
+ 418.75 39.2762 lineto
+ 419.25 39.2762 lineto
+ 419.75 39.2762 lineto
+ 420.25 39.2761 lineto
+ 420.75 39.2761 lineto
+ 421.25 39.2761 lineto
+ 421.75 39.2761 lineto
+ 422.25 39.2761 lineto
+ 422.75 39.2761 lineto
+ 423.25 39.2761 lineto
+ 423.75 39.2761 lineto
+ 424.25 39.2761 lineto
+ 424.75 39.2761 lineto
+ 425.25 39.2761 lineto
+ 425.75 39.2761 lineto
+ 426.25 39.2761 lineto
+ 426.75 39.2761 lineto
+ 427.25 39.2761 lineto
+ 427.75 39.2761 lineto
+ 428.25 39.2761 lineto
+ 428.75 39.2761 lineto
+ 429.25 39.2761 lineto
+ 429.75 39.2761 lineto
+ 430.25 39.2761 lineto
+ 430.75 39.2761 lineto
+ 431.25 39.2761 lineto
+ 431.75 39.2761 lineto
+ 432.25 39.2761 lineto
+ 432.75 39.2761 lineto
+ 433.25 39.2761 lineto
+ 433.75 39.2761 lineto
+ 434.25 39.2761 lineto
+ 434.75 39.2761 lineto
+ 435.25 39.2761 lineto
+ 435.75 39.2761 lineto
+ 436.25 39.2761 lineto
+ 436.75 39.2761 lineto
+ 437.25 39.2761 lineto
+ 437.75 39.2761 lineto
+ 438.25 39.2761 lineto
+ 438.75 39.2761 lineto
+ 439.25 39.2761 lineto
+ 439.75 39.2761 lineto
+ 440.25 39.2761 lineto
+ 440.75 39.2761 lineto
+ 441.25 39.2761 lineto
+ 441.75 39.2761 lineto
+ 442.25 39.2761 lineto
+ 442.75 39.2761 lineto
+ 443.25 39.2761 lineto
+ 443.75 39.2761 lineto
+ 444.25 39.2761 lineto
+ 444.75 39.2761 lineto
+ 445.25 39.2761 lineto
+ 445.75 39.2761 lineto
+ 446.25 39.2761 lineto
+ 446.75 39.2761 lineto
+ 447.25 39.2761 lineto
+ 447.75 39.2761 lineto
+ 448.25 39.2761 lineto
+ 448.75 39.2761 lineto
+ 449.25 39.2761 lineto
+ 449.75 39.2761 lineto
+ 450.25 39.2761 lineto
+ 450.75 39.2761 lineto
+ 451.25 39.2761 lineto
+ 451.75 39.2761 lineto
+ 452.25 39.2761 lineto
+ 452.75 39.2761 lineto
+ 453.25 39.2761 lineto
+ 453.75 39.2761 lineto
+ 454.25 39.2761 lineto
+ 454.75 39.2761 lineto
+ 455.25 39.2761 lineto
+ 455.75 39.2761 lineto
+ 456.25 39.2761 lineto
+ 456.75 39.2761 lineto
+ 457.25 39.2761 lineto
+ 457.75 39.2761 lineto
+ 458.25 39.2761 lineto
+ 458.75 39.2761 lineto
+ 459.25 39.2761 lineto
+ 459.75 39.2761 lineto
+ 460.25 39.2761 lineto
+ 460.75 39.2761 lineto
+ 461.25 39.2761 lineto
+ 461.75 39.2761 lineto
+ 462.25 39.2761 lineto
+ 462.75 39.2761 lineto
+ 463.25 39.2761 lineto
+ 463.75 39.2761 lineto
+ 464.25 39.2761 lineto
+ 464.75 39.2761 lineto
+ 465.25 39.2761 lineto
+ 465.75 39.2761 lineto
+ 466.25 39.2761 lineto
+ 466.75 39.2761 lineto
+ 467.25 39.2761 lineto
+ 467.75 39.2761 lineto
+ 468.25 39.2761 lineto
+ 468.75 39.2761 lineto
+ 469.25 39.2761 lineto
+ 469.75 39.2761 lineto
+ 470.25 39.2761 lineto
+ 470.75 39.2761 lineto
+ 471.25 39.2761 lineto
+ 471.75 39.2761 lineto
+ 472.25 39.2761 lineto
+ 472.75 39.2761 lineto
+ 473.25 39.2761 lineto
+ 473.75 39.2761 lineto
+ 474.25 39.2761 lineto
+ 474.75 39.2761 lineto
+ 475.25 39.2761 lineto
+ 475.75 39.2761 lineto
+ 476.25 39.2761 lineto
+ 476.75 39.2761 lineto
+ 477.25 39.2761 lineto
+ 477.75 39.2761 lineto
+ 478.25 39.2761 lineto
+ 478.75 39.2761 lineto
+ 479.25 39.2761 lineto
+ 479.75 39.2761 lineto
+ 480.25 39.2761 lineto
+ 480.75 39.2761 lineto
+ 481.25 39.2761 lineto
+ 481.75 39.2761 lineto
+ 482.25 39.2761 lineto
+ 482.75 39.2761 lineto
+ 483.25 39.2761 lineto
+ 483.75 39.2761 lineto
+ 484.25 39.2761 lineto
+ 484.75 39.2761 lineto
+ 485.25 39.2761 lineto
+ 485.75 39.2761 lineto
+ 486.25 39.2761 lineto
+ 486.75 39.2761 lineto
+ 487.25 39.2761 lineto
+ 487.75 39.2761 lineto
+ 488.25 39.2761 lineto
+ 488.75 39.2761 lineto
+ 489.25 39.2761 lineto
+ 489.75 39.2761 lineto
+ 490.25 39.2761 lineto
+ 490.75 39.2761 lineto
+ 491.25 39.2761 lineto
+ 491.75 39.2761 lineto
+ 492.25 39.2761 lineto
+ 492.75 39.2761 lineto
+ 493.25 39.2761 lineto
+ 493.75 39.2761 lineto
+ 494.25 39.2761 lineto
+ 494.75 39.2761 lineto
+ 495.25 39.2761 lineto
+ 495.75 39.2761 lineto
+ 496.25 39.2761 lineto
+ 496.75 39.2761 lineto
+ 497.25 39.2761 lineto
+ 497.75 39.2761 lineto
+ 498.25 39.2761 lineto
+ 498.75 39.2761 lineto
+ 499.25 39.2761 lineto
+ 499.75 39.2761 lineto
+ 500.25 39.2761 lineto
+ 500.75 39.2761 lineto
+ 501.25 39.2761 lineto
+ 501.75 39.2761 lineto
+ 502.25 39.2761 lineto
+ 502.75 39.2761 lineto
+ 503.25 39.2761 lineto
+ 503.75 39.2761 lineto
+ 504.25 39.2761 lineto
+ 504.75 39.2761 lineto
+ 505.25 39.2761 lineto
+ 505.75 39.2761 lineto
+ 506.25 39.2761 lineto
+ 506.75 39.2761 lineto
+ 507.25 39.2761 lineto
+ 507.75 39.2761 lineto
+ 508.25 39.2761 lineto
+ 508.75 39.2761 lineto
+ 509.25 39.2761 lineto
+ 509.75 39.2761 lineto
+ 510.25 39.2761 lineto
+ 510.75 39.2761 lineto
+ 511.25 39.2761 lineto
+ 511.75 39.2761 lineto
+ 512.25 39.2761 lineto
+ 512.75 39.2761 lineto
+ 513.25 39.2761 lineto
+ 513.75 39.2761 lineto
+ 514.25 39.2761 lineto
+ 514.75 39.2761 lineto
+ 515.25 39.2761 lineto
+ 515.75 39.2761 lineto
+ 516.25 39.2761 lineto
+ 516.75 39.2761 lineto
+ 517.25 39.2761 lineto
+ 517.75 39.2761 lineto
+ 518.25 39.2761 lineto
+ 518.75 39.2761 lineto
+ 519.25 39.2761 lineto
+ 519.75 39.2761 lineto
+ 520.25 39.2761 lineto
+ 520.75 39.2761 lineto
+ 521 39.2761 lineto
+ 521.05 39.4618 lineto
+ 521.15 39.8261 lineto
+ 521.35 40.5132 lineto
+ 521.75 41.7368 lineto
+ 522.25 43.0275 lineto
+ 522.75 44.1843 lineto
+ 523.25 45.6778 lineto
+ 523.75 47.5294 lineto
+ 524.25 49.0917 lineto
+ 524.75 50.2179 lineto
+ 525.25 50.9551 lineto
+ 525.75 51.3791 lineto
+ 526.25 51.5639 lineto
+ 526.75 51.5748 lineto
+ 527.25 51.4659 lineto
+ 527.75 51.2797 lineto
+ 528.25 51.0487 lineto
+ 528.75 50.7963 lineto
+ 529.25 50.5388 lineto
+ 529.75 50.287 lineto
+ 530.25 50.0476 lineto
+ 530.75 49.824 lineto
+ 531 49.7187 lineto
+ 531.05 49.349 lineto
+ 531.15 48.6359 lineto
+ 531.35 47.356 lineto
+ 531.75 45.2877 lineto
+ 532.25 43.4239 lineto
+ 532.75 42.1381 lineto
+ 533.25 41.2515 lineto
+ 533.75 40.6402 lineto
+ 534.25 40.2187 lineto
+ 534.75 39.9281 lineto
+ 535.25 39.7276 lineto
+ 535.75 39.5894 lineto
+ 536.25 39.4942 lineto
+ 536.75 39.4284 lineto
+ 537.25 39.3831 lineto
+ 537.75 39.3519 lineto
+ 538.25 39.3303 lineto
+ 538.75 39.3154 lineto
+ 539.25 39.3052 lineto
+ 539.75 39.2981 lineto
+ 540.25 39.2932 lineto
+ 540.75 39.2898 lineto
+ 541.25 39.2876 lineto
+ 541.75 39.2859 lineto
+ 542.25 39.2849 lineto
+ 542.75 39.2841 lineto
+ 543.25 39.2835 lineto
+ 543.75 39.2832 lineto
+ 544.25 39.2829 lineto
+ 544.75 39.2828 lineto
+ 545.25 39.2826 lineto
+ 545.75 39.2826 lineto
+ 546.25 39.2825 lineto
+ 546.75 39.2825 lineto
+ 547.25 39.2825 lineto
+ 547.75 39.2824 lineto
+ 548.25 39.2824 lineto
+ 548.75 39.2824 lineto
+ 549.25 39.2824 lineto
+ 549.75 39.2824 lineto
+ 550.25 39.2823 lineto
+ 550.75 39.2823 lineto
+ 551.25 39.2823 lineto
+ 551.75 39.2823 lineto
+ 552.25 39.2823 lineto
+ 552.75 39.2823 lineto
+ 553.25 39.2823 lineto
+ 553.75 39.2823 lineto
+ 554.25 39.2823 lineto
+ 554.75 39.2823 lineto
+ 555.25 39.2823 lineto
+ 555.75 39.2823 lineto
+ 556.25 39.2823 lineto
+ 556.75 39.2823 lineto
+ 557.25 39.2823 lineto
+ 557.75 39.2823 lineto
+ 558.25 39.2823 lineto
+ 558.75 39.2823 lineto
+ 559.25 39.2823 lineto
+ 559.75 39.2823 lineto
+ 560.25 39.2823 lineto
+ 560.75 39.2823 lineto
+ 561.25 39.2823 lineto
+ 561.75 39.2823 lineto
+ 562.25 39.2823 lineto
+ 562.75 39.2823 lineto
+ 563.25 39.2823 lineto
+ 563.75 39.2823 lineto
+ 564.25 39.2823 lineto
+ 564.75 39.2823 lineto
+ 565.25 39.2823 lineto
+ 565.75 39.2823 lineto
+ 566.25 39.2823 lineto
+ 566.75 39.2823 lineto
+ 567.25 39.2823 lineto
+ 567.75 39.2823 lineto
+ 568.25 39.2823 lineto
+ 568.75 39.2823 lineto
+ 569.25 39.2823 lineto
+ 569.75 39.2823 lineto
+ 570.25 39.2822 lineto
+ 570.75 39.2822 lineto
+ 571.25 39.2822 lineto
+ 571.75 39.2822 lineto
+ 572.25 39.2822 lineto
+ 572.75 39.2822 lineto
+ 573.25 39.2822 lineto
+ 573.75 39.2822 lineto
+ 574.25 39.2822 lineto
+ 574.75 39.2822 lineto
+ 575.25 39.2822 lineto
+ 575.75 39.2822 lineto
+ 576.25 39.2822 lineto
+ 576.75 39.2822 lineto
+ 577.25 39.2822 lineto
+ 577.75 39.2822 lineto
+ 578.25 39.2822 lineto
+ 578.75 39.2822 lineto
+ 579.25 39.2822 lineto
+ 579.75 39.2822 lineto
+ 580.25 39.2822 lineto
+ 580.75 39.2822 lineto
+ 581.25 39.2822 lineto
+ 581.75 39.2822 lineto
+ 582.25 39.2822 lineto
+ 582.75 39.2822 lineto
+ 583.25 39.2822 lineto
+ 583.75 39.2822 lineto
+ 584.25 39.2822 lineto
+ 584.75 39.2822 lineto
+ 585.25 39.2822 lineto
+ 585.75 39.2822 lineto
+ 586.25 39.2822 lineto
+ 586.75 39.2822 lineto
+ 587.25 39.2822 lineto
+ 587.75 39.2822 lineto
+ 588.25 39.2822 lineto
+ 588.75 39.2822 lineto
+ 589.25 39.2822 lineto
+ 589.75 39.2822 lineto
+ 590.25 39.2822 lineto
+ 590.75 39.2822 lineto
+ 591.25 39.2822 lineto
+ 591.75 39.2822 lineto
+ 592.25 39.2821 lineto
+ 592.75 39.2821 lineto
+ 593.25 39.2821 lineto
+ 593.75 39.2821 lineto
+ 594.25 39.2821 lineto
+ 594.75 39.2821 lineto
+ 595.25 39.2821 lineto
+ 595.75 39.2821 lineto
+ 596.25 39.2821 lineto
+ 596.75 39.2821 lineto
+ 597.25 39.2821 lineto
+ 597.75 39.2821 lineto
+ 598.25 39.2821 lineto
+ 598.75 39.2821 lineto
+ 599.25 39.2821 lineto
+ 599.75 39.2821 lineto
+ 600.25 39.2821 lineto
+ 600.75 39.2821 lineto
+ 601.25 39.2821 lineto
+ 601.75 39.2821 lineto
+ 602.25 39.2821 lineto
+ 602.75 39.2821 lineto
+ 603.25 39.2821 lineto
+ 603.75 39.282 lineto
+ 604.25 39.282 lineto
+ 604.75 39.282 lineto
+ 605.25 39.282 lineto
+ 605.75 39.282 lineto
+ 606.25 39.282 lineto
+ 606.75 39.282 lineto
+ 607.25 39.282 lineto
+ 607.75 39.282 lineto
+ 608.25 39.282 lineto
+ 608.75 39.282 lineto
+ 609.25 39.282 lineto
+ 609.75 39.282 lineto
+ 610.25 39.282 lineto
+ 610.75 39.282 lineto
+ 611.25 39.282 lineto
+ 611.75 39.282 lineto
+ 612.25 39.282 lineto
+ 612.75 39.282 lineto
+ 613.25 39.282 lineto
+ 613.75 39.282 lineto
+ 614.25 39.282 lineto
+ 614.75 39.282 lineto
+ 615.25 39.282 lineto
+ 615.75 39.282 lineto
+ 616.25 39.282 lineto
+ 616.75 39.282 lineto
+ 617.25 39.282 lineto
+ 617.75 39.282 lineto
+ 618.25 39.282 lineto
+ 618.75 39.282 lineto
+ 619.25 39.282 lineto
+ 619.75 39.282 lineto
+ 620.25 39.282 lineto
+ 620.75 39.282 lineto
+ 621.25 39.282 lineto
+ 621.75 39.282 lineto
+ 622.25 39.282 lineto
+ 622.75 39.282 lineto
+ 623.25 39.282 lineto
+ 623.75 39.282 lineto
+ 624.25 39.282 lineto
+ 624.75 39.282 lineto
+ 625.25 39.282 lineto
+ 625.75 39.282 lineto
+ 626.25 39.282 lineto
+ 626.75 39.2819 lineto
+ 627.25 39.2819 lineto
+ 627.75 39.2819 lineto
+ 628.25 39.2819 lineto
+ 628.75 39.2819 lineto
+ 629.25 39.2819 lineto
+ 629.75 39.2819 lineto
+ 630.25 39.2819 lineto
+ 630.75 39.2819 lineto
+ 631.25 39.2819 lineto
+ 631.75 39.2819 lineto
+ 632.25 39.2819 lineto
+ 632.75 39.2819 lineto
+ 633.25 39.2819 lineto
+ 633.75 39.2819 lineto
+ 634.25 39.2819 lineto
+ 634.75 39.2819 lineto
+ 635.25 39.2819 lineto
+ 635.75 39.2819 lineto
+ 636.25 39.2819 lineto
+ 636.75 39.2819 lineto
+ 637.25 39.2819 lineto
+ 637.75 39.2819 lineto
+ 638.25 39.2819 lineto
+ 638.75 39.2819 lineto
+ 639.25 39.2819 lineto
+ 639.75 39.2819 lineto
+ 640.25 39.2819 lineto
+ 640.75 39.2819 lineto
+ 641.25 39.2819 lineto
+ 641.75 39.2819 lineto
+ 642.25 39.2819 lineto
+ 642.75 39.2819 lineto
+ 643.25 39.2819 lineto
+ 643.75 39.2819 lineto
+ 644.25 39.2819 lineto
+ 644.75 39.2819 lineto
+ 645.25 39.2819 lineto
+ 645.75 39.2819 lineto
+ 646.25 39.2819 lineto
+ 646.75 39.2819 lineto
+ 647.25 39.2819 lineto
+ 647.75 39.2819 lineto
+ 648.25 39.2819 lineto
+ 648.75 39.2819 lineto
+ 649.25 39.2819 lineto
+ 649.75 39.2819 lineto
+ 650.25 39.2819 lineto
+ 650.75 39.2818 lineto
+ 651.25 39.2818 lineto
+ 651.75 39.2818 lineto
+ 652.25 39.2818 lineto
+ 652.75 39.2818 lineto
+ 653.25 39.2818 lineto
+ 653.75 39.2818 lineto
+ 654.25 39.2818 lineto
+ 654.75 39.2818 lineto
+ 655.25 39.2818 lineto
+ 655.75 39.2818 lineto
+ 656.25 39.2818 lineto
+ 656.75 39.2818 lineto
+ 657.25 39.2818 lineto
+ 657.75 39.2818 lineto
+ 658.25 39.2818 lineto
+ 658.75 39.2818 lineto
+ 659.25 39.2818 lineto
+ 659.75 39.2818 lineto
+ 660.25 39.2818 lineto
+ 660.75 39.2818 lineto
+ 661 39.2818 lineto
+ 661.05 38.3105 lineto
+ 661.15 36.4433 lineto
+ 661.35 33.1255 lineto
+ 661.75 27.8199 lineto
+ 662.25 22.988 lineto
+ 662.75 19.4883 lineto
+ 663.25 17.1553 lineto
+ 663.75 16.1502 lineto
+ 664.25 16.6133 lineto
+ 664.75 18.6489 lineto
+ 665.25 22.357 lineto
+ 665.75 27.8614 lineto
+ 666.25 35.3505 lineto
+ 666.75 44.7281 lineto
+ 667.25 56.7645 lineto
+ 667.75 73.7618 lineto
+ 668.25 99.513 lineto
+ 668.75 134.011 lineto
+ 669.25 177.411 lineto
+ 669.75 229.296 lineto
+ 670.25 288.264 lineto
+ 670.75 350.929 lineto
+ 671 381.18 lineto
+ 671.05 387.82 lineto
+ 671.15 400.848 lineto
+ 671.35 425.466 lineto
+ 671.75 469.051 lineto
+ 672.25 513.786 lineto
+ 672.75 549.248 lineto
+ 673.25 577.153 lineto
+ 673.75 598.943 lineto
+ 674.25 615.819 lineto
+ 674.75 628.793 lineto
+ 675.25 638.707 lineto
+ 675.75 646.248 lineto
+ 676.25 651.964 lineto
+ 676.75 656.285 lineto
+ 677.25 659.543 lineto
+ 677.75 661.995 lineto
+ 678.25 663.84 lineto
+ 678.75 665.226 lineto
+ 679.25 666.267 lineto
+ 679.75 667.048 lineto
+ 680.25 667.634 lineto
+ 680.75 668.074 lineto
+ 681.25 668.404 lineto
+ 681.75 668.651 lineto
+ 682.25 668.836 lineto
+ 682.75 668.975 lineto
+ 683.25 669.08 lineto
+ 683.75 669.158 lineto
+ 684.25 669.216 lineto
+ 684.75 669.26 lineto
+ 685.25 669.293 lineto
+ 685.75 669.318 lineto
+ 686.25 669.336 lineto
+ 686.75 669.35 lineto
+ 687.25 669.36 lineto
+ 687.75 669.368 lineto
+ 688.25 669.374 lineto
+ 688.75 669.378 lineto
+ 689.25 669.382 lineto
+ 689.75 669.384 lineto
+ 690.25 669.386 lineto
+ 690.75 669.387 lineto
+ 691.25 669.388 lineto
+ 691.75 669.389 lineto
+ 692.25 669.39 lineto
+ 692.75 669.39 lineto
+ 693.25 669.391 lineto
+ 693.75 669.391 lineto
+ 694.25 669.391 lineto
+ 694.75 669.391 lineto
+ 695.25 669.391 lineto
+ 695.75 669.391 lineto
+ 696.25 669.391 lineto
+ 696.75 669.391 lineto
+ 697.25 669.391 lineto
+ 697.75 669.391 lineto
+ 698.25 669.391 lineto
+ 698.75 669.391 lineto
+ 699.25 669.391 lineto
+ 699.75 669.392 lineto
+ 700.25 669.392 lineto
+ 700.75 669.392 lineto
+ 701.25 669.392 lineto
+ 701.75 669.392 lineto
+ 702.25 669.392 lineto
+ 702.75 669.392 lineto
+ 703.25 669.392 lineto
+ 703.75 669.392 lineto
+ 704.25 669.392 lineto
+ 704.75 669.392 lineto
+ 705.25 669.392 lineto
+ 705.75 669.392 lineto
+ 706.25 669.392 lineto
+ 706.75 669.392 lineto
+ 707.25 669.392 lineto
+ 707.75 669.392 lineto
+ 708.25 669.392 lineto
+ 708.75 669.392 lineto
+ 709.25 669.392 lineto
+ 709.75 669.392 lineto
+ 710.25 669.392 lineto
+ 710.75 669.392 lineto
+ 711.25 669.392 lineto
+ 711.75 669.392 lineto
+ 712.25 669.392 lineto
+ 712.75 669.392 lineto
+ 713.25 669.392 lineto
+ 713.75 669.392 lineto
+ 714.25 669.392 lineto
+ 714.75 669.392 lineto
+ 715.25 669.392 lineto
+ 715.75 669.392 lineto
+ 716.25 669.392 lineto
+ 716.75 669.392 lineto
+ 717.25 669.392 lineto
+ 717.75 669.392 lineto
+ 718.25 669.392 lineto
+ 718.75 669.392 lineto
+ 719.25 669.392 lineto
+ 719.75 669.392 lineto
+ 720.25 669.392 lineto
+ 720.75 669.392 lineto
+ 721.25 669.392 lineto
+ 721.75 669.392 lineto
+ 722.25 669.392 lineto
+ 722.75 669.392 lineto
+ 723.25 669.392 lineto
+ 723.75 669.392 lineto
+ 724.25 669.392 lineto
+ 724.75 669.392 lineto
+ 725.25 669.392 lineto
+ 725.75 669.392 lineto
+ 726.25 669.392 lineto
+ 726.75 669.392 lineto
+ 727.25 669.392 lineto
+ 727.75 669.392 lineto
+ 728.25 669.392 lineto
+ 728.75 669.392 lineto
+ 729.25 669.392 lineto
+ 729.75 669.392 lineto
+ 730.25 669.392 lineto
+ 730.75 669.392 lineto
+ 731.25 669.392 lineto
+ 731.75 669.392 lineto
+ 732.25 669.392 lineto
+ 732.75 669.392 lineto
+ 733.25 669.392 lineto
+ 733.75 669.392 lineto
+ 734.25 669.392 lineto
+ 734.75 669.392 lineto
+ 735.25 669.392 lineto
+ 735.75 669.392 lineto
+ 736.25 669.392 lineto
+ 736.75 669.392 lineto
+ 737.25 669.392 lineto
+ 737.75 669.392 lineto
+ 738.25 669.392 lineto
+ 738.75 669.392 lineto
+ 739.25 669.392 lineto
+ 739.75 669.392 lineto
+ 740.25 669.392 lineto
+ 740.75 669.392 lineto
+ 741.25 669.392 lineto
+ 741.75 669.392 lineto
+ 742.25 669.392 lineto
+ 742.75 669.392 lineto
+ 743.25 669.392 lineto
+ 743.75 669.392 lineto
+ 744.25 669.392 lineto
+ 744.75 669.392 lineto
+ 745.25 669.392 lineto
+ 745.75 669.392 lineto
+ 746.25 669.392 lineto
+ 746.75 669.392 lineto
+ 747.25 669.392 lineto
+ 747.75 669.392 lineto
+ 748.25 669.392 lineto
+ 748.75 669.392 lineto
+ 749.25 669.392 lineto
+ 749.75 669.392 lineto
+ 750.25 669.392 lineto
+ 750.75 669.392 lineto
+ 751.25 669.392 lineto
+ 751.75 669.392 lineto
+ 752.25 669.392 lineto
+ 752.75 669.392 lineto
+ 753.25 669.392 lineto
+ 753.75 669.392 lineto
+ 754.25 669.392 lineto
+ 754.75 669.392 lineto
+ 755.25 669.392 lineto
+ 755.75 669.392 lineto
+ 756.25 669.392 lineto
+ 756.75 669.392 lineto
+ 757.25 669.392 lineto
+ 757.75 669.392 lineto
+ 758.25 669.392 lineto
+ 758.75 669.392 lineto
+ 759.25 669.392 lineto
+ 759.75 669.392 lineto
+ 760.25 669.392 lineto
+ 760.75 669.392 lineto
+ 761.25 669.392 lineto
+ 761.75 669.392 lineto
+ 762.25 669.392 lineto
+ 762.75 669.392 lineto
+ 763.25 669.392 lineto
+ 763.75 669.392 lineto
+ 764.25 669.392 lineto
+ 764.75 669.392 lineto
+ 765.25 669.392 lineto
+ 765.75 669.392 lineto
+ 766.25 669.392 lineto
+ 766.75 669.392 lineto
+ 767.25 669.392 lineto
+ 767.75 669.392 lineto
+ 768.25 669.392 lineto
+ 768.75 669.392 lineto
+ 769.25 669.392 lineto
+ 769.75 669.392 lineto
+ 770.25 669.392 lineto
+ 770.75 669.392 lineto
+ 771.25 669.392 lineto
+ 771.75 669.392 lineto
+ 772.25 669.392 lineto
+ 772.75 669.392 lineto
+ 773.25 669.392 lineto
+ 773.75 669.392 lineto
+ 774.25 669.392 lineto
+ 774.75 669.392 lineto
+ 775.25 669.392 lineto
+ 775.75 669.392 lineto
+ 776.25 669.392 lineto
+ 776.75 669.392 lineto
+ 777.25 669.392 lineto
+ 777.75 669.392 lineto
+ 778.25 669.392 lineto
+ 778.75 669.392 lineto
+ 779.25 669.392 lineto
+ 779.75 669.392 lineto
+ 780.25 669.392 lineto
+ 780.75 669.392 lineto
+ 781.25 669.392 lineto
+ 781.75 669.392 lineto
+ 782.25 669.392 lineto
+ 782.75 669.392 lineto
+ 783.25 669.392 lineto
+ 783.75 669.392 lineto
+ 784.25 669.392 lineto
+ 784.75 669.392 lineto
+ 785.25 669.392 lineto
+ 785.75 669.392 lineto
+ 786.25 669.392 lineto
+ 786.75 669.392 lineto
+ 787.25 669.392 lineto
+ 787.75 669.392 lineto
+ 788.25 669.392 lineto
+ 788.75 669.392 lineto
+ 789.25 669.392 lineto
+ 789.75 669.392 lineto
+ 790.25 669.392 lineto
+ 790.75 669.392 lineto
+ 791.25 669.392 lineto
+ 791.75 669.392 lineto
+ 792.25 669.392 lineto
+ 792.75 669.392 lineto
+ 793.25 669.392 lineto
+DashesProc stroke
+ newpath  793.25 669.392 moveto
+ 793.75 669.392 lineto
+ 794.25 669.392 lineto
+ 794.75 669.392 lineto
+ 795.25 669.392 lineto
+ 795.75 669.392 lineto
+ 796.25 669.392 lineto
+ 796.75 669.392 lineto
+ 797.25 669.392 lineto
+ 797.75 669.392 lineto
+ 798.25 669.392 lineto
+ 798.75 669.392 lineto
+ 799.25 669.392 lineto
+ 799.75 669.392 lineto
+ 800.25 669.392 lineto
+ 800.75 669.392 lineto
+ 801.25 669.392 lineto
+ 801.75 669.392 lineto
+ 802.25 669.392 lineto
+ 802.75 669.392 lineto
+ 803.25 669.392 lineto
+ 803.75 669.392 lineto
+ 804.25 669.392 lineto
+ 804.75 669.392 lineto
+ 805.25 669.392 lineto
+ 805.75 669.392 lineto
+ 806.25 669.392 lineto
+ 806.75 669.392 lineto
+ 807.25 669.392 lineto
+ 807.75 669.392 lineto
+ 808.25 669.392 lineto
+ 808.75 669.392 lineto
+ 809.25 669.392 lineto
+ 809.75 669.392 lineto
+ 810.25 669.392 lineto
+ 810.75 669.392 lineto
+ 811.25 669.392 lineto
+ 811.75 669.392 lineto
+ 812.25 669.392 lineto
+ 812.75 669.392 lineto
+ 813.25 669.392 lineto
+ 813.75 669.392 lineto
+ 814.25 669.392 lineto
+ 814.75 669.392 lineto
+ 815.25 669.392 lineto
+ 815.75 669.392 lineto
+ 816.25 669.392 lineto
+ 816.75 669.392 lineto
+ 817.25 669.392 lineto
+ 817.75 669.392 lineto
+ 818.25 669.392 lineto
+ 818.75 669.392 lineto
+ 819.25 669.392 lineto
+ 819.75 669.392 lineto
+ 820.25 669.392 lineto
+ 820.75 669.392 lineto
+ 821 669.392 lineto
+ 821.05 669.622 lineto
+ 821.15 670.108 lineto
+ 821.35 671.16 lineto
+ 821.75 673.2 lineto
+ 822.25 675.362 lineto
+ 822.75 677.143 lineto
+ 823.25 678.823 lineto
+ 823.75 679.978 lineto
+ 824.25 680 lineto
+ 824.75 678.754 lineto
+ 825.25 676.267 lineto
+ 825.75 672.494 lineto
+ 826.25 667.432 lineto
+ 826.75 661.062 lineto
+ 827.25 653.332 lineto
+ 827.75 644.11 lineto
+ 828.25 633.056 lineto
+ 828.75 619.504 lineto
+ 829.25 602.833 lineto
+ 829.75 582.983 lineto
+ 830.25 560.205 lineto
+ 830.75 534.648 lineto
+ 831 520.834 lineto
+ 831.05 517.674 lineto
+ 831.15 511.382 lineto
+ 831.35 498.936 lineto
+ 831.75 474.324 lineto
+ 832.25 443.769 lineto
+ 832.75 413.36 lineto
+ 833.25 383.254 lineto
+ 833.75 353.681 lineto
+ 834.25 324.84 lineto
+ 834.75 296.861 lineto
+ 835.25 269.817 lineto
+ 835.75 243.803 lineto
+ 836.25 219.025 lineto
+ 836.75 195.804 lineto
+ 837.25 174.519 lineto
+ 837.75 155.429 lineto
+ 838.25 138.601 lineto
+ 838.75 123.957 lineto
+ 839.25 111.335 lineto
+ 839.75 100.534 lineto
+ 840.25 91.3379 lineto
+ 840.75 83.5388 lineto
+ 841.25 76.9424 lineto
+ 841.75 71.3735 lineto
+ 842.25 66.6781 lineto
+ 842.75 62.7219 lineto
+ 843.25 59.3894 lineto
+ 843.75 56.5821 lineto
+ 844.25 54.2162 lineto
+ 844.75 52.2209 lineto
+ 845.25 50.5366 lineto
+ 845.75 49.1131 lineto
+ 846.25 47.9081 lineto
+ 846.75 46.8866 lineto
+ 847.25 46.0189 lineto
+ 847.75 45.2802 lineto
+ 848.25 44.65 lineto
+ 848.75 44.1108 lineto
+ 849.25 43.6483 lineto
+ 849.75 43.2504 lineto
+ 850.25 42.9068 lineto
+ 850.75 42.6093 lineto
+ 851.25 42.3507 lineto
+ 851.75 42.125 lineto
+ 852.25 41.9274 lineto
+ 852.75 41.7535 lineto
+ 853.25 41.6 lineto
+ 853.75 41.4638 lineto
+ 854.25 41.3425 lineto
+ 854.75 41.2341 lineto
+ 855.25 41.1367 lineto
+ 855.75 41.0488 lineto
+ 856.25 40.9692 lineto
+ 856.75 40.8968 lineto
+ 857.25 40.8307 lineto
+ 857.75 40.7701 lineto
+ 858.25 40.7144 lineto
+ 858.75 40.663 lineto
+ 859.25 40.6153 lineto
+ 859.75 40.5711 lineto
+ 860.25 40.5298 lineto
+ 860.75 40.4913 lineto
+ 861 40.4729 lineto
+DashesProc stroke
+
+% Element "b"
+
+0 setlinejoin
+0 setlinecap
+1 1 0 SetFgColor
+1 setlinewidth
+[  2] 0 setdash
+/DashesProc {} def
+/DashesProc {} def
+ newpath 61 669.392 moveto
+ 61.005 669.076 lineto
+DashesProc stroke
+ newpath  61.005 669.076 moveto
+ 61.01 668.761 lineto
+ 61.02 668.131 lineto
+ 61.04 666.871 lineto
+ 61.08 664.351 lineto
+ 61.16 659.31 lineto
+ 61.32 649.228 lineto
+ 61.64 629.064 lineto
+ 62.14 597.558 lineto
+ 62.64 566.052 lineto
+ 63.14 534.547 lineto
+ 63.64 503.041 lineto
+ 64.14 471.535 lineto
+ 64.64 440.029 lineto
+ 65.14 408.523 lineto
+ 65.64 377.017 lineto
+ 66.14 345.512 lineto
+ 66.64 314.006 lineto
+ 67.14 282.5 lineto
+ 67.64 250.994 lineto
+ 68.14 219.488 lineto
+ 68.64 187.983 lineto
+ 69.14 156.477 lineto
+ 69.64 124.971 lineto
+ 70.14 93.4651 lineto
+ 70.64 61.9592 lineto
+ 71 39.2751 lineto
+ 71.05 39.2751 lineto
+ 71.15 39.2751 lineto
+ 71.35 39.2751 lineto
+ 71.75 39.2751 lineto
+ 72.25 39.2751 lineto
+ 72.75 39.2751 lineto
+ 73.25 39.2751 lineto
+ 73.75 39.2751 lineto
+ 74.25 39.2751 lineto
+ 74.75 39.2751 lineto
+ 75.25 39.2751 lineto
+ 75.75 39.2751 lineto
+ 76.25 39.2751 lineto
+ 76.75 39.2751 lineto
+ 77.25 39.2751 lineto
+ 77.75 39.2751 lineto
+ 78.25 39.2751 lineto
+ 78.75 39.2751 lineto
+ 79.25 39.2751 lineto
+ 79.75 39.2751 lineto
+ 80.25 39.2751 lineto
+ 80.75 39.2751 lineto
+ 81.25 39.2751 lineto
+ 81.75 39.2751 lineto
+ 82.25 39.2751 lineto
+ 82.75 39.2751 lineto
+ 83.25 39.2751 lineto
+ 83.75 39.2751 lineto
+ 84.25 39.2751 lineto
+ 84.75 39.2751 lineto
+ 85.25 39.2751 lineto
+ 85.75 39.2751 lineto
+ 86.25 39.2751 lineto
+ 86.75 39.2751 lineto
+ 87.25 39.2751 lineto
+ 87.75 39.2751 lineto
+ 88.25 39.2751 lineto
+ 88.75 39.2751 lineto
+ 89.25 39.2751 lineto
+ 89.75 39.2751 lineto
+ 90.25 39.2751 lineto
+ 90.75 39.2751 lineto
+ 91.25 39.2751 lineto
+ 91.75 39.2751 lineto
+ 92.25 39.2751 lineto
+ 92.75 39.2751 lineto
+ 93.25 39.2751 lineto
+ 93.75 39.2751 lineto
+ 94.25 39.2751 lineto
+ 94.75 39.2751 lineto
+ 95.25 39.2751 lineto
+ 95.75 39.2751 lineto
+ 96.25 39.2751 lineto
+ 96.75 39.2751 lineto
+ 97.25 39.2751 lineto
+ 97.75 39.2751 lineto
+ 98.25 39.2751 lineto
+ 98.75 39.2751 lineto
+ 99.25 39.2751 lineto
+ 99.75 39.2751 lineto
+ 100.25 39.2751 lineto
+ 100.75 39.2751 lineto
+ 101.25 39.2751 lineto
+ 101.75 39.2751 lineto
+ 102.25 39.2751 lineto
+ 102.75 39.2751 lineto
+ 103.25 39.2751 lineto
+ 103.75 39.2751 lineto
+ 104.25 39.2751 lineto
+ 104.75 39.2751 lineto
+ 105.25 39.2751 lineto
+ 105.75 39.2751 lineto
+ 106.25 39.2751 lineto
+ 106.75 39.2751 lineto
+ 107.25 39.2751 lineto
+ 107.75 39.2751 lineto
+ 108.25 39.2751 lineto
+ 108.75 39.2751 lineto
+ 109.25 39.2751 lineto
+ 109.75 39.2751 lineto
+ 110.25 39.2751 lineto
+ 110.75 39.2751 lineto
+ 111.25 39.2751 lineto
+ 111.75 39.2751 lineto
+ 112.25 39.2751 lineto
+ 112.75 39.2751 lineto
+ 113.25 39.2751 lineto
+ 113.75 39.2751 lineto
+ 114.25 39.2751 lineto
+ 114.75 39.2751 lineto
+ 115.25 39.2751 lineto
+ 115.75 39.2751 lineto
+ 116.25 39.2751 lineto
+ 116.75 39.2751 lineto
+ 117.25 39.2751 lineto
+ 117.75 39.2751 lineto
+ 118.25 39.2751 lineto
+ 118.75 39.2751 lineto
+ 119.25 39.2751 lineto
+ 119.75 39.2751 lineto
+ 120.25 39.2751 lineto
+ 120.75 39.2751 lineto
+ 121.25 39.2751 lineto
+ 121.75 39.2751 lineto
+ 122.25 39.2751 lineto
+ 122.75 39.2751 lineto
+ 123.25 39.2751 lineto
+ 123.75 39.2751 lineto
+ 124.25 39.2751 lineto
+ 124.75 39.2751 lineto
+ 125.25 39.2751 lineto
+ 125.75 39.2751 lineto
+ 126.25 39.2751 lineto
+ 126.75 39.2751 lineto
+ 127.25 39.2751 lineto
+ 127.75 39.2751 lineto
+ 128.25 39.2751 lineto
+ 128.75 39.2751 lineto
+ 129.25 39.2751 lineto
+ 129.75 39.2751 lineto
+ 130.25 39.2751 lineto
+ 130.75 39.2751 lineto
+ 131.25 39.2751 lineto
+ 131.75 39.2751 lineto
+ 132.25 39.2751 lineto
+ 132.75 39.2751 lineto
+ 133.25 39.2751 lineto
+ 133.75 39.2751 lineto
+ 134.25 39.2751 lineto
+ 134.75 39.2751 lineto
+ 135.25 39.2751 lineto
+ 135.75 39.2751 lineto
+ 136.25 39.2751 lineto
+ 136.75 39.2751 lineto
+ 137.25 39.2751 lineto
+ 137.75 39.2751 lineto
+ 138.25 39.2751 lineto
+ 138.75 39.2751 lineto
+ 139.25 39.2751 lineto
+ 139.75 39.2751 lineto
+ 140.25 39.2751 lineto
+ 140.75 39.2751 lineto
+ 141.25 39.2751 lineto
+ 141.75 39.2751 lineto
+ 142.25 39.2751 lineto
+ 142.75 39.2751 lineto
+ 143.25 39.2751 lineto
+ 143.75 39.2751 lineto
+ 144.25 39.2751 lineto
+ 144.75 39.2751 lineto
+ 145.25 39.2751 lineto
+ 145.75 39.2751 lineto
+ 146.25 39.2751 lineto
+ 146.75 39.2751 lineto
+ 147.25 39.2751 lineto
+ 147.75 39.2751 lineto
+ 148.25 39.2751 lineto
+ 148.75 39.2751 lineto
+ 149.25 39.2751 lineto
+ 149.75 39.2751 lineto
+ 150.25 39.2751 lineto
+ 150.75 39.2751 lineto
+ 151.25 39.2751 lineto
+ 151.75 39.2751 lineto
+ 152.25 39.2751 lineto
+ 152.75 39.2751 lineto
+ 153.25 39.2751 lineto
+ 153.75 39.2751 lineto
+ 154.25 39.2751 lineto
+ 154.75 39.2751 lineto
+ 155.25 39.2751 lineto
+ 155.75 39.2751 lineto
+ 156.25 39.2751 lineto
+ 156.75 39.2751 lineto
+ 157.25 39.2751 lineto
+ 157.75 39.2751 lineto
+ 158.25 39.2751 lineto
+ 158.75 39.2751 lineto
+ 159.25 39.2751 lineto
+ 159.75 39.2751 lineto
+ 160.25 39.2751 lineto
+ 160.75 39.2751 lineto
+ 161.25 39.2751 lineto
+ 161.75 39.2751 lineto
+ 162.25 39.2751 lineto
+ 162.75 39.2751 lineto
+ 163.25 39.2751 lineto
+ 163.75 39.2751 lineto
+ 164.25 39.2751 lineto
+ 164.75 39.2751 lineto
+ 165.25 39.2751 lineto
+ 165.75 39.2751 lineto
+ 166.25 39.2751 lineto
+ 166.75 39.2751 lineto
+ 167.25 39.2751 lineto
+ 167.75 39.2751 lineto
+ 168.25 39.2751 lineto
+ 168.75 39.2751 lineto
+ 169.25 39.2751 lineto
+ 169.75 39.2751 lineto
+ 170.25 39.2751 lineto
+ 170.75 39.2751 lineto
+ 171.25 39.2751 lineto
+ 171.75 39.2751 lineto
+ 172.25 39.2751 lineto
+ 172.75 39.2751 lineto
+ 173.25 39.2751 lineto
+ 173.75 39.2751 lineto
+ 174.25 39.2751 lineto
+ 174.75 39.2751 lineto
+ 175.25 39.2751 lineto
+ 175.75 39.2751 lineto
+ 176.25 39.2751 lineto
+ 176.75 39.2751 lineto
+ 177.25 39.2751 lineto
+ 177.75 39.2751 lineto
+ 178.25 39.2751 lineto
+ 178.75 39.2751 lineto
+ 179.25 39.2751 lineto
+ 179.75 39.2751 lineto
+ 180.25 39.2751 lineto
+ 180.75 39.2751 lineto
+ 181.25 39.2751 lineto
+ 181.75 39.2751 lineto
+ 182.25 39.2751 lineto
+ 182.75 39.2751 lineto
+ 183.25 39.2751 lineto
+ 183.75 39.2751 lineto
+ 184.25 39.2751 lineto
+ 184.75 39.2751 lineto
+ 185.25 39.2751 lineto
+ 185.75 39.2751 lineto
+ 186.25 39.2751 lineto
+ 186.75 39.2751 lineto
+ 187.25 39.2751 lineto
+ 187.75 39.2751 lineto
+ 188.25 39.2751 lineto
+ 188.75 39.2751 lineto
+ 189.25 39.2751 lineto
+ 189.75 39.2751 lineto
+ 190.25 39.2751 lineto
+ 190.75 39.2751 lineto
+ 191.25 39.2751 lineto
+ 191.75 39.2751 lineto
+ 192.25 39.2751 lineto
+ 192.75 39.2751 lineto
+ 193.25 39.2751 lineto
+ 193.75 39.2751 lineto
+ 194.25 39.2751 lineto
+ 194.75 39.2751 lineto
+ 195.25 39.2751 lineto
+ 195.75 39.2751 lineto
+ 196.25 39.2751 lineto
+ 196.75 39.2751 lineto
+ 197.25 39.2751 lineto
+ 197.75 39.2751 lineto
+ 198.25 39.2751 lineto
+ 198.75 39.2751 lineto
+ 199.25 39.2751 lineto
+ 199.75 39.2751 lineto
+ 200.25 39.2751 lineto
+ 200.75 39.2751 lineto
+ 201.25 39.2751 lineto
+ 201.75 39.2751 lineto
+ 202.25 39.2751 lineto
+ 202.75 39.2751 lineto
+ 203.25 39.2751 lineto
+ 203.75 39.2751 lineto
+ 204.25 39.2751 lineto
+ 204.75 39.2751 lineto
+ 205.25 39.2751 lineto
+ 205.75 39.2751 lineto
+ 206.25 39.2751 lineto
+ 206.75 39.2751 lineto
+ 207.25 39.2751 lineto
+ 207.75 39.2751 lineto
+ 208.25 39.2751 lineto
+ 208.75 39.2751 lineto
+ 209.25 39.2751 lineto
+ 209.75 39.2751 lineto
+ 210.25 39.2751 lineto
+ 210.75 39.2751 lineto
+ 211.25 39.2751 lineto
+ 211.75 39.2751 lineto
+ 212.25 39.2751 lineto
+ 212.75 39.2751 lineto
+ 213.25 39.2751 lineto
+ 213.75 39.2751 lineto
+ 214.25 39.2751 lineto
+ 214.75 39.2751 lineto
+ 215.25 39.2751 lineto
+ 215.75 39.2751 lineto
+ 216.25 39.2751 lineto
+ 216.75 39.2751 lineto
+ 217.25 39.2751 lineto
+ 217.75 39.2751 lineto
+ 218.25 39.2751 lineto
+ 218.75 39.2751 lineto
+ 219.25 39.2751 lineto
+ 219.75 39.2751 lineto
+ 220.25 39.2751 lineto
+ 220.75 39.2751 lineto
+ 221 39.2751 lineto
+ 221.05 42.4257 lineto
+ 221.15 48.7268 lineto
+ 221.35 61.3292 lineto
+ 221.75 86.5338 lineto
+ 222.25 118.04 lineto
+ 222.75 149.545 lineto
+ 223.25 181.051 lineto
+ 223.75 212.557 lineto
+ 224.25 244.063 lineto
+ 224.75 275.569 lineto
+ 225.25 307.075 lineto
+ 225.75 338.58 lineto
+ 226.25 370.086 lineto
+ 226.75 401.592 lineto
+ 227.25 433.098 lineto
+ 227.75 464.604 lineto
+ 228.25 496.109 lineto
+ 228.75 527.615 lineto
+ 229.25 559.121 lineto
+ 229.75 590.627 lineto
+ 230.25 622.133 lineto
+ 230.75 653.639 lineto
+ 231 669.392 lineto
+ 231.05 669.392 lineto
+ 231.15 669.392 lineto
+ 231.35 669.392 lineto
+ 231.75 669.392 lineto
+ 232.25 669.392 lineto
+ 232.75 669.392 lineto
+ 233.25 669.392 lineto
+ 233.75 669.392 lineto
+ 234.25 669.392 lineto
+ 234.75 669.392 lineto
+ 235.25 669.392 lineto
+ 235.75 669.392 lineto
+ 236.25 669.392 lineto
+ 236.75 669.392 lineto
+ 237.25 669.392 lineto
+ 237.75 669.392 lineto
+ 238.25 669.392 lineto
+ 238.75 669.392 lineto
+ 239.25 669.392 lineto
+ 239.75 669.392 lineto
+ 240.25 669.392 lineto
+ 240.75 669.392 lineto
+ 241.25 669.392 lineto
+ 241.75 669.392 lineto
+ 242.25 669.392 lineto
+ 242.75 669.392 lineto
+ 243.25 669.392 lineto
+ 243.75 669.392 lineto
+ 244.25 669.392 lineto
+ 244.75 669.392 lineto
+ 245.25 669.392 lineto
+ 245.75 669.392 lineto
+ 246.25 669.392 lineto
+ 246.75 669.392 lineto
+ 247.25 669.392 lineto
+ 247.75 669.392 lineto
+ 248.25 669.392 lineto
+ 248.75 669.392 lineto
+ 249.25 669.392 lineto
+ 249.75 669.392 lineto
+ 250.25 669.392 lineto
+ 250.75 669.392 lineto
+ 251.25 669.392 lineto
+ 251.75 669.392 lineto
+ 252.25 669.392 lineto
+ 252.75 669.392 lineto
+ 253.25 669.392 lineto
+ 253.75 669.392 lineto
+ 254.25 669.392 lineto
+ 254.75 669.392 lineto
+ 255.25 669.392 lineto
+ 255.75 669.392 lineto
+ 256.25 669.392 lineto
+ 256.75 669.392 lineto
+ 257.25 669.392 lineto
+ 257.75 669.392 lineto
+ 258.25 669.392 lineto
+ 258.75 669.392 lineto
+ 259.25 669.392 lineto
+ 259.75 669.392 lineto
+ 260.25 669.392 lineto
+ 260.75 669.392 lineto
+ 261.25 669.392 lineto
+ 261.75 669.392 lineto
+ 262.25 669.392 lineto
+ 262.75 669.392 lineto
+ 263.25 669.392 lineto
+ 263.75 669.392 lineto
+ 264.25 669.392 lineto
+ 264.75 669.392 lineto
+ 265.25 669.392 lineto
+ 265.75 669.392 lineto
+ 266.25 669.392 lineto
+ 266.75 669.392 lineto
+ 267.25 669.392 lineto
+ 267.75 669.392 lineto
+ 268.25 669.392 lineto
+ 268.75 669.392 lineto
+ 269.25 669.392 lineto
+ 269.75 669.392 lineto
+ 270.25 669.392 lineto
+ 270.75 669.392 lineto
+ 271.25 669.392 lineto
+ 271.75 669.392 lineto
+ 272.25 669.392 lineto
+ 272.75 669.392 lineto
+ 273.25 669.392 lineto
+ 273.75 669.392 lineto
+ 274.25 669.392 lineto
+ 274.75 669.392 lineto
+ 275.25 669.392 lineto
+ 275.75 669.392 lineto
+ 276.25 669.392 lineto
+ 276.75 669.392 lineto
+ 277.25 669.392 lineto
+ 277.75 669.392 lineto
+ 278.25 669.392 lineto
+ 278.75 669.392 lineto
+ 279.25 669.392 lineto
+ 279.75 669.392 lineto
+ 280.25 669.392 lineto
+ 280.75 669.392 lineto
+ 281.25 669.392 lineto
+ 281.75 669.392 lineto
+ 282.25 669.392 lineto
+ 282.75 669.392 lineto
+ 283.25 669.392 lineto
+ 283.75 669.392 lineto
+ 284.25 669.392 lineto
+ 284.75 669.392 lineto
+ 285.25 669.392 lineto
+ 285.75 669.392 lineto
+ 286.25 669.392 lineto
+ 286.75 669.392 lineto
+ 287.25 669.392 lineto
+ 287.75 669.392 lineto
+ 288.25 669.392 lineto
+ 288.75 669.392 lineto
+ 289.25 669.392 lineto
+ 289.75 669.392 lineto
+ 290.25 669.392 lineto
+ 290.75 669.392 lineto
+ 291.25 669.392 lineto
+ 291.75 669.392 lineto
+ 292.25 669.392 lineto
+ 292.75 669.392 lineto
+ 293.25 669.392 lineto
+ 293.75 669.392 lineto
+ 294.25 669.392 lineto
+ 294.75 669.392 lineto
+ 295.25 669.392 lineto
+ 295.75 669.392 lineto
+ 296.25 669.392 lineto
+ 296.75 669.392 lineto
+ 297.25 669.392 lineto
+ 297.75 669.392 lineto
+ 298.25 669.392 lineto
+ 298.75 669.392 lineto
+ 299.25 669.392 lineto
+ 299.75 669.392 lineto
+ 300.25 669.392 lineto
+ 300.75 669.392 lineto
+ 301.25 669.392 lineto
+ 301.75 669.392 lineto
+ 302.25 669.392 lineto
+ 302.75 669.392 lineto
+ 303.25 669.392 lineto
+ 303.75 669.392 lineto
+ 304.25 669.392 lineto
+ 304.75 669.392 lineto
+ 305.25 669.392 lineto
+ 305.75 669.392 lineto
+ 306.25 669.392 lineto
+ 306.75 669.392 lineto
+ 307.25 669.392 lineto
+ 307.75 669.392 lineto
+ 308.25 669.392 lineto
+ 308.75 669.392 lineto
+ 309.25 669.392 lineto
+ 309.75 669.392 lineto
+ 310.25 669.392 lineto
+ 310.75 669.392 lineto
+ 311.25 669.392 lineto
+ 311.75 669.392 lineto
+ 312.25 669.392 lineto
+ 312.75 669.392 lineto
+ 313.25 669.392 lineto
+ 313.75 669.392 lineto
+ 314.25 669.392 lineto
+ 314.75 669.392 lineto
+ 315.25 669.392 lineto
+ 315.75 669.392 lineto
+ 316.25 669.392 lineto
+ 316.75 669.392 lineto
+ 317.25 669.392 lineto
+ 317.75 669.392 lineto
+ 318.25 669.392 lineto
+ 318.75 669.392 lineto
+ 319.25 669.392 lineto
+ 319.75 669.392 lineto
+ 320.25 669.392 lineto
+ 320.75 669.392 lineto
+ 321.25 669.392 lineto
+ 321.75 669.392 lineto
+ 322.25 669.392 lineto
+ 322.75 669.392 lineto
+ 323.25 669.392 lineto
+ 323.75 669.392 lineto
+ 324.25 669.392 lineto
+ 324.75 669.392 lineto
+ 325.25 669.392 lineto
+ 325.75 669.392 lineto
+ 326.25 669.392 lineto
+ 326.75 669.392 lineto
+ 327.25 669.392 lineto
+ 327.75 669.392 lineto
+ 328.25 669.392 lineto
+ 328.75 669.392 lineto
+ 329.25 669.392 lineto
+ 329.75 669.392 lineto
+ 330.25 669.392 lineto
+ 330.75 669.392 lineto
+ 331.25 669.392 lineto
+ 331.75 669.392 lineto
+ 332.25 669.392 lineto
+ 332.75 669.392 lineto
+ 333.25 669.392 lineto
+ 333.75 669.392 lineto
+ 334.25 669.392 lineto
+ 334.75 669.392 lineto
+ 335.25 669.392 lineto
+ 335.75 669.392 lineto
+ 336.25 669.392 lineto
+ 336.75 669.392 lineto
+ 337.25 669.392 lineto
+ 337.75 669.392 lineto
+ 338.25 669.392 lineto
+ 338.75 669.392 lineto
+ 339.25 669.392 lineto
+ 339.75 669.392 lineto
+ 340.25 669.392 lineto
+ 340.75 669.392 lineto
+ 341.25 669.392 lineto
+ 341.75 669.392 lineto
+ 342.25 669.392 lineto
+ 342.75 669.392 lineto
+ 343.25 669.392 lineto
+ 343.75 669.392 lineto
+ 344.25 669.392 lineto
+ 344.75 669.392 lineto
+ 345.25 669.392 lineto
+ 345.75 669.392 lineto
+ 346.25 669.392 lineto
+ 346.75 669.392 lineto
+ 347.25 669.392 lineto
+ 347.75 669.392 lineto
+ 348.25 669.392 lineto
+ 348.75 669.392 lineto
+ 349.25 669.392 lineto
+ 349.75 669.392 lineto
+ 350.25 669.392 lineto
+ 350.75 669.392 lineto
+ 351.25 669.392 lineto
+ 351.75 669.392 lineto
+ 352.25 669.392 lineto
+ 352.75 669.392 lineto
+ 353.25 669.392 lineto
+ 353.75 669.392 lineto
+ 354.25 669.392 lineto
+ 354.75 669.392 lineto
+ 355.25 669.392 lineto
+ 355.75 669.392 lineto
+ 356.25 669.392 lineto
+ 356.75 669.392 lineto
+ 357.25 669.392 lineto
+ 357.75 669.392 lineto
+ 358.25 669.392 lineto
+ 358.75 669.392 lineto
+ 359.25 669.392 lineto
+ 359.75 669.392 lineto
+ 360.25 669.392 lineto
+ 360.75 669.392 lineto
+ 361 669.392 lineto
+ 361.05 666.241 lineto
+ 361.15 659.94 lineto
+ 361.35 647.337 lineto
+ 361.75 622.133 lineto
+ 362.25 590.627 lineto
+ 362.75 559.121 lineto
+ 363.25 527.615 lineto
+ 363.75 496.109 lineto
+ 364.25 464.604 lineto
+ 364.75 433.098 lineto
+ 365.25 401.592 lineto
+ 365.75 370.086 lineto
+ 366.25 338.58 lineto
+ 366.75 307.075 lineto
+ 367.25 275.569 lineto
+ 367.75 244.063 lineto
+ 368.25 212.557 lineto
+ 368.75 181.051 lineto
+ 369.25 149.545 lineto
+ 369.75 118.04 lineto
+ 370.25 86.5338 lineto
+ 370.75 55.028 lineto
+ 371 39.2751 lineto
+ 371.05 39.2751 lineto
+ 371.15 39.2751 lineto
+ 371.35 39.2751 lineto
+ 371.75 39.2751 lineto
+ 372.25 39.2751 lineto
+ 372.75 39.2751 lineto
+ 373.25 39.2751 lineto
+ 373.75 39.2751 lineto
+ 374.25 39.2751 lineto
+ 374.75 39.2751 lineto
+ 375.25 39.2751 lineto
+ 375.75 39.2751 lineto
+ 376.25 39.2751 lineto
+ 376.75 39.2751 lineto
+ 377.25 39.2751 lineto
+ 377.75 39.2751 lineto
+ 378.25 39.2751 lineto
+ 378.75 39.2751 lineto
+ 379.25 39.2751 lineto
+ 379.75 39.2751 lineto
+ 380.25 39.2751 lineto
+ 380.75 39.2751 lineto
+ 381 39.2751 lineto
+ 381.05 39.2751 lineto
+ 381.15 39.2751 lineto
+ 381.35 39.2751 lineto
+ 381.75 39.2751 lineto
+ 382.25 39.2751 lineto
+ 382.75 39.2751 lineto
+ 383.25 39.2751 lineto
+ 383.75 39.2751 lineto
+ 384.25 39.2751 lineto
+ 384.75 39.2751 lineto
+ 385.25 39.2751 lineto
+ 385.75 39.2751 lineto
+ 386.25 39.2751 lineto
+ 386.75 39.2751 lineto
+ 387.25 39.2751 lineto
+ 387.75 39.2751 lineto
+ 388.25 39.2751 lineto
+ 388.75 39.2751 lineto
+ 389.25 39.2751 lineto
+ 389.75 39.2751 lineto
+ 390.25 39.2751 lineto
+ 390.75 39.2751 lineto
+ 391.25 39.2751 lineto
+ 391.75 39.2751 lineto
+ 392.25 39.2751 lineto
+ 392.75 39.2751 lineto
+ 393.25 39.2751 lineto
+ 393.75 39.2751 lineto
+ 394.25 39.2751 lineto
+ 394.75 39.2751 lineto
+ 395.25 39.2751 lineto
+ 395.75 39.2751 lineto
+ 396.25 39.2751 lineto
+ 396.75 39.2751 lineto
+ 397.25 39.2751 lineto
+ 397.75 39.2751 lineto
+ 398.25 39.2751 lineto
+ 398.75 39.2751 lineto
+ 399.25 39.2751 lineto
+ 399.75 39.2751 lineto
+ 400.25 39.2751 lineto
+ 400.75 39.2751 lineto
+ 401.25 39.2751 lineto
+ 401.75 39.2751 lineto
+ 402.25 39.2751 lineto
+ 402.75 39.2751 lineto
+ 403.25 39.2751 lineto
+ 403.75 39.2751 lineto
+ 404.25 39.2751 lineto
+ 404.75 39.2751 lineto
+ 405.25 39.2751 lineto
+ 405.75 39.2751 lineto
+ 406.25 39.2751 lineto
+ 406.75 39.2751 lineto
+ 407.25 39.2751 lineto
+ 407.75 39.2751 lineto
+ 408.25 39.2751 lineto
+ 408.75 39.2751 lineto
+ 409.25 39.2751 lineto
+ 409.75 39.2751 lineto
+ 410.25 39.2751 lineto
+ 410.75 39.2751 lineto
+ 411.25 39.2751 lineto
+ 411.75 39.2751 lineto
+ 412.25 39.2751 lineto
+ 412.75 39.2751 lineto
+ 413.25 39.2751 lineto
+ 413.75 39.2751 lineto
+ 414.25 39.2751 lineto
+ 414.75 39.2751 lineto
+ 415.25 39.2751 lineto
+ 415.75 39.2751 lineto
+ 416.25 39.2751 lineto
+ 416.75 39.2751 lineto
+ 417.25 39.2751 lineto
+ 417.75 39.2751 lineto
+ 418.25 39.2751 lineto
+ 418.75 39.2751 lineto
+ 419.25 39.2751 lineto
+ 419.75 39.2751 lineto
+ 420.25 39.2751 lineto
+ 420.75 39.2751 lineto
+ 421.25 39.2751 lineto
+ 421.75 39.2751 lineto
+ 422.25 39.2751 lineto
+ 422.75 39.2751 lineto
+ 423.25 39.2751 lineto
+ 423.75 39.2751 lineto
+ 424.25 39.2751 lineto
+ 424.75 39.2751 lineto
+ 425.25 39.2751 lineto
+ 425.75 39.2751 lineto
+ 426.25 39.2751 lineto
+ 426.75 39.2751 lineto
+ 427.25 39.2751 lineto
+ 427.75 39.2751 lineto
+ 428.25 39.2751 lineto
+ 428.75 39.2751 lineto
+ 429.25 39.2751 lineto
+ 429.75 39.2751 lineto
+ 430.25 39.2751 lineto
+ 430.75 39.2751 lineto
+ 431.25 39.2751 lineto
+ 431.75 39.2751 lineto
+ 432.25 39.2751 lineto
+ 432.75 39.2751 lineto
+ 433.25 39.2751 lineto
+ 433.75 39.2751 lineto
+ 434.25 39.2751 lineto
+ 434.75 39.2751 lineto
+ 435.25 39.2751 lineto
+ 435.75 39.2751 lineto
+ 436.25 39.2751 lineto
+ 436.75 39.2751 lineto
+ 437.25 39.2751 lineto
+ 437.75 39.2751 lineto
+ 438.25 39.2751 lineto
+ 438.75 39.2751 lineto
+ 439.25 39.2751 lineto
+ 439.75 39.2751 lineto
+ 440.25 39.2751 lineto
+ 440.75 39.2751 lineto
+ 441.25 39.2751 lineto
+ 441.75 39.2751 lineto
+ 442.25 39.2751 lineto
+ 442.75 39.2751 lineto
+ 443.25 39.2751 lineto
+ 443.75 39.2751 lineto
+ 444.25 39.2751 lineto
+ 444.75 39.2751 lineto
+ 445.25 39.2751 lineto
+ 445.75 39.2751 lineto
+ 446.25 39.2751 lineto
+ 446.75 39.2751 lineto
+ 447.25 39.2751 lineto
+ 447.75 39.2751 lineto
+ 448.25 39.2751 lineto
+ 448.75 39.2751 lineto
+ 449.25 39.2751 lineto
+ 449.75 39.2751 lineto
+ 450.25 39.2751 lineto
+ 450.75 39.2751 lineto
+ 451.25 39.2751 lineto
+ 451.75 39.2751 lineto
+ 452.25 39.2751 lineto
+ 452.75 39.2751 lineto
+ 453.25 39.2751 lineto
+ 453.75 39.2751 lineto
+ 454.25 39.2751 lineto
+ 454.75 39.2751 lineto
+ 455.25 39.2751 lineto
+ 455.75 39.2751 lineto
+ 456.25 39.2751 lineto
+ 456.75 39.2751 lineto
+ 457.25 39.2751 lineto
+ 457.75 39.2751 lineto
+ 458.25 39.2751 lineto
+ 458.75 39.2751 lineto
+ 459.25 39.2751 lineto
+ 459.75 39.2751 lineto
+ 460.25 39.2751 lineto
+ 460.75 39.2751 lineto
+ 461.25 39.2751 lineto
+ 461.75 39.2751 lineto
+ 462.25 39.2751 lineto
+ 462.75 39.2751 lineto
+ 463.25 39.2751 lineto
+ 463.75 39.2751 lineto
+ 464.25 39.2751 lineto
+ 464.75 39.2751 lineto
+ 465.25 39.2751 lineto
+ 465.75 39.2751 lineto
+ 466.25 39.2751 lineto
+ 466.75 39.2751 lineto
+ 467.25 39.2751 lineto
+ 467.75 39.2751 lineto
+ 468.25 39.2751 lineto
+ 468.75 39.2751 lineto
+ 469.25 39.2751 lineto
+ 469.75 39.2751 lineto
+ 470.25 39.2751 lineto
+ 470.75 39.2751 lineto
+ 471.25 39.2751 lineto
+ 471.75 39.2751 lineto
+ 472.25 39.2751 lineto
+ 472.75 39.2751 lineto
+ 473.25 39.2751 lineto
+ 473.75 39.2751 lineto
+ 474.25 39.2751 lineto
+ 474.75 39.2751 lineto
+ 475.25 39.2751 lineto
+ 475.75 39.2751 lineto
+ 476.25 39.2751 lineto
+ 476.75 39.2751 lineto
+ 477.25 39.2751 lineto
+ 477.75 39.2751 lineto
+ 478.25 39.2751 lineto
+ 478.75 39.2751 lineto
+ 479.25 39.2751 lineto
+ 479.75 39.2751 lineto
+ 480.25 39.2751 lineto
+ 480.75 39.2751 lineto
+ 481.25 39.2751 lineto
+ 481.75 39.2751 lineto
+ 482.25 39.2751 lineto
+ 482.75 39.2751 lineto
+ 483.25 39.2751 lineto
+ 483.75 39.2751 lineto
+ 484.25 39.2751 lineto
+ 484.75 39.2751 lineto
+ 485.25 39.2751 lineto
+ 485.75 39.2751 lineto
+ 486.25 39.2751 lineto
+ 486.75 39.2751 lineto
+ 487.25 39.2751 lineto
+ 487.75 39.2751 lineto
+ 488.25 39.2751 lineto
+ 488.75 39.2751 lineto
+ 489.25 39.2751 lineto
+ 489.75 39.2751 lineto
+ 490.25 39.2751 lineto
+ 490.75 39.2751 lineto
+ 491.25 39.2751 lineto
+ 491.75 39.2751 lineto
+ 492.25 39.2751 lineto
+ 492.75 39.2751 lineto
+ 493.25 39.2751 lineto
+ 493.75 39.2751 lineto
+ 494.25 39.2751 lineto
+ 494.75 39.2751 lineto
+ 495.25 39.2751 lineto
+ 495.75 39.2751 lineto
+ 496.25 39.2751 lineto
+ 496.75 39.2751 lineto
+ 497.25 39.2751 lineto
+ 497.75 39.2751 lineto
+ 498.25 39.2751 lineto
+ 498.75 39.2751 lineto
+ 499.25 39.2751 lineto
+ 499.75 39.2751 lineto
+ 500.25 39.2751 lineto
+ 500.75 39.2751 lineto
+ 501.25 39.2751 lineto
+ 501.75 39.2751 lineto
+ 502.25 39.2751 lineto
+ 502.75 39.2751 lineto
+ 503.25 39.2751 lineto
+ 503.75 39.2751 lineto
+ 504.25 39.2751 lineto
+ 504.75 39.2751 lineto
+ 505.25 39.2751 lineto
+ 505.75 39.2751 lineto
+ 506.25 39.2751 lineto
+ 506.75 39.2751 lineto
+ 507.25 39.2751 lineto
+ 507.75 39.2751 lineto
+ 508.25 39.2751 lineto
+ 508.75 39.2751 lineto
+ 509.25 39.2751 lineto
+ 509.75 39.2751 lineto
+ 510.25 39.2751 lineto
+ 510.75 39.2751 lineto
+ 511.25 39.2751 lineto
+ 511.75 39.2751 lineto
+ 512.25 39.2751 lineto
+ 512.75 39.2751 lineto
+ 513.25 39.2751 lineto
+ 513.75 39.2751 lineto
+ 514.25 39.2751 lineto
+ 514.75 39.2751 lineto
+ 515.25 39.2751 lineto
+ 515.75 39.2751 lineto
+ 516.25 39.2751 lineto
+ 516.75 39.2751 lineto
+ 517.25 39.2751 lineto
+ 517.75 39.2751 lineto
+ 518.25 39.2751 lineto
+ 518.75 39.2751 lineto
+ 519.25 39.2751 lineto
+ 519.75 39.2751 lineto
+ 520.25 39.2751 lineto
+ 520.75 39.2751 lineto
+ 521 39.2751 lineto
+ 521.05 42.4257 lineto
+ 521.15 48.7268 lineto
+ 521.35 61.3292 lineto
+ 521.75 86.5338 lineto
+ 522.25 118.04 lineto
+ 522.75 149.545 lineto
+ 523.25 181.051 lineto
+ 523.75 212.557 lineto
+ 524.25 244.063 lineto
+ 524.75 275.569 lineto
+ 525.25 307.075 lineto
+ 525.75 338.58 lineto
+ 526.25 370.086 lineto
+ 526.75 401.592 lineto
+ 527.25 433.098 lineto
+ 527.75 464.604 lineto
+ 528.25 496.109 lineto
+ 528.75 527.615 lineto
+ 529.25 559.121 lineto
+ 529.75 590.627 lineto
+ 530.25 622.133 lineto
+ 530.75 653.639 lineto
+ 531 669.392 lineto
+ 531.05 669.392 lineto
+ 531.15 669.392 lineto
+ 531.35 669.392 lineto
+ 531.75 669.392 lineto
+ 532.25 669.392 lineto
+ 532.75 669.392 lineto
+ 533.25 669.392 lineto
+ 533.75 669.392 lineto
+ 534.25 669.392 lineto
+ 534.75 669.392 lineto
+ 535.25 669.392 lineto
+ 535.75 669.392 lineto
+ 536.25 669.392 lineto
+ 536.75 669.392 lineto
+ 537.25 669.392 lineto
+ 537.75 669.392 lineto
+ 538.25 669.392 lineto
+ 538.75 669.392 lineto
+ 539.25 669.392 lineto
+ 539.75 669.392 lineto
+ 540.25 669.392 lineto
+ 540.75 669.392 lineto
+ 541.25 669.392 lineto
+ 541.75 669.392 lineto
+ 542.25 669.392 lineto
+ 542.75 669.392 lineto
+ 543.25 669.392 lineto
+ 543.75 669.392 lineto
+ 544.25 669.392 lineto
+ 544.75 669.392 lineto
+ 545.25 669.392 lineto
+ 545.75 669.392 lineto
+ 546.25 669.392 lineto
+ 546.75 669.392 lineto
+ 547.25 669.392 lineto
+ 547.75 669.392 lineto
+ 548.25 669.392 lineto
+ 548.75 669.392 lineto
+ 549.25 669.392 lineto
+ 549.75 669.392 lineto
+ 550.25 669.392 lineto
+ 550.75 669.392 lineto
+ 551.25 669.392 lineto
+ 551.75 669.392 lineto
+ 552.25 669.392 lineto
+ 552.75 669.392 lineto
+ 553.25 669.392 lineto
+ 553.75 669.392 lineto
+ 554.25 669.392 lineto
+ 554.75 669.392 lineto
+ 555.25 669.392 lineto
+ 555.75 669.392 lineto
+ 556.25 669.392 lineto
+ 556.75 669.392 lineto
+ 557.25 669.392 lineto
+ 557.75 669.392 lineto
+ 558.25 669.392 lineto
+ 558.75 669.392 lineto
+ 559.25 669.392 lineto
+ 559.75 669.392 lineto
+ 560.25 669.392 lineto
+ 560.75 669.392 lineto
+ 561.25 669.392 lineto
+ 561.75 669.392 lineto
+ 562.25 669.392 lineto
+ 562.75 669.392 lineto
+ 563.25 669.392 lineto
+ 563.75 669.392 lineto
+ 564.25 669.392 lineto
+ 564.75 669.392 lineto
+ 565.25 669.392 lineto
+ 565.75 669.392 lineto
+ 566.25 669.392 lineto
+ 566.75 669.392 lineto
+ 567.25 669.392 lineto
+ 567.75 669.392 lineto
+ 568.25 669.392 lineto
+ 568.75 669.392 lineto
+ 569.25 669.392 lineto
+ 569.75 669.392 lineto
+ 570.25 669.392 lineto
+ 570.75 669.392 lineto
+ 571.25 669.392 lineto
+ 571.75 669.392 lineto
+ 572.25 669.392 lineto
+ 572.75 669.392 lineto
+ 573.25 669.392 lineto
+ 573.75 669.392 lineto
+ 574.25 669.392 lineto
+ 574.75 669.392 lineto
+ 575.25 669.392 lineto
+ 575.75 669.392 lineto
+ 576.25 669.392 lineto
+ 576.75 669.392 lineto
+ 577.25 669.392 lineto
+ 577.75 669.392 lineto
+ 578.25 669.392 lineto
+ 578.75 669.392 lineto
+ 579.25 669.392 lineto
+ 579.75 669.392 lineto
+ 580.25 669.392 lineto
+ 580.75 669.392 lineto
+ 581.25 669.392 lineto
+ 581.75 669.392 lineto
+ 582.25 669.392 lineto
+ 582.75 669.392 lineto
+ 583.25 669.392 lineto
+ 583.75 669.392 lineto
+ 584.25 669.392 lineto
+ 584.75 669.392 lineto
+ 585.25 669.392 lineto
+ 585.75 669.392 lineto
+ 586.25 669.392 lineto
+ 586.75 669.392 lineto
+ 587.25 669.392 lineto
+ 587.75 669.392 lineto
+ 588.25 669.392 lineto
+ 588.75 669.392 lineto
+ 589.25 669.392 lineto
+ 589.75 669.392 lineto
+ 590.25 669.392 lineto
+ 590.75 669.392 lineto
+ 591.25 669.392 lineto
+ 591.75 669.392 lineto
+ 592.25 669.392 lineto
+ 592.75 669.392 lineto
+ 593.25 669.392 lineto
+ 593.75 669.392 lineto
+ 594.25 669.392 lineto
+ 594.75 669.392 lineto
+ 595.25 669.392 lineto
+ 595.75 669.392 lineto
+ 596.25 669.392 lineto
+ 596.75 669.392 lineto
+ 597.25 669.392 lineto
+ 597.75 669.392 lineto
+ 598.25 669.392 lineto
+ 598.75 669.392 lineto
+ 599.25 669.392 lineto
+ 599.75 669.392 lineto
+ 600.25 669.392 lineto
+ 600.75 669.392 lineto
+ 601.25 669.392 lineto
+ 601.75 669.392 lineto
+ 602.25 669.392 lineto
+ 602.75 669.392 lineto
+ 603.25 669.392 lineto
+ 603.75 669.392 lineto
+ 604.25 669.392 lineto
+ 604.75 669.392 lineto
+ 605.25 669.392 lineto
+ 605.75 669.392 lineto
+ 606.25 669.392 lineto
+ 606.75 669.392 lineto
+ 607.25 669.392 lineto
+ 607.75 669.392 lineto
+ 608.25 669.392 lineto
+ 608.75 669.392 lineto
+ 609.25 669.392 lineto
+ 609.75 669.392 lineto
+ 610.25 669.392 lineto
+ 610.75 669.392 lineto
+ 611.25 669.392 lineto
+ 611.75 669.392 lineto
+ 612.25 669.392 lineto
+ 612.75 669.392 lineto
+ 613.25 669.392 lineto
+ 613.75 669.392 lineto
+ 614.25 669.392 lineto
+ 614.75 669.392 lineto
+ 615.25 669.392 lineto
+ 615.75 669.392 lineto
+ 616.25 669.392 lineto
+ 616.75 669.392 lineto
+ 617.25 669.392 lineto
+ 617.75 669.392 lineto
+ 618.25 669.392 lineto
+ 618.75 669.392 lineto
+ 619.25 669.392 lineto
+ 619.75 669.392 lineto
+ 620.25 669.392 lineto
+ 620.75 669.392 lineto
+ 621.25 669.392 lineto
+ 621.75 669.392 lineto
+ 622.25 669.392 lineto
+ 622.75 669.392 lineto
+ 623.25 669.392 lineto
+ 623.75 669.392 lineto
+ 624.25 669.392 lineto
+ 624.75 669.392 lineto
+ 625.25 669.392 lineto
+ 625.75 669.392 lineto
+ 626.25 669.392 lineto
+ 626.75 669.392 lineto
+ 627.25 669.392 lineto
+ 627.75 669.392 lineto
+ 628.25 669.392 lineto
+ 628.75 669.392 lineto
+ 629.25 669.392 lineto
+ 629.75 669.392 lineto
+ 630.25 669.392 lineto
+ 630.75 669.392 lineto
+ 631.25 669.392 lineto
+ 631.75 669.392 lineto
+ 632.25 669.392 lineto
+ 632.75 669.392 lineto
+ 633.25 669.392 lineto
+ 633.75 669.392 lineto
+ 634.25 669.392 lineto
+ 634.75 669.392 lineto
+ 635.25 669.392 lineto
+ 635.75 669.392 lineto
+ 636.25 669.392 lineto
+ 636.75 669.392 lineto
+ 637.25 669.392 lineto
+ 637.75 669.392 lineto
+ 638.25 669.392 lineto
+ 638.75 669.392 lineto
+ 639.25 669.392 lineto
+ 639.75 669.392 lineto
+ 640.25 669.392 lineto
+ 640.75 669.392 lineto
+ 641.25 669.392 lineto
+ 641.75 669.392 lineto
+ 642.25 669.392 lineto
+ 642.75 669.392 lineto
+ 643.25 669.392 lineto
+ 643.75 669.392 lineto
+ 644.25 669.392 lineto
+ 644.75 669.392 lineto
+ 645.25 669.392 lineto
+ 645.75 669.392 lineto
+ 646.25 669.392 lineto
+ 646.75 669.392 lineto
+ 647.25 669.392 lineto
+ 647.75 669.392 lineto
+ 648.25 669.392 lineto
+ 648.75 669.392 lineto
+ 649.25 669.392 lineto
+ 649.75 669.392 lineto
+ 650.25 669.392 lineto
+ 650.75 669.392 lineto
+ 651.25 669.392 lineto
+ 651.75 669.392 lineto
+ 652.25 669.392 lineto
+ 652.75 669.392 lineto
+ 653.25 669.392 lineto
+ 653.75 669.392 lineto
+ 654.25 669.392 lineto
+ 654.75 669.392 lineto
+ 655.25 669.392 lineto
+ 655.75 669.392 lineto
+ 656.25 669.392 lineto
+ 656.75 669.392 lineto
+ 657.25 669.392 lineto
+ 657.75 669.392 lineto
+ 658.25 669.392 lineto
+ 658.75 669.392 lineto
+ 659.25 669.392 lineto
+ 659.75 669.392 lineto
+ 660.25 669.392 lineto
+ 660.75 669.392 lineto
+ 661 669.392 lineto
+ 661.05 666.241 lineto
+ 661.15 659.94 lineto
+ 661.35 647.337 lineto
+ 661.75 622.133 lineto
+ 662.25 590.627 lineto
+ 662.75 559.121 lineto
+ 663.25 527.615 lineto
+ 663.75 496.109 lineto
+ 664.25 464.604 lineto
+ 664.75 433.098 lineto
+ 665.25 401.592 lineto
+ 665.75 370.086 lineto
+ 666.25 338.58 lineto
+ 666.75 307.075 lineto
+ 667.25 275.569 lineto
+ 667.75 244.063 lineto
+ 668.25 212.557 lineto
+ 668.75 181.051 lineto
+ 669.25 149.545 lineto
+ 669.75 118.04 lineto
+ 670.25 86.5338 lineto
+ 670.75 55.028 lineto
+ 671 39.2751 lineto
+ 671.05 39.2751 lineto
+ 671.15 39.2751 lineto
+ 671.35 39.2751 lineto
+ 671.75 39.2751 lineto
+ 672.25 39.2751 lineto
+ 672.75 39.2751 lineto
+ 673.25 39.2751 lineto
+ 673.75 39.2751 lineto
+ 674.25 39.2751 lineto
+ 674.75 39.2751 lineto
+ 675.25 39.2751 lineto
+ 675.75 39.2751 lineto
+ 676.25 39.2751 lineto
+ 676.75 39.2751 lineto
+ 677.25 39.2751 lineto
+ 677.75 39.2751 lineto
+ 678.25 39.2751 lineto
+ 678.75 39.2751 lineto
+ 679.25 39.2751 lineto
+ 679.75 39.2751 lineto
+ 680.25 39.2751 lineto
+ 680.75 39.2751 lineto
+ 681.25 39.2751 lineto
+ 681.75 39.2751 lineto
+ 682.25 39.2751 lineto
+ 682.75 39.2751 lineto
+ 683.25 39.2751 lineto
+ 683.75 39.2751 lineto
+ 684.25 39.2751 lineto
+ 684.75 39.2751 lineto
+ 685.25 39.2751 lineto
+ 685.75 39.2751 lineto
+ 686.25 39.2751 lineto
+ 686.75 39.2751 lineto
+ 687.25 39.2751 lineto
+ 687.75 39.2751 lineto
+ 688.25 39.2751 lineto
+ 688.75 39.2751 lineto
+ 689.25 39.2751 lineto
+ 689.75 39.2751 lineto
+ 690.25 39.2751 lineto
+ 690.75 39.2751 lineto
+ 691.25 39.2751 lineto
+ 691.75 39.2751 lineto
+ 692.25 39.2751 lineto
+ 692.75 39.2751 lineto
+ 693.25 39.2751 lineto
+ 693.75 39.2751 lineto
+ 694.25 39.2751 lineto
+ 694.75 39.2751 lineto
+ 695.25 39.2751 lineto
+ 695.75 39.2751 lineto
+ 696.25 39.2751 lineto
+ 696.75 39.2751 lineto
+ 697.25 39.2751 lineto
+ 697.75 39.2751 lineto
+ 698.25 39.2751 lineto
+ 698.75 39.2751 lineto
+ 699.25 39.2751 lineto
+ 699.75 39.2751 lineto
+ 700.25 39.2751 lineto
+ 700.75 39.2751 lineto
+ 701.25 39.2751 lineto
+ 701.75 39.2751 lineto
+ 702.25 39.2751 lineto
+ 702.75 39.2751 lineto
+ 703.25 39.2751 lineto
+ 703.75 39.2751 lineto
+ 704.25 39.2751 lineto
+ 704.75 39.2751 lineto
+ 705.25 39.2751 lineto
+ 705.75 39.2751 lineto
+ 706.25 39.2751 lineto
+ 706.75 39.2751 lineto
+ 707.25 39.2751 lineto
+ 707.75 39.2751 lineto
+ 708.25 39.2751 lineto
+ 708.75 39.2751 lineto
+ 709.25 39.2751 lineto
+ 709.75 39.2751 lineto
+ 710.25 39.2751 lineto
+ 710.75 39.2751 lineto
+ 711.25 39.2751 lineto
+ 711.75 39.2751 lineto
+ 712.25 39.2751 lineto
+ 712.75 39.2751 lineto
+ 713.25 39.2751 lineto
+ 713.75 39.2751 lineto
+ 714.25 39.2751 lineto
+ 714.75 39.2751 lineto
+ 715.25 39.2751 lineto
+ 715.75 39.2751 lineto
+ 716.25 39.2751 lineto
+ 716.75 39.2751 lineto
+ 717.25 39.2751 lineto
+ 717.75 39.2751 lineto
+ 718.25 39.2751 lineto
+ 718.75 39.2751 lineto
+ 719.25 39.2751 lineto
+ 719.75 39.2751 lineto
+ 720.25 39.2751 lineto
+ 720.75 39.2751 lineto
+ 721.25 39.2751 lineto
+ 721.75 39.2751 lineto
+ 722.25 39.2751 lineto
+ 722.75 39.2751 lineto
+ 723.25 39.2751 lineto
+ 723.75 39.2751 lineto
+ 724.25 39.2751 lineto
+ 724.75 39.2751 lineto
+ 725.25 39.2751 lineto
+ 725.75 39.2751 lineto
+ 726.25 39.2751 lineto
+ 726.75 39.2751 lineto
+ 727.25 39.2751 lineto
+ 727.75 39.2751 lineto
+ 728.25 39.2751 lineto
+ 728.75 39.2751 lineto
+ 729.25 39.2751 lineto
+ 729.75 39.2751 lineto
+ 730.25 39.2751 lineto
+ 730.75 39.2751 lineto
+ 731.25 39.2751 lineto
+ 731.75 39.2751 lineto
+ 732.25 39.2751 lineto
+ 732.75 39.2751 lineto
+ 733.25 39.2751 lineto
+ 733.75 39.2751 lineto
+ 734.25 39.2751 lineto
+ 734.75 39.2751 lineto
+ 735.25 39.2751 lineto
+ 735.75 39.2751 lineto
+ 736.25 39.2751 lineto
+ 736.75 39.2751 lineto
+ 737.25 39.2751 lineto
+ 737.75 39.2751 lineto
+ 738.25 39.2751 lineto
+ 738.75 39.2751 lineto
+ 739.25 39.2751 lineto
+ 739.75 39.2751 lineto
+ 740.25 39.2751 lineto
+ 740.75 39.2751 lineto
+ 741.25 39.2751 lineto
+ 741.75 39.2751 lineto
+ 742.25 39.2751 lineto
+ 742.75 39.2751 lineto
+ 743.25 39.2751 lineto
+ 743.75 39.2751 lineto
+ 744.25 39.2751 lineto
+ 744.75 39.2751 lineto
+ 745.25 39.2751 lineto
+ 745.75 39.2751 lineto
+ 746.25 39.2751 lineto
+ 746.75 39.2751 lineto
+ 747.25 39.2751 lineto
+ 747.75 39.2751 lineto
+ 748.25 39.2751 lineto
+ 748.75 39.2751 lineto
+ 749.25 39.2751 lineto
+ 749.75 39.2751 lineto
+ 750.25 39.2751 lineto
+ 750.75 39.2751 lineto
+ 751.25 39.2751 lineto
+ 751.75 39.2751 lineto
+ 752.25 39.2751 lineto
+ 752.75 39.2751 lineto
+ 753.25 39.2751 lineto
+ 753.75 39.2751 lineto
+ 754.25 39.2751 lineto
+ 754.75 39.2751 lineto
+ 755.25 39.2751 lineto
+ 755.75 39.2751 lineto
+ 756.25 39.2751 lineto
+ 756.75 39.2751 lineto
+ 757.25 39.2751 lineto
+ 757.75 39.2751 lineto
+ 758.25 39.2751 lineto
+ 758.75 39.2751 lineto
+ 759.25 39.2751 lineto
+ 759.75 39.2751 lineto
+ 760.25 39.2751 lineto
+ 760.75 39.2751 lineto
+ 761.25 39.2751 lineto
+ 761.75 39.2751 lineto
+ 762.25 39.2751 lineto
+ 762.75 39.2751 lineto
+ 763.25 39.2751 lineto
+ 763.75 39.2751 lineto
+ 764.25 39.2751 lineto
+ 764.75 39.2751 lineto
+ 765.25 39.2751 lineto
+ 765.75 39.2751 lineto
+ 766.25 39.2751 lineto
+ 766.75 39.2751 lineto
+ 767.25 39.2751 lineto
+ 767.75 39.2751 lineto
+ 768.25 39.2751 lineto
+ 768.75 39.2751 lineto
+ 769.25 39.2751 lineto
+ 769.75 39.2751 lineto
+ 770.25 39.2751 lineto
+ 770.75 39.2751 lineto
+ 771.25 39.2751 lineto
+ 771.75 39.2751 lineto
+ 772.25 39.2751 lineto
+ 772.75 39.2751 lineto
+ 773.25 39.2751 lineto
+ 773.75 39.2751 lineto
+ 774.25 39.2751 lineto
+ 774.75 39.2751 lineto
+ 775.25 39.2751 lineto
+ 775.75 39.2751 lineto
+ 776.25 39.2751 lineto
+ 776.75 39.2751 lineto
+ 777.25 39.2751 lineto
+ 777.75 39.2751 lineto
+ 778.25 39.2751 lineto
+ 778.75 39.2751 lineto
+ 779.25 39.2751 lineto
+ 779.75 39.2751 lineto
+ 780.25 39.2751 lineto
+ 780.75 39.2751 lineto
+ 781.25 39.2751 lineto
+ 781.75 39.2751 lineto
+ 782.25 39.2751 lineto
+ 782.75 39.2751 lineto
+ 783.25 39.2751 lineto
+ 783.75 39.2751 lineto
+ 784.25 39.2751 lineto
+ 784.75 39.2751 lineto
+ 785.25 39.2751 lineto
+ 785.75 39.2751 lineto
+ 786.25 39.2751 lineto
+ 786.75 39.2751 lineto
+ 787.25 39.2751 lineto
+ 787.75 39.2751 lineto
+ 788.25 39.2751 lineto
+ 788.75 39.2751 lineto
+ 789.25 39.2751 lineto
+ 789.75 39.2751 lineto
+ 790.25 39.2751 lineto
+ 790.75 39.2751 lineto
+ 791.25 39.2751 lineto
+ 791.75 39.2751 lineto
+ 792.25 39.2751 lineto
+ 792.75 39.2751 lineto
+ 793.25 39.2751 lineto
+DashesProc stroke
+ newpath  793.25 39.2751 moveto
+ 793.75 39.2751 lineto
+ 794.25 39.2751 lineto
+ 794.75 39.2751 lineto
+ 795.25 39.2751 lineto
+ 795.75 39.2751 lineto
+ 796.25 39.2751 lineto
+ 796.75 39.2751 lineto
+ 797.25 39.2751 lineto
+ 797.75 39.2751 lineto
+ 798.25 39.2751 lineto
+ 798.75 39.2751 lineto
+ 799.25 39.2751 lineto
+ 799.75 39.2751 lineto
+ 800.25 39.2751 lineto
+ 800.75 39.2751 lineto
+ 801.25 39.2751 lineto
+ 801.75 39.2751 lineto
+ 802.25 39.2751 lineto
+ 802.75 39.2751 lineto
+ 803.25 39.2751 lineto
+ 803.75 39.2751 lineto
+ 804.25 39.2751 lineto
+ 804.75 39.2751 lineto
+ 805.25 39.2751 lineto
+ 805.75 39.2751 lineto
+ 806.25 39.2751 lineto
+ 806.75 39.2751 lineto
+ 807.25 39.2751 lineto
+ 807.75 39.2751 lineto
+ 808.25 39.2751 lineto
+ 808.75 39.2751 lineto
+ 809.25 39.2751 lineto
+ 809.75 39.2751 lineto
+ 810.25 39.2751 lineto
+ 810.75 39.2751 lineto
+ 811.25 39.2751 lineto
+ 811.75 39.2751 lineto
+ 812.25 39.2751 lineto
+ 812.75 39.2751 lineto
+ 813.25 39.2751 lineto
+ 813.75 39.2751 lineto
+ 814.25 39.2751 lineto
+ 814.75 39.2751 lineto
+ 815.25 39.2751 lineto
+ 815.75 39.2751 lineto
+ 816.25 39.2751 lineto
+ 816.75 39.2751 lineto
+ 817.25 39.2751 lineto
+ 817.75 39.2751 lineto
+ 818.25 39.2751 lineto
+ 818.75 39.2751 lineto
+ 819.25 39.2751 lineto
+ 819.75 39.2751 lineto
+ 820.25 39.2751 lineto
+ 820.75 39.2751 lineto
+ 821 39.2751 lineto
+ 821.05 42.4257 lineto
+ 821.15 48.7268 lineto
+ 821.35 61.3292 lineto
+ 821.75 86.5338 lineto
+ 822.25 118.04 lineto
+ 822.75 149.545 lineto
+ 823.25 181.051 lineto
+ 823.75 212.557 lineto
+ 824.25 244.063 lineto
+ 824.75 275.569 lineto
+ 825.25 307.075 lineto
+ 825.75 338.58 lineto
+ 826.25 370.086 lineto
+ 826.75 401.592 lineto
+ 827.25 433.098 lineto
+ 827.75 464.604 lineto
+ 828.25 496.109 lineto
+ 828.75 527.615 lineto
+ 829.25 559.121 lineto
+ 829.75 590.627 lineto
+ 830.25 622.133 lineto
+ 830.75 653.639 lineto
+ 831 669.392 lineto
+ 831.05 669.392 lineto
+ 831.15 669.392 lineto
+ 831.35 669.392 lineto
+ 831.75 669.392 lineto
+ 832.25 669.392 lineto
+ 832.75 669.392 lineto
+ 833.25 669.392 lineto
+ 833.75 669.392 lineto
+ 834.25 669.392 lineto
+ 834.75 669.392 lineto
+ 835.25 669.392 lineto
+ 835.75 669.392 lineto
+ 836.25 669.392 lineto
+ 836.75 669.392 lineto
+ 837.25 669.392 lineto
+ 837.75 669.392 lineto
+ 838.25 669.392 lineto
+ 838.75 669.392 lineto
+ 839.25 669.392 lineto
+ 839.75 669.392 lineto
+ 840.25 669.392 lineto
+ 840.75 669.392 lineto
+ 841.25 669.392 lineto
+ 841.75 669.392 lineto
+ 842.25 669.392 lineto
+ 842.75 669.392 lineto
+ 843.25 669.392 lineto
+ 843.75 669.392 lineto
+ 844.25 669.392 lineto
+ 844.75 669.392 lineto
+ 845.25 669.392 lineto
+ 845.75 669.392 lineto
+ 846.25 669.392 lineto
+ 846.75 669.392 lineto
+ 847.25 669.392 lineto
+ 847.75 669.392 lineto
+ 848.25 669.392 lineto
+ 848.75 669.392 lineto
+ 849.25 669.392 lineto
+ 849.75 669.392 lineto
+ 850.25 669.392 lineto
+ 850.75 669.392 lineto
+ 851.25 669.392 lineto
+ 851.75 669.392 lineto
+ 852.25 669.392 lineto
+ 852.75 669.392 lineto
+ 853.25 669.392 lineto
+ 853.75 669.392 lineto
+ 854.25 669.392 lineto
+ 854.75 669.392 lineto
+ 855.25 669.392 lineto
+ 855.75 669.392 lineto
+ 856.25 669.392 lineto
+ 856.75 669.392 lineto
+ 857.25 669.392 lineto
+ 857.75 669.392 lineto
+ 858.25 669.392 lineto
+ 858.75 669.392 lineto
+ 859.25 669.392 lineto
+ 859.75 669.392 lineto
+ 860.25 669.392 lineto
+ 860.75 669.392 lineto
+ 861 669.392 lineto
+DashesProc stroke
+
+% Element "a"
+
+0 setlinejoin
+0 setlinecap
+0 1 0 SetFgColor
+1 setlinewidth
+[  4] 0 setdash
+/DashesProc {} def
+/DashesProc {} def
+ newpath 61 669.392 moveto
+ 61.005 669.076 lineto
+DashesProc stroke
+ newpath  61.005 669.076 moveto
+ 61.01 668.761 lineto
+ 61.02 668.131 lineto
+ 61.04 666.871 lineto
+ 61.08 664.351 lineto
+ 61.16 659.31 lineto
+ 61.32 649.228 lineto
+ 61.64 629.064 lineto
+ 62.14 597.558 lineto
+ 62.64 566.052 lineto
+ 63.14 534.547 lineto
+ 63.64 503.041 lineto
+ 64.14 471.535 lineto
+ 64.64 440.029 lineto
+ 65.14 408.523 lineto
+ 65.64 377.017 lineto
+ 66.14 345.512 lineto
+ 66.64 314.006 lineto
+ 67.14 282.5 lineto
+ 67.64 250.994 lineto
+ 68.14 219.488 lineto
+ 68.64 187.983 lineto
+ 69.14 156.477 lineto
+ 69.64 124.971 lineto
+ 70.14 93.4651 lineto
+ 70.64 61.9592 lineto
+ 71 39.2751 lineto
+ 71.05 39.2751 lineto
+ 71.15 39.2751 lineto
+ 71.35 39.2751 lineto
+ 71.75 39.2751 lineto
+ 72.25 39.2751 lineto
+ 72.75 39.2751 lineto
+ 73.25 39.2751 lineto
+ 73.75 39.2751 lineto
+ 74.25 39.2751 lineto
+ 74.75 39.2751 lineto
+ 75.25 39.2751 lineto
+ 75.75 39.2751 lineto
+ 76.25 39.2751 lineto
+ 76.75 39.2751 lineto
+ 77.25 39.2751 lineto
+ 77.75 39.2751 lineto
+ 78.25 39.2751 lineto
+ 78.75 39.2751 lineto
+ 79.25 39.2751 lineto
+ 79.75 39.2751 lineto
+ 80.25 39.2751 lineto
+ 80.75 39.2751 lineto
+ 81.25 39.2751 lineto
+ 81.75 39.2751 lineto
+ 82.25 39.2751 lineto
+ 82.75 39.2751 lineto
+ 83.25 39.2751 lineto
+ 83.75 39.2751 lineto
+ 84.25 39.2751 lineto
+ 84.75 39.2751 lineto
+ 85.25 39.2751 lineto
+ 85.75 39.2751 lineto
+ 86.25 39.2751 lineto
+ 86.75 39.2751 lineto
+ 87.25 39.2751 lineto
+ 87.75 39.2751 lineto
+ 88.25 39.2751 lineto
+ 88.75 39.2751 lineto
+ 89.25 39.2751 lineto
+ 89.75 39.2751 lineto
+ 90.25 39.2751 lineto
+ 90.75 39.2751 lineto
+ 91.25 39.2751 lineto
+ 91.75 39.2751 lineto
+ 92.25 39.2751 lineto
+ 92.75 39.2751 lineto
+ 93.25 39.2751 lineto
+ 93.75 39.2751 lineto
+ 94.25 39.2751 lineto
+ 94.75 39.2751 lineto
+ 95.25 39.2751 lineto
+ 95.75 39.2751 lineto
+ 96.25 39.2751 lineto
+ 96.75 39.2751 lineto
+ 97.25 39.2751 lineto
+ 97.75 39.2751 lineto
+ 98.25 39.2751 lineto
+ 98.75 39.2751 lineto
+ 99.25 39.2751 lineto
+ 99.75 39.2751 lineto
+ 100.25 39.2751 lineto
+ 100.75 39.2751 lineto
+ 101.25 39.2751 lineto
+ 101.75 39.2751 lineto
+ 102.25 39.2751 lineto
+ 102.75 39.2751 lineto
+ 103.25 39.2751 lineto
+ 103.75 39.2751 lineto
+ 104.25 39.2751 lineto
+ 104.75 39.2751 lineto
+ 105.25 39.2751 lineto
+ 105.75 39.2751 lineto
+ 106.25 39.2751 lineto
+ 106.75 39.2751 lineto
+ 107.25 39.2751 lineto
+ 107.75 39.2751 lineto
+ 108.25 39.2751 lineto
+ 108.75 39.2751 lineto
+ 109.25 39.2751 lineto
+ 109.75 39.2751 lineto
+ 110.25 39.2751 lineto
+ 110.75 39.2751 lineto
+ 111.25 39.2751 lineto
+ 111.75 39.2751 lineto
+ 112.25 39.2751 lineto
+ 112.75 39.2751 lineto
+ 113.25 39.2751 lineto
+ 113.75 39.2751 lineto
+ 114.25 39.2751 lineto
+ 114.75 39.2751 lineto
+ 115.25 39.2751 lineto
+ 115.75 39.2751 lineto
+ 116.25 39.2751 lineto
+ 116.75 39.2751 lineto
+ 117.25 39.2751 lineto
+ 117.75 39.2751 lineto
+ 118.25 39.2751 lineto
+ 118.75 39.2751 lineto
+ 119.25 39.2751 lineto
+ 119.75 39.2751 lineto
+ 120.25 39.2751 lineto
+ 120.75 39.2751 lineto
+ 121.25 39.2751 lineto
+ 121.75 39.2751 lineto
+ 122.25 39.2751 lineto
+ 122.75 39.2751 lineto
+ 123.25 39.2751 lineto
+ 123.75 39.2751 lineto
+ 124.25 39.2751 lineto
+ 124.75 39.2751 lineto
+ 125.25 39.2751 lineto
+ 125.75 39.2751 lineto
+ 126.25 39.2751 lineto
+ 126.75 39.2751 lineto
+ 127.25 39.2751 lineto
+ 127.75 39.2751 lineto
+ 128.25 39.2751 lineto
+ 128.75 39.2751 lineto
+ 129.25 39.2751 lineto
+ 129.75 39.2751 lineto
+ 130.25 39.2751 lineto
+ 130.75 39.2751 lineto
+ 131.25 39.2751 lineto
+ 131.75 39.2751 lineto
+ 132.25 39.2751 lineto
+ 132.75 39.2751 lineto
+ 133.25 39.2751 lineto
+ 133.75 39.2751 lineto
+ 134.25 39.2751 lineto
+ 134.75 39.2751 lineto
+ 135.25 39.2751 lineto
+ 135.75 39.2751 lineto
+ 136.25 39.2751 lineto
+ 136.75 39.2751 lineto
+ 137.25 39.2751 lineto
+ 137.75 39.2751 lineto
+ 138.25 39.2751 lineto
+ 138.75 39.2751 lineto
+ 139.25 39.2751 lineto
+ 139.75 39.2751 lineto
+ 140.25 39.2751 lineto
+ 140.75 39.2751 lineto
+ 141.25 39.2751 lineto
+ 141.75 39.2751 lineto
+ 142.25 39.2751 lineto
+ 142.75 39.2751 lineto
+ 143.25 39.2751 lineto
+ 143.75 39.2751 lineto
+ 144.25 39.2751 lineto
+ 144.75 39.2751 lineto
+ 145.25 39.2751 lineto
+ 145.75 39.2751 lineto
+ 146.25 39.2751 lineto
+ 146.75 39.2751 lineto
+ 147.25 39.2751 lineto
+ 147.75 39.2751 lineto
+ 148.25 39.2751 lineto
+ 148.75 39.2751 lineto
+ 149.25 39.2751 lineto
+ 149.75 39.2751 lineto
+ 150.25 39.2751 lineto
+ 150.75 39.2751 lineto
+ 151.25 39.2751 lineto
+ 151.75 39.2751 lineto
+ 152.25 39.2751 lineto
+ 152.75 39.2751 lineto
+ 153.25 39.2751 lineto
+ 153.75 39.2751 lineto
+ 154.25 39.2751 lineto
+ 154.75 39.2751 lineto
+ 155.25 39.2751 lineto
+ 155.75 39.2751 lineto
+ 156.25 39.2751 lineto
+ 156.75 39.2751 lineto
+ 157.25 39.2751 lineto
+ 157.75 39.2751 lineto
+ 158.25 39.2751 lineto
+ 158.75 39.2751 lineto
+ 159.25 39.2751 lineto
+ 159.75 39.2751 lineto
+ 160.25 39.2751 lineto
+ 160.75 39.2751 lineto
+ 161.25 39.2751 lineto
+ 161.75 39.2751 lineto
+ 162.25 39.2751 lineto
+ 162.75 39.2751 lineto
+ 163.25 39.2751 lineto
+ 163.75 39.2751 lineto
+ 164.25 39.2751 lineto
+ 164.75 39.2751 lineto
+ 165.25 39.2751 lineto
+ 165.75 39.2751 lineto
+ 166.25 39.2751 lineto
+ 166.75 39.2751 lineto
+ 167.25 39.2751 lineto
+ 167.75 39.2751 lineto
+ 168.25 39.2751 lineto
+ 168.75 39.2751 lineto
+ 169.25 39.2751 lineto
+ 169.75 39.2751 lineto
+ 170.25 39.2751 lineto
+ 170.75 39.2751 lineto
+ 171.25 39.2751 lineto
+ 171.75 39.2751 lineto
+ 172.25 39.2751 lineto
+ 172.75 39.2751 lineto
+ 173.25 39.2751 lineto
+ 173.75 39.2751 lineto
+ 174.25 39.2751 lineto
+ 174.75 39.2751 lineto
+ 175.25 39.2751 lineto
+ 175.75 39.2751 lineto
+ 176.25 39.2751 lineto
+ 176.75 39.2751 lineto
+ 177.25 39.2751 lineto
+ 177.75 39.2751 lineto
+ 178.25 39.2751 lineto
+ 178.75 39.2751 lineto
+ 179.25 39.2751 lineto
+ 179.75 39.2751 lineto
+ 180.25 39.2751 lineto
+ 180.75 39.2751 lineto
+ 181.25 39.2751 lineto
+ 181.75 39.2751 lineto
+ 182.25 39.2751 lineto
+ 182.75 39.2751 lineto
+ 183.25 39.2751 lineto
+ 183.75 39.2751 lineto
+ 184.25 39.2751 lineto
+ 184.75 39.2751 lineto
+ 185.25 39.2751 lineto
+ 185.75 39.2751 lineto
+ 186.25 39.2751 lineto
+ 186.75 39.2751 lineto
+ 187.25 39.2751 lineto
+ 187.75 39.2751 lineto
+ 188.25 39.2751 lineto
+ 188.75 39.2751 lineto
+ 189.25 39.2751 lineto
+ 189.75 39.2751 lineto
+ 190.25 39.2751 lineto
+ 190.75 39.2751 lineto
+ 191.25 39.2751 lineto
+ 191.75 39.2751 lineto
+ 192.25 39.2751 lineto
+ 192.75 39.2751 lineto
+ 193.25 39.2751 lineto
+ 193.75 39.2751 lineto
+ 194.25 39.2751 lineto
+ 194.75 39.2751 lineto
+ 195.25 39.2751 lineto
+ 195.75 39.2751 lineto
+ 196.25 39.2751 lineto
+ 196.75 39.2751 lineto
+ 197.25 39.2751 lineto
+ 197.75 39.2751 lineto
+ 198.25 39.2751 lineto
+ 198.75 39.2751 lineto
+ 199.25 39.2751 lineto
+ 199.75 39.2751 lineto
+ 200.25 39.2751 lineto
+ 200.75 39.2751 lineto
+ 201.25 39.2751 lineto
+ 201.75 39.2751 lineto
+ 202.25 39.2751 lineto
+ 202.75 39.2751 lineto
+ 203.25 39.2751 lineto
+ 203.75 39.2751 lineto
+ 204.25 39.2751 lineto
+ 204.75 39.2751 lineto
+ 205.25 39.2751 lineto
+ 205.75 39.2751 lineto
+ 206.25 39.2751 lineto
+ 206.75 39.2751 lineto
+ 207.25 39.2751 lineto
+ 207.75 39.2751 lineto
+ 208.25 39.2751 lineto
+ 208.75 39.2751 lineto
+ 209.25 39.2751 lineto
+ 209.75 39.2751 lineto
+ 210.25 39.2751 lineto
+ 210.75 39.2751 lineto
+ 211.25 39.2751 lineto
+ 211.75 39.2751 lineto
+ 212.25 39.2751 lineto
+ 212.75 39.2751 lineto
+ 213.25 39.2751 lineto
+ 213.75 39.2751 lineto
+ 214.25 39.2751 lineto
+ 214.75 39.2751 lineto
+ 215.25 39.2751 lineto
+ 215.75 39.2751 lineto
+ 216.25 39.2751 lineto
+ 216.75 39.2751 lineto
+ 217.25 39.2751 lineto
+ 217.75 39.2751 lineto
+ 218.25 39.2751 lineto
+ 218.75 39.2751 lineto
+ 219.25 39.2751 lineto
+ 219.75 39.2751 lineto
+ 220.25 39.2751 lineto
+ 220.75 39.2751 lineto
+ 221 39.2751 lineto
+ 221.05 39.2751 lineto
+ 221.15 39.2751 lineto
+ 221.35 39.2751 lineto
+ 221.75 39.2751 lineto
+ 222.25 39.2751 lineto
+ 222.75 39.2751 lineto
+ 223.25 39.2751 lineto
+ 223.75 39.2751 lineto
+ 224.25 39.2751 lineto
+ 224.75 39.2751 lineto
+ 225.25 39.2751 lineto
+ 225.75 39.2751 lineto
+ 226.25 39.2751 lineto
+ 226.75 39.2751 lineto
+ 227.25 39.2751 lineto
+ 227.75 39.2751 lineto
+ 228.25 39.2751 lineto
+ 228.75 39.2751 lineto
+ 229.25 39.2751 lineto
+ 229.75 39.2751 lineto
+ 230.25 39.2751 lineto
+ 230.75 39.2751 lineto
+ 231 39.2751 lineto
+ 231.05 39.2751 lineto
+ 231.15 39.2751 lineto
+ 231.35 39.2751 lineto
+ 231.75 39.2751 lineto
+ 232.25 39.2751 lineto
+ 232.75 39.2751 lineto
+ 233.25 39.2751 lineto
+ 233.75 39.2751 lineto
+ 234.25 39.2751 lineto
+ 234.75 39.2751 lineto
+ 235.25 39.2751 lineto
+ 235.75 39.2751 lineto
+ 236.25 39.2751 lineto
+ 236.75 39.2751 lineto
+ 237.25 39.2751 lineto
+ 237.75 39.2751 lineto
+ 238.25 39.2751 lineto
+ 238.75 39.2751 lineto
+ 239.25 39.2751 lineto
+ 239.75 39.2751 lineto
+ 240.25 39.2751 lineto
+ 240.75 39.2751 lineto
+ 241.25 39.2751 lineto
+ 241.75 39.2751 lineto
+ 242.25 39.2751 lineto
+ 242.75 39.2751 lineto
+ 243.25 39.2751 lineto
+ 243.75 39.2751 lineto
+ 244.25 39.2751 lineto
+ 244.75 39.2751 lineto
+ 245.25 39.2751 lineto
+ 245.75 39.2751 lineto
+ 246.25 39.2751 lineto
+ 246.75 39.2751 lineto
+ 247.25 39.2751 lineto
+ 247.75 39.2751 lineto
+ 248.25 39.2751 lineto
+ 248.75 39.2751 lineto
+ 249.25 39.2751 lineto
+ 249.75 39.2751 lineto
+ 250.25 39.2751 lineto
+ 250.75 39.2751 lineto
+ 251.25 39.2751 lineto
+ 251.75 39.2751 lineto
+ 252.25 39.2751 lineto
+ 252.75 39.2751 lineto
+ 253.25 39.2751 lineto
+ 253.75 39.2751 lineto
+ 254.25 39.2751 lineto
+ 254.75 39.2751 lineto
+ 255.25 39.2751 lineto
+ 255.75 39.2751 lineto
+ 256.25 39.2751 lineto
+ 256.75 39.2751 lineto
+ 257.25 39.2751 lineto
+ 257.75 39.2751 lineto
+ 258.25 39.2751 lineto
+ 258.75 39.2751 lineto
+ 259.25 39.2751 lineto
+ 259.75 39.2751 lineto
+ 260.25 39.2751 lineto
+ 260.75 39.2751 lineto
+ 261.25 39.2751 lineto
+ 261.75 39.2751 lineto
+ 262.25 39.2751 lineto
+ 262.75 39.2751 lineto
+ 263.25 39.2751 lineto
+ 263.75 39.2751 lineto
+ 264.25 39.2751 lineto
+ 264.75 39.2751 lineto
+ 265.25 39.2751 lineto
+ 265.75 39.2751 lineto
+ 266.25 39.2751 lineto
+ 266.75 39.2751 lineto
+ 267.25 39.2751 lineto
+ 267.75 39.2751 lineto
+ 268.25 39.2751 lineto
+ 268.75 39.2751 lineto
+ 269.25 39.2751 lineto
+ 269.75 39.2751 lineto
+ 270.25 39.2751 lineto
+ 270.75 39.2751 lineto
+ 271.25 39.2751 lineto
+ 271.75 39.2751 lineto
+ 272.25 39.2751 lineto
+ 272.75 39.2751 lineto
+ 273.25 39.2751 lineto
+ 273.75 39.2751 lineto
+ 274.25 39.2751 lineto
+ 274.75 39.2751 lineto
+ 275.25 39.2751 lineto
+ 275.75 39.2751 lineto
+ 276.25 39.2751 lineto
+ 276.75 39.2751 lineto
+ 277.25 39.2751 lineto
+ 277.75 39.2751 lineto
+ 278.25 39.2751 lineto
+ 278.75 39.2751 lineto
+ 279.25 39.2751 lineto
+ 279.75 39.2751 lineto
+ 280.25 39.2751 lineto
+ 280.75 39.2751 lineto
+ 281.25 39.2751 lineto
+ 281.75 39.2751 lineto
+ 282.25 39.2751 lineto
+ 282.75 39.2751 lineto
+ 283.25 39.2751 lineto
+ 283.75 39.2751 lineto
+ 284.25 39.2751 lineto
+ 284.75 39.2751 lineto
+ 285.25 39.2751 lineto
+ 285.75 39.2751 lineto
+ 286.25 39.2751 lineto
+ 286.75 39.2751 lineto
+ 287.25 39.2751 lineto
+ 287.75 39.2751 lineto
+ 288.25 39.2751 lineto
+ 288.75 39.2751 lineto
+ 289.25 39.2751 lineto
+ 289.75 39.2751 lineto
+ 290.25 39.2751 lineto
+ 290.75 39.2751 lineto
+ 291.25 39.2751 lineto
+ 291.75 39.2751 lineto
+ 292.25 39.2751 lineto
+ 292.75 39.2751 lineto
+ 293.25 39.2751 lineto
+ 293.75 39.2751 lineto
+ 294.25 39.2751 lineto
+ 294.75 39.2751 lineto
+ 295.25 39.2751 lineto
+ 295.75 39.2751 lineto
+ 296.25 39.2751 lineto
+ 296.75 39.2751 lineto
+ 297.25 39.2751 lineto
+ 297.75 39.2751 lineto
+ 298.25 39.2751 lineto
+ 298.75 39.2751 lineto
+ 299.25 39.2751 lineto
+ 299.75 39.2751 lineto
+ 300.25 39.2751 lineto
+ 300.75 39.2751 lineto
+ 301.25 39.2751 lineto
+ 301.75 39.2751 lineto
+ 302.25 39.2751 lineto
+ 302.75 39.2751 lineto
+ 303.25 39.2751 lineto
+ 303.75 39.2751 lineto
+ 304.25 39.2751 lineto
+ 304.75 39.2751 lineto
+ 305.25 39.2751 lineto
+ 305.75 39.2751 lineto
+ 306.25 39.2751 lineto
+ 306.75 39.2751 lineto
+ 307.25 39.2751 lineto
+ 307.75 39.2751 lineto
+ 308.25 39.2751 lineto
+ 308.75 39.2751 lineto
+ 309.25 39.2751 lineto
+ 309.75 39.2751 lineto
+ 310.25 39.2751 lineto
+ 310.75 39.2751 lineto
+ 311.25 39.2751 lineto
+ 311.75 39.2751 lineto
+ 312.25 39.2751 lineto
+ 312.75 39.2751 lineto
+ 313.25 39.2751 lineto
+ 313.75 39.2751 lineto
+ 314.25 39.2751 lineto
+ 314.75 39.2751 lineto
+ 315.25 39.2751 lineto
+ 315.75 39.2751 lineto
+ 316.25 39.2751 lineto
+ 316.75 39.2751 lineto
+ 317.25 39.2751 lineto
+ 317.75 39.2751 lineto
+ 318.25 39.2751 lineto
+ 318.75 39.2751 lineto
+ 319.25 39.2751 lineto
+ 319.75 39.2751 lineto
+ 320.25 39.2751 lineto
+ 320.75 39.2751 lineto
+ 321.25 39.2751 lineto
+ 321.75 39.2751 lineto
+ 322.25 39.2751 lineto
+ 322.75 39.2751 lineto
+ 323.25 39.2751 lineto
+ 323.75 39.2751 lineto
+ 324.25 39.2751 lineto
+ 324.75 39.2751 lineto
+ 325.25 39.2751 lineto
+ 325.75 39.2751 lineto
+ 326.25 39.2751 lineto
+ 326.75 39.2751 lineto
+ 327.25 39.2751 lineto
+ 327.75 39.2751 lineto
+ 328.25 39.2751 lineto
+ 328.75 39.2751 lineto
+ 329.25 39.2751 lineto
+ 329.75 39.2751 lineto
+ 330.25 39.2751 lineto
+ 330.75 39.2751 lineto
+ 331.25 39.2751 lineto
+ 331.75 39.2751 lineto
+ 332.25 39.2751 lineto
+ 332.75 39.2751 lineto
+ 333.25 39.2751 lineto
+ 333.75 39.2751 lineto
+ 334.25 39.2751 lineto
+ 334.75 39.2751 lineto
+ 335.25 39.2751 lineto
+ 335.75 39.2751 lineto
+ 336.25 39.2751 lineto
+ 336.75 39.2751 lineto
+ 337.25 39.2751 lineto
+ 337.75 39.2751 lineto
+ 338.25 39.2751 lineto
+ 338.75 39.2751 lineto
+ 339.25 39.2751 lineto
+ 339.75 39.2751 lineto
+ 340.25 39.2751 lineto
+ 340.75 39.2751 lineto
+ 341.25 39.2751 lineto
+ 341.75 39.2751 lineto
+ 342.25 39.2751 lineto
+ 342.75 39.2751 lineto
+ 343.25 39.2751 lineto
+ 343.75 39.2751 lineto
+ 344.25 39.2751 lineto
+ 344.75 39.2751 lineto
+ 345.25 39.2751 lineto
+ 345.75 39.2751 lineto
+ 346.25 39.2751 lineto
+ 346.75 39.2751 lineto
+ 347.25 39.2751 lineto
+ 347.75 39.2751 lineto
+ 348.25 39.2751 lineto
+ 348.75 39.2751 lineto
+ 349.25 39.2751 lineto
+ 349.75 39.2751 lineto
+ 350.25 39.2751 lineto
+ 350.75 39.2751 lineto
+ 351.25 39.2751 lineto
+ 351.75 39.2751 lineto
+ 352.25 39.2751 lineto
+ 352.75 39.2751 lineto
+ 353.25 39.2751 lineto
+ 353.75 39.2751 lineto
+ 354.25 39.2751 lineto
+ 354.75 39.2751 lineto
+ 355.25 39.2751 lineto
+ 355.75 39.2751 lineto
+ 356.25 39.2751 lineto
+ 356.75 39.2751 lineto
+ 357.25 39.2751 lineto
+ 357.75 39.2751 lineto
+ 358.25 39.2751 lineto
+ 358.75 39.2751 lineto
+ 359.25 39.2751 lineto
+ 359.75 39.2751 lineto
+ 360.25 39.2751 lineto
+ 360.75 39.2751 lineto
+ 361 39.2751 lineto
+ 361.05 39.2751 lineto
+ 361.15 39.2751 lineto
+ 361.35 39.2751 lineto
+ 361.75 39.2751 lineto
+ 362.25 39.2751 lineto
+ 362.75 39.2751 lineto
+ 363.25 39.2751 lineto
+ 363.75 39.2751 lineto
+ 364.25 39.2751 lineto
+ 364.75 39.2751 lineto
+ 365.25 39.2751 lineto
+ 365.75 39.2751 lineto
+ 366.25 39.2751 lineto
+ 366.75 39.2751 lineto
+ 367.25 39.2751 lineto
+ 367.75 39.2751 lineto
+ 368.25 39.2751 lineto
+ 368.75 39.2751 lineto
+ 369.25 39.2751 lineto
+ 369.75 39.2751 lineto
+ 370.25 39.2751 lineto
+ 370.75 39.2751 lineto
+ 371 39.2751 lineto
+ 371.05 42.4257 lineto
+ 371.15 48.7268 lineto
+ 371.35 61.3292 lineto
+ 371.75 86.5338 lineto
+ 372.25 118.04 lineto
+ 372.75 149.545 lineto
+ 373.25 181.051 lineto
+ 373.75 212.557 lineto
+ 374.25 244.063 lineto
+ 374.75 275.569 lineto
+ 375.25 307.075 lineto
+ 375.75 338.58 lineto
+ 376.25 370.086 lineto
+ 376.75 401.592 lineto
+ 377.25 433.098 lineto
+ 377.75 464.604 lineto
+ 378.25 496.109 lineto
+ 378.75 527.615 lineto
+ 379.25 559.121 lineto
+ 379.75 590.627 lineto
+ 380.25 622.133 lineto
+ 380.75 653.639 lineto
+ 381 669.392 lineto
+ 381.05 669.392 lineto
+ 381.15 669.392 lineto
+ 381.35 669.392 lineto
+ 381.75 669.392 lineto
+ 382.25 669.392 lineto
+ 382.75 669.392 lineto
+ 383.25 669.392 lineto
+ 383.75 669.392 lineto
+ 384.25 669.392 lineto
+ 384.75 669.392 lineto
+ 385.25 669.392 lineto
+ 385.75 669.392 lineto
+ 386.25 669.392 lineto
+ 386.75 669.392 lineto
+ 387.25 669.392 lineto
+ 387.75 669.392 lineto
+ 388.25 669.392 lineto
+ 388.75 669.392 lineto
+ 389.25 669.392 lineto
+ 389.75 669.392 lineto
+ 390.25 669.392 lineto
+ 390.75 669.392 lineto
+ 391.25 669.392 lineto
+ 391.75 669.392 lineto
+ 392.25 669.392 lineto
+ 392.75 669.392 lineto
+ 393.25 669.392 lineto
+ 393.75 669.392 lineto
+ 394.25 669.392 lineto
+ 394.75 669.392 lineto
+ 395.25 669.392 lineto
+ 395.75 669.392 lineto
+ 396.25 669.392 lineto
+ 396.75 669.392 lineto
+ 397.25 669.392 lineto
+ 397.75 669.392 lineto
+ 398.25 669.392 lineto
+ 398.75 669.392 lineto
+ 399.25 669.392 lineto
+ 399.75 669.392 lineto
+ 400.25 669.392 lineto
+ 400.75 669.392 lineto
+ 401.25 669.392 lineto
+ 401.75 669.392 lineto
+ 402.25 669.392 lineto
+ 402.75 669.392 lineto
+ 403.25 669.392 lineto
+ 403.75 669.392 lineto
+ 404.25 669.392 lineto
+ 404.75 669.392 lineto
+ 405.25 669.392 lineto
+ 405.75 669.392 lineto
+ 406.25 669.392 lineto
+ 406.75 669.392 lineto
+ 407.25 669.392 lineto
+ 407.75 669.392 lineto
+ 408.25 669.392 lineto
+ 408.75 669.392 lineto
+ 409.25 669.392 lineto
+ 409.75 669.392 lineto
+ 410.25 669.392 lineto
+ 410.75 669.392 lineto
+ 411.25 669.392 lineto
+ 411.75 669.392 lineto
+ 412.25 669.392 lineto
+ 412.75 669.392 lineto
+ 413.25 669.392 lineto
+ 413.75 669.392 lineto
+ 414.25 669.392 lineto
+ 414.75 669.392 lineto
+ 415.25 669.392 lineto
+ 415.75 669.392 lineto
+ 416.25 669.392 lineto
+ 416.75 669.392 lineto
+ 417.25 669.392 lineto
+ 417.75 669.392 lineto
+ 418.25 669.392 lineto
+ 418.75 669.392 lineto
+ 419.25 669.392 lineto
+ 419.75 669.392 lineto
+ 420.25 669.392 lineto
+ 420.75 669.392 lineto
+ 421.25 669.392 lineto
+ 421.75 669.392 lineto
+ 422.25 669.392 lineto
+ 422.75 669.392 lineto
+ 423.25 669.392 lineto
+ 423.75 669.392 lineto
+ 424.25 669.392 lineto
+ 424.75 669.392 lineto
+ 425.25 669.392 lineto
+ 425.75 669.392 lineto
+ 426.25 669.392 lineto
+ 426.75 669.392 lineto
+ 427.25 669.392 lineto
+ 427.75 669.392 lineto
+ 428.25 669.392 lineto
+ 428.75 669.392 lineto
+ 429.25 669.392 lineto
+ 429.75 669.392 lineto
+ 430.25 669.392 lineto
+ 430.75 669.392 lineto
+ 431.25 669.392 lineto
+ 431.75 669.392 lineto
+ 432.25 669.392 lineto
+ 432.75 669.392 lineto
+ 433.25 669.392 lineto
+ 433.75 669.392 lineto
+ 434.25 669.392 lineto
+ 434.75 669.392 lineto
+ 435.25 669.392 lineto
+ 435.75 669.392 lineto
+ 436.25 669.392 lineto
+ 436.75 669.392 lineto
+ 437.25 669.392 lineto
+ 437.75 669.392 lineto
+ 438.25 669.392 lineto
+ 438.75 669.392 lineto
+ 439.25 669.392 lineto
+ 439.75 669.392 lineto
+ 440.25 669.392 lineto
+ 440.75 669.392 lineto
+ 441.25 669.392 lineto
+ 441.75 669.392 lineto
+ 442.25 669.392 lineto
+ 442.75 669.392 lineto
+ 443.25 669.392 lineto
+ 443.75 669.392 lineto
+ 444.25 669.392 lineto
+ 444.75 669.392 lineto
+ 445.25 669.392 lineto
+ 445.75 669.392 lineto
+ 446.25 669.392 lineto
+ 446.75 669.392 lineto
+ 447.25 669.392 lineto
+ 447.75 669.392 lineto
+ 448.25 669.392 lineto
+ 448.75 669.392 lineto
+ 449.25 669.392 lineto
+ 449.75 669.392 lineto
+ 450.25 669.392 lineto
+ 450.75 669.392 lineto
+ 451.25 669.392 lineto
+ 451.75 669.392 lineto
+ 452.25 669.392 lineto
+ 452.75 669.392 lineto
+ 453.25 669.392 lineto
+ 453.75 669.392 lineto
+ 454.25 669.392 lineto
+ 454.75 669.392 lineto
+ 455.25 669.392 lineto
+ 455.75 669.392 lineto
+ 456.25 669.392 lineto
+ 456.75 669.392 lineto
+ 457.25 669.392 lineto
+ 457.75 669.392 lineto
+ 458.25 669.392 lineto
+ 458.75 669.392 lineto
+ 459.25 669.392 lineto
+ 459.75 669.392 lineto
+ 460.25 669.392 lineto
+ 460.75 669.392 lineto
+ 461.25 669.392 lineto
+ 461.75 669.392 lineto
+ 462.25 669.392 lineto
+ 462.75 669.392 lineto
+ 463.25 669.392 lineto
+ 463.75 669.392 lineto
+ 464.25 669.392 lineto
+ 464.75 669.392 lineto
+ 465.25 669.392 lineto
+ 465.75 669.392 lineto
+ 466.25 669.392 lineto
+ 466.75 669.392 lineto
+ 467.25 669.392 lineto
+ 467.75 669.392 lineto
+ 468.25 669.392 lineto
+ 468.75 669.392 lineto
+ 469.25 669.392 lineto
+ 469.75 669.392 lineto
+ 470.25 669.392 lineto
+ 470.75 669.392 lineto
+ 471.25 669.392 lineto
+ 471.75 669.392 lineto
+ 472.25 669.392 lineto
+ 472.75 669.392 lineto
+ 473.25 669.392 lineto
+ 473.75 669.392 lineto
+ 474.25 669.392 lineto
+ 474.75 669.392 lineto
+ 475.25 669.392 lineto
+ 475.75 669.392 lineto
+ 476.25 669.392 lineto
+ 476.75 669.392 lineto
+ 477.25 669.392 lineto
+ 477.75 669.392 lineto
+ 478.25 669.392 lineto
+ 478.75 669.392 lineto
+ 479.25 669.392 lineto
+ 479.75 669.392 lineto
+ 480.25 669.392 lineto
+ 480.75 669.392 lineto
+ 481.25 669.392 lineto
+ 481.75 669.392 lineto
+ 482.25 669.392 lineto
+ 482.75 669.392 lineto
+ 483.25 669.392 lineto
+ 483.75 669.392 lineto
+ 484.25 669.392 lineto
+ 484.75 669.392 lineto
+ 485.25 669.392 lineto
+ 485.75 669.392 lineto
+ 486.25 669.392 lineto
+ 486.75 669.392 lineto
+ 487.25 669.392 lineto
+ 487.75 669.392 lineto
+ 488.25 669.392 lineto
+ 488.75 669.392 lineto
+ 489.25 669.392 lineto
+ 489.75 669.392 lineto
+ 490.25 669.392 lineto
+ 490.75 669.392 lineto
+ 491.25 669.392 lineto
+ 491.75 669.392 lineto
+ 492.25 669.392 lineto
+ 492.75 669.392 lineto
+ 493.25 669.392 lineto
+ 493.75 669.392 lineto
+ 494.25 669.392 lineto
+ 494.75 669.392 lineto
+ 495.25 669.392 lineto
+ 495.75 669.392 lineto
+ 496.25 669.392 lineto
+ 496.75 669.392 lineto
+ 497.25 669.392 lineto
+ 497.75 669.392 lineto
+ 498.25 669.392 lineto
+ 498.75 669.392 lineto
+ 499.25 669.392 lineto
+ 499.75 669.392 lineto
+ 500.25 669.392 lineto
+ 500.75 669.392 lineto
+ 501.25 669.392 lineto
+ 501.75 669.392 lineto
+ 502.25 669.392 lineto
+ 502.75 669.392 lineto
+ 503.25 669.392 lineto
+ 503.75 669.392 lineto
+ 504.25 669.392 lineto
+ 504.75 669.392 lineto
+ 505.25 669.392 lineto
+ 505.75 669.392 lineto
+ 506.25 669.392 lineto
+ 506.75 669.392 lineto
+ 507.25 669.392 lineto
+ 507.75 669.392 lineto
+ 508.25 669.392 lineto
+ 508.75 669.392 lineto
+ 509.25 669.392 lineto
+ 509.75 669.392 lineto
+ 510.25 669.392 lineto
+ 510.75 669.392 lineto
+ 511.25 669.392 lineto
+ 511.75 669.392 lineto
+ 512.25 669.392 lineto
+ 512.75 669.392 lineto
+ 513.25 669.392 lineto
+ 513.75 669.392 lineto
+ 514.25 669.392 lineto
+ 514.75 669.392 lineto
+ 515.25 669.392 lineto
+ 515.75 669.392 lineto
+ 516.25 669.392 lineto
+ 516.75 669.392 lineto
+ 517.25 669.392 lineto
+ 517.75 669.392 lineto
+ 518.25 669.392 lineto
+ 518.75 669.392 lineto
+ 519.25 669.392 lineto
+ 519.75 669.392 lineto
+ 520.25 669.392 lineto
+ 520.75 669.392 lineto
+ 521 669.392 lineto
+ 521.05 669.392 lineto
+ 521.15 669.392 lineto
+ 521.35 669.392 lineto
+ 521.75 669.392 lineto
+ 522.25 669.392 lineto
+ 522.75 669.392 lineto
+ 523.25 669.392 lineto
+ 523.75 669.392 lineto
+ 524.25 669.392 lineto
+ 524.75 669.392 lineto
+ 525.25 669.392 lineto
+ 525.75 669.392 lineto
+ 526.25 669.392 lineto
+ 526.75 669.392 lineto
+ 527.25 669.392 lineto
+ 527.75 669.392 lineto
+ 528.25 669.392 lineto
+ 528.75 669.392 lineto
+ 529.25 669.392 lineto
+ 529.75 669.392 lineto
+ 530.25 669.392 lineto
+ 530.75 669.392 lineto
+ 531 669.392 lineto
+ 531.05 669.392 lineto
+ 531.15 669.392 lineto
+ 531.35 669.392 lineto
+ 531.75 669.392 lineto
+ 532.25 669.392 lineto
+ 532.75 669.392 lineto
+ 533.25 669.392 lineto
+ 533.75 669.392 lineto
+ 534.25 669.392 lineto
+ 534.75 669.392 lineto
+ 535.25 669.392 lineto
+ 535.75 669.392 lineto
+ 536.25 669.392 lineto
+ 536.75 669.392 lineto
+ 537.25 669.392 lineto
+ 537.75 669.392 lineto
+ 538.25 669.392 lineto
+ 538.75 669.392 lineto
+ 539.25 669.392 lineto
+ 539.75 669.392 lineto
+ 540.25 669.392 lineto
+ 540.75 669.392 lineto
+ 541.25 669.392 lineto
+ 541.75 669.392 lineto
+ 542.25 669.392 lineto
+ 542.75 669.392 lineto
+ 543.25 669.392 lineto
+ 543.75 669.392 lineto
+ 544.25 669.392 lineto
+ 544.75 669.392 lineto
+ 545.25 669.392 lineto
+ 545.75 669.392 lineto
+ 546.25 669.392 lineto
+ 546.75 669.392 lineto
+ 547.25 669.392 lineto
+ 547.75 669.392 lineto
+ 548.25 669.392 lineto
+ 548.75 669.392 lineto
+ 549.25 669.392 lineto
+ 549.75 669.392 lineto
+ 550.25 669.392 lineto
+ 550.75 669.392 lineto
+ 551.25 669.392 lineto
+ 551.75 669.392 lineto
+ 552.25 669.392 lineto
+ 552.75 669.392 lineto
+ 553.25 669.392 lineto
+ 553.75 669.392 lineto
+ 554.25 669.392 lineto
+ 554.75 669.392 lineto
+ 555.25 669.392 lineto
+ 555.75 669.392 lineto
+ 556.25 669.392 lineto
+ 556.75 669.392 lineto
+ 557.25 669.392 lineto
+ 557.75 669.392 lineto
+ 558.25 669.392 lineto
+ 558.75 669.392 lineto
+ 559.25 669.392 lineto
+ 559.75 669.392 lineto
+ 560.25 669.392 lineto
+ 560.75 669.392 lineto
+ 561.25 669.392 lineto
+ 561.75 669.392 lineto
+ 562.25 669.392 lineto
+ 562.75 669.392 lineto
+ 563.25 669.392 lineto
+ 563.75 669.392 lineto
+ 564.25 669.392 lineto
+ 564.75 669.392 lineto
+ 565.25 669.392 lineto
+ 565.75 669.392 lineto
+ 566.25 669.392 lineto
+ 566.75 669.392 lineto
+ 567.25 669.392 lineto
+ 567.75 669.392 lineto
+ 568.25 669.392 lineto
+ 568.75 669.392 lineto
+ 569.25 669.392 lineto
+ 569.75 669.392 lineto
+ 570.25 669.392 lineto
+ 570.75 669.392 lineto
+ 571.25 669.392 lineto
+ 571.75 669.392 lineto
+ 572.25 669.392 lineto
+ 572.75 669.392 lineto
+ 573.25 669.392 lineto
+ 573.75 669.392 lineto
+ 574.25 669.392 lineto
+ 574.75 669.392 lineto
+ 575.25 669.392 lineto
+ 575.75 669.392 lineto
+ 576.25 669.392 lineto
+ 576.75 669.392 lineto
+ 577.25 669.392 lineto
+ 577.75 669.392 lineto
+ 578.25 669.392 lineto
+ 578.75 669.392 lineto
+ 579.25 669.392 lineto
+ 579.75 669.392 lineto
+ 580.25 669.392 lineto
+ 580.75 669.392 lineto
+ 581.25 669.392 lineto
+ 581.75 669.392 lineto
+ 582.25 669.392 lineto
+ 582.75 669.392 lineto
+ 583.25 669.392 lineto
+ 583.75 669.392 lineto
+ 584.25 669.392 lineto
+ 584.75 669.392 lineto
+ 585.25 669.392 lineto
+ 585.75 669.392 lineto
+ 586.25 669.392 lineto
+ 586.75 669.392 lineto
+ 587.25 669.392 lineto
+ 587.75 669.392 lineto
+ 588.25 669.392 lineto
+ 588.75 669.392 lineto
+ 589.25 669.392 lineto
+ 589.75 669.392 lineto
+ 590.25 669.392 lineto
+ 590.75 669.392 lineto
+ 591.25 669.392 lineto
+ 591.75 669.392 lineto
+ 592.25 669.392 lineto
+ 592.75 669.392 lineto
+ 593.25 669.392 lineto
+ 593.75 669.392 lineto
+ 594.25 669.392 lineto
+ 594.75 669.392 lineto
+ 595.25 669.392 lineto
+ 595.75 669.392 lineto
+ 596.25 669.392 lineto
+ 596.75 669.392 lineto
+ 597.25 669.392 lineto
+ 597.75 669.392 lineto
+ 598.25 669.392 lineto
+ 598.75 669.392 lineto
+ 599.25 669.392 lineto
+ 599.75 669.392 lineto
+ 600.25 669.392 lineto
+ 600.75 669.392 lineto
+ 601.25 669.392 lineto
+ 601.75 669.392 lineto
+ 602.25 669.392 lineto
+ 602.75 669.392 lineto
+ 603.25 669.392 lineto
+ 603.75 669.392 lineto
+ 604.25 669.392 lineto
+ 604.75 669.392 lineto
+ 605.25 669.392 lineto
+ 605.75 669.392 lineto
+ 606.25 669.392 lineto
+ 606.75 669.392 lineto
+ 607.25 669.392 lineto
+ 607.75 669.392 lineto
+ 608.25 669.392 lineto
+ 608.75 669.392 lineto
+ 609.25 669.392 lineto
+ 609.75 669.392 lineto
+ 610.25 669.392 lineto
+ 610.75 669.392 lineto
+ 611.25 669.392 lineto
+ 611.75 669.392 lineto
+ 612.25 669.392 lineto
+ 612.75 669.392 lineto
+ 613.25 669.392 lineto
+ 613.75 669.392 lineto
+ 614.25 669.392 lineto
+ 614.75 669.392 lineto
+ 615.25 669.392 lineto
+ 615.75 669.392 lineto
+ 616.25 669.392 lineto
+ 616.75 669.392 lineto
+ 617.25 669.392 lineto
+ 617.75 669.392 lineto
+ 618.25 669.392 lineto
+ 618.75 669.392 lineto
+ 619.25 669.392 lineto
+ 619.75 669.392 lineto
+ 620.25 669.392 lineto
+ 620.75 669.392 lineto
+ 621.25 669.392 lineto
+ 621.75 669.392 lineto
+ 622.25 669.392 lineto
+ 622.75 669.392 lineto
+ 623.25 669.392 lineto
+ 623.75 669.392 lineto
+ 624.25 669.392 lineto
+ 624.75 669.392 lineto
+ 625.25 669.392 lineto
+ 625.75 669.392 lineto
+ 626.25 669.392 lineto
+ 626.75 669.392 lineto
+ 627.25 669.392 lineto
+ 627.75 669.392 lineto
+ 628.25 669.392 lineto
+ 628.75 669.392 lineto
+ 629.25 669.392 lineto
+ 629.75 669.392 lineto
+ 630.25 669.392 lineto
+ 630.75 669.392 lineto
+ 631.25 669.392 lineto
+ 631.75 669.392 lineto
+ 632.25 669.392 lineto
+ 632.75 669.392 lineto
+ 633.25 669.392 lineto
+ 633.75 669.392 lineto
+ 634.25 669.392 lineto
+ 634.75 669.392 lineto
+ 635.25 669.392 lineto
+ 635.75 669.392 lineto
+ 636.25 669.392 lineto
+ 636.75 669.392 lineto
+ 637.25 669.392 lineto
+ 637.75 669.392 lineto
+ 638.25 669.392 lineto
+ 638.75 669.392 lineto
+ 639.25 669.392 lineto
+ 639.75 669.392 lineto
+ 640.25 669.392 lineto
+ 640.75 669.392 lineto
+ 641.25 669.392 lineto
+ 641.75 669.392 lineto
+ 642.25 669.392 lineto
+ 642.75 669.392 lineto
+ 643.25 669.392 lineto
+ 643.75 669.392 lineto
+ 644.25 669.392 lineto
+ 644.75 669.392 lineto
+ 645.25 669.392 lineto
+ 645.75 669.392 lineto
+ 646.25 669.392 lineto
+ 646.75 669.392 lineto
+ 647.25 669.392 lineto
+ 647.75 669.392 lineto
+ 648.25 669.392 lineto
+ 648.75 669.392 lineto
+ 649.25 669.392 lineto
+ 649.75 669.392 lineto
+ 650.25 669.392 lineto
+ 650.75 669.392 lineto
+ 651.25 669.392 lineto
+ 651.75 669.392 lineto
+ 652.25 669.392 lineto
+ 652.75 669.392 lineto
+ 653.25 669.392 lineto
+ 653.75 669.392 lineto
+ 654.25 669.392 lineto
+ 654.75 669.392 lineto
+ 655.25 669.392 lineto
+ 655.75 669.392 lineto
+ 656.25 669.392 lineto
+ 656.75 669.392 lineto
+ 657.25 669.392 lineto
+ 657.75 669.392 lineto
+ 658.25 669.392 lineto
+ 658.75 669.392 lineto
+ 659.25 669.392 lineto
+ 659.75 669.392 lineto
+ 660.25 669.392 lineto
+ 660.75 669.392 lineto
+ 661 669.392 lineto
+ 661.05 666.241 lineto
+ 661.15 659.94 lineto
+ 661.35 647.337 lineto
+ 661.75 622.133 lineto
+ 662.25 590.627 lineto
+ 662.75 559.121 lineto
+ 663.25 527.615 lineto
+ 663.75 496.109 lineto
+ 664.25 464.604 lineto
+ 664.75 433.098 lineto
+ 665.25 401.592 lineto
+ 665.75 370.086 lineto
+ 666.25 338.58 lineto
+ 666.75 307.075 lineto
+ 667.25 275.569 lineto
+ 667.75 244.063 lineto
+ 668.25 212.557 lineto
+ 668.75 181.051 lineto
+ 669.25 149.545 lineto
+ 669.75 118.04 lineto
+ 670.25 86.5338 lineto
+ 670.75 55.028 lineto
+ 671 39.2751 lineto
+ 671.05 39.2751 lineto
+ 671.15 39.2751 lineto
+ 671.35 39.2751 lineto
+ 671.75 39.2751 lineto
+ 672.25 39.2751 lineto
+ 672.75 39.2751 lineto
+ 673.25 39.2751 lineto
+ 673.75 39.2751 lineto
+ 674.25 39.2751 lineto
+ 674.75 39.2751 lineto
+ 675.25 39.2751 lineto
+ 675.75 39.2751 lineto
+ 676.25 39.2751 lineto
+ 676.75 39.2751 lineto
+ 677.25 39.2751 lineto
+ 677.75 39.2751 lineto
+ 678.25 39.2751 lineto
+ 678.75 39.2751 lineto
+ 679.25 39.2751 lineto
+ 679.75 39.2751 lineto
+ 680.25 39.2751 lineto
+ 680.75 39.2751 lineto
+ 681.25 39.2751 lineto
+ 681.75 39.2751 lineto
+ 682.25 39.2751 lineto
+ 682.75 39.2751 lineto
+ 683.25 39.2751 lineto
+ 683.75 39.2751 lineto
+ 684.25 39.2751 lineto
+ 684.75 39.2751 lineto
+ 685.25 39.2751 lineto
+ 685.75 39.2751 lineto
+ 686.25 39.2751 lineto
+ 686.75 39.2751 lineto
+ 687.25 39.2751 lineto
+ 687.75 39.2751 lineto
+ 688.25 39.2751 lineto
+ 688.75 39.2751 lineto
+ 689.25 39.2751 lineto
+ 689.75 39.2751 lineto
+ 690.25 39.2751 lineto
+ 690.75 39.2751 lineto
+ 691.25 39.2751 lineto
+ 691.75 39.2751 lineto
+ 692.25 39.2751 lineto
+ 692.75 39.2751 lineto
+ 693.25 39.2751 lineto
+ 693.75 39.2751 lineto
+ 694.25 39.2751 lineto
+ 694.75 39.2751 lineto
+ 695.25 39.2751 lineto
+ 695.75 39.2751 lineto
+ 696.25 39.2751 lineto
+ 696.75 39.2751 lineto
+ 697.25 39.2751 lineto
+ 697.75 39.2751 lineto
+ 698.25 39.2751 lineto
+ 698.75 39.2751 lineto
+ 699.25 39.2751 lineto
+ 699.75 39.2751 lineto
+ 700.25 39.2751 lineto
+ 700.75 39.2751 lineto
+ 701.25 39.2751 lineto
+ 701.75 39.2751 lineto
+ 702.25 39.2751 lineto
+ 702.75 39.2751 lineto
+ 703.25 39.2751 lineto
+ 703.75 39.2751 lineto
+ 704.25 39.2751 lineto
+ 704.75 39.2751 lineto
+ 705.25 39.2751 lineto
+ 705.75 39.2751 lineto
+ 706.25 39.2751 lineto
+ 706.75 39.2751 lineto
+ 707.25 39.2751 lineto
+ 707.75 39.2751 lineto
+ 708.25 39.2751 lineto
+ 708.75 39.2751 lineto
+ 709.25 39.2751 lineto
+ 709.75 39.2751 lineto
+ 710.25 39.2751 lineto
+ 710.75 39.2751 lineto
+ 711.25 39.2751 lineto
+ 711.75 39.2751 lineto
+ 712.25 39.2751 lineto
+ 712.75 39.2751 lineto
+ 713.25 39.2751 lineto
+ 713.75 39.2751 lineto
+ 714.25 39.2751 lineto
+ 714.75 39.2751 lineto
+ 715.25 39.2751 lineto
+ 715.75 39.2751 lineto
+ 716.25 39.2751 lineto
+ 716.75 39.2751 lineto
+ 717.25 39.2751 lineto
+ 717.75 39.2751 lineto
+ 718.25 39.2751 lineto
+ 718.75 39.2751 lineto
+ 719.25 39.2751 lineto
+ 719.75 39.2751 lineto
+ 720.25 39.2751 lineto
+ 720.75 39.2751 lineto
+ 721.25 39.2751 lineto
+ 721.75 39.2751 lineto
+ 722.25 39.2751 lineto
+ 722.75 39.2751 lineto
+ 723.25 39.2751 lineto
+ 723.75 39.2751 lineto
+ 724.25 39.2751 lineto
+ 724.75 39.2751 lineto
+ 725.25 39.2751 lineto
+ 725.75 39.2751 lineto
+ 726.25 39.2751 lineto
+ 726.75 39.2751 lineto
+ 727.25 39.2751 lineto
+ 727.75 39.2751 lineto
+ 728.25 39.2751 lineto
+ 728.75 39.2751 lineto
+ 729.25 39.2751 lineto
+ 729.75 39.2751 lineto
+ 730.25 39.2751 lineto
+ 730.75 39.2751 lineto
+ 731.25 39.2751 lineto
+ 731.75 39.2751 lineto
+ 732.25 39.2751 lineto
+ 732.75 39.2751 lineto
+ 733.25 39.2751 lineto
+ 733.75 39.2751 lineto
+ 734.25 39.2751 lineto
+ 734.75 39.2751 lineto
+ 735.25 39.2751 lineto
+ 735.75 39.2751 lineto
+ 736.25 39.2751 lineto
+ 736.75 39.2751 lineto
+ 737.25 39.2751 lineto
+ 737.75 39.2751 lineto
+ 738.25 39.2751 lineto
+ 738.75 39.2751 lineto
+ 739.25 39.2751 lineto
+ 739.75 39.2751 lineto
+ 740.25 39.2751 lineto
+ 740.75 39.2751 lineto
+ 741.25 39.2751 lineto
+ 741.75 39.2751 lineto
+ 742.25 39.2751 lineto
+ 742.75 39.2751 lineto
+ 743.25 39.2751 lineto
+ 743.75 39.2751 lineto
+ 744.25 39.2751 lineto
+ 744.75 39.2751 lineto
+ 745.25 39.2751 lineto
+ 745.75 39.2751 lineto
+ 746.25 39.2751 lineto
+ 746.75 39.2751 lineto
+ 747.25 39.2751 lineto
+ 747.75 39.2751 lineto
+ 748.25 39.2751 lineto
+ 748.75 39.2751 lineto
+ 749.25 39.2751 lineto
+ 749.75 39.2751 lineto
+ 750.25 39.2751 lineto
+ 750.75 39.2751 lineto
+ 751.25 39.2751 lineto
+ 751.75 39.2751 lineto
+ 752.25 39.2751 lineto
+ 752.75 39.2751 lineto
+ 753.25 39.2751 lineto
+ 753.75 39.2751 lineto
+ 754.25 39.2751 lineto
+ 754.75 39.2751 lineto
+ 755.25 39.2751 lineto
+ 755.75 39.2751 lineto
+ 756.25 39.2751 lineto
+ 756.75 39.2751 lineto
+ 757.25 39.2751 lineto
+ 757.75 39.2751 lineto
+ 758.25 39.2751 lineto
+ 758.75 39.2751 lineto
+ 759.25 39.2751 lineto
+ 759.75 39.2751 lineto
+ 760.25 39.2751 lineto
+ 760.75 39.2751 lineto
+ 761.25 39.2751 lineto
+ 761.75 39.2751 lineto
+ 762.25 39.2751 lineto
+ 762.75 39.2751 lineto
+ 763.25 39.2751 lineto
+ 763.75 39.2751 lineto
+ 764.25 39.2751 lineto
+ 764.75 39.2751 lineto
+ 765.25 39.2751 lineto
+ 765.75 39.2751 lineto
+ 766.25 39.2751 lineto
+ 766.75 39.2751 lineto
+ 767.25 39.2751 lineto
+ 767.75 39.2751 lineto
+ 768.25 39.2751 lineto
+ 768.75 39.2751 lineto
+ 769.25 39.2751 lineto
+ 769.75 39.2751 lineto
+ 770.25 39.2751 lineto
+ 770.75 39.2751 lineto
+ 771.25 39.2751 lineto
+ 771.75 39.2751 lineto
+ 772.25 39.2751 lineto
+ 772.75 39.2751 lineto
+ 773.25 39.2751 lineto
+ 773.75 39.2751 lineto
+ 774.25 39.2751 lineto
+ 774.75 39.2751 lineto
+ 775.25 39.2751 lineto
+ 775.75 39.2751 lineto
+ 776.25 39.2751 lineto
+ 776.75 39.2751 lineto
+ 777.25 39.2751 lineto
+ 777.75 39.2751 lineto
+ 778.25 39.2751 lineto
+ 778.75 39.2751 lineto
+ 779.25 39.2751 lineto
+ 779.75 39.2751 lineto
+ 780.25 39.2751 lineto
+ 780.75 39.2751 lineto
+ 781.25 39.2751 lineto
+ 781.75 39.2751 lineto
+ 782.25 39.2751 lineto
+ 782.75 39.2751 lineto
+ 783.25 39.2751 lineto
+ 783.75 39.2751 lineto
+ 784.25 39.2751 lineto
+ 784.75 39.2751 lineto
+ 785.25 39.2751 lineto
+ 785.75 39.2751 lineto
+ 786.25 39.2751 lineto
+ 786.75 39.2751 lineto
+ 787.25 39.2751 lineto
+ 787.75 39.2751 lineto
+ 788.25 39.2751 lineto
+ 788.75 39.2751 lineto
+ 789.25 39.2751 lineto
+ 789.75 39.2751 lineto
+ 790.25 39.2751 lineto
+ 790.75 39.2751 lineto
+ 791.25 39.2751 lineto
+ 791.75 39.2751 lineto
+ 792.25 39.2751 lineto
+ 792.75 39.2751 lineto
+ 793.25 39.2751 lineto
+DashesProc stroke
+ newpath  793.25 39.2751 moveto
+ 793.75 39.2751 lineto
+ 794.25 39.2751 lineto
+ 794.75 39.2751 lineto
+ 795.25 39.2751 lineto
+ 795.75 39.2751 lineto
+ 796.25 39.2751 lineto
+ 796.75 39.2751 lineto
+ 797.25 39.2751 lineto
+ 797.75 39.2751 lineto
+ 798.25 39.2751 lineto
+ 798.75 39.2751 lineto
+ 799.25 39.2751 lineto
+ 799.75 39.2751 lineto
+ 800.25 39.2751 lineto
+ 800.75 39.2751 lineto
+ 801.25 39.2751 lineto
+ 801.75 39.2751 lineto
+ 802.25 39.2751 lineto
+ 802.75 39.2751 lineto
+ 803.25 39.2751 lineto
+ 803.75 39.2751 lineto
+ 804.25 39.2751 lineto
+ 804.75 39.2751 lineto
+ 805.25 39.2751 lineto
+ 805.75 39.2751 lineto
+ 806.25 39.2751 lineto
+ 806.75 39.2751 lineto
+ 807.25 39.2751 lineto
+ 807.75 39.2751 lineto
+ 808.25 39.2751 lineto
+ 808.75 39.2751 lineto
+ 809.25 39.2751 lineto
+ 809.75 39.2751 lineto
+ 810.25 39.2751 lineto
+ 810.75 39.2751 lineto
+ 811.25 39.2751 lineto
+ 811.75 39.2751 lineto
+ 812.25 39.2751 lineto
+ 812.75 39.2751 lineto
+ 813.25 39.2751 lineto
+ 813.75 39.2751 lineto
+ 814.25 39.2751 lineto
+ 814.75 39.2751 lineto
+ 815.25 39.2751 lineto
+ 815.75 39.2751 lineto
+ 816.25 39.2751 lineto
+ 816.75 39.2751 lineto
+ 817.25 39.2751 lineto
+ 817.75 39.2751 lineto
+ 818.25 39.2751 lineto
+ 818.75 39.2751 lineto
+ 819.25 39.2751 lineto
+ 819.75 39.2751 lineto
+ 820.25 39.2751 lineto
+ 820.75 39.2751 lineto
+ 821 39.2751 lineto
+ 821.05 39.2751 lineto
+ 821.15 39.2751 lineto
+ 821.35 39.2751 lineto
+ 821.75 39.2751 lineto
+ 822.25 39.2751 lineto
+ 822.75 39.2751 lineto
+ 823.25 39.2751 lineto
+ 823.75 39.2751 lineto
+ 824.25 39.2751 lineto
+ 824.75 39.2751 lineto
+ 825.25 39.2751 lineto
+ 825.75 39.2751 lineto
+ 826.25 39.2751 lineto
+ 826.75 39.2751 lineto
+ 827.25 39.2751 lineto
+ 827.75 39.2751 lineto
+ 828.25 39.2751 lineto
+ 828.75 39.2751 lineto
+ 829.25 39.2751 lineto
+ 829.75 39.2751 lineto
+ 830.25 39.2751 lineto
+ 830.75 39.2751 lineto
+ 831 39.2751 lineto
+ 831.05 39.2751 lineto
+ 831.15 39.2751 lineto
+ 831.35 39.2751 lineto
+ 831.75 39.2751 lineto
+ 832.25 39.2751 lineto
+ 832.75 39.2751 lineto
+ 833.25 39.2751 lineto
+ 833.75 39.2751 lineto
+ 834.25 39.2751 lineto
+ 834.75 39.2751 lineto
+ 835.25 39.2751 lineto
+ 835.75 39.2751 lineto
+ 836.25 39.2751 lineto
+ 836.75 39.2751 lineto
+ 837.25 39.2751 lineto
+ 837.75 39.2751 lineto
+ 838.25 39.2751 lineto
+ 838.75 39.2751 lineto
+ 839.25 39.2751 lineto
+ 839.75 39.2751 lineto
+ 840.25 39.2751 lineto
+ 840.75 39.2751 lineto
+ 841.25 39.2751 lineto
+ 841.75 39.2751 lineto
+ 842.25 39.2751 lineto
+ 842.75 39.2751 lineto
+ 843.25 39.2751 lineto
+ 843.75 39.2751 lineto
+ 844.25 39.2751 lineto
+ 844.75 39.2751 lineto
+ 845.25 39.2751 lineto
+ 845.75 39.2751 lineto
+ 846.25 39.2751 lineto
+ 846.75 39.2751 lineto
+ 847.25 39.2751 lineto
+ 847.75 39.2751 lineto
+ 848.25 39.2751 lineto
+ 848.75 39.2751 lineto
+ 849.25 39.2751 lineto
+ 849.75 39.2751 lineto
+ 850.25 39.2751 lineto
+ 850.75 39.2751 lineto
+ 851.25 39.2751 lineto
+ 851.75 39.2751 lineto
+ 852.25 39.2751 lineto
+ 852.75 39.2751 lineto
+ 853.25 39.2751 lineto
+ 853.75 39.2751 lineto
+ 854.25 39.2751 lineto
+ 854.75 39.2751 lineto
+ 855.25 39.2751 lineto
+ 855.75 39.2751 lineto
+ 856.25 39.2751 lineto
+ 856.75 39.2751 lineto
+ 857.25 39.2751 lineto
+ 857.75 39.2751 lineto
+ 858.25 39.2751 lineto
+ 858.75 39.2751 lineto
+ 859.25 39.2751 lineto
+ 859.75 39.2751 lineto
+ 860.25 39.2751 lineto
+ 860.75 39.2751 lineto
+ 861 39.2751 lineto
+DashesProc stroke
+
+% Marker "marker1" is a TextMarker marker
+81 22 0 461 78.8 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(Counter.raw) 73 4 15 DrawAdjText
+EndText
+
+% Unset clipping
+grestore
+
+ 1.0 1.0 1.0 SetBgColor
+0 0 962 4 Box fill
+
+0 4 53 684 Box fill
+
+869 4 93 684 Box fill
+
+0 688 962 33 Box fill
+
+ 1.0 1.0 1.0 SetBgColor
+902 5 56 64 Box fill
+
+0 setlinejoin
+0 setlinecap
+0 1 0 SetFgColor
+3 setlinewidth
+[  4] 0 setdash
+/DashesProc {} def
+919 16 22 Li
+7 14 0 937.5 17 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(a) 7 0 11 DrawAdjText
+EndText
+0 setlinejoin
+0 setlinecap
+1 1 0 SetFgColor
+3 setlinewidth
+[  2] 0 setdash
+/DashesProc {} def
+919 36 22 Li
+7 14 0 937.5 37 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(b) 7 0 11 DrawAdjText
+EndText
+0 setlinejoin
+0 setlinecap
+1 0.752941 0.796078 SetFgColor
+3 setlinewidth
+[ ] 0 setdash
+/DashesProc {} def
+919 56 22 Li
+19 14 0 943.5 57 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(out) 19 0 11 DrawAdjText
+EndText
+11 14 0 61 699 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(0) 7 2 11 DrawAdjText
+EndText
+18 14 0 311 699 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(5n) 14 2 11 DrawAdjText
+EndText
+25 14 0 561 699 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(10n) 21 2 11 DrawAdjText
+EndText
+25 14 0 811 699 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(15n) 21 2 11 DrawAdjText
+EndText
+0 setlinejoin
+0 setlinecap
+0 0 0 SetFgColor
+1 setlinewidth
+[ ] 0 setdash
+/DashesProc {} def
+61 690 moveto
+ 861 690 lineto
+DashesProc stroke
+186 690 moveto
+ 186 690 lineto
+DashesProc stroke
+61 690 moveto
+ 61 690 lineto
+DashesProc stroke
+436 690 moveto
+ 436 690 lineto
+DashesProc stroke
+311 690 moveto
+ 311 690 lineto
+DashesProc stroke
+686 690 moveto
+ 686 690 lineto
+DashesProc stroke
+561 690 moveto
+ 561 690 lineto
+DashesProc stroke
+811 690 moveto
+ 811 690 lineto
+DashesProc stroke
+44 14 90 24 346 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(Voltage) 44 0 11 DrawAdjText
+EndText
+11 14 90 42 669.392 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(0) 7 2 11 DrawAdjText
+EndText
+11 14 90 42 417.345 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(1) 7 2 11 DrawAdjText
+EndText
+11 14 90 42 165.298 BeginText
+9 /Helvetica-Bold SetFont
+0 0 0 SetFgColor
+(2) 7 2 11 DrawAdjText
+EndText
+0 setlinejoin
+0 setlinecap
+0 0 0 SetFgColor
+1 setlinewidth
+[ ] 0 setdash
+/DashesProc {} def
+51 680 moveto
+ 51 12 lineto
+DashesProc stroke
+51 543.368 moveto
+ 51 543.368 lineto
+DashesProc stroke
+51 669.392 moveto
+ 51 669.392 lineto
+DashesProc stroke
+51 291.322 moveto
+ 51 291.322 lineto
+DashesProc stroke
+51 417.345 moveto
+ 51 417.345 lineto
+DashesProc stroke
+51 39.2751 moveto
+ 51 39.2751 lineto
+DashesProc stroke
+51 165.298 moveto
+ 51 165.298 lineto
+DashesProc stroke
+showpage
+%Trailer
+grestore
+end
+%EOF
