@@ -8,10 +8,10 @@ proc SCHEMATIC_NAND {} {
   make input -name a -origin {360 320}
   make input -orient RXY -name b -origin {530 320}
   make output -name out -origin {480 360}
-  make input -name a -origin {400 400}
-  make input -name b -origin {400 480}
   make nmos -W 2 -origin {460 400}
   make nmos -W 2 -origin {460 480}
+  make input -name b -origin {400 400}
+  make input -name a -origin {400 480}
   make_wire 460 520 460 530
   make_wire 420 360 460 360
   make_wire 450 280 470 280

@@ -1,14 +1,14 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_FullAdder {} {
-  make HalfAdder -origin {190 270}
-  make HalfAdder -origin {600 270}
   make NAND -origin {910 290}
   make output -name Sum -origin {750 250}
-  make input -name a -origin {40 270}
-  make input -name b -origin {450 270}
   make input -name Cin -origin {40 250}
-  make output -name Cout -origin {990 290}
+  make HalfAdder -origin {190 270}
+  make HalfAdder -origin {600 270}
+  make input -name A -origin {40 270}
+  make input -name B -origin {450 270}
+  make output -name Cn -origin {990 290}
   make_wire 340 250 450 250
   make_wire 360 270 360 350
   make_wire 360 350 780 350
@@ -20,11 +20,11 @@ proc SCHEMATIC_FullAdder {} {
 
 proc ICON_FullAdder args {
   icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
-  icon_term -type input -origin {-130 0} -name a
-  icon_term -type input -origin {-130 20} -name b
   icon_term -type output -origin {130 -20} -name Sum
   icon_term -type input -origin {-130 -20} -name Cin
-  icon_term -type output -origin {130 0} -name Cout
+  icon_term -type input -origin {-130 0} -name A
+  icon_term -type input -origin {-130 20} -name B
+  icon_term -type output -origin {130 0} -name Cn
   icon_property -origin {0 0} -size large -anchor center -label FullAdder
   icon_line -130 -60 130 -60 130 60 -130 60 -130 -60
   icon_property -origin {-120 -20} -label Cn_1

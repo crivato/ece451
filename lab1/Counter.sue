@@ -1,18 +1,21 @@
-# SUE version MMI_SUE4.3.6
+# SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_Counter {} {
   make global -name GND -origin {20 160}
   make global -name GND -origin {-70 160}
   make pulse -origin {20 90}
   make pulse -pulse_width 6ns -period 12ns -origin {-70 90}
-  make output -name OUT1 -origin {90 -40}
-  make output -name OUT2 -origin {90 -20}
+  make output -name OUT1 -origin {240 -50}
+  make output -name OUT2 -origin {290 50}
+  make NAND -origin {130 -50}
   make_wire -70 130 -70 160
   make_wire 20 130 20 160
-  make_wire 20 -20 90 -20
-  make_wire -70 -40 90 -40
-  make_wire -70 50 -70 -40
-  make_wire 20 -20 20 50
+  make_wire 270 50 290 50
+  make_wire -70 -70 50 -70
+  make_wire -70 -70 -70 50
+  make_wire 210 -50 240 -50
+  make_wire 20 -50 20 50
+  make_wire 20 -50 50 -50
 }
 
 proc ICON_Counter args {
