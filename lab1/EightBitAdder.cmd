@@ -1,0 +1,1 @@
+h vdd;l gnd;stepsize 500;w cout sum7 sum6 sum5 sum4 sum3 sum2 sum1 sum0 b7 b6 b5 b4 b3 b2 b1 b0 a7 a6 a5 a4 a3 a2 a1 a0 cin;vector in cin a7 a6 a5 a4 a3 a2 a1 a0 b7 b6 b5 b4 b3 b2 b1 b0;setvector in 11111111100000000; s;analyzer sum0 sum1 sum2 sum3 sum4 sum5 sum6 sum7 cout
