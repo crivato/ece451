@@ -1,0 +1,48 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_RAMCell {} {
+  make nmos -origin {530 350}
+  make pmos -origin {530 270}
+  make nmos -origin {650 350}
+  make pmos -origin {650 270}
+  make nmos -orient R270 -origin {340 280}
+  make pmos -orient R90 -origin {460 90}
+  make nmos -orient R270 -origin {460 130}
+  make nmos -orient R270 -origin {840 130}
+  make nmos -orient R270 -origin {850 310}
+  make global -orient RXY -name vdd -origin {570 230}
+  make global -name gnd -origin {570 390}
+  make output -name Ai -origin {880 130}
+  make output -name Bi -origin {890 310}
+  make input -name WriteEn -origin {340 340}
+  make input -name ARdEn -origin {840 190}
+  make input -name BRdEn -origin {850 370}
+  make input -name RAMINi -origin {300 280}
+  make input -name FBEn -origin {460 190}
+  make input -name notFBEn -origin {460 30}
+  make_wire 390 110 420 110
+  make_wire 420 90 420 110
+  make_wire 420 110 420 130
+  make_wire 390 110 390 280
+  make_wire 380 280 390 280
+  make_wire 530 310 590 310
+  make_wire 590 310 590 350
+  make_wire 590 270 590 310
+  make_wire 750 310 650 310
+  make_wire 750 310 810 310
+  make_wire 500 110 750 110
+  make_wire 500 110 500 90
+  make_wire 500 110 500 130
+  make_wire 750 130 800 130
+  make_wire 750 130 750 110
+  make_wire 750 310 750 130
+  make_wire 470 300 390 300
+  make_wire 390 300 390 280
+  make_wire 470 300 470 270
+  make_wire 470 300 470 350
+  make_wire 530 230 570 230
+  make_wire 650 230 570 230
+  make_wire 530 390 570 390
+  make_wire 650 390 570 390
+}
+
