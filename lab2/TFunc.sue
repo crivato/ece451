@@ -1,0 +1,55 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_TFunc {} {
+  make nmos -origin {80 320}
+  make nmos -origin {80 400}
+  make nmos -origin {250 320}
+  make nmos -origin {250 400}
+  make nmos -origin {570 320}
+  make nmos -origin {570 400}
+  make nmos -origin {430 390}
+  make nmos -origin {430 310}
+  make output -name Y -origin {1370 440}
+  make input -name notS -origin {20 320}
+  make input -name notR -origin {20 400}
+  make input -name notR -origin {190 320}
+  make input -name notS -origin {370 310}
+  make input -name S -origin {190 400}
+  make input -name R -origin {370 390}
+  make input -name R -origin {510 400}
+  make input -name S -origin {510 320}
+  make input -orient R90 -name X0 -origin {80 280}
+  make input -orient R90 -name X1 -origin {250 280}
+  make input -orient R90 -name X2 -origin {430 270}
+  make input -orient R90 -name X3 -origin {570 280}
+  make input -name notS -origin {1250 320}
+  make input -name notR -origin {1250 400}
+  make input -name notR -origin {1070 320}
+  make input -name notS -origin {880 320}
+  make input -name S -origin {1070 400}
+  make input -name R -origin {880 400}
+  make input -name R -origin {700 400}
+  make input -name S -origin {700 320}
+  make input -orient R90 -name X0 -origin {760 280}
+  make input -orient R90 -name X1 -origin {940 280}
+  make input -orient R90 -name X2 -origin {1130 280}
+  make input -orient R90 -name X3 -origin {1310 280}
+  make pmos -origin {940 320}
+  make pmos -origin {760 320}
+  make pmos -origin {760 400}
+  make pmos -origin {940 400}
+  make pmos -origin {1130 320}
+  make pmos -origin {1130 400}
+  make pmos -origin {1310 320}
+  make pmos -origin {1310 400}
+  make_wire 430 430 430 440
+  make_wire 80 440 250 440
+  make_wire 250 440 430 440
+  make_wire 430 440 570 440
+  make_wire 760 440 570 440
+  make_wire 760 440 940 440
+  make_wire 940 440 1130 440
+  make_wire 1130 440 1310 440
+  make_wire 1310 440 1370 440
+}
+

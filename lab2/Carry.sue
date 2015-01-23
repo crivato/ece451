@@ -1,0 +1,54 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_Carry {} {
+  make pmos -origin {-180 -50}
+  make pmos -origin {0 -50}
+  make pmos -origin {400 -50}
+  make global -orient RXY -name vdd -origin {160 -90}
+  make input -name Phi -origin {-240 -50}
+  make input -name Phi -origin {-50 -50}
+  make input -name Phi -origin {340 -50}
+  make pmos -origin {90 40}
+  make nmos -origin {90 120}
+  make global -orient RXY -name vdd -origin {90 0}
+  make global -name gnd -origin {90 160}
+  make pmos -origin {610 90}
+  make nmos -origin {610 170}
+  make global -orient RXY -name vdd -origin {610 50}
+  make global -name gnd -origin {610 210}
+  make pmos -origin {-90 210}
+  make nmos -origin {-90 290}
+  make global -orient RXY -name vdd -origin {-90 170}
+  make global -name gnd -origin {-90 330}
+  make nmos -origin {400 250}
+  make nmos -orient R270 -origin {300 20}
+  make input -name notCi_1 -origin {260 20}
+  make input -name notCi_1 -origin {550 130}
+  make output -name Ci_1 -origin {610 130}
+  make output -name notCi -origin {400 20}
+  make output -name P -origin {330 80}
+  make global -name gnd -origin {400 290}
+  make input -name notP -origin {30 80}
+  make input -name notG -origin {-150 250}
+  make_wire 160 -90 400 -90
+  make_wire 550 130 550 90
+  make_wire 550 130 550 170
+  make_wire 30 80 30 40
+  make_wire 30 80 30 120
+  make_wire -150 250 -150 210
+  make_wire -150 250 -150 290
+  make_wire -90 250 340 250
+  make_wire -60 -50 -50 -50
+  make_wire -180 -90 0 -90
+  make_wire 160 -90 0 -90
+  make_wire 340 20 400 20
+  make_wire 90 80 300 80
+  make_wire 300 80 330 80
+  make_wire 0 -10 0 40
+  make_wire 0 40 30 40
+  make_wire 400 -10 400 20
+  make_wire 400 20 400 210
+  make_wire -180 -10 -180 210
+  make_wire -180 210 -150 210
+}
+
