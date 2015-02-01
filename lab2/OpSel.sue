@@ -1,7 +1,6 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_OpSel {} {
-  make pmos -origin {90 330}
   make nmos -origin {230 450}
   make pmos -origin {230 370}
   make global -orient RXY -name vdd -origin {230 330}
@@ -30,6 +29,7 @@ proc SCHEMATIC_OpSel {} {
   make input -name In2 -origin {-150 570}
   make input -name In2Select -origin {50 630}
   make input -name In1Select -origin {-10 470}
+  make pmos -W 1 -origin {90 330}
   make_wire 610 410 610 370
   make_wire 610 410 610 450
   make_wire 460 410 460 370

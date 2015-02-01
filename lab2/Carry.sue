@@ -1,9 +1,6 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_Carry {} {
-  make pmos -origin {-180 -50}
-  make pmos -origin {0 -50}
-  make pmos -origin {400 -50}
   make global -orient RXY -name vdd -origin {160 -90}
   make input -name Phi -origin {-240 -50}
   make input -name Phi -origin {-50 -50}
@@ -30,6 +27,9 @@ proc SCHEMATIC_Carry {} {
   make global -name gnd -origin {400 290}
   make input -name notP -origin {30 80}
   make input -name notG -origin {-150 250}
+  make pmos -W 1 -origin {-180 -50}
+  make pmos -W 1 -origin {0 -50}
+  make pmos -W 1 -origin {400 -50}
   make_wire 160 -90 400 -90
   make_wire 550 130 550 90
   make_wire 550 130 550 170

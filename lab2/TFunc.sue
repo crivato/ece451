@@ -14,11 +14,11 @@ proc SCHEMATIC_TFunc {} {
   make input -orient R90 -name X1 -origin {250 280}
   make input -orient R90 -name X2 -origin {430 270}
   make input -orient R90 -name X3 -origin {570 280}
-  make input -name notS -origin {1250 320}
-  make input -name notR -origin {1250 400}
-  make input -name notR -origin {1070 320}
+  make input -name notS -origin {1250 400}
+  make input -name notR -origin {1250 320}
+  make input -name notR -origin {1070 400}
   make input -name notS -origin {880 320}
-  make input -name S -origin {1070 400}
+  make input -name S -origin {1070 320}
   make input -name R -origin {880 400}
   make input -name R -origin {700 400}
   make input -name S -origin {700 320}

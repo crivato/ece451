@@ -7,18 +7,18 @@ proc SCHEMATIC_Shifter {} {
   make pmos -orient R90 -origin {440 430}
   make input -name Fi -origin {350 370}
   make input -name shl -origin {440 370}
-  make input -name notshl -origin {440 200}
   make input -name notshl -origin {440 520}
   make nmos -orient R270 -origin {680 310}
   make pmos -orient R90 -origin {680 280}
   make nmos -orient R270 -origin {680 460}
   make pmos -orient R90 -origin {680 430}
-  make input -name notshr -origin {680 200}
-  make input -name notshr -origin {680 520}
   make input -name shr -origin {680 370}
   make output -name RAMINi -origin {750 370}
-  make inout -name FiPlus1 -origin {540 270}
-  make inout -name Fi_1 -origin {540 470}
+  make inout -name Fi_1 -origin {550 450}
+  make input -name notshl -origin {440 200}
+  make input -name notshr -origin {680 200}
+  make input -name notshr -origin {680 520}
+  make inout -name FiPlus1 -origin {540 290}
   make_wire 400 280 400 290
   make_wire 400 290 400 310
   make_wire 400 430 400 440
@@ -36,8 +36,6 @@ proc SCHEMATIC_Shifter {} {
   make_wire 720 440 720 460
   make_wire 720 300 720 280
   make_wire 720 300 720 310
-  make_wire 640 430 640 450
-  make_wire 640 450 640 460
   make_wire 480 430 480 450
   make_wire 480 450 480 460
   make_wire 480 290 480 280
@@ -46,11 +44,11 @@ proc SCHEMATIC_Shifter {} {
   make_wire 640 290 640 310
   make_wire 750 370 750 300
   make_wire 750 370 750 440
-  make_wire 540 270 540 290
-  make_wire 540 450 540 470
   make_wire 480 290 540 290
   make_wire 540 290 640 290
-  make_wire 480 450 540 450
-  make_wire 540 450 640 450
+  make_wire 550 450 480 450
+  make_wire 550 450 640 450
+  make_wire 640 450 640 430
+  make_wire 640 450 640 460
 }
 
