@@ -16,8 +16,6 @@ proc SCHEMATIC_OpSel {} {
   make nmos -orient R270 -origin {360 440}
   make pmos -orient R90 -origin {360 380}
   make nmos -orient R270 -origin {-10 410}
-  make nmos -orient R270 -origin {-110 570}
-  make nmos -orient R270 -origin {50 570}
   make global -orient RXY -name vdd -origin {90 290}
   make output -name notOut -origin {670 410}
   make output -name Out -origin {560 480}
@@ -30,6 +28,8 @@ proc SCHEMATIC_OpSel {} {
   make input -name In2Select -origin {50 630}
   make input -name In1Select -origin {-10 470}
   make pmos -W 1 -origin {90 330}
+  make nmos -orient R270 -W 2 -origin {-110 570}
+  make nmos -orient R270 -W 2 -origin {50 570}
   make_wire 610 410 610 370
   make_wire 610 410 610 450
   make_wire 460 410 460 370

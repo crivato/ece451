@@ -5,44 +5,44 @@ proc SCHEMATIC_RAMCell {} {
   make pmos -origin {530 270}
   make nmos -origin {650 350}
   make pmos -origin {650 270}
-  make nmos -orient R270 -origin {340 280}
+  make nmos -orient R270 -origin {320 210}
   make pmos -orient R90 -origin {460 90}
-  make nmos -orient R270 -origin {460 130}
+  make nmos -orient R270 -origin {460 120}
   make global -orient RXY -name vdd -origin {570 230}
   make global -name gnd -origin {570 390}
-  make input -name WriteEn -origin {340 340}
-  make input -name RAMINi -origin {300 280}
-  make input -name FBEn -origin {460 190}
+  make input -name WriteEn -origin {320 270}
+  make input -name RAMINi -origin {280 210}
+  make input -name FBEn -origin {460 180}
   make input -name notFBEn -origin {460 30}
-  make output -name Ai -origin {770 140}
-  make output -name Bi -origin {770 300}
-  make input -orient RXY -name ARdEn -origin {850 180}
-  make nmos -orient RXY -origin {770 260}
-  make nmos -orient RXY -origin {770 180}
-  make input -orient RXY -name BRdEn -origin {830 260}
-  make_wire 390 110 420 110
-  make_wire 420 90 420 110
-  make_wire 420 110 420 130
-  make_wire 390 110 390 280
-  make_wire 380 280 390 280
+  make output -name Ai -origin {720 230}
+  make output -name Bi -origin {720 390}
+  make input -orient RXY -name ARdEn -origin {800 270}
+  make nmos -orient RXY -origin {720 350}
+  make nmos -orient RXY -origin {720 270}
+  make input -orient RXY -name BRdEn -origin {780 350}
   make_wire 530 310 590 310
   make_wire 590 310 590 350
   make_wire 590 270 590 310
-  make_wire 750 310 650 310
-  make_wire 500 110 750 110
-  make_wire 500 110 500 90
-  make_wire 500 110 500 130
-  make_wire 470 300 390 300
-  make_wire 390 300 390 280
-  make_wire 470 300 470 270
-  make_wire 470 300 470 350
   make_wire 530 230 570 230
   make_wire 650 230 570 230
   make_wire 530 390 570 390
   make_wire 650 390 570 390
-  make_wire 830 180 850 180
-  make_wire 750 220 770 220
-  make_wire 750 220 750 310
-  make_wire 750 220 750 110
+  make_wire 780 270 800 270
+  make_wire 500 90 500 110
+  make_wire 500 110 500 120
+  make_wire 690 110 690 310
+  make_wire 650 310 690 310
+  make_wire 690 310 720 310
+  make_wire 500 110 690 110
+  make_wire 360 210 390 210
+  make_wire 340 210 360 210
+  make_wire 470 300 470 350
+  make_wire 390 300 470 300
+  make_wire 470 270 470 300
+  make_wire 420 90 420 110
+  make_wire 420 110 420 120
+  make_wire 390 110 420 110
+  make_wire 390 110 390 210
+  make_wire 390 210 390 300
 }
 
