@@ -1,0 +1,69 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_RegFile {} {
+  make RAMCell -origin {490 370}
+  make RAMCell -origin {670 370}
+  make pmos -W 1 -origin {300 130}
+  make global -orient RXY -name vdd -origin {310 90}
+  make input -name Phi1 -origin {240 130}
+  make pmos -orient RXY -W 1 -origin {320 130}
+  make input -orient RXY -name Phi1 -origin {380 130}
+  make RAMCell -origin {850 370}
+  make RAMCell -origin {1030 370}
+  make input -orient R270 -name {ARdEn[0]} -origin {440 480}
+  make input -orient R270 -name {ARdEn[1]} -origin {620 480}
+  make input -orient R270 -name {ARdEn[2]} -origin {800 480}
+  make input -orient R270 -name {ARdEn[3]} -origin {980 480}
+  make input -orient R270 -name {BRdEn[0]} -origin {460 480}
+  make input -orient R270 -name {BRdEn[1]} -origin {640 480}
+  make input -orient R270 -name {BRdEn[2]} -origin {820 480}
+  make input -orient R270 -name {BRdEn[3]} -origin {1000 480}
+  make output -name Bi -origin {1130 160}
+  make output -name Ai -origin {1090 50}
+  make input -orient R270 -name {WriteEn[0]} -origin {480 480}
+  make input -orient R270 -name {FBEn[0]} -origin {500 480}
+  make input -orient R270 -name {notFBEn[0]} -origin {520 480}
+  make input -orient R270 -name {WriteEn[1]} -origin {660 480}
+  make input -orient R270 -name {FBEn[1]} -origin {680 480}
+  make input -orient R270 -name {notFBEn[1]} -origin {700 480}
+  make input -orient R270 -name {FBEn[2]} -origin {860 480}
+  make input -orient R270 -name {notFBEn[2]} -origin {880 480}
+  make input -orient R270 -name {WriteEn[2]} -origin {840 480}
+  make input -orient R270 -name {WriteEn[3]} -origin {1020 480}
+  make input -orient R270 -name {FBEn[3]} -origin {1040 480}
+  make input -orient R270 -name {notFBEn[3]} -origin {1060 480}
+  make input -name RAMINi -origin {420 670}
+  make_wire 300 90 310 90
+  make_wire 310 90 320 90
+  make_wire 650 260 650 50
+  make_wire 650 50 470 50
+  make_wire 1050 160 1050 260
+  make_wire 690 160 690 260
+  make_wire 690 160 510 160
+  make_wire 870 160 870 260
+  make_wire 870 160 690 160
+  make_wire 830 260 830 50
+  make_wire 830 50 650 50
+  make_wire 1010 50 1010 260
+  make_wire 1010 50 830 50
+  make_wire 1010 50 1090 50
+  make_wire 870 160 1050 160
+  make_wire 1050 160 1130 160
+  make_wire 510 240 510 260
+  make_wire 510 240 510 160
+  make_wire 470 50 470 210
+  make_wire 470 210 470 260
+  make_wire 300 170 300 240
+  make_wire 300 240 510 240
+  make_wire 320 170 320 210
+  make_wire 320 210 470 210
+  make_wire 540 480 540 670
+  make_wire 540 670 720 670
+  make_wire 720 670 720 480
+  make_wire 1080 480 1080 670
+  make_wire 900 480 900 670
+  make_wire 900 670 1080 670
+  make_wire 900 670 720 670
+  make_wire 420 670 540 670
+}
+
