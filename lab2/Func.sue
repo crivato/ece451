@@ -22,11 +22,35 @@ proc SCHEMATIC_Func {} {
   make nmos -W 2 -origin {430 390}
   make nmos -W 2 -origin {570 400}
   make nmos -W 2 -origin {570 320}
+  make pmos -origin {-210 80}
+  make nmos -origin {-210 160}
+  make global -orient RXY -name vdd -origin {-210 40}
+  make global -name gnd -origin {-210 200}
+  make pmos -origin {-290 410}
+  make nmos -origin {-290 490}
+  make global -orient RXY -name vdd -origin {-290 370}
+  make global -name gnd -origin {-290 530}
+  make input -name S -origin {-270 120}
+  make input -name R -origin {-350 450}
   make_wire 430 430 430 440
   make_wire 570 440 640 440
   make_wire 80 440 250 440
   make_wire 250 440 430 440
   make_wire 430 440 570 440
+  make_wire -270 120 -270 80
+  make_wire -270 120 -270 160
+  make_wire -350 410 -350 450
+  make_wire -350 490 -350 450
+  make_wire -210 120 20 120
+  make_wire 20 120 20 320
+  make_wire -290 450 20 450
+  make_wire 20 400 20 450
+  make_wire 20 120 370 120
+  make_wire 370 120 370 310
+  make_wire 130 380 130 400
+  make_wire 130 400 20 400
+  make_wire 190 320 190 380
+  make_wire 130 380 190 380
 }
 
 proc ICON_Func args {
