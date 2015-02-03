@@ -1,55 +1,98 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_TFunc {} {
-  make output -name Y -origin {1370 440}
+  make output -name Y -origin {760 440}
   make input -name notS -origin {20 320}
-  make input -name notR -origin {20 400}
   make input -name notR -origin {190 320}
   make input -name notS -origin {370 310}
   make input -name S -origin {190 400}
   make input -name R -origin {370 390}
-  make input -name R -origin {510 400}
-  make input -name S -origin {510 320}
+  make input -name R -origin {670 400}
+  make input -name S -origin {670 320}
   make input -orient R90 -name X0 -origin {80 280}
   make input -orient R90 -name X1 -origin {250 280}
   make input -orient R90 -name X2 -origin {430 270}
-  make input -orient R90 -name X3 -origin {570 280}
-  make input -name notS -origin {1250 400}
-  make input -name notR -origin {1250 320}
-  make input -name notR -origin {1070 400}
-  make input -name notS -origin {880 320}
-  make input -name S -origin {1070 320}
-  make input -name R -origin {880 400}
-  make input -name R -origin {700 400}
-  make input -name S -origin {700 320}
-  make input -orient R90 -name X0 -origin {760 280}
-  make input -orient R90 -name X1 -origin {940 280}
-  make input -orient R90 -name X2 -origin {1130 280}
-  make input -orient R90 -name X3 -origin {1310 280}
+  make input -orient R90 -name X3 -origin {730 280}
   make nmos -W 2 -origin {80 320}
   make nmos -W 2 -origin {80 400}
-  make pmos -W 4 -origin {1310 320}
-  make pmos -W 4 -origin {1310 400}
-  make pmos -W 4 -origin {1130 320}
-  make pmos -W 4 -origin {1130 400}
-  make pmos -W 4 -origin {940 320}
-  make pmos -W 4 -origin {940 400}
-  make pmos -W 4 -origin {760 320}
-  make pmos -W 4 -origin {760 400}
-  make nmos -W 2 -origin {570 320}
-  make nmos -W 2 -origin {570 400}
+  make nmos -W 2 -origin {730 320}
+  make nmos -W 2 -origin {730 400}
   make nmos -W 2 -origin {430 310}
   make nmos -W 2 -origin {430 390}
   make nmos -W 2 -origin {250 320}
   make nmos -W 2 -origin {250 400}
+  make pmos -origin {-140 30}
+  make nmos -origin {-140 110}
+  make global -orient RXY -name vdd -origin {-140 -10}
+  make global -name gnd -origin {-140 150}
+  make pmos -origin {-210 370}
+  make nmos -origin {-210 450}
+  make global -orient RXY -name vdd -origin {-210 330}
+  make global -name gnd -origin {-210 490}
+  make input -name S -origin {-200 70}
+  make input -name R -origin {-270 410}
+  make output -name notS -origin {-140 70}
+  make input -orient RY -name notS -origin {20 480}
+  make input -orient RY -name notR -origin {20 560}
+  make input -orient RY -name notR -origin {390 480}
+  make input -orient RY -name notS -origin {200 560}
+  make input -orient RY -name S -origin {390 560}
+  make input -orient RY -name R -origin {200 480}
+  make input -orient RY -name R -origin {670 480}
+  make input -orient RY -name S -origin {670 560}
+  make input -orient R90Y -name X0 -origin {730 600}
+  make input -orient R90Y -name X1 -origin {260 600}
+  make input -orient R90Y -name X2 -origin {450 600}
+  make input -orient R90Y -name X3 -origin {80 600}
+  make pmos -orient RY -W 4 -origin {80 560}
+  make pmos -orient RY -W 4 -origin {80 480}
+  make pmos -orient RY -W 4 -origin {450 560}
+  make pmos -orient RY -W 4 -origin {450 480}
+  make pmos -orient RY -W 4 -origin {260 560}
+  make pmos -orient RY -W 4 -origin {260 480}
+  make pmos -orient RY -W 4 -origin {730 560}
+  make pmos -orient RY -W 4 -origin {730 480}
   make_wire 430 430 430 440
+  make_wire -200 70 -200 30
+  make_wire -200 70 -200 110
+  make_wire -270 370 -270 410
+  make_wire -270 450 -270 410
+  make_wire -210 410 20 410
+  make_wire 20 410 20 400
   make_wire 80 440 250 440
-  make_wire 250 440 430 440
-  make_wire 430 440 570 440
-  make_wire 760 440 570 440
-  make_wire 760 440 940 440
-  make_wire 940 440 1130 440
-  make_wire 1130 440 1310 440
-  make_wire 1310 440 1370 440
+  make_wire 250 440 260 440
+  make_wire 260 440 430 440
+  make_wire 430 440 450 440
+  make_wire 730 440 450 440
+  make_wire 730 440 760 440
+}
+
+proc ICON_TFunc args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-100 -40} -name notS
+  icon_term -type input -origin {-100 -20} -name S
+  icon_term -type input -origin {-100 0} -name notR
+  icon_term -type input -origin {-100 20} -name R
+  icon_term -type output -origin {100 0} -name Y
+  icon_term -type input -origin {20 60} -orient R90Y -name X0
+  icon_term -type input -origin {0 60} -orient R90Y -name X1
+  icon_term -type input -origin {-20 60} -orient R90Y -name X2
+  icon_term -type input -origin {-40 60} -orient R90Y -name X3
+  icon_term -type output -origin {0 0} -name notR
+  icon_term -type output -origin {0 0} -name notS
+  icon_property -origin {0 0} -size large -anchor center -label TFunc
+  icon_line -100 -60 100 -60 100 60 -100 60 -100 -60
+  icon_property -origin {-90 -40} -label notS
+  icon_property -origin {-90 -20} -label S
+  icon_property -origin {-90 0} -label notR
+  icon_property -origin {-90 20} -label R
+  icon_property -origin {90 0} -anchor e -label Y
+  icon_property -origin {20 50} -anchor e -rotate 1 -label X0
+  icon_property -origin {0 50} -anchor e -rotate 1 -label X1
+  icon_property -origin {-20 50} -anchor e -rotate 1 -label X2
+  icon_property -origin {-40 50} -anchor e -rotate 1 -label X3
+  icon_property -origin {-100 280} -type user -name name
+  icon_property -origin {-100 300} -type user -name M
+  icon_property -origin {-100 320} -type user -name dpc
 }
 

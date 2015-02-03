@@ -52,3 +52,28 @@ proc SCHEMATIC_Shifter {} {
   make_wire 640 450 640 460
 }
 
+proc ICON_Shifter args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-30 -110} -orient R90 -name notshl
+  icon_term -type input -origin {-140 0} -name Fi
+  icon_term -type input -origin {0 -110} -orient R90 -name shl
+  icon_term -type input -origin {0 110} -orient R90Y -name shr
+  icon_term -type input -origin {-30 110} -orient R90Y -name notshr
+  icon_term -type inout -origin {50 -110} -orient R90Y -name FiPlus1
+  icon_term -type output -origin {140 0} -name RAMINi
+  icon_term -type inout -origin {50 110} -orient R90 -name Fi_1
+  icon_property -origin {0 0} -size large -anchor center -label Shifter
+  icon_line -140 -110 140 -110 140 110 -140 110 -140 -110
+  icon_property -origin {-30 -100} -rotate 1 -label notshl
+  icon_property -origin {-130 0} -label Fi
+  icon_property -origin {0 -100} -rotate 1 -label shl
+  icon_property -origin {0 100} -anchor e -rotate 1 -label shr
+  icon_property -origin {-30 100} -anchor e -rotate 1 -label notshr
+  icon_property -origin {50 -100} -rotate 1 -label FiPlus1
+  icon_property -origin {130 0} -anchor e -label RAMINi
+  icon_property -origin {50 100} -anchor e -rotate 1 -label Fi_1
+  icon_property -origin {-140 330} -type user -name name
+  icon_property -origin {-140 350} -type user -name M
+  icon_property -origin {-140 370} -type user -name dpc
+}
+

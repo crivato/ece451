@@ -52,3 +52,26 @@ proc SCHEMATIC_Carry {} {
   make_wire -180 210 -150 210
 }
 
+proc ICON_Carry args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-60 110} -orient R90Y -name Phi
+  icon_term -type input -origin {-100 20} -name notP
+  icon_term -type input -origin {10 110} -orient R90Y -name notCi_1
+  icon_term -type input -origin {-100 -40} -name notG
+  icon_term -type output -origin {10 -110} -orient R90Y -name notCi
+  icon_term -type output -origin {100 -40} -name P
+  icon_term -type output -origin {100 20} -name Ci_1
+  icon_property -origin {0 0} -size large -anchor center -label Carry
+  icon_line -100 -110 100 -110 100 110 -100 110 -100 -110
+  icon_property -origin {-60 100} -anchor e -rotate 1 -label Phi
+  icon_property -origin {-90 20} -label notP
+  icon_property -origin {10 100} -anchor e -rotate 1 -label notCi_1
+  icon_property -origin {-90 -40} -label notG
+  icon_property -origin {10 -100} -rotate 1 -label notCi
+  icon_property -origin {90 -40} -anchor e -label P
+  icon_property -origin {90 20} -anchor e -label Ci_1
+  icon_property -origin {-100 330} -type user -name name
+  icon_property -origin {-100 350} -type user -name M
+  icon_property -origin {-100 370} -type user -name dpc
+}
+

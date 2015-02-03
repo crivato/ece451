@@ -46,3 +46,28 @@ proc SCHEMATIC_RAMCell {} {
   make_wire 390 210 390 300
 }
 
+proc ICON_RAMCell args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {30 110} -orient R90Y -name notFBEn
+  icon_term -type input -origin {10 110} -orient R90Y -name FBEn
+  icon_term -type input -origin {50 110} -orient R90Y -name RAMINi
+  icon_term -type input -origin {-10 110} -orient R90Y -name WriteEn
+  icon_term -type output -origin {-20 -110} -orient R90Y -name Ai
+  icon_term -type input -origin {-50 110} -orient R90Y -name ARdEn
+  icon_term -type input -origin {-30 110} -orient R90Y -name BRdEn
+  icon_term -type output -origin {20 -110} -orient R90Y -name Bi
+  icon_property -origin {0 0} -size large -anchor center -label RAMCell
+  icon_line -80 -110 80 -110 80 110 -80 110 -80 -110
+  icon_property -origin {30 100} -anchor e -rotate 1 -label notFBEn
+  icon_property -origin {10 100} -anchor e -rotate 1 -label FBEn
+  icon_property -origin {50 100} -anchor e -rotate 1 -label RAMINi
+  icon_property -origin {-10 100} -anchor e -rotate 1 -label WriteEn
+  icon_property -origin {-20 -100} -rotate 1 -label Ai
+  icon_property -origin {-50 100} -anchor e -rotate 1 -label ARdEn
+  icon_property -origin {-30 100} -anchor e -rotate 1 -label BRdEn
+  icon_property -origin {20 -100} -rotate 1 -label Bi
+  icon_property -origin {-80 330} -type user -name name
+  icon_property -origin {-80 350} -type user -name M
+  icon_property -origin {-80 370} -type user -name dpc
+}
+
