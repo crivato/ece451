@@ -1,19 +1,19 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_TFunc {} {
-  make output -name Y -origin {760 440}
-  make input -name S -origin {190 400}
+  make output -name Y -origin {670 440}
+  make input -name S -origin {190 320}
   make input -name R -origin {370 390}
-  make input -name R -origin {670 400}
-  make input -name S -origin {670 320}
+  make input -name R -origin {580 400}
+  make input -name S -origin {580 320}
   make input -orient R90 -name X0 -origin {80 280}
   make input -orient R90 -name X1 -origin {250 280}
   make input -orient R90 -name X2 -origin {430 270}
-  make input -orient R90 -name X3 -origin {730 280}
+  make input -orient R90 -name X3 -origin {640 280}
   make nmos -W 2 -origin {80 320}
   make nmos -W 2 -origin {80 400}
-  make nmos -W 2 -origin {730 320}
-  make nmos -W 2 -origin {730 400}
+  make nmos -W 2 -origin {640 320}
+  make nmos -W 2 -origin {640 400}
   make nmos -W 2 -origin {430 310}
   make nmos -W 2 -origin {430 390}
   make nmos -W 2 -origin {250 320}
@@ -30,9 +30,9 @@ proc SCHEMATIC_TFunc {} {
   make input -name R -origin {-280 400}
   make input -orient RY -name S -origin {390 560}
   make input -orient RY -name R -origin {200 480}
-  make input -orient RY -name R -origin {670 480}
-  make input -orient RY -name S -origin {670 560}
-  make input -orient R90Y -name X0 -origin {730 600}
+  make input -orient RY -name R -origin {580 480}
+  make input -orient RY -name S -origin {580 560}
+  make input -orient R90Y -name X0 -origin {640 600}
   make input -orient R90Y -name X1 -origin {260 600}
   make input -orient R90Y -name X2 -origin {450 600}
   make input -orient R90Y -name X3 -origin {80 600}
@@ -42,8 +42,8 @@ proc SCHEMATIC_TFunc {} {
   make pmos -orient RY -W 4 -origin {450 480}
   make pmos -orient RY -W 4 -origin {260 560}
   make pmos -orient RY -W 4 -origin {260 480}
-  make pmos -orient RY -W 4 -origin {730 560}
-  make pmos -orient RY -W 4 -origin {730 480}
+  make pmos -orient RY -W 4 -origin {640 560}
+  make pmos -orient RY -W 4 -origin {640 480}
   make_wire 430 430 430 440
   make_wire -200 70 -200 30
   make_wire -200 70 -200 110
@@ -53,29 +53,30 @@ proc SCHEMATIC_TFunc {} {
   make_wire 250 440 260 440
   make_wire 260 440 430 440
   make_wire 430 440 450 440
-  make_wire 730 440 450 440
-  make_wire 730 440 760 440
-  make_wire 120 320 120 400
-  make_wire 20 400 120 400
-  make_wire 120 320 190 320
+  make_wire 640 440 670 440
   make_wire 20 560 -140 560
   make_wire -140 560 -140 400
   make_wire -140 400 -220 400
-  make_wire -140 400 20 400
   make_wire 390 480 310 480
   make_wire 310 480 310 720
   make_wire 310 720 -140 720
   make_wire -140 720 -140 560
-  make_wire 20 70 20 320
-  make_wire -50 70 -50 480
   make_wire 20 480 -50 480
   make_wire -50 70 -140 70
-  make_wire -50 70 20 70
   make_wire 20 480 120 480
   make_wire 120 480 120 560
   make_wire 120 560 200 560
   make_wire 370 310 370 70
-  make_wire 370 70 20 70
+  make_wire 450 440 640 440
+  make_wire -140 320 20 320
+  make_wire 20 350 190 350
+  make_wire -140 320 -140 400
+  make_wire 190 350 190 400
+  make_wire 20 320 20 350
+  make_wire 370 70 -50 70
+  make_wire -50 400 20 400
+  make_wire -50 400 -50 70
+  make_wire -50 400 -50 480
 }
 
 proc ICON_TFunc args {
