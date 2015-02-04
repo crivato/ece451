@@ -5,51 +5,52 @@ proc SCHEMATIC_Carry {} {
   make input -name Phi -origin {-240 -50}
   make input -name Phi -origin {-50 -50}
   make input -name Phi -origin {340 -50}
-  make pmos -origin {90 40}
-  make nmos -origin {90 120}
-  make global -orient RXY -name vdd -origin {90 0}
-  make global -name gnd -origin {90 160}
+  make pmos -origin {90 240}
+  make nmos -origin {90 320}
+  make global -orient RXY -name vdd -origin {90 200}
+  make global -name gnd -origin {90 360}
   make pmos -origin {610 90}
   make nmos -origin {610 170}
   make global -orient RXY -name vdd -origin {610 50}
   make global -name gnd -origin {610 210}
-  make pmos -origin {-90 210}
-  make nmos -origin {-90 290}
-  make global -orient RXY -name vdd -origin {-90 170}
-  make global -name gnd -origin {-90 330}
-  make nmos -origin {400 250}
-  make nmos -orient R270 -origin {300 20}
-  make input -name notCi_1 -origin {260 20}
-  make input -name notCi_1 -origin {550 130}
+  make pmos -origin {-90 410}
+  make nmos -origin {-90 490}
+  make global -orient RXY -name vdd -origin {-90 370}
+  make global -name gnd -origin {-90 530}
+  make nmos -origin {400 450}
+  make nmos -orient R270 -origin {300 220}
+  make input -name notCi_1 -origin {260 220}
   make output -name Ci_1 -origin {610 130}
-  make output -name notCi -origin {400 20}
-  make output -name P -origin {330 80}
-  make global -name gnd -origin {400 290}
-  make input -name notP -origin {30 80}
-  make input -name notG -origin {-150 250}
+  make output -name notCi -origin {400 220}
+  make output -name P -origin {330 280}
+  make global -name gnd -origin {400 490}
+  make input -name notP -origin {30 280}
+  make input -name notG -origin {-150 450}
   make pmos -W 1 -origin {-180 -50}
   make pmos -W 1 -origin {0 -50}
   make pmos -W 1 -origin {400 -50}
   make_wire 160 -90 400 -90
-  make_wire 550 130 550 90
-  make_wire 550 130 550 170
-  make_wire 30 80 30 40
-  make_wire 30 80 30 120
-  make_wire -150 250 -150 210
-  make_wire -150 250 -150 290
-  make_wire -90 250 340 250
+  make_wire 30 280 30 240
+  make_wire 30 280 30 320
+  make_wire -150 450 -150 410
+  make_wire -150 450 -150 490
+  make_wire -90 450 340 450
   make_wire -60 -50 -50 -50
   make_wire -180 -90 0 -90
   make_wire 160 -90 0 -90
-  make_wire 340 20 400 20
-  make_wire 90 80 300 80
-  make_wire 300 80 330 80
-  make_wire 0 -10 0 40
-  make_wire 0 40 30 40
-  make_wire 400 -10 400 20
-  make_wire 400 20 400 210
-  make_wire -180 -10 -180 210
-  make_wire -180 210 -150 210
+  make_wire 340 220 400 220
+  make_wire 90 280 300 280
+  make_wire 300 280 330 280
+  make_wire 0 240 30 240
+  make_wire 400 220 400 410
+  make_wire -180 410 -150 410
+  make_wire 0 240 0 -10
+  make_wire 400 220 400 -10
+  make_wire -180 410 -180 -10
+  make_wire 260 220 260 130
+  make_wire 260 130 550 130
+  make_wire 550 130 550 170
+  make_wire 550 130 550 90
 }
 
 proc ICON_Carry args {
