@@ -4,16 +4,16 @@ proc SCHEMATIC_Simulation {} {
   make Carry -origin {520 430}
   make global -name gnd -origin {380 750}
   make output -name P -origin {620 390}
-  make output -name Cl_1 -origin {620 450}
-  make pwl_source -edges {200ns 400ns} -repeat 1 -origin {210 440}
-  make pwl_source -edges {400ns 800ns} -repeat 1 -origin {300 520}
-  make pwl_source -edges {800ns 1600ns} -repeat 1 -origin {490 680}
   make name_net_s -name notCi_1 -origin {510 590}
   make output -name NotCi -origin {620 280}
   make name_net_s -name Phi -origin {420 570}
   make name_net_s -name notP -origin {370 450}
   make name_net_s -name notG -origin {300 390}
-  make pwl_source -edges {100ns 300ns 500ns 700ns 900ns 1100ns 1300ns 1500ns 1700ns 1900ns} -origin {380 630}
+  make output -name Ci_1 -origin {620 450}
+  make pwl_source -edges {50ns 150ns 250ns 350ns 450ns 550ns 650ns 750ns 850ns 950ns} -origin {380 630}
+  make pwl_source -edges {100ps 200ns 300ns 500ns 600ns} -repeat 1 -origin {210 440}
+  make pwl_source -edges {300ns 600ns} -repeat 1 -origin {490 680}
+  make pwl_source -edges {100ns 300ns 400ns 600ns} -repeat 1 -origin {300 520}
   make_wire 490 750 490 720
   make_wire 380 670 380 750
   make_wire 380 750 490 750

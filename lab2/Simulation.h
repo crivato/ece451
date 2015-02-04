@@ -33,5 +33,5 @@
 VDD vdd 0 DC vddp 
 
 .TEMP 105
-.TRAN 10p 2u
+.TRAN 10p 700n
 *********************** end header ******************************
