@@ -1,0 +1,41 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_Simulation {} {
+  make Carry -origin {520 430}
+  make global -name gnd -origin {380 750}
+  make output -name P -origin {620 390}
+  make output -name Cl_1 -origin {620 450}
+  make pwl_source -edges {200ns 400ns} -repeat 1 -origin {210 440}
+  make pwl_source -edges {400ns 800ns} -repeat 1 -origin {300 520}
+  make pwl_source -edges {800ns 1600ns} -repeat 1 -origin {490 680}
+  make name_net_s -name notCi_1 -origin {510 590}
+  make output -name NotCi -origin {620 280}
+  make name_net_s -name Phi -origin {420 570}
+  make name_net_s -name notP -origin {370 450}
+  make name_net_s -name notG -origin {300 390}
+  make pwl_source -edges {100ns 300ns 500ns 700ns 900ns 1100ns 1300ns 1500ns 1700ns 1900ns} -origin {380 630}
+  make_wire 490 750 490 720
+  make_wire 380 670 380 750
+  make_wire 380 750 490 750
+  make_wire 300 560 300 750
+  make_wire 300 750 380 750
+  make_wire 210 480 210 750
+  make_wire 210 750 300 750
+  make_wire 490 640 490 590
+  make_wire 530 590 530 540
+  make_wire 380 590 380 570
+  make_wire 460 570 460 540
+  make_wire 300 480 300 450
+  make_wire 210 390 210 400
+  make_wire 530 320 530 280
+  make_wire 530 280 620 280
+  make_wire 510 590 490 590
+  make_wire 510 590 530 590
+  make_wire 420 570 380 570
+  make_wire 420 570 460 570
+  make_wire 370 450 300 450
+  make_wire 370 450 420 450
+  make_wire 300 390 420 390
+  make_wire 300 390 210 390
+}
+
