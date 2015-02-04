@@ -1,6 +1,6 @@
 # SUE version MMI_SUE5.5.4
 
-proc SCHEMATIC_Simulation {} {
+proc SCHEMATIC_CarrySimulation {} {
   make Carry -origin {520 430}
   make global -name gnd -origin {380 750}
   make output -name P -origin {620 390}
