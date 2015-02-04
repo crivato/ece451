@@ -1,0 +1,71 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_RAMCellSimulation {} {
+  make RAMCell -origin {720 420}
+  make inverter -orient R270 -origin {330 450}
+  make pwl_source -origin {330 710}
+  make name_net_s -name FEBn -origin {590 610}
+  make name_net_s -name notFEBn -origin {590 630}
+  make pwl_source -origin {380 710}
+  make name_net_s -name RAMINi -origin {590 650}
+  make pwl_source -origin {260 710}
+  make global -name gnd -origin {330 790}
+  make pwl_source -origin {200 710}
+  make pwl_source -origin {140 710}
+  make output -name Bi -origin {830 250}
+  make output -name Ai -origin {830 220}
+  make name_net_s -name WriteEn -origin {590 590}
+  make name_net_s -name BRdEn -origin {590 570}
+  make name_net_s -name ARdEn -origin {590 550}
+  make_wire 420 340 330 340
+  make_wire 330 340 330 400
+  make_wire 330 540 290 540
+  make_wire 290 310 450 310
+  make_wire 290 310 290 540
+  make_wire 200 790 260 790
+  make_wire 700 310 700 220
+  make_wire 700 220 830 220
+  make_wire 740 310 740 250
+  make_wire 740 250 830 250
+  make_wire 750 530 750 630
+  make_wire 670 530 670 550
+  make_wire 710 530 710 590
+  make_wire 730 530 730 610
+  make_wire 690 530 690 570
+  make_wire 260 280 480 280
+  make_wire 260 750 260 790
+  make_wire 200 250 510 250
+  make_wire 200 750 200 790
+  make_wire 330 750 330 790
+  make_wire 140 750 140 790
+  make_wire 140 790 200 790
+  make_wire 770 530 770 650
+  make_wire 590 650 770 650
+  make_wire 140 220 540 220
+  make_wire 380 650 380 670
+  make_wire 380 650 590 650
+  make_wire 380 750 380 790
+  make_wire 260 790 330 790
+  make_wire 330 790 380 790
+  make_wire 140 220 140 670
+  make_wire 260 280 260 670
+  make_wire 330 480 330 540
+  make_wire 330 540 330 670
+  make_wire 540 220 540 550
+  make_wire 540 550 590 550
+  make_wire 590 550 670 550
+  make_wire 480 280 480 590
+  make_wire 480 590 590 590
+  make_wire 590 590 710 590
+  make_wire 200 250 200 670
+  make_wire 450 310 450 610
+  make_wire 450 610 590 610
+  make_wire 590 610 730 610
+  make_wire 510 250 510 570
+  make_wire 510 570 590 570
+  make_wire 590 570 690 570
+  make_wire 420 340 420 630
+  make_wire 420 630 590 630
+  make_wire 590 630 750 630
+}
+
