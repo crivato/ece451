@@ -1,0 +1,77 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_FuncSimulation {} {
+  make Func -origin {480 430}
+  make inverter -origin {250 390}
+  make inverter -origin {250 480}
+  make global -name gnd -origin {240 650}
+  make name_net_s -name notR -origin {340 390}
+  make name_net_s -name R -origin {310 440}
+  make name_net_s -name notS -origin {330 480}
+  make name_net_s -name S -origin {370 500}
+  make output -name Y -origin {570 430}
+  make name_net_s -name X0 -origin {550 500}
+  make name_net_s -name X1 -origin {490 510}
+  make name_net_s -name X2 -origin {450 510}
+  make name_net_s -name X3 -origin {390 510}
+  make pwl_source -edges {3200ns 6400ns} -origin {350 560}
+  make pwl_source -name X0 -edges {400ns 800ns 1200ns 1600ns 2000ns 2400ns 2800ns 3200ns 3600ns 4000ns 4400ns 4800ns 5200ns 5600ns 6000ns 6400ns} -repeat 1 -origin {570 560}
+  make pwl_source -edges {800ns 1600ns 2400ns 3200ns 4000ns 4800ns 5600ns 6400ns} -origin {500 560}
+  make pwl_source -edges {1600ns 3200ns 4800ns 6400ns} -repeat 1 -origin {430 560}
+  make pwl_source -edges {100ns 200ns 300ns 400ns 500ns 600ns 700ns 800ns 900ns 1000ns 1100ns 1200ns 1300ns 1400ns 1500ns 1600ns 1700ns 1800ns 1900ns 2000ns 2100ns 2200ns 2300ns 2400ns 2500ns 2600ns 2700ns 2800ns 2900ns 3000ns 3100ns 3200ns 3300ns 3400ns 3500ns 3600ns 3700ns 3800ns 3900ns 4000ns 4100ns 4200ns 4300ns 4400ns 4500ns 4600ns 4700ns 4800ns 4900ns 5000ns 5100ns 5200ns 5300ns 5400ns 5500ns 5600ns 5700ns 5800ns 5900ns 6000ns 6100ns 6200ns 6300ns 6400ns 6500ns} -origin {40 540}
+  make pwl_source -edges {200ns 400ns 600ns 800ns 1000ns 1200ns 1400ns 1600ns 1800ns 2000ns 2200ns 2400ns 2600ns 2800ns 3000ns 3200ns 3400ns 3600ns 3800ns 4000ns 4200ns 4400ns 4600ns 4800ns 5000ns 5200ns 5400ns 5600ns 5800ns 6000ns 6200ns 64000ns 6600ns} -repeat 1 -origin {130 540}
+  make_wire 130 500 130 480
+  make_wire 130 480 220 480
+  make_wire 360 480 360 430
+  make_wire 360 430 390 430
+  make_wire 130 500 200 500
+  make_wire 200 500 200 540
+  make_wire 380 450 380 500
+  make_wire 200 540 300 540
+  make_wire 350 520 350 510
+  make_wire 400 510 400 500
+  make_wire 400 500 440 500
+  make_wire 440 500 440 490
+  make_wire 430 520 430 510
+  make_wire 460 510 460 490
+  make_wire 500 520 500 510
+  make_wire 480 510 480 490
+  make_wire 500 490 500 500
+  make_wire 340 440 340 410
+  make_wire 380 450 390 450
+  make_wire 300 500 300 540
+  make_wire 340 410 390 410
+  make_wire 220 390 40 390
+  make_wire 40 390 40 440
+  make_wire 40 500 40 440
+  make_wire 240 650 130 650
+  make_wire 130 650 130 580
+  make_wire 130 650 40 650
+  make_wire 40 650 40 580
+  make_wire 350 600 350 650
+  make_wire 350 650 240 650
+  make_wire 350 650 430 650
+  make_wire 430 650 430 600
+  make_wire 500 600 500 650
+  make_wire 340 390 390 390
+  make_wire 340 390 300 390
+  make_wire 310 440 40 440
+  make_wire 310 440 340 440
+  make_wire 330 480 300 480
+  make_wire 330 480 360 480
+  make_wire 370 500 300 500
+  make_wire 370 500 380 500
+  make_wire 490 510 500 510
+  make_wire 490 510 480 510
+  make_wire 450 510 430 510
+  make_wire 450 510 460 510
+  make_wire 390 510 350 510
+  make_wire 390 510 400 510
+  make_wire 570 500 570 520
+  make_wire 500 500 550 500
+  make_wire 550 500 570 500
+  make_wire 570 600 570 650
+  make_wire 430 650 500 650
+  make_wire 500 650 570 650
+}
+
