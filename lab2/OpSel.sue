@@ -53,3 +53,28 @@ proc SCHEMATIC_OpSel {} {
   make_wire 90 410 170 410
 }
 
+proc ICON_OpSel args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-20 110} -orient R90Y -name notPhi1
+  icon_term -type input -origin {0 110} -orient R90Y -name Phi1
+  icon_term -type input -origin {-150 -40} -name In1
+  icon_term -type input -origin {-150 -20} -name In1Select
+  icon_term -type input -origin {-150 0} -name In2
+  icon_term -type input -origin {-150 20} -name In2Select
+  icon_term -type output -origin {150 -20} -name notOut
+  icon_term -type output -origin {150 0} -name Out
+  icon_property -origin {0 0} -size large -anchor center -label OpSel
+  icon_line -150 -110 150 -110 150 110 -150 110 -150 -110
+  icon_property -origin {-20 100} -anchor e -rotate 1 -label notPhi1
+  icon_property -origin {0 100} -anchor e -rotate 1 -label Phi1
+  icon_property -origin {-140 -40} -label In1
+  icon_property -origin {-140 -20} -label In1Select
+  icon_property -origin {-140 0} -label In2
+  icon_property -origin {-140 20} -label In2Select
+  icon_property -origin {140 -20} -anchor e -label notOut
+  icon_property -origin {140 0} -anchor e -label Out
+  icon_property -origin {-150 330} -type user -name name
+  icon_property -origin {-150 350} -type user -name M
+  icon_property -origin {-150 370} -type user -name dpc
+}
+

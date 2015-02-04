@@ -67,3 +67,30 @@ proc SCHEMATIC_RegFile {} {
   make_wire 420 670 540 670
 }
 
+proc ICON_RegFile args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-140 0} -name RAMINi
+  icon_term -type output -origin {140 -20} -name Ai
+  icon_term -type input -origin {-60 160} -orient R90Y -name Phi1
+  icon_term -type output -origin {140 0} -name Bi
+  icon_term -type input -origin {-40 160} -orient R90Y -name {ARdEn[3:0]}
+  icon_term -type input -origin {-20 160} -orient R90Y -name {BRdEn[3:0]}
+  icon_term -type input -origin {0 160} -orient R90Y -name {WriteEn[3:0]}
+  icon_term -type input -origin {20 160} -orient R90Y -name {FBEn[3:0]}
+  icon_term -type input -origin {40 160} -orient R90Y -name {notFBEn[3:0]}
+  icon_property -origin {0 0} -size large -anchor center -label RegFile
+  icon_line -140 -160 140 -160 140 160 -140 160 -140 -160
+  icon_property -origin {-130 0} -label RAMINi
+  icon_property -origin {130 -20} -anchor e -label Ai
+  icon_property -origin {-60 150} -anchor e -rotate 1 -label Phi1
+  icon_property -origin {130 0} -anchor e -label Bi
+  icon_property -origin {-40 150} -anchor e -rotate 1 -label ARdEn
+  icon_property -origin {-20 150} -anchor e -rotate 1 -label BRdEn
+  icon_property -origin {0 150} -anchor e -rotate 1 -label WriteEn
+  icon_property -origin {20 150} -anchor e -rotate 1 -label FBEn
+  icon_property -origin {40 150} -anchor e -rotate 1 -label notFBEn
+  icon_property -origin {-140 380} -type user -name name
+  icon_property -origin {-140 400} -type user -name M
+  icon_property -origin {-140 420} -type user -name dpc
+}
+
