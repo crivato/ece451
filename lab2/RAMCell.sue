@@ -14,12 +14,12 @@ proc SCHEMATIC_RAMCell {} {
   make input -name RAMINi -origin {280 210}
   make input -name FBEn -origin {460 180}
   make input -name notFBEn -origin {460 30}
-  make output -name Ai -origin {720 230}
-  make output -name Bi -origin {720 390}
-  make input -orient RXY -name ARdEn -origin {800 270}
+  make output -name Ai -origin {720 390}
+  make output -name Bi -origin {720 230}
+  make input -orient RXY -name ARdEn -origin {780 350}
   make nmos -orient RXY -origin {720 350}
   make nmos -orient RXY -origin {720 270}
-  make input -orient RXY -name BRdEn -origin {780 350}
+  make input -orient RXY -name BRdEn -origin {780 270}
   make_wire 530 310 590 310
   make_wire 590 310 590 350
   make_wire 590 270 590 310
@@ -27,7 +27,6 @@ proc SCHEMATIC_RAMCell {} {
   make_wire 650 230 570 230
   make_wire 530 390 570 390
   make_wire 650 390 570 390
-  make_wire 780 270 800 270
   make_wire 500 90 500 110
   make_wire 500 110 500 120
   make_wire 690 110 690 310
