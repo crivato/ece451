@@ -1,8 +1,6 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_ALU {} {
-  make Func -origin {160 460}
-  make Func -orient RY -origin {160 310}
   make Carry -origin {440 390}
   make output -orient R270 -name notCi -origin {450 280}
   make output -name Fi -origin {840 390}
@@ -39,6 +37,8 @@ proc SCHEMATIC_ALU {} {
   make input -name Ri -origin {70 330}
   make input -name Ri -origin {70 440}
   make TFunc -origin {680 390}
+  make Func -origin {160 460}
+  make Func -orient RY -origin {160 310}
   make_wire 310 410 340 410
   make_wire 310 350 340 350
   make_wire 250 310 310 310
