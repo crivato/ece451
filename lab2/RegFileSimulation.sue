@@ -3,44 +3,143 @@
 proc SCHEMATIC_RegFileSimulation {} {
   make RegFile -origin {520 320}
   make OpSel -origin {990 80}
-  make OpSel -origin {990 370}
-  make pwl_source -origin {80 600}
-  make inverter -orient R270 -origin {80 450}
-  make global -name gnd -origin {80 710}
-  make output -name OpSel2Out -origin {1140 370}
-  make output -name OpSel2notOut -origin {1140 350}
+  make OpSel -origin {990 360}
+  make pwl_source -origin {80 720}
+  make inverter -orient R270 -origin {80 600}
+  make global -name gnd -origin {80 830}
+  make output -name OpSel2Out -origin {1140 360}
+  make output -name OpSel2notOut -origin {1140 340}
   make output -name OpSel1notOut -origin {1140 60}
   make output -name OpSel1Out -origin {1140 80}
-  make_wire 80 400 80 390
-  make_wire 80 390 180 390
-  make_wire 180 390 180 570
-  make_wire 180 570 970 570
-  make_wire 970 570 970 480
-  make_wire 970 570 1220 570
-  make_wire 1220 570 1220 240
-  make_wire 1220 240 970 240
-  make_wire 970 240 970 190
-  make_wire 80 520 150 520
-  make_wire 150 520 150 610
-  make_wire 990 610 990 480
-  make_wire 80 520 80 560
-  make_wire 80 520 80 480
-  make_wire 1250 610 1250 220
-  make_wire 1250 220 990 220
-  make_wire 990 220 990 190
-  make_wire 990 610 1250 610
-  make_wire 80 640 80 710
-  make_wire 460 480 460 610
-  make_wire 460 610 150 610
-  make_wire 460 610 990 610
-  make_wire 660 300 790 300
+  make pwl_source -origin {-10 720}
+  make pwl_source -origin {-120 720}
+  make pwl_source -origin {-190 720}
+  make pwl_source -origin {-260 720}
+  make pwl_source -origin {-330 720}
+  make pwl_source -origin {-390 720}
+  make pwl_source -origin {-460 720}
+  make pwl_source -origin {-550 710}
+  make inverter -orient R270 -origin {-550 520}
+  make name_net_s -name In1Select -origin {390 60}
+  make name_net_s -name In2Select -origin {390 80}
+  make name_net_s -name OpSel1In1 -origin {390 40}
+  make name_net_s -name OpSel1In2 -origin {710 300}
+  make name_net_s -name OpSel2In1 -origin {710 320}
+  make name_net_s -name notFBEn -origin {380 590}
+  make name_net_s -name FBEn -origin {380 610}
+  make name_net_s -name WriteEn -origin {380 630}
+  make name_net_s -name BRdEn -origin {380 650}
+  make name_net_s -name ArdEn -origin {380 670}
+  make name_net_s -name Phi -origin {380 710}
+  make name_net_s -name notPhi -origin {380 690}
+  make pwl_source -origin {-60 720}
+  make_wire 180 530 180 690
+  make_wire -10 530 80 530
+  make_wire 80 530 180 530
+  make_wire -10 530 -10 680
   make_wire 790 300 790 80
   make_wire 790 80 840 80
-  make_wire 660 320 790 320
-  make_wire 790 320 790 370
-  make_wire 790 370 840 370
-  make_wire 730 40 730 710
-  make_wire 730 40 840 40
-  make_wire 80 710 730 710
+  make_wire 80 760 80 830
+  make_wire -10 760 -10 830
+  make_wire -120 830 -120 760
+  make_wire -190 760 -190 830
+  make_wire -260 760 -260 830
+  make_wire -330 760 -330 830
+  make_wire -390 760 -390 830
+  make_wire -460 830 -460 760
+  make_wire 770 340 840 340
+  make_wire 840 100 750 100
+  make_wire 750 380 840 380
+  make_wire 710 300 660 300
+  make_wire 710 300 790 300
+  make_wire 710 320 660 320
+  make_wire 80 530 80 550
+  make_wire 80 630 80 650
+  make_wire 80 650 80 680
+  make_wire 380 590 560 590
+  make_wire 380 630 270 630
+  make_wire 380 630 520 630
+  make_wire 380 650 240 650
+  make_wire 380 650 500 650
+  make_wire 380 670 480 670
+  make_wire 380 710 150 710
+  make_wire 380 710 460 710
+  make_wire 150 650 150 710
+  make_wire 80 650 150 650
+  make_wire 380 690 180 690
+  make_wire -550 80 -550 470
+  make_wire 770 60 840 60
+  make_wire -550 830 -460 830
+  make_wire -460 830 -390 830
+  make_wire -550 630 -490 630
+  make_wire 300 610 380 610
+  make_wire 380 610 540 610
+  make_wire 330 590 380 590
+  make_wire 840 340 840 360
+  make_wire 840 380 840 360
+  make_wire 840 380 840 390
+  make_wire 840 320 710 320
+  make_wire 80 830 770 830
+  make_wire 770 60 770 340
+  make_wire 750 80 750 100
+  make_wire 750 100 750 380
+  make_wire 460 710 990 710
+  make_wire 990 710 1210 710
+  make_wire 380 690 970 690
+  make_wire 970 690 1180 690
+  make_wire 990 190 990 210
+  make_wire 970 190 970 230
+  make_wire -390 830 -330 830
+  make_wire -330 830 -260 830
+  make_wire 480 480 480 670
+  make_wire -490 60 -490 630
+  make_wire -260 410 -260 680
+  make_wire -550 750 -550 830
+  make_wire -550 550 -550 630
+  make_wire 990 470 990 710
+  make_wire 970 470 970 690
+  make_wire 500 480 500 650
+  make_wire 540 480 540 610
+  make_wire 560 480 560 590
+  make_wire 460 480 460 710
+  make_wire -190 440 -190 680
+  make_wire -460 40 -460 680
+  make_wire 1180 230 1180 690
+  make_wire 970 230 1180 230
+  make_wire 770 360 770 830
+  make_wire 770 360 840 360
+  make_wire 520 480 520 630
+  make_wire -330 380 -330 680
+  make_wire 1210 210 1210 710
+  make_wire 990 210 1210 210
+  make_wire -120 470 -120 680
+  make_wire -390 320 -390 680
+  make_wire -550 630 -550 670
+  make_wire -550 670 -550 680
+  make_wire 210 500 210 670
+  make_wire 210 670 380 670
+  make_wire -10 830 80 830
+  make_wire -60 760 -60 830
+  make_wire -60 830 -10 830
+  make_wire -60 500 -60 680
+  make_wire 210 500 -60 500
+  make_wire -120 470 240 470
+  make_wire 240 470 240 650
+  make_wire -260 410 300 410
+  make_wire 300 410 300 610
+  make_wire -490 60 390 60
+  make_wire 390 60 770 60
+  make_wire -190 440 270 440
+  make_wire 270 440 270 630
+  make_wire -260 830 -190 830
+  make_wire -190 830 -120 830
+  make_wire -120 830 -60 830
+  make_wire -330 380 330 380
+  make_wire 330 380 330 590
+  make_wire -550 80 390 80
+  make_wire 390 80 750 80
+  make_wire -460 40 390 40
+  make_wire 390 40 840 40
+  make_wire -390 320 380 320
 }
 
