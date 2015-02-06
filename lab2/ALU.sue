@@ -6,8 +6,6 @@ proc SCHEMATIC_ALU {} {
   make output -name Fi -origin {840 390}
   make input -orient R270 -name notCi_1 -origin {450 500}
   make input -orient R270 -name Phi2 -origin {380 500}
-  make input -name Ri -origin {-180 260}
-  make input -name Si -origin {-190 520}
   make input -orient R270 -name {M[0]} -origin {180 520}
   make input -orient R270 -name {M[3]} -origin {120 520}
   make input -orient R270 -name {M[2]} -origin {140 520}
@@ -20,18 +18,10 @@ proc SCHEMATIC_ALU {} {
   make input -orient R270 -name {N[3]} -origin {640 450}
   make input -orient R270 -name {N[2]} -origin {660 450}
   make input -orient R270 -name {N[1]} -origin {680 450}
-  make pmos -origin {-130 480}
-  make nmos -origin {-130 560}
-  make global -name gnd -origin {-130 600}
-  make global -orient RXY -name vdd -origin {-130 440}
   make pmos -origin {840 350}
   make nmos -origin {840 430}
   make global -name gnd -origin {840 470}
   make global -orient RXY -name vdd -origin {840 310}
-  make pmos -origin {-120 220}
-  make nmos -origin {-120 300}
-  make global -name gnd -origin {-120 340}
-  make global -orient RXY -name vdd -origin {-120 180}
   make input -name Si -origin {70 290}
   make input -name Si -origin {70 480}
   make input -name Ri -origin {70 330}
@@ -39,6 +29,10 @@ proc SCHEMATIC_ALU {} {
   make TFunc -origin {680 390}
   make Func -origin {160 460}
   make Func -orient RY -origin {160 310}
+  make input -name NotSi -origin {70 310}
+  make input -name NotSi -origin {70 460}
+  make input -name NotRi -origin {70 420}
+  make input -name NotRi -origin {70 350}
   make_wire 310 410 340 410
   make_wire 310 350 340 350
   make_wire 250 310 310 310
@@ -50,20 +44,6 @@ proc SCHEMATIC_ALU {} {
   make_wire 780 390 780 430
   make_wire 540 410 600 410
   make_wire 540 350 600 350
-  make_wire -10 460 70 460
-  make_wire -10 310 70 310
-  make_wire -10 310 -10 460
-  make_wire -190 480 -190 520
-  make_wire -190 520 -190 560
-  make_wire -180 220 -180 260
-  make_wire -180 260 -180 300
-  make_wire 70 350 -80 350
-  make_wire -80 350 -80 260
-  make_wire -80 260 -120 260
-  make_wire -80 350 -80 420
-  make_wire -80 420 70 420
-  make_wire -130 520 -10 520
-  make_wire -10 460 -10 520
   make_wire 600 370 610 370
   make_wire 600 350 600 370
   make_wire 600 390 610 390
