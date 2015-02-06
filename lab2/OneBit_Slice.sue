@@ -33,7 +33,7 @@ proc SCHEMATIC_OneBit_Slice {} {
   make output -orient R270 -name notCi -origin {610 200}
   make inout -name Fi_1 -origin {-790 480}
   make inout -name FiPlus1 -origin {-790 220}
-  make input -orient RXY -name Phi1 -origin {-280 350}
+  make input -orient R270 -name Phi1 -origin {-480 510}
   make_wire -560 350 -700 350
   make_wire 710 310 810 310
   make_wire 810 310 810 -20
@@ -58,10 +58,10 @@ proc SCHEMATIC_OneBit_Slice {} {
   make_wire -120 230 -80 230
   make_wire -280 330 -240 330
   make_wire -240 190 -80 190
-  make_wire -280 370 -240 370
+  make_wire -280 350 -240 350
   make_wire -790 460 -790 480
   make_wire -790 220 -790 240
-  make_wire -240 370 -240 500
+  make_wire -240 350 -240 500
   make_wire -240 500 -80 500
 }
 
