@@ -1,3 +1,21 @@
-l gnd; stepsize 50; w notG notP Phi notCi_1 NotCI P Ci_1; stepsize 50; 
-vector in notCi_1 notP notG Phi; set vlist {0010 0011 0111 0110 0100 0101 1011 1010 1110 1111 1101 1100}; foreach vec $vlist {setvector in $vec; s}; analyzer notG notP notCi_1 Phi P Ci_1 NotCi
-
+l gnd; stepsize 25; w notG notP Phi notCi_1 NotCI P Ci_1; 
+vector in notCi_1 notP notG Phi;
+setvector in 0010; s;
+setvector in 0011; s;
+setvector in 0010; s; s;
+setvector in 0110; s;
+setvector in 0111; s;
+setvector in 0110; s; s;
+setvector in 1100; s;
+setvector in 1101; s;
+setvector in 1100; s; s;
+setvector in 1010; s;
+setvector in 1011; s;
+setvector in 1010; s; s;
+setvector in 1100; s;
+setvector in 1101; s;
+setvector in 1100; s; s;
+setvector in 0010; s;
+setvector in 0011; s;
+setvector in 0010; s; s;
+analyzer notg notp notci_1 phi p ci_1 notci;
