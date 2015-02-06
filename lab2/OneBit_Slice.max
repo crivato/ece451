@@ -1,0 +1,83 @@
+# MAX version Max5.7.11 OpenGL Accelerated , compiled 11:21:30  Jul  8 2011.
+
+# WARNING:
+#
+# The .max file format continues to evolve.
+#
+# Micro Magic, Inc. recommends you do not write or parse .max files directly.
+# Instead use the Max API (e.g. 'db_search' and 'db_paint' commands).
+# The API is also easier to interface to.  See 'Text Commands/Variables' under
+# the Max 'Help' menu for full documentation on the API.
+
+max 5
+tech mmi25
+resolution 0.001
+
+
+DEF
+
+SECTION VERSIONS {
+vMAIN 1423200161 19
+vDRC 1423200160 12
+vBBOX 1423200161 19
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer error_p
+52600 23600 53940 23680
+52570 23530 53940 23600
+53000 23200 53540 23280
+52970 23130 53540 23200
+35630 18050 35640 18590
+36030 17900 36040 18300
+layer m2
+46810 24330 60480 24730
+46810 20900 47210 24330
+46600 20500 47210 20900
+47610 23530 60480 23930
+47610 19460 48010 23530
+46480 19060 48010 19460
+} SECTION RECTS
+
+SECTION GROUPS {
+} SECTION GROUPS
+
+SECTION INSTANCES {
+def ALU
+vMAIN 1423198715 11
+vDRC 1423199721 1
+vBBOX 1423198715 11
+bbox -48630 12290 4950 25740
+bbox_user -48630 12290 4950 25740
+uses {
+	_51 1 0 106480 0 1 1160
+}
+def Shifter
+vMAIN 1423196450 15
+vDRC 1423186003 2
+vBBOX 1423196450 15
+bbox -11180 -9580 -4820 -1570
+bbox_user -11180 -9580 -4820 -1570
+uses {
+	_55 1 0 -1500 0 1 25230
+}
+def OpSel
+vMAIN 1423199581 146
+vDRC 1423199594 65
+vBBOX 1423199581 146
+bbox -6910 12810 4060 26160
+bbox_user -6910 12810 4060 26160
+uses {
+	_62 1 0 53910 0 1 710
+	_63 1 0 42940 0 1 710
+}
+def RegFile
+vMAIN 1423199953 3
+vDRC 1423200059 78
+vBBOX 1423199953 3
+bbox -6320 13480 36030 26920
+bbox_user -6320 13480 36030 26920
+uses {
+	_75 1 0 0 0 1 0
+}
+} SECTION INSTANCES
