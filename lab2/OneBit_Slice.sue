@@ -1,0 +1,37 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_OneBit_Slice {} {
+  make ALU -origin {610 310}
+  make OpSel -origin {70 230}
+  make OpSel -origin {70 540}
+  make RegFile -origin {-420 350}
+  make Shifter -origin {-840 350}
+  make input -name D -origin {-80 500}
+  make input -name 0 -origin {-80 190}
+  make_wire -560 350 -700 350
+  make_wire 710 310 810 310
+  make_wire 810 310 810 -20
+  make_wire -1080 350 -1080 -20
+  make_wire 810 -20 -1080 -20
+  make_wire -980 350 -970 350
+  make_wire -980 350 -1080 350
+  make_wire -280 330 -160 330
+  make_wire -160 330 -160 230
+  make_wire -160 230 -80 230
+  make_wire -280 350 -180 350
+  make_wire -180 350 -180 540
+  make_wire -180 540 -80 540
+  make_wire 220 230 410 230
+  make_wire 410 230 410 330
+  make_wire 410 330 510 330
+  make_wire 510 310 460 310
+  make_wire 460 310 460 210
+  make_wire 460 210 220 210
+  make_wire 220 520 350 520
+  make_wire 350 520 350 270
+  make_wire 350 270 510 270
+  make_wire 220 540 480 540
+  make_wire 480 540 480 290
+  make_wire 480 290 510 290
+}
+
