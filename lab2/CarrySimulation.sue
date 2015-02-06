@@ -10,10 +10,10 @@ proc SCHEMATIC_CarrySimulation {} {
   make name_net_s -name notP -origin {370 450}
   make name_net_s -name notG -origin {300 390}
   make output -name Ci_1 -origin {620 450}
-  make pwl_source -edges {50ns 150ns 250ns 350ns 450ns 550ns 650ns 750ns 850ns 950ns} -origin {380 630}
   make pwl_source -edges {100ps 200ns 300ns 500ns 600ns} -repeat 1 -origin {210 440}
   make pwl_source -edges {300ns 600ns} -repeat 1 -origin {490 680}
   make pwl_source -edges {100ns 300ns 400ns 600ns} -repeat 1 -origin {300 520}
+  make pwl_source -edges {25ns 50ns 125ns 150ns 225ns 250ns 325ns 350ns 425ns 450ns 525ns 550ns 625ns 650ns 725ns 750ns 825ns 850ns 925ns 950ns} -origin {380 630}
   make_wire 490 750 490 720
   make_wire 380 670 380 750
   make_wire 380 750 490 750
