@@ -3,8 +3,8 @@
 proc SCHEMATIC_ALU {} {
   make Carry -origin {440 390}
   make output -orient R270 -name notCi -origin {450 280}
-  make output -name Fi -origin {840 390}
-  make input -orient R270 -name notCi_1 -origin {450 500}
+  make output -name Fi -origin {950 390}
+  make input -orient R270 -name notCi_1 -origin {450 510}
   make input -orient R270 -name Phi2 -origin {380 500}
   make input -orient R270 -name {M[0]} -origin {180 520}
   make input -orient R270 -name {M[3]} -origin {120 520}
@@ -14,40 +14,47 @@ proc SCHEMATIC_ALU {} {
   make input -orient R90 -name {L[1]} -origin {160 250}
   make input -orient R90 -name {L[2]} -origin {140 250}
   make input -orient R90 -name {L[3]} -origin {120 250}
-  make input -orient R270 -name {N[0]} -origin {700 450}
-  make input -orient R270 -name {N[3]} -origin {640 450}
-  make input -orient R270 -name {N[2]} -origin {660 450}
-  make input -orient R270 -name {N[1]} -origin {680 450}
-  make pmos -origin {840 350}
-  make nmos -origin {840 430}
-  make global -name gnd -origin {840 470}
-  make global -orient RXY -name vdd -origin {840 310}
+  make input -orient R270 -name {N[0]} -origin {770 450}
+  make input -orient R270 -name {N[3]} -origin {710 450}
+  make input -orient R270 -name {N[2]} -origin {750 450}
+  make input -orient R270 -name {N[1]} -origin {730 450}
+  make global -name gnd -origin {950 470}
+  make global -orient RXY -name vdd -origin {950 310}
   make input -name Si -origin {70 290}
   make input -name Si -origin {70 480}
   make input -name Ri -origin {70 330}
   make input -name Ri -origin {70 440}
-  make TFunc -origin {680 390}
   make Func -origin {160 460}
   make Func -orient RY -origin {160 310}
   make input -name NotSi -origin {70 310}
   make input -name NotSi -origin {70 460}
   make input -name NotRi -origin {70 420}
   make input -name NotRi -origin {70 350}
+  make pmos -W 4 -origin {950 350}
+  make nmos -W 2 -origin {950 430}
+  make TFunc -origin {750 390}
   make_wire 310 410 340 410
   make_wire 310 350 340 350
   make_wire 250 310 310 310
   make_wire 310 310 310 350
   make_wire 250 460 310 460
   make_wire 310 410 310 460
-  make_wire 750 390 780 390
-  make_wire 780 390 780 350
-  make_wire 780 390 780 430
-  make_wire 540 410 600 410
-  make_wire 540 350 600 350
-  make_wire 600 370 610 370
-  make_wire 600 350 600 370
-  make_wire 600 390 610 390
-  make_wire 600 390 600 410
+  make_wire 850 390 890 390
+  make_wire 890 350 890 390
+  make_wire 890 390 890 430
+  make_wire 560 390 560 410
+  make_wire 570 350 570 410
+  make_wire 340 410 500 410
+  make_wire 450 500 450 510
+  make_wire 600 350 600 510
+  make_wire 540 410 560 410
+  make_wire 560 390 650 390
+  make_wire 540 350 570 350
+  make_wire 570 410 650 410
+  make_wire 450 510 600 510
+  make_wire 600 350 650 350
+  make_wire 650 370 500 370
+  make_wire 500 370 500 410
 }
 
 proc ICON_ALU args {
