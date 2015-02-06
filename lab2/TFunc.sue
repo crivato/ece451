@@ -53,26 +53,28 @@ proc SCHEMATIC_TFunc {} {
 
 proc ICON_TFunc args {
   icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
-  icon_term -type input -origin {-70 -20} -name R
-  icon_term -type input -origin {-70 0} -name S
-  icon_term -type output -origin {70 0} -name Y
+  icon_term -type input -origin {-100 -40} -name notR
+  icon_term -type input -origin {-100 -20} -name notS
+  icon_term -type input -origin {-100 0} -name R
+  icon_term -type input -origin {-100 20} -name S
+  icon_term -type output -origin {100 0} -name Y
   icon_term -type input -origin {-40 60} -orient R90Y -name X3
-  icon_term -type input -origin {-20 60} -orient R90Y -name X1
-  icon_term -type input -origin {0 60} -orient R90Y -name X2
+  icon_term -type input -origin {0 60} -orient R90Y -name X1
+  icon_term -type input -origin {-20 60} -orient R90Y -name X2
   icon_term -type input -origin {20 60} -orient R90Y -name X0
-  icon_term -type input -origin {0 0} -name notS
-  icon_term -type input -origin {0 0} -name notR
   icon_property -origin {0 0} -size large -anchor center -label TFunc
-  icon_line -70 -60 70 -60 70 60 -70 60 -70 -60
-  icon_property -origin {-60 -20} -label R
-  icon_property -origin {-60 0} -label S
-  icon_property -origin {60 0} -anchor e -label Y
+  icon_line -100 -60 100 -60 100 60 -100 60 -100 -60
+  icon_property -origin {-90 -40} -label notR
+  icon_property -origin {-90 -20} -label notS
+  icon_property -origin {-90 0} -label R
+  icon_property -origin {-90 20} -label S
+  icon_property -origin {90 0} -anchor e -label Y
   icon_property -origin {-40 50} -anchor e -rotate 1 -label X3
-  icon_property -origin {-20 50} -anchor e -rotate 1 -label X1
-  icon_property -origin {0 50} -anchor e -rotate 1 -label X2
+  icon_property -origin {0 50} -anchor e -rotate 1 -label X1
+  icon_property -origin {-20 50} -anchor e -rotate 1 -label X2
   icon_property -origin {20 50} -anchor e -rotate 1 -label X0
-  icon_property -origin {-70 280} -type user -name name
-  icon_property -origin {-70 300} -type user -name M
-  icon_property -origin {-70 320} -type user -name dpc
+  icon_property -origin {-100 280} -type user -name name
+  icon_property -origin {-100 300} -type user -name M
+  icon_property -origin {-100 320} -type user -name dpc
 }
 
