@@ -65,3 +65,60 @@ proc SCHEMATIC_OneBit_Slice {} {
   make_wire -240 500 -80 500
 }
 
+proc ICON_OneBit_Slice args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-230 -60} -name ASelect
+  icon_term -type input -origin {-230 -40} -name zeroSelect
+  icon_term -type input -origin {-230 -20} -name BSelect
+  icon_term -type input -origin {-230 0} -name D
+  icon_term -type input -origin {-230 20} -name DSelect
+  icon_term -type inout -origin {-80 -110} -orient R90Y -name FiPlus1
+  icon_term -type inout -origin {-80 110} -orient R90 -name Fi_1
+  icon_term -type input -origin {-60 -110} -orient R90 -name notshl
+  icon_term -type input -origin {-40 -110} -orient R90 -name shl
+  icon_term -type input -origin {-20 -110} -orient R90 -name {L[3:0]}
+  icon_term -type output -origin {0 -110} -orient R90Y -name notCi
+  icon_term -type input -origin {-230 40} -name notshr
+  icon_term -type input -origin {-230 60} -name shr
+  icon_term -type input -origin {20 -110} -orient R90 -name Phi1
+  icon_term -type input -origin {230 -60} -orient RX -name {ARdEn[0:3]}
+  icon_term -type input -origin {230 -40} -orient RX -name {BRdEn[0:3]}
+  icon_term -type input -origin {230 -20} -orient RX -name {WriteEn[0:3]}
+  icon_term -type input -origin {230 0} -orient RX -name {FBEn[0:3]}
+  icon_term -type input -origin {230 20} -orient RX -name {notFBEn[0:3]}
+  icon_term -type input -origin {40 -110} -orient R90 -name notPhi1
+  icon_term -type input -origin {230 40} -orient RX -name {M[3:0]}
+  icon_term -type input -origin {60 -110} -orient R90 -name Phi2
+  icon_term -type input -origin {0 110} -orient R90Y -name notCi_1
+  icon_term -type input -origin {230 60} -orient RX -name {N[3:0]}
+  icon_property -origin {0 0} -size large -anchor center -label OneBit_Slice
+  icon_line -230 -110 230 -110 230 110 -230 110 -230 -110
+  icon_property -origin {-220 -60} -label ASelect
+  icon_property -origin {-220 -40} -label zeroSelect
+  icon_property -origin {-220 -20} -label BSelect
+  icon_property -origin {-220 0} -label D
+  icon_property -origin {-220 20} -label DSelect
+  icon_property -origin {-80 -100} -rotate 1 -label FiPlus1
+  icon_property -origin {-80 100} -anchor e -rotate 1 -label Fi_1
+  icon_property -origin {-60 -100} -rotate 1 -label notshl
+  icon_property -origin {-40 -100} -rotate 1 -label shl
+  icon_property -origin {-20 -100} -rotate 1 -label L
+  icon_property -origin {0 -100} -rotate 1 -label notCi
+  icon_property -origin {-220 40} -label notshr
+  icon_property -origin {-220 60} -label shr
+  icon_property -origin {20 -100} -rotate 1 -label Phi1
+  icon_property -origin {220 -60} -anchor e -label ARdEn
+  icon_property -origin {220 -40} -anchor e -label BRdEn
+  icon_property -origin {220 -20} -anchor e -label WriteEn
+  icon_property -origin {220 0} -anchor e -label FBEn
+  icon_property -origin {220 20} -anchor e -label notFBEn
+  icon_property -origin {40 -100} -rotate 1 -label notPhi1
+  icon_property -origin {220 40} -anchor e -label M
+  icon_property -origin {60 -100} -rotate 1 -label Phi2
+  icon_property -origin {0 100} -anchor e -rotate 1 -label notCi_1
+  icon_property -origin {220 60} -anchor e -label N
+  icon_property -origin {-230 330} -type user -name name
+  icon_property -origin {-230 350} -type user -name M
+  icon_property -origin {-230 370} -type user -name dpc
+}
+
