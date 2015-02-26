@@ -1,0 +1,185 @@
+# MAX version Max5.7.11 OpenGL Accelerated , compiled 11:21:30  Jul  8 2011.
+
+# WARNING:
+#
+# The .max file format continues to evolve.
+#
+# Micro Magic, Inc. recommends you do not write or parse .max files directly.
+# Instead use the Max API (e.g. 'db_search' and 'db_paint' commands).
+# The API is also easier to interface to.  See 'Text Commands/Variables' under
+# the Max 'Help' menu for full documentation on the API.
+
+max 5
+tech mmi25
+resolution 0.001
+
+
+DEF #fet!-fingers!2!-width!2.0!-_version!1325725399 "nfet (S)" "2 X 2.0/0.24"
+
+SECTION VERSIONS {
+vMAIN 1423243828 84
+vDRC 1325725399 1000
+vBBOX 1423243828 84
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer ndif
+-660 0 1640 2000
+layer poly
+0 -360 240 2360
+740 -360 980 2360
+layer ct
+-520 1450 -220 1750
+1200 1450 1500 1750
+-520 850 -220 1150
+1200 850 1500 1150
+-520 250 -220 550
+1200 250 1500 550
+layer m1
+-610 50 -130 1950
+1110 50 1590 1950
+} SECTION RECTS
+
+SECTION LABELS {
+lab ndif 1350 1000 1350 1000 0 1 d
+lab ndif -370 1000 -370 1000 0 1 s
+lab poly 120 2180 120 2180 0 1 gn
+lab poly 120 -180 120 -180 0 1 gs
+} SECTION LABELS
+
+
+DEF #via!-type!v12!-_version!963634069 "via (S)" "v12"
+
+SECTION VERSIONS {
+vMAIN 1423243828 25
+vDRC 963634069 1000
+vBBOX 1423243828 25
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer m1
+-270 -270 270 270
+layer v12
+-180 -180 180 180
+layer m2
+-270 -270 270 270
+} SECTION RECTS
+
+SECTION LABELS {
+lab m1 0 0 0 0 0 1 bot
+lab m2 0 0 0 0 0 1 top
+} SECTION LABELS
+
+
+DEF #via!-type!ct_poly!-_version!686360247 "via (S)" "ct_poly"
+
+SECTION VERSIONS {
+vMAIN 1423243828 19
+vDRC 686360247 1000
+vBBOX 1423243828 19
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer poly
+-290 -290 290 290
+layer ct
+-150 -150 150 150
+layer m1
+-240 -240 240 240
+} SECTION RECTS
+
+SECTION LABELS {
+lab poly 0 0 0 0 0 1 bot
+lab m1 0 0 0 0 0 1 top
+} SECTION LABELS
+
+
+DEF
+
+SECTION VERSIONS {
+vMAIN 1423249673 23
+vDRC 1423249673 23
+vBBOX 1423249673 23
+} SECTION VERSIONS
+
+SECTION RECTS {
+layer ndif
+400 -4560 700 -2560
+-4580 -4560 -4280 -2560
+layer poly
+-1110 -2440 -870 -1340
+1210 -2490 1450 -1320
+-6220 -5640 -5980 -4310
+-3070 -5900 -2830 -4500
+-370 -5880 -130 -4510
+1950 -5290 2190 -4470
+layer m1
+-6830 -3130 -6510 -740
+-6830 -6400 -6510 -3900
+-5050 -4510 -3980 -2610
+-2540 -3110 -2220 -740
+-1720 -3230 -1400 -740
+-2540 -6400 -2220 -4020
+-1720 -6400 -1400 -3960
+0 -4510 1070 -2610
+2480 -3120 2800 -740
+2480 -6400 2800 -3990
+layer m2
+-7220 -6170 -120 -5770
+-7220 -5060 2030 -4660
+-4800 -3100 3020 -2700
+-7220 -2300 -3810 -1900
+-7220 -1350 1280 -950
+} SECTION RECTS
+
+SECTION LABELS {
+lab m1 2640 -1480 2640 -1480 5 2 X0
+lab m1 -1510 -1600 -1510 -1600 5 2 X1
+lab m1 -2410 -1650 -2410 -1650 5 2 X2
+lab m1 -6670 -1570 -6670 -1570 5 2 X3
+lab m2 -6250 -5980 -6250 -5980 3 2 S
+lab m2 -6120 -4870 -6120 -4870 3 2 notS
+lab m2 -6230 -2010 -6230 -2010 3 2 R
+lab m2 -6270 -1160 -6270 -1160 3 2 notR
+lab m2 1940 -2920 1940 -2920 3 2 Y
+} SECTION LABELS
+
+SECTION INSTANCES {
+gcell 1325725399 #fet!-fingers!2!-width!2.0
+bbox -660 -360 1640 2360
+bbox_user -660 -360 1640 2360
+uses {
+	_6 -1 0 2190 0 1 -4560
+	_5 -1 0 -130 0 1 -4560
+	_4 -1 0 -2830 0 1 -4560
+	_3 1 0 -6220 0 1 -4560
+}
+gcell 963634069 #via!-type!v12
+bbox -270 -270 270 270
+bbox_user -270 -270 270 270
+uses {
+	_4 -1 0 -4040 0 1 -2020
+	_1 -1 0 -5010 0 1 -2020
+	_19 1 0 1860 0 -1 -5100
+	_18 1 0 -3140 0 -1 -5100
+	_15 -1 0 -4530 0 1 -3040
+	_13 1 0 -340 0 -1 -5730
+	_11 -1 0 -5870 0 -1 -5730
+	_79 -1 0 510 0 1 -2870
+	_3 -1 0 -690 0 -1 -1230
+	_5 1 0 990 0 -1 -1220
+}
+gcell 686360247 #via!-type!ct_poly
+bbox -290 -290 290 290
+bbox_user -290 -290 290 290
+uses {
+	_15 1 0 1900 0 -1 -5570
+	_14 1 0 -3100 0 -1 -5570
+	_13 -1 0 -5930 0 -1 -5570
+	_11 1 0 -230 0 -1 -5570
+	_3 -1 0 -810 0 -1 -1420
+	_4 1 0 1150 0 -1 -1400
+	_90 1 0 -3860 0 1 -2050
+	_91 1 0 -5190 0 1 -2050
+}
+} SECTION INSTANCES

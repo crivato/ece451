@@ -1,0 +1,57 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_Func {} {
+  make output -name Y -origin {640 440}
+  make input -name notS -origin {20 320}
+  make input -name notR -origin {20 400}
+  make input -name notS -origin {370 310}
+  make input -name R -origin {370 390}
+  make input -name R -origin {510 400}
+  make input -name S -origin {510 320}
+  make input -orient R90 -name X0 -origin {80 280}
+  make input -orient R90 -name X2 -origin {430 270}
+  make input -orient R90 -name X3 -origin {570 280}
+  make nmos -W 2 -origin {80 320}
+  make nmos -W 2 -origin {80 400}
+  make nmos -W 2 -origin {430 310}
+  make nmos -W 2 -origin {430 390}
+  make nmos -W 2 -origin {570 400}
+  make nmos -W 2 -origin {570 320}
+  make input -orient RY -name notR -origin {20 560}
+  make input -orient RY -name S -origin {20 480}
+  make input -orient R90Y -name X1 -origin {80 600}
+  make nmos -orient RY -W 2 -origin {80 560}
+  make nmos -orient RY -W 2 -origin {80 480}
+  make_wire 430 430 430 440
+  make_wire 570 440 640 440
+  make_wire 430 440 570 440
+  make_wire 430 440 80 440
+}
+
+proc ICON_Func args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-90 0} -name notS
+  icon_term -type input -origin {-90 -40} -name notR
+  icon_term -type input -origin {-90 20} -name S
+  icon_term -type input -origin {-90 -20} -name R
+  icon_term -type output -origin {90 0} -name Y
+  icon_term -type input -origin {20 60} -orient R90Y -name X0
+  icon_term -type input -origin {0 60} -orient R90Y -name X1
+  icon_term -type input -origin {-20 60} -orient R90Y -name X2
+  icon_term -type input -origin {-40 60} -orient R90Y -name X3
+  icon_property -origin {0 0} -size large -anchor center -label Func
+  icon_line -90 -60 90 -60 90 60 -90 60 -90 -60
+  icon_property -origin {-80 0} -label notS
+  icon_property -origin {-80 -40} -label notR
+  icon_property -origin {-80 20} -label S
+  icon_property -origin {-80 -20} -label R
+  icon_property -origin {80 0} -anchor e -label Y
+  icon_property -origin {20 50} -anchor e -rotate 1 -label X0
+  icon_property -origin {0 50} -anchor e -rotate 1 -label X1
+  icon_property -origin {-20 50} -anchor e -rotate 1 -label X2
+  icon_property -origin {-40 50} -anchor e -rotate 1 -label X3
+  icon_property -origin {-90 280} -type user -name name
+  icon_property -origin {-90 300} -type user -name M
+  icon_property -origin {-90 320} -type user -name dpc
+}
+

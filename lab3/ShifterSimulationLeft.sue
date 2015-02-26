@@ -1,0 +1,55 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_ShifterSimulationLeft {} {
+  make inverter -origin {400 590}
+  make global -name gnd -origin {350 760}
+  make name_net_s -name Fi -origin {310 390}
+  make output -name RAMINi -origin {680 390}
+  make pwl_source -edges {100ns 200ns 300ns 400ns 500ns 600ns 700ns 800ns 900ns 1000ns 1100ns 1200ns 1300ns 1400ns 1500ns 1600ns} -origin {150 520}
+  make pwl_source -edges {200ns 400ns 600ns 800ns 1000ns 1200ns} -origin {860 650}
+  make inverter -origin {170 230}
+  make Shifter -orient RY -origin {540 390}
+  make name_net_s -name Fi_1 -origin {860 550}
+  make output -name FiPlus1 -origin {680 540}
+  make name_net_s -name notshr -origin {310 230}
+  make name_net_s -name notshl -origin {490 590}
+  make name_net_s -name shl -origin {490 640}
+  make pwl_source -edges 100ps -origin {200 660}
+  make_wire 510 590 510 500
+  make_wire 540 640 540 500
+  make_wire 150 480 150 390
+  make_wire 150 560 150 760
+  make_wire 310 390 150 390
+  make_wire 310 390 400 390
+  make_wire 490 640 350 640
+  make_wire 490 640 540 640
+  make_wire 490 590 510 590
+  make_wire 540 190 540 280
+  make_wire 510 230 510 280
+  make_wire 450 590 490 590
+  make_wire 350 590 370 590
+  make_wire 50 190 50 760
+  make_wire 100 230 140 230
+  make_wire 220 230 310 230
+  make_wire 310 230 510 230
+  make_wire 100 230 100 760
+  make_wire 50 760 100 760
+  make_wire 100 760 150 760
+  make_wire 350 570 350 590
+  make_wire 350 590 350 640
+  make_wire 50 190 540 190
+  make_wire 200 570 350 570
+  make_wire 860 610 860 550
+  make_wire 860 690 860 760
+  make_wire 200 570 200 620
+  make_wire 200 760 200 700
+  make_wire 200 760 350 760
+  make_wire 200 760 150 760
+  make_wire 350 760 860 760
+  make_wire 860 550 860 190
+  make_wire 860 190 590 190
+  make_wire 590 540 680 540
+  make_wire 590 500 590 540
+  make_wire 590 280 590 190
+}
+

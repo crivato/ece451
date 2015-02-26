@@ -1,0 +1,78 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_Carry {} {
+  make global -orient RXY -name vdd -origin {160 -90}
+  make input -name Phi -origin {-240 -50}
+  make input -name Phi -origin {-50 -50}
+  make input -name Phi -origin {340 -50}
+  make pmos -origin {90 240}
+  make nmos -origin {90 320}
+  make global -orient RXY -name vdd -origin {90 200}
+  make global -name gnd -origin {90 360}
+  make pmos -origin {610 90}
+  make nmos -origin {610 170}
+  make global -orient RXY -name vdd -origin {610 50}
+  make global -name gnd -origin {610 210}
+  make pmos -origin {-90 410}
+  make nmos -origin {-90 490}
+  make global -orient RXY -name vdd -origin {-90 370}
+  make global -name gnd -origin {-90 530}
+  make nmos -origin {400 450}
+  make nmos -orient R270 -origin {300 220}
+  make input -name notCi_1 -origin {260 220}
+  make output -name Ci_1 -origin {610 130}
+  make output -name notCi -origin {400 220}
+  make output -name P -origin {330 280}
+  make global -name gnd -origin {400 490}
+  make input -name notP -origin {30 280}
+  make input -name notG -origin {-150 450}
+  make pmos -W 1 -origin {-180 -50}
+  make pmos -W 1 -origin {0 -50}
+  make pmos -W 1 -origin {400 -50}
+  make_wire 160 -90 400 -90
+  make_wire 30 280 30 240
+  make_wire 30 280 30 320
+  make_wire -150 450 -150 410
+  make_wire -150 450 -150 490
+  make_wire -90 450 340 450
+  make_wire -60 -50 -50 -50
+  make_wire -180 -90 0 -90
+  make_wire 160 -90 0 -90
+  make_wire 340 220 400 220
+  make_wire 90 280 300 280
+  make_wire 300 280 330 280
+  make_wire 0 240 30 240
+  make_wire 400 220 400 410
+  make_wire -180 410 -150 410
+  make_wire 0 240 0 -10
+  make_wire 400 220 400 -10
+  make_wire -180 410 -180 -10
+  make_wire 260 220 260 130
+  make_wire 260 130 550 130
+  make_wire 550 130 550 170
+  make_wire 550 130 550 90
+}
+
+proc ICON_Carry args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-60 110} -orient R90Y -name Phi
+  icon_term -type input -origin {-100 20} -name notP
+  icon_term -type input -origin {10 110} -orient R90Y -name notCi_1
+  icon_term -type input -origin {-100 -40} -name notG
+  icon_term -type output -origin {10 -110} -orient R90Y -name notCi
+  icon_term -type output -origin {100 -40} -name P
+  icon_term -type output -origin {100 20} -name Ci_1
+  icon_property -origin {0 0} -size large -anchor center -label Carry
+  icon_line -100 -110 100 -110 100 110 -100 110 -100 -110
+  icon_property -origin {-60 100} -anchor e -rotate 1 -label Phi
+  icon_property -origin {-90 20} -label notP
+  icon_property -origin {10 100} -anchor e -rotate 1 -label notCi_1
+  icon_property -origin {-90 -40} -label notG
+  icon_property -origin {10 -100} -rotate 1 -label notCi
+  icon_property -origin {90 -40} -anchor e -label P
+  icon_property -origin {90 20} -anchor e -label Ci_1
+  icon_property -origin {-100 330} -type user -name name
+  icon_property -origin {-100 350} -type user -name M
+  icon_property -origin {-100 370} -type user -name dpc
+}
+

@@ -1,0 +1,90 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_ALU {} {
+  make Carry -origin {440 390}
+  make output -orient R270 -name notCi -origin {450 280}
+  make output -name Fi -origin {950 390}
+  make input -orient R270 -name notCi_1 -origin {450 510}
+  make input -orient R270 -name Phi2 -origin {380 500}
+  make input -orient R270 -name {M[0]} -origin {180 520}
+  make input -orient R270 -name {M[3]} -origin {120 520}
+  make input -orient R270 -name {M[2]} -origin {140 520}
+  make input -orient R270 -name {M[1]} -origin {160 520}
+  make input -orient R90 -name {L[0]} -origin {180 250}
+  make input -orient R90 -name {L[1]} -origin {160 250}
+  make input -orient R90 -name {L[2]} -origin {140 250}
+  make input -orient R90 -name {L[3]} -origin {120 250}
+  make input -orient R270 -name {N[0]} -origin {770 450}
+  make input -orient R270 -name {N[3]} -origin {710 450}
+  make input -orient R270 -name {N[2]} -origin {750 450}
+  make input -orient R270 -name {N[1]} -origin {730 450}
+  make global -name gnd -origin {950 470}
+  make global -orient RXY -name vdd -origin {950 310}
+  make input -name Si -origin {70 290}
+  make input -name Si -origin {70 480}
+  make input -name Ri -origin {70 330}
+  make input -name Ri -origin {70 440}
+  make Func -origin {160 460}
+  make Func -orient RY -origin {160 310}
+  make input -name NotSi -origin {70 310}
+  make input -name NotSi -origin {70 460}
+  make input -name NotRi -origin {70 420}
+  make input -name NotRi -origin {70 350}
+  make pmos -W 4 -origin {950 350}
+  make nmos -W 2 -origin {950 430}
+  make TFunc -origin {750 390}
+  make_wire 310 410 340 410
+  make_wire 310 350 340 350
+  make_wire 250 310 310 310
+  make_wire 310 310 310 350
+  make_wire 250 460 310 460
+  make_wire 310 410 310 460
+  make_wire 850 390 890 390
+  make_wire 890 350 890 390
+  make_wire 890 390 890 430
+  make_wire 560 390 560 410
+  make_wire 570 350 570 410
+  make_wire 340 410 500 410
+  make_wire 450 500 450 510
+  make_wire 600 350 600 510
+  make_wire 540 410 560 410
+  make_wire 560 390 650 390
+  make_wire 540 350 570 350
+  make_wire 570 410 650 410
+  make_wire 450 510 600 510
+  make_wire 600 350 650 350
+  make_wire 650 370 500 370
+  make_wire 500 370 500 410
+}
+
+proc ICON_ALU args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-100 -40} -name NotRi
+  icon_term -type input -origin {-100 -20} -name Ri
+  icon_term -type input -origin {-100 0} -name NotSi
+  icon_term -type input -origin {-100 20} -name Si
+  icon_term -type output -origin {100 0} -name Fi
+  icon_term -type input -origin {-20 -110} -orient R90 -name {L[3:0]}
+  icon_term -type output -origin {0 -110} -orient R90Y -name notCi
+  icon_term -type input -origin {-40 110} -orient R90Y -name {M[3:0]}
+  icon_term -type input -origin {-20 110} -orient R90Y -name Phi2
+  icon_term -type input -origin {0 110} -orient R90Y -name notCi_1
+  icon_term -type input -origin {20 110} -orient R90Y -name {N[3:0]}
+  icon_property -origin {0 0} -size large -anchor center -label ALU
+  icon_line -100 -110 100 -110 100 110 -100 110 -100 -110
+  icon_property -origin {-90 -40} -label NotRi
+  icon_property -origin {-90 -20} -label Ri
+  icon_property -origin {-90 0} -label NotSi
+  icon_property -origin {-90 20} -label Si
+  icon_property -origin {90 0} -anchor e -label Fi
+  icon_property -origin {-20 -100} -rotate 1 -label L
+  icon_property -origin {0 -100} -rotate 1 -label notCi
+  icon_property -origin {-40 100} -anchor e -rotate 1 -label M
+  icon_property -origin {-20 100} -anchor e -rotate 1 -label Phi2
+  icon_property -origin {0 100} -anchor e -rotate 1 -label notCi_1
+  icon_property -origin {20 100} -anchor e -rotate 1 -label N
+  icon_property -origin {-100 330} -type user -name name
+  icon_property -origin {-100 350} -type user -name M
+  icon_property -origin {-100 370} -type user -name dpc
+}
+
