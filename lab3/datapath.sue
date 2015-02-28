@@ -1,108 +1,212 @@
 # SUE version MMI_SUE5.5.4
 
 proc SCHEMATIC_datapath {} {
-  make OneBit_Slice -origin {560 250}
-  make input -orient R90 -name notshl -origin {500 140}
-  make input -orient R90 -name shl -origin {520 140}
-  make input -name notshr -origin {330 290}
-  make input -name shr -origin {330 310}
-  make input -name DSelect -origin {330 270}
-  make input -name zeroSelect -origin {330 210}
-  make input -name ASelect -origin {330 190}
-  make input -name BSelect -origin {330 230}
-  make input -orient R90 -name Phi1 -origin {580 140}
-  make input -orient R90 -name notPhi1 -origin {600 140}
-  make input -orient R90 -name {L[3:0]} -origin {540 140}
-  make input -orient RXY -name {N[3:0]} -origin {790 310}
-  make input -orient RXY -name {M[3:0]} -origin {790 290}
-  make input -orient R90 -name Phi2 -origin {620 140}
-  make input -orient RXY -name {ARdEn[0:3]} -origin {790 190}
-  make input -orient RXY -name {BRdEn[0:3]} -origin {790 210}
-  make input -orient RXY -name {WriteEn[0:3]} -origin {790 230}
-  make input -orient RXY -name {FBEn[0:3]} -origin {790 250}
-  make input -orient RXY -name {notFBEn[0:3]} -origin {790 270}
-  make OneBit_Slice -origin {560 610}
-  make input -orient R90 -name notshl -origin {500 500}
-  make input -orient R90 -name shl -origin {520 500}
-  make input -name notshr -origin {330 650}
-  make input -name shr -origin {330 670}
-  make input -name DSelect -origin {330 630}
-  make input -name zeroSelect -origin {330 570}
-  make input -name ASelect -origin {330 550}
-  make input -name BSelect -origin {330 590}
-  make input -orient R90 -name Phi1 -origin {580 500}
-  make input -orient R90 -name notPhi1 -origin {600 500}
-  make input -orient R90 -name {L[3:0]} -origin {540 500}
-  make input -orient RXY -name {N[3:0]} -origin {790 670}
-  make input -orient RXY -name {M[3:0]} -origin {790 650}
-  make input -orient R90 -name Phi2 -origin {620 500}
-  make input -orient RXY -name {ARdEn[0:3]} -origin {790 550}
-  make input -orient RXY -name {BRdEn[0:3]} -origin {790 570}
-  make input -orient RXY -name {WriteEn[0:3]} -origin {790 590}
-  make input -orient RXY -name {FBEn[0:3]} -origin {790 610}
-  make input -orient RXY -name {notFBEn[0:3]} -origin {790 630}
-  make OneBit_Slice -origin {560 970}
-  make input -orient R90 -name notshl -origin {500 860}
-  make input -orient R90 -name shl -origin {520 860}
-  make input -name notshr -origin {330 1010}
-  make input -name shr -origin {330 1030}
-  make input -name DSelect -origin {330 990}
-  make input -name zeroSelect -origin {330 930}
-  make input -name ASelect -origin {330 910}
-  make input -name BSelect -origin {330 950}
-  make input -orient R90 -name Phi1 -origin {580 860}
-  make input -orient R90 -name notPhi1 -origin {600 860}
-  make input -orient R90 -name {L[3:0]} -origin {540 860}
-  make input -orient RXY -name {N[3:0]} -origin {790 1030}
-  make input -orient RXY -name {M[3:0]} -origin {790 1010}
-  make input -orient R90 -name Phi2 -origin {620 860}
-  make input -orient RXY -name {ARdEn[0:3]} -origin {790 910}
-  make input -orient RXY -name {BRdEn[0:3]} -origin {790 930}
-  make input -orient RXY -name {WriteEn[0:3]} -origin {790 950}
-  make input -orient RXY -name {FBEn[0:3]} -origin {790 970}
-  make input -orient RXY -name {notFBEn[0:3]} -origin {790 990}
-  make OneBit_Slice -origin {560 1330}
-  make input -orient R90 -name notshl -origin {500 1220}
-  make input -orient R90 -name shl -origin {520 1220}
-  make input -name notshr -origin {330 1370}
-  make input -name shr -origin {330 1390}
-  make input -name DSelect -origin {330 1350}
-  make input -name zeroSelect -origin {330 1290}
-  make input -name ASelect -origin {330 1270}
-  make input -name BSelect -origin {330 1310}
-  make input -orient R90 -name Phi1 -origin {580 1220}
-  make input -orient R90 -name notPhi1 -origin {600 1220}
-  make input -orient R90 -name {L[3:0]} -origin {540 1220}
-  make input -orient RXY -name {N[3:0]} -origin {790 1390}
-  make input -orient RXY -name {M[3:0]} -origin {790 1370}
-  make input -orient R90 -name Phi2 -origin {620 1220}
-  make input -orient RXY -name {ARdEn[0:3]} -origin {790 1270}
-  make input -orient RXY -name {BRdEn[0:3]} -origin {790 1290}
-  make input -orient RXY -name {WriteEn[0:3]} -origin {790 1310}
-  make input -orient RXY -name {FBEn[0:3]} -origin {790 1330}
-  make input -orient RXY -name {notFBEn[0:3]} -origin {790 1350}
-  make output -orient R270 -name notCi -origin {560 140}
-  make input -orient R270 -name notCi_1 -origin {560 1440}
-  make nmos -origin {420 1530}
-  make pmos -orient RXY -origin {470 1530}
-  make input -orient RXY -name notshl -origin {530 1530}
-  make input -name shl -origin {360 1530}
-  make input -orient R270 -name SL -origin {450 1570}
-  make input -orient R90 -name SR -origin {480 140}
-  make input -name {D[0]} -origin {330 1330}
-  make input -name {D[1]} -origin {330 970}
-  make input -name {D[2]} -origin {330 610}
-  make input -name {D[3]} -origin {330 250}
-  make_wire 560 360 560 500
-  make_wire 480 500 480 360
-  make_wire 560 720 560 860
-  make_wire 480 720 480 860
-  make_wire 560 1080 560 1220
-  make_wire 480 1080 480 1220
-  make_wire 480 1440 480 1490
-  make_wire 420 1490 470 1490
-  make_wire 470 1490 480 1490
-  make_wire 450 1570 420 1570
-  make_wire 450 1570 470 1570
+  make nmos -origin {370 1270}
+  make pmos -orient RXY -origin {420 1270}
+  make input -orient RXY -name notshl -origin {480 1270}
+  make input -name shl -origin {310 1270}
+  make OneBit_Slice -origin {490 870}
+  make input -orient R270 -name {N[3:0]} -origin {610 1030}
+  make input -orient R270 -name {M[3:0]} -origin {550 1030}
+  make input -orient R270 -name {ARdEn[0:3]} -origin {430 1030}
+  make input -orient R270 -name {BRdEn[0:3]} -origin {450 1030}
+  make input -orient R270 -name {WriteEn[0:3]} -origin {470 1030}
+  make input -orient R270 -name {FBEn[0:3]} -origin {490 1030}
+  make input -orient R270 -name {notFBEn[0:3]} -origin {510 1030}
+  make input -orient R270 -name Phi1 -origin {410 1030}
+  make input -orient R270 -name Phi2 -origin {570 1030}
+  make input -orient R90 -name {L[3:0]} -origin {510 710}
+  make input -orient R270 -name notPhi1 -origin {530 1030}
+  make input -orient R90 -name shl -origin {490 710}
+  make input -orient R90 -name notshl -origin {470 710}
+  make input -name DSelect -origin {280 910}
+  make input -name zeroSelect -origin {280 850}
+  make input -name ASelect -origin {280 830}
+  make input -name BSelect -origin {280 870}
+  make input -orient R270 -name shr -origin {390 1030}
+  make input -orient R270 -name notshr -origin {370 1030}
+  make output -name {S[0]} -origin {700 810}
+  make output -name {F[0]} -origin {700 830}
+  make output -name {A[0]} -origin {700 850}
+  make output -name {B[0]} -origin {700 870}
+  make output -name {RAMIN[0]} -origin {700 890}
+  make output -name {R[0]} -origin {700 910}
+  make OneBit_Slice -origin {490 290}
+  make input -orient R270 -name {N[3:0]} -origin {610 450}
+  make input -orient R270 -name {M[3:0]} -origin {550 450}
+  make input -orient R270 -name {ARdEn[0:3]} -origin {430 450}
+  make input -orient R270 -name {BRdEn[0:3]} -origin {450 450}
+  make input -orient R270 -name {WriteEn[0:3]} -origin {470 450}
+  make input -orient R270 -name {FBEn[0:3]} -origin {490 450}
+  make input -orient R270 -name {notFBEn[0:3]} -origin {510 450}
+  make input -orient R270 -name Phi1 -origin {410 450}
+  make input -orient R270 -name Phi2 -origin {570 450}
+  make input -orient R90 -name {L[3:0]} -origin {510 130}
+  make input -orient R270 -name notPhi1 -origin {530 450}
+  make input -orient R90 -name shl -origin {490 130}
+  make input -orient R90 -name notshl -origin {470 130}
+  make input -name DSelect -origin {280 330}
+  make input -name zeroSelect -origin {280 270}
+  make input -name ASelect -origin {280 250}
+  make input -name BSelect -origin {280 290}
+  make input -orient R270 -name shr -origin {390 450}
+  make input -orient R270 -name notshr -origin {370 450}
+  make OneBit_Slice -origin {490 -290}
+  make input -orient R270 -name {N[3:0]} -origin {610 -130}
+  make input -orient R270 -name {M[3:0]} -origin {550 -130}
+  make input -orient R270 -name {ARdEn[0:3]} -origin {430 -130}
+  make input -orient R270 -name {BRdEn[0:3]} -origin {450 -130}
+  make input -orient R270 -name {WriteEn[0:3]} -origin {470 -130}
+  make input -orient R270 -name {FBEn[0:3]} -origin {490 -130}
+  make input -orient R270 -name {notFBEn[0:3]} -origin {510 -130}
+  make input -orient R270 -name Phi1 -origin {410 -130}
+  make input -orient R270 -name Phi2 -origin {570 -130}
+  make input -orient R90 -name {L[3:0]} -origin {510 -450}
+  make input -orient R270 -name notPhi1 -origin {530 -130}
+  make input -orient R90 -name shl -origin {490 -450}
+  make input -orient R90 -name notshl -origin {470 -450}
+  make input -name DSelect -origin {280 -250}
+  make input -name zeroSelect -origin {280 -310}
+  make input -name ASelect -origin {280 -330}
+  make input -name BSelect -origin {280 -290}
+  make input -orient R270 -name shr -origin {390 -130}
+  make input -orient R270 -name notshr -origin {370 -130}
+  make OneBit_Slice -origin {490 -870}
+  make input -orient R270 -name {N[3:0]} -origin {610 -710}
+  make input -orient R270 -name {M[3:0]} -origin {550 -710}
+  make input -orient R270 -name {ARdEn[0:3]} -origin {430 -710}
+  make input -orient R270 -name {BRdEn[0:3]} -origin {450 -710}
+  make input -orient R270 -name {WriteEn[0:3]} -origin {470 -710}
+  make input -orient R270 -name {FBEn[0:3]} -origin {490 -710}
+  make input -orient R270 -name {notFBEn[0:3]} -origin {510 -710}
+  make input -orient R270 -name Phi1 -origin {410 -710}
+  make input -orient R270 -name Phi2 -origin {570 -710}
+  make input -orient R90 -name {L[3:0]} -origin {510 -1030}
+  make input -orient R270 -name notPhi1 -origin {530 -710}
+  make input -orient R90 -name shl -origin {490 -1030}
+  make input -orient R90 -name notshl -origin {470 -1030}
+  make input -name DSelect -origin {280 -830}
+  make input -name zeroSelect -origin {280 -890}
+  make input -name ASelect -origin {280 -910}
+  make input -name BSelect -origin {280 -870}
+  make input -orient R270 -name shr -origin {390 -710}
+  make input -orient R270 -name notshr -origin {370 -710}
+  make output -orient R270 -name notCout -origin {530 -1030}
+  make output -name {R[1]} -origin {700 330}
+  make output -name {RAMIN[1]} -origin {700 310}
+  make output -name {B[1]} -origin {700 290}
+  make output -name {A[1]} -origin {700 270}
+  make output -name {F[1]} -origin {700 250}
+  make output -name {S[1]} -origin {700 230}
+  make output -name {R[2]} -origin {700 -250}
+  make output -name {RAMIN[2]} -origin {700 -270}
+  make output -name {B[2]} -origin {700 -290}
+  make output -name {A[2]} -origin {700 -310}
+  make output -name {F[2]} -origin {700 -330}
+  make output -name {S[2]} -origin {700 -350}
+  make output -name {R[3]} -origin {700 -830}
+  make output -name {RAMIN[3]} -origin {700 -850}
+  make output -name {B[3]} -origin {700 -870}
+  make output -name {A[3]} -origin {700 -890}
+  make output -name {F[3]} -origin {700 -910}
+  make output -name {S[3]} -origin {700 -930}
+  make inout -orient R270 -name SL -origin {450 -1030}
+  make input -orient R270 -name SR -origin {400 1310}
+  make input -orient R270 -name notCin -origin {590 1030}
+  make input -name {D[0]} -origin {280 890}
+  make input -name {D[1]} -origin {280 310}
+  make input -name {D[3]} -origin {280 -850}
+  make input -name {D[2]} -origin {280 -270}
+  make_wire 400 1310 370 1310
+  make_wire 400 1310 420 1310
+  make_wire 530 710 530 620
+  make_wire 590 450 590 620
+  make_wire 530 620 590 620
+  make_wire 350 450 350 630
+  make_wire 350 630 450 630
+  make_wire 450 40 350 40
+  make_wire 350 40 350 -130
+  make_wire 530 130 530 20
+  make_wire 530 20 590 20
+  make_wire 590 20 590 -130
+  make_wire 450 -520 350 -520
+  make_wire 350 -520 350 -710
+  make_wire 530 -450 530 -590
+  make_wire 530 -590 590 -590
+  make_wire 590 -590 590 -710
+  make_wire 350 1200 400 1200
+  make_wire 400 1200 400 1230
+  make_wire 400 1230 370 1230
+  make_wire 400 1230 420 1230
+  make_wire 450 630 450 710
+  make_wire 450 130 450 40
+  make_wire 450 -450 450 -520
+  make_wire 350 1030 350 1200
+}
+
+proc ICON_datapath args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-200 -80} -name ASelect
+  icon_term -type input -origin {-200 -60} -name zeroSelect
+  icon_term -type input -origin {-200 -40} -name BSelect
+  icon_term -type input -origin {-200 -20} -name {D[3:0]}
+  icon_term -type input -origin {-200 0} -name DSelect
+  icon_term -type input -origin {-200 20} -name notshr
+  icon_term -type input -origin {-200 40} -name shr
+  icon_term -type input -origin {-200 60} -name shl
+  icon_term -type input -origin {200 -80} -orient RX -name {ARdEn[0:3]}
+  icon_term -type input -origin {200 -60} -orient RX -name {BRdEn[0:3]}
+  icon_term -type input -origin {200 -40} -orient RX -name {WriteEn[0:3]}
+  icon_term -type input -origin {200 -20} -orient RX -name {FBEn[0:3]}
+  icon_term -type input -origin {200 0} -orient RX -name {notFBEn[0:3]}
+  icon_term -type input -origin {200 20} -orient RX -name {M[3:0]}
+  icon_term -type input -origin {200 40} -orient RX -name {N[3:0]}
+  icon_term -type input -origin {200 60} -orient RX -name notshl
+  icon_term -type input -origin {-60 -110} -orient R90 -name SR
+  icon_term -type input -origin {-40 -110} -orient R90 -name {L[3:0]}
+  icon_term -type output -origin {-20 -110} -orient R90Y -name notCi
+  icon_term -type input -origin {0 -110} -orient R90 -name Phi1
+  icon_term -type input -origin {20 -110} -orient R90 -name notPhi1
+  icon_term -type input -origin {40 -110} -orient R90 -name Phi2
+  icon_term -type input -origin {-20 110} -orient R90Y -name SL
+  icon_term -type input -origin {0 110} -orient R90Y -name notCi_1
+  icon_term -type output -origin {0 0} -name notCout
+  icon_term -type output -origin {0 0} -name {R[3:0]}
+  icon_term -type output -origin {0 0} -name {RAMIN[3:0]}
+  icon_term -type output -origin {0 0} -name {B[3:0]}
+  icon_term -type output -origin {0 0} -name {A[3:0]}
+  icon_term -type output -origin {0 0} -name {F[3:0]}
+  icon_term -type output -origin {0 0} -name {S[3:0]}
+  icon_term -type inout -origin {0 0} -name SL
+  icon_term -type input -origin {0 0} -name notCin
+  icon_property -origin {0 0} -size large -anchor center -label datapath
+  icon_line -200 -110 200 -110 200 110 -200 110 -200 -110
+  icon_property -origin {-190 -80} -label ASelect
+  icon_property -origin {-190 -60} -label zeroSelect
+  icon_property -origin {-190 -40} -label BSelect
+  icon_property -origin {-190 -20} -label D
+  icon_property -origin {-190 0} -label DSelect
+  icon_property -origin {-190 20} -label notshr
+  icon_property -origin {-190 40} -label shr
+  icon_property -origin {-190 60} -label shl
+  icon_property -origin {190 -80} -anchor e -label ARdEn
+  icon_property -origin {190 -60} -anchor e -label BRdEn
+  icon_property -origin {190 -40} -anchor e -label WriteEn
+  icon_property -origin {190 -20} -anchor e -label FBEn
+  icon_property -origin {190 0} -anchor e -label notFBEn
+  icon_property -origin {190 20} -anchor e -label M
+  icon_property -origin {190 40} -anchor e -label N
+  icon_property -origin {190 60} -anchor e -label notshl
+  icon_property -origin {-60 -100} -rotate 1 -label SR
+  icon_property -origin {-40 -100} -rotate 1 -label L
+  icon_property -origin {-20 -100} -rotate 1 -label notCi
+  icon_property -origin {0 -100} -rotate 1 -label Phi1
+  icon_property -origin {20 -100} -rotate 1 -label notPhi1
+  icon_property -origin {40 -100} -rotate 1 -label Phi2
+  icon_property -origin {-20 100} -anchor e -rotate 1 -label SL
+  icon_property -origin {0 100} -anchor e -rotate 1 -label notCi_1
+  icon_property -origin {-200 330} -type user -name name
+  icon_property -origin {-200 350} -type user -name M
+  icon_property -origin {-200 370} -type user -name dpc
 }
 
