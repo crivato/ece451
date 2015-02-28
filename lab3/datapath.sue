@@ -146,67 +146,70 @@ proc SCHEMATIC_datapath {} {
 
 proc ICON_datapath args {
   icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
-  icon_term -type input -origin {-200 -80} -name ASelect
-  icon_term -type input -origin {-200 -60} -name zeroSelect
-  icon_term -type input -origin {-200 -40} -name BSelect
-  icon_term -type input -origin {-200 -20} -name {D[3:0]}
-  icon_term -type input -origin {-200 0} -name DSelect
-  icon_term -type input -origin {-200 20} -name notshr
-  icon_term -type input -origin {-200 40} -name shr
-  icon_term -type input -origin {-200 60} -name shl
-  icon_term -type input -origin {200 -80} -orient RX -name {ARdEn[0:3]}
-  icon_term -type input -origin {200 -60} -orient RX -name {BRdEn[0:3]}
-  icon_term -type input -origin {200 -40} -orient RX -name {WriteEn[0:3]}
-  icon_term -type input -origin {200 -20} -orient RX -name {FBEn[0:3]}
-  icon_term -type input -origin {200 0} -orient RX -name {notFBEn[0:3]}
-  icon_term -type input -origin {200 20} -orient RX -name {M[3:0]}
-  icon_term -type input -origin {200 40} -orient RX -name {N[3:0]}
-  icon_term -type input -origin {200 60} -orient RX -name notshl
-  icon_term -type input -origin {-60 -110} -orient R90 -name SR
-  icon_term -type input -origin {-40 -110} -orient R90 -name {L[3:0]}
-  icon_term -type output -origin {-20 -110} -orient R90Y -name notCi
-  icon_term -type input -origin {0 -110} -orient R90 -name Phi1
-  icon_term -type input -origin {20 -110} -orient R90 -name notPhi1
-  icon_term -type input -origin {40 -110} -orient R90 -name Phi2
-  icon_term -type input -origin {-20 110} -orient R90Y -name SL
-  icon_term -type input -origin {0 110} -orient R90Y -name notCi_1
-  icon_term -type output -origin {0 0} -name notCout
-  icon_term -type output -origin {0 0} -name {R[3:0]}
-  icon_term -type output -origin {0 0} -name {RAMIN[3:0]}
-  icon_term -type output -origin {0 0} -name {B[3:0]}
-  icon_term -type output -origin {0 0} -name {A[3:0]}
-  icon_term -type output -origin {0 0} -name {F[3:0]}
-  icon_term -type output -origin {0 0} -name {S[3:0]}
-  icon_term -type inout -origin {0 0} -name SL
-  icon_term -type input -origin {0 0} -name notCin
+  icon_term -type input -origin {-180 -40} -name ASelect
+  icon_term -type input -origin {-180 -20} -name zeroSelect
+  icon_term -type input -origin {-180 0} -name BSelect
+  icon_term -type input -origin {-180 20} -name DSelect
+  icon_term -type input -origin {-180 40} -name {D[3:0]}
+  icon_term -type output -origin {180 -60} -name {S[3:0]}
+  icon_term -type output -origin {180 -40} -name {F[3:0]}
+  icon_term -type output -origin {180 -20} -name {A[3:0]}
+  icon_term -type output -origin {180 0} -name {B[3:0]}
+  icon_term -type output -origin {180 20} -name {RAMIN[3:0]}
+  icon_term -type output -origin {180 40} -name {R[3:0]}
+  icon_term -type inout -origin {-40 -160} -orient R90Y -name SL
+  icon_term -type input -origin {-20 -160} -orient R90 -name notshl
+  icon_term -type input -origin {0 -160} -orient R90 -name shl
+  icon_term -type input -origin {20 -160} -orient R90 -name {L[3:0]}
+  icon_term -type output -origin {40 -160} -orient R90Y -name notCout
+  icon_term -type input -origin {-140 160} -orient R90Y -name notshr
+  icon_term -type input -origin {-120 160} -orient R90Y -name shr
+  icon_term -type input -origin {-100 160} -orient R90Y -name SR
+  icon_term -type input -origin {-80 160} -orient R90Y -name Phi1
+  icon_term -type input -origin {-60 160} -orient R90Y -name {ARdEn[0:3]}
+  icon_term -type input -origin {-40 160} -orient R90Y -name {BRdEn[0:3]}
+  icon_term -type input -origin {-20 160} -orient R90Y -name {WriteEn[0:3]}
+  icon_term -type input -origin {0 160} -orient R90Y -name {FBEn[0:3]}
+  icon_term -type input -origin {20 160} -orient R90Y -name {notFBEn[0:3]}
+  icon_term -type input -origin {40 160} -orient R90Y -name notPhi1
+  icon_term -type input -origin {60 160} -orient R90Y -name {M[3:0]}
+  icon_term -type input -origin {80 160} -orient R90Y -name Phi2
+  icon_term -type input -origin {100 160} -orient R90Y -name notCin
+  icon_term -type input -origin {120 160} -orient R90Y -name {N[3:0]}
   icon_property -origin {0 0} -size large -anchor center -label datapath
-  icon_line -200 -110 200 -110 200 110 -200 110 -200 -110
-  icon_property -origin {-190 -80} -label ASelect
-  icon_property -origin {-190 -60} -label zeroSelect
-  icon_property -origin {-190 -40} -label BSelect
-  icon_property -origin {-190 -20} -label D
-  icon_property -origin {-190 0} -label DSelect
-  icon_property -origin {-190 20} -label notshr
-  icon_property -origin {-190 40} -label shr
-  icon_property -origin {-190 60} -label shl
-  icon_property -origin {190 -80} -anchor e -label ARdEn
-  icon_property -origin {190 -60} -anchor e -label BRdEn
-  icon_property -origin {190 -40} -anchor e -label WriteEn
-  icon_property -origin {190 -20} -anchor e -label FBEn
-  icon_property -origin {190 0} -anchor e -label notFBEn
-  icon_property -origin {190 20} -anchor e -label M
-  icon_property -origin {190 40} -anchor e -label N
-  icon_property -origin {190 60} -anchor e -label notshl
-  icon_property -origin {-60 -100} -rotate 1 -label SR
-  icon_property -origin {-40 -100} -rotate 1 -label L
-  icon_property -origin {-20 -100} -rotate 1 -label notCi
-  icon_property -origin {0 -100} -rotate 1 -label Phi1
-  icon_property -origin {20 -100} -rotate 1 -label notPhi1
-  icon_property -origin {40 -100} -rotate 1 -label Phi2
-  icon_property -origin {-20 100} -anchor e -rotate 1 -label SL
-  icon_property -origin {0 100} -anchor e -rotate 1 -label notCi_1
-  icon_property -origin {-200 330} -type user -name name
-  icon_property -origin {-200 350} -type user -name M
-  icon_property -origin {-200 370} -type user -name dpc
+  icon_line -180 -160 180 -160 180 160 -180 160 -180 -160
+  icon_property -origin {-170 -40} -label ASelect
+  icon_property -origin {-170 -20} -label zeroSelect
+  icon_property -origin {-170 0} -label BSelect
+  icon_property -origin {-170 20} -label DSelect
+  icon_property -origin {-170 40} -label D
+  icon_property -origin {170 -60} -anchor e -label S
+  icon_property -origin {170 -40} -anchor e -label F
+  icon_property -origin {170 -20} -anchor e -label A
+  icon_property -origin {170 0} -anchor e -label B
+  icon_property -origin {170 20} -anchor e -label RAMIN
+  icon_property -origin {170 40} -anchor e -label R
+  icon_property -origin {-40 -150} -rotate 1 -label SL
+  icon_property -origin {-20 -150} -rotate 1 -label notshl
+  icon_property -origin {0 -150} -rotate 1 -label shl
+  icon_property -origin {20 -150} -rotate 1 -label L
+  icon_property -origin {40 -150} -rotate 1 -label notCout
+  icon_property -origin {-140 150} -anchor e -rotate 1 -label notshr
+  icon_property -origin {-120 150} -anchor e -rotate 1 -label shr
+  icon_property -origin {-100 150} -anchor e -rotate 1 -label SR
+  icon_property -origin {-80 150} -anchor e -rotate 1 -label Phi1
+  icon_property -origin {-60 150} -anchor e -rotate 1 -label ARdEn
+  icon_property -origin {-40 150} -anchor e -rotate 1 -label BRdEn
+  icon_property -origin {-20 150} -anchor e -rotate 1 -label WriteEn
+  icon_property -origin {0 150} -anchor e -rotate 1 -label FBEn
+  icon_property -origin {20 150} -anchor e -rotate 1 -label notFBEn
+  icon_property -origin {40 150} -anchor e -rotate 1 -label notPhi1
+  icon_property -origin {60 150} -anchor e -rotate 1 -label M
+  icon_property -origin {80 150} -anchor e -rotate 1 -label Phi2
+  icon_property -origin {100 150} -anchor e -rotate 1 -label notCin
+  icon_property -origin {120 150} -anchor e -rotate 1 -label N
+  icon_property -origin {-180 380} -type user -name name
+  icon_property -origin {-180 400} -type user -name M
+  icon_property -origin {-180 420} -type user -name dpc
 }
 

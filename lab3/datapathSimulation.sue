@@ -1,0 +1,136 @@
+# SUE version MMI_SUE5.5.4
+
+proc SCHEMATIC_datapathSimulation {} {
+  make datapath -origin {520 350}
+  make pwl_source -name Phi1 -edges {25ns 50ns 125ns 150ns 225ns 250ns 325ns 350ns 425ns 450ns 525ns 550ns 625ns 650ns 725ns 750ns 825ns 850ns 925ns 950ns 1025ns 1050ns 1125ns 1150ns 1225ns 1250ns} -origin {440 830}
+  make pwl_source -name Phi2 -edges {75ns 100ns 175ns 200ns 275ns 300ns 375ns 400ns 475ns 500ns 575ns 600ns 675ns 700ns 775ns 800ns 875ns 900ns 975ns 1000ns 1075ns 1100ns 1175ns 1200ns 1275ns 1300ns} -origin {600 830}
+  make inverter -orient R270 -origin {490 730}
+  make global -name gnd -origin {520 870}
+  make inverter -orient R270 -origin {50 460}
+  make input -orient R270 -name shl -origin {50 530}
+  make inverter -orient R270 -origin {60 830}
+  make input -orient R270 -name shr -origin {60 890}
+  make output -name Phi1 -origin {490 790}
+  make output -name Ph2 -origin {600 650}
+  make output -name {R[3:0]} -origin {700 390}
+  make output -name {RAMIN[3:0]} -origin {700 370}
+  make output -name {B[3:0]} -origin {700 350}
+  make output -name {A[3:0]} -origin {700 330}
+  make output -name {F[3:0]} -origin {700 310}
+  make output -name {S[3:0]} -origin {700 290}
+  make output -name notshl -origin {320 20}
+  make output -name notshr -origin {320 630}
+  make input -orient R270 -name {N[3:0]} -origin {640 510}
+  make input -orient R270 -name notCin -origin {620 510}
+  make input -orient R270 -name {M[3:0]} -origin {580 510}
+  make input -orient R90Y -name SR -origin {420 510}
+  make input -orient R90 -name {L[3:0]} -origin {540 190}
+  make output -orient R90Y -name notCout -origin {560 190}
+  make inout -orient R270 -name SL -origin {480 190}
+  make input -name DSelect -origin {340 370}
+  make input -name zeroSelect -origin {340 330}
+  make input -name ASelect -origin {340 310}
+  make input -name BSelect -origin {340 350}
+  make input -name {D[3]} -origin {340 390}
+  make input -orient R90Y -name {ARdEn[0:3]} -origin {460 510}
+  make input -orient R90Y -name {BRdEn[0:3]} -origin {480 510}
+  make input -orient R90Y -name {WriteEn[0:3]} -origin {500 510}
+  make input -orient R90Y -name {FBEn[0:3]} -origin {520 510}
+  make input -orient R90Y -name {notFBEn[0:3]} -origin {540 510}
+  make_wire 0 0 520 0
+  make_wire 50 530 50 490
+  make_wire 380 510 380 630
+  make_wire 60 630 60 780
+  make_wire 0 610 0 890
+  make_wire 0 610 400 610
+  make_wire 60 860 60 890
+  make_wire 0 890 60 890
+  make_wire 400 610 400 510
+  make_wire 440 790 490 790
+  make_wire 60 630 320 630
+  make_wire 320 630 380 630
+  make_wire 440 510 440 790
+  make_wire 440 870 520 870
+  make_wire 520 870 600 870
+  make_wire 50 20 320 20
+  make_wire 320 20 500 20
+  make_wire 520 0 520 190
+  make_wire 500 20 500 190
+  make_wire 50 20 50 410
+  make_wire 0 0 0 530
+  make_wire 0 530 50 530
+  make_wire 600 650 600 510
+  make_wire 600 650 600 790
+  make_wire 490 760 490 790
+  make_wire 490 670 560 670
+  make_wire 560 510 560 670
+  make_wire 490 670 490 680
+}
+
+proc ICON_datapathSimulation args {
+  icon_setup $args {{origin {0 0}} {orient R0} {name {}} {M {}} {dpc {}}}
+  icon_term -type input -origin {-260 -40} -name ASelect
+  icon_term -type input -origin {-260 -20} -name zeroSelect
+  icon_term -type input -origin {-260 0} -name BSelect
+  icon_term -type input -origin {-260 20} -name DSelect
+  icon_term -type input -origin {-260 40} -name {D[3]}
+  icon_term -type output -origin {260 -100} -name notshl
+  icon_term -type output -origin {260 -80} -name {S[3:0]}
+  icon_term -type output -origin {260 -60} -name {F[3:0]}
+  icon_term -type output -origin {260 -40} -name {A[3:0]}
+  icon_term -type output -origin {260 -20} -name {B[3:0]}
+  icon_term -type output -origin {260 0} -name {RAMIN[3:0]}
+  icon_term -type output -origin {260 20} -name {R[3:0]}
+  icon_term -type output -origin {260 40} -name notshr
+  icon_term -type output -origin {260 60} -name Ph2
+  icon_term -type output -origin {260 80} -name Phi1
+  icon_term -type inout -origin {-20 -160} -orient R90Y -name SL
+  icon_term -type input -origin {0 -160} -orient R90 -name {L[3:0]}
+  icon_term -type output -origin {20 -160} -orient R90Y -name notCout
+  icon_term -type input -origin {-100 160} -orient R90Y -name shl
+  icon_term -type input -origin {-80 160} -orient R90Y -name shr
+  icon_term -type input -origin {-60 160} -orient R90Y -name SR
+  icon_term -type input -origin {-40 160} -orient R90Y -name {ARdEn[0:3]}
+  icon_term -type input -origin {-20 160} -orient R90Y -name {BRdEn[0:3]}
+  icon_term -type input -origin {0 160} -orient R90Y -name {WriteEn[0:3]}
+  icon_term -type input -origin {20 160} -orient R90Y -name {FBEn[0:3]}
+  icon_term -type input -origin {40 160} -orient R90Y -name {notFBEn[0:3]}
+  icon_term -type input -origin {60 160} -orient R90Y -name {M[3:0]}
+  icon_term -type input -origin {80 160} -orient R90Y -name notCin
+  icon_term -type input -origin {100 160} -orient R90Y -name {N[3:0]}
+  icon_property -origin {0 0} -size large -anchor center -label datapathSimulation
+  icon_line -260 -160 260 -160 260 160 -260 160 -260 -160
+  icon_property -origin {-250 -40} -label ASelect
+  icon_property -origin {-250 -20} -label zeroSelect
+  icon_property -origin {-250 0} -label BSelect
+  icon_property -origin {-250 20} -label DSelect
+  icon_property -origin {-250 40} -label D
+  icon_property -origin {250 -100} -anchor e -label notshl
+  icon_property -origin {250 -80} -anchor e -label S
+  icon_property -origin {250 -60} -anchor e -label F
+  icon_property -origin {250 -40} -anchor e -label A
+  icon_property -origin {250 -20} -anchor e -label B
+  icon_property -origin {250 0} -anchor e -label RAMIN
+  icon_property -origin {250 20} -anchor e -label R
+  icon_property -origin {250 40} -anchor e -label notshr
+  icon_property -origin {250 60} -anchor e -label Ph2
+  icon_property -origin {250 80} -anchor e -label Phi1
+  icon_property -origin {-20 -150} -rotate 1 -label SL
+  icon_property -origin {0 -150} -rotate 1 -label L
+  icon_property -origin {20 -150} -rotate 1 -label notCout
+  icon_property -origin {-100 150} -anchor e -rotate 1 -label shl
+  icon_property -origin {-80 150} -anchor e -rotate 1 -label shr
+  icon_property -origin {-60 150} -anchor e -rotate 1 -label SR
+  icon_property -origin {-40 150} -anchor e -rotate 1 -label ARdEn
+  icon_property -origin {-20 150} -anchor e -rotate 1 -label BRdEn
+  icon_property -origin {0 150} -anchor e -rotate 1 -label WriteEn
+  icon_property -origin {20 150} -anchor e -rotate 1 -label FBEn
+  icon_property -origin {40 150} -anchor e -rotate 1 -label notFBEn
+  icon_property -origin {60 150} -anchor e -rotate 1 -label M
+  icon_property -origin {80 150} -anchor e -rotate 1 -label notCin
+  icon_property -origin {100 150} -anchor e -rotate 1 -label N
+  icon_property -origin {-260 380} -type user -name name
+  icon_property -origin {-260 400} -type user -name M
+  icon_property -origin {-260 420} -type user -name dpc
+}
+
