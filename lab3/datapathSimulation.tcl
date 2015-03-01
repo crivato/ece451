@@ -4,7 +4,8 @@ h notCin
 l shl shr
 h notshl notshr
 l SR SL
-stepsize 25
+l ASelect zeroSelect BSelect DSelect
+stepsize 200
 vector CLOCK Phi1 notPhi1 Phi2
 vector D {D[3:0]}
 vector S {S[3:0]}
@@ -21,7 +22,11 @@ vector notFBEn {notFBEn[3:0]}
 vector L {L[3:0]}
 vector M {M[3:0]}
 vector N {N[3:0]}
-w Phi1 notPhi1 Phi2 D A B
+vector CTRL_SHIFTER notshl shl notshr shr
+vector CTRL_Ri {ARdEn[3:0]} {BRdEn[3:0]} {FBEn[3:0]} {notFBEn[3:0]} {WriteEn[3:0]}
+vector CTRL_MUX ASelect zeroSelect BSelect DSelect
+w Phi1 notPhi1 Phi2 D A B L M N R S F RAMIN notCout notCin
+w CTRL_Ri CTRL_SHIFTER CTRL_MUX
 clock CLOCK 010 100 010 011
 setvector D 0000
 setvector FBEn 1111
@@ -29,5 +34,7 @@ setvector notFBEn 0000
 setvector WriteEn 0000
 setvector ARdEn 0000
 setvector BRdEn 0000
-
+setvector L 1111
+setvector N 1111
+setvector M 1111
 
