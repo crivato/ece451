@@ -5,7 +5,7 @@ l shl shr
 h notshl notshr
 l SR SL
 l ASelect zeroSelect BSelect DSelect
-stepsize 200
+stepsize 500
 vector CLOCK Phi1 notPhi1 Phi2
 vector D {D[3:0]}
 vector S {S[3:0]}
