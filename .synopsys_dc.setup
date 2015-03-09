@@ -1,0 +1,27 @@
+/* This .synopsys_dc.setup file should be used when transfering desgins
+   to Cadence dfII */
+
+search_path = {.}
+search_path = search_path + {synopsys_root + /libraries/syn}
+
+link_library = "* /cad2/ece451/synopsys/ece451_cells.db" 
+target_library = {/cad2/ece451/synopsys/ece451_cells.db} 
+symbol_library = {}
+
+write_name_nets_same_as_ports="true"
+bus_naming_style = "%s[%d]"
+verilogout_no_tri = "true"
+define_name_rules preview -allowed "A-Za-z0-9_[]"
+verilogout_single_bit = "false"
+
+/* Some usefull scripts. */
+view_script_submenu_items = \
+   {"Remove All Designs","remove_design find(design \"*\")", \
+    "Save All Designs", "write find(design \"*\") -out save.db", \
+    "set_dont_touch All Designs", "set_dont_touch find(design \"*\")", \
+    "Remove dont_touch All Designs", \
+       "remove_attribute find(design \"*\") dont_touch", \
+    "Remove Unconnected Ports", \
+       "remove_unconnected_ports -blast_buses find(-hierarchy cell, \"*\")", \
+    "Change Names for Preview", \
+       "change_names -rules preview -hierarchy > change_names.out" }
