@@ -1,0 +1,504 @@
+1) Med mapping effort
+Structure logic on (timing driven structuring on, boolean Optimization on)
+1.4 ns clock
+
+2) High mapping effort
+1.38ns clock
+Structure logic off
+
+3) High mapping effort
+1.4ns clock
+Structure logic off
+Boundary Optimization on
+
+4) High mapping effort
+1.2ns clock (violated, still under 1.4)
+Structure logic on (timing driven structuring off, boolean Optimization on)
+
+5)Med mapping effort
+1.3ns clock (violated, still under 1.4)
+Structure logic off
+Flatten Logic on (high effort, multiple output, apply strategy)
+
+6) high mapping effort
+1.3ns clock (violated, still under 1.4)
+Structure logic on (timing driven structuring on, Boundary Optimization on)
+Flatten Logic on (high effort, multiple output, apply strategy)
+Boundary Optimization on
+
+
+1)
+****************************************
+Report : area
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 17:15:33 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:                6
+Number of nets:                20
+Number of cells:               13
+Number of references:           6
+
+Combinational area:        582.119934
+Noncombinational area:    1358.279907
+Net Interconnect area:       0.284977  
+
+Total cell area:          1940.400024
+Total area:               1940.684814
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 17:15:33 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: c_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: carry_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FA                 q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  c_reg/C (fdp1)                           0.00       0.00 r
+  c_reg/NQ (fdp1)                          0.74       0.74 f
+  U44/NQ (na2p1)                           0.22       0.95 r
+  U45/NQ (na2p1)                           0.17       1.12 f
+  U47/NQ (na2p1)                           0.18       1.30 r
+  carry_out_reg/D (fdp1)                   0.00       1.30 r
+  data arrival time                                   1.30
+
+  clock clk (rise edge)                    1.40       1.40
+  clock network delay (ideal)              0.00       1.40
+  carry_out_reg/C (fdp1)                   0.00       1.40 r
+  library setup time                      -0.09       1.31
+  data required time                                  1.31
+  -----------------------------------------------------------
+  data required time                                  1.31
+  data arrival time                                  -1.30
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+1
+design_analyzer> 
+
+
+
+
+
+2)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : area
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 17:54:18 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:                6
+Number of nets:                18
+Number of cells:               12
+Number of references:           7
+
+Combinational area:        582.119995
+Noncombinational area:    1428.839966
+Net Interconnect area:       0.275656  
+
+Total cell area:          2010.959961
+Total area:               2011.235596
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 17:54:18 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: b_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: carry_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FA                 q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  b_reg/C (fdp2)                           0.00       0.00 r
+  b_reg/NQ (fdp2)                          0.76       0.76 f
+  U855/NQ (na2p1)                          0.20       0.96 r
+  U859/NQ (na2p1)                          0.15       1.11 f
+  U858/NQ (na2p1)                          0.17       1.28 r
+  carry_out_reg/D (fdp1)                   0.00       1.28 r
+  data arrival time                                   1.28
+
+  clock clk (rise edge)                    1.38       1.38
+  clock network delay (ideal)              0.00       1.38
+  carry_out_reg/C (fdp1)                   0.00       1.38 r
+  library setup time                      -0.09       1.29
+  data required time                                  1.29
+  -----------------------------------------------------------
+  data required time                                  1.29
+  data arrival time                                  -1.28
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+1
+design_analyzer> 
+
+
+
+
+
+
+
+
+
+3)
+ 
+****************************************
+Report : area
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 18:04:27 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:                6
+Number of nets:                16
+Number of cells:               11
+Number of references:           7
+
+Combinational area:        599.759949
+Noncombinational area:    1428.839966
+Net Interconnect area:       0.272980  
+
+Total cell area:          2028.599976
+Total area:               2028.872925
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 18:04:27 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: c_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sum_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FA                 q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  c_reg/C (fdp2)                           0.00       0.00 r
+  c_reg/Q (fdp2)                           0.66       0.66 f
+  U166/Q (xo2p2)                           0.34       0.99 f
+  U170/NQ (xn2p2)                          0.31       1.30 r
+  sum_out_reg/D (fdp1)                     0.00       1.30 r
+  data arrival time                                   1.30
+
+  clock clk (rise edge)                    1.40       1.40
+  clock network delay (ideal)              0.00       1.40
+  sum_out_reg/C (fdp1)                     0.00       1.40 r
+  library setup time                      -0.09       1.31
+  data required time                                  1.31
+  -----------------------------------------------------------
+  data required time                                  1.31
+  data arrival time                                  -1.30
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+1
+design_analyzer> 
+
+
+
+
+
+
+
+
+4) 
+****************************************
+Report : area
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 18:14:29 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:                6
+Number of nets:                20
+Number of cells:               13
+Number of references:           7
+
+Combinational area:        617.399963
+Noncombinational area:    1428.839966
+Net Interconnect area:       0.284977  
+
+Total cell area:          2046.239990
+Total area:               2046.524902
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 18:14:29 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: a_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sum_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FA                 q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  a_reg/C (fdp2)                           0.00       0.00 r
+  a_reg/Q (fdp2)                           0.57       0.57 f
+  U542/Q (xo2p2)                           0.40       0.97 r
+  U541/NQ (xn2p2)                          0.31       1.28 r
+  sum_out_reg/D (fdp1)                     0.00       1.28 r
+  data arrival time                                   1.28
+
+  clock clk (rise edge)                    1.20       1.20
+  clock network delay (ideal)              0.00       1.20
+  sum_out_reg/C (fdp1)                     0.00       1.20 r
+  library setup time                      -0.09       1.11
+  data required time                                  1.11
+  -----------------------------------------------------------
+  data required time                                  1.11
+  data arrival time                                  -1.28
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.17
+
+
+1
+design_analyzer> 
+
+
+
+5) 
+ 
+****************************************
+Report : area
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 19:41:10 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:                6
+Number of nets:                18
+Number of cells:               12
+Number of references:           9
+
+Combinational area:        705.599976
+Noncombinational area:    1428.839966
+Net Interconnect area:       0.275656  
+
+Total cell area:          2134.439941
+Total area:               2134.715576
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 19:41:10 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: c_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sum_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FA                 q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  c_reg/C (fdp2)                           0.00       0.00 r
+  c_reg/Q (fdp2)                           0.57       0.57 f
+  U48/Q (xo2p2)                            0.40       0.97 r
+  U51/NQ (xn2p2)                           0.31       1.28 r
+  sum_out_reg/D (fdp1)                     0.00       1.28 r
+  data arrival time                                   1.28
+
+  clock clk (rise edge)                    1.30       1.30
+  clock network delay (ideal)              0.00       1.30
+  sum_out_reg/C (fdp1)                     0.00       1.30 r
+  library setup time                      -0.09       1.21
+  data required time                                  1.21
+  -----------------------------------------------------------
+  data required time                                  1.21
+  data arrival time                                  -1.28
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.07
+
+
+1
+design_analyzer> 
+
+
+
+
+
+6)
+ 
+****************************************
+Report : area
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 19:43:47 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:                6
+Number of nets:                20
+Number of cells:               13
+Number of references:           6
+
+Combinational area:        599.759949
+Noncombinational area:    1428.839966
+Net Interconnect area:       0.284977  
+
+Total cell area:          2028.599976
+Total area:               2028.884888
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FA
+Version: X-2005.09
+Date   : Wed Mar 11 19:43:47 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: a_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sum_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FA                 q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  a_reg/C (fdp2)                           0.00       0.00 r
+  a_reg/Q (fdp2)                           0.57       0.57 f
+  U93/Q (xo2p2)                            0.40       0.97 r
+  U92/NQ (xn2p2)                           0.31       1.28 r
+  sum_out_reg/D (fdp1)                     0.00       1.28 r
+  data arrival time                                   1.28
+
+  clock clk (rise edge)                    1.30       1.30
+  clock network delay (ideal)              0.00       1.30
+  sum_out_reg/C (fdp1)                     0.00       1.30 r
+  library setup time                      -0.09       1.21
+  data required time                                  1.21
+  -----------------------------------------------------------
+  data required time                                  1.21
+  data arrival time                                  -1.28
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.07
+
+
+1
+design_analyzer> 
