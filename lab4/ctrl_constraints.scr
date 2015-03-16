@@ -1,0 +1,23 @@
+compile -map_effort low
+create_clock -name "phi1" -period 19.1 -waveform {"0" "9.3"} {"phi1"}
+create_clock -name "phi2" -period 19.1 -waveform {"9.55" "18.85"} {"phi2"}
+set_max_delay 0.2 -from {"phi1"} -to {"phi1_1"}
+set_max_delay 0.2 -from {"phi1"} -to {"phi1_2"}
+set_max_delay 0.2 -from {"phi1"} -to {"phi1_3"}
+set_max_delay 0.2 -from {"phi2"} -to {"phi2_1"}
+set_max_delay 0.2 -from {"phi1"} -to {"notphi1_1"}
+set_max_delay 0.2 -from {"phi1"} -to {"notphi1_1"}
+set_output_delay -clock phi1 -max 0 "ARdEn"
+set_output_delay -clock phi1 -max 0 "BRdEn"
+set_output_delay -clock phi1 -max 2.2 "ASelect"
+set_output_delay -clock phi1 -max 2.2 "zeroSelect"
+set_output_delay -clock phi1 -max 2.2 "DSelect"
+set_output_delay -clock phi1 -max 2.2 "BSelect"
+set_output_delay -clock phi2 -max 0 "L"
+set_output_delay -clock phi2 -max 0 "M"
+set_output_delay -clock phi2 -max 3.5 "N"
+set_output_delay -clock phi2 -max 6 "shr"
+set_output_delay -clock phi2 -max 6 "shl"
+set_output_delay -clock phi2 -max 6 "notshr"
+set_output_delay -clock phi2 -max 6 "notshl"
+set_output_delay -clock phi2 -max 7.5 "WriteEn"
