@@ -1,0 +1,73 @@
+ 
+****************************************
+Report : area
+Design : FA
+Version: X-2005.09
+Date   : Mon Mar 16 13:28:36 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:                6
+Number of nets:                20
+Number of cells:               13
+Number of references:           7
+
+Combinational area:        617.399902
+Noncombinational area:    1393.559937
+Net Interconnect area:       0.284977  
+
+Total cell area:          2010.959961
+Total area:               2011.244873
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : FA
+Version: X-2005.09
+Date   : Mon Mar 16 13:28:36 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: a_reg (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sum_out_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  FA                 q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  a_reg/C (fdp2)                           0.00       0.00 r
+  a_reg/Q (fdp2)                           0.57       0.57 f
+  U38/Q (xo2p2)                            0.40       0.97 r
+  U34/NQ (xn2p2)                           0.31       1.28 r
+  sum_out_reg/D (fdp1)                     0.00       1.28 r
+  data arrival time                                   1.28
+
+  clock clk (rise edge)                    1.38       1.38
+  clock network delay (ideal)              0.00       1.38
+  sum_out_reg/C (fdp1)                     0.00       1.38 r
+  library setup time                      -0.09       1.29
+  data required time                                  1.29
+  -----------------------------------------------------------
+  data required time                                  1.29
+  data arrival time                                  -1.28
+  -----------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+1
+design_analyzer> 
