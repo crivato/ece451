@@ -1,0 +1,42 @@
+read -format verilog control.v
+Current_design control
+Uniquify
+Characterize -cons {I1, I2, I3}
+Write -o top.db
+
+Current_design decoder_0
+Write_script > decoder_0.scr
+Write -o decoder_0.db
+
+Current_design decoder_1
+Write_script > decoder_1.scr
+Write -o decoder_1.db
+
+Current_design decoder_2
+Write_script > decoder_2.scr
+Write -o decoder_2.db
+
+remove_design -designs
+
+read decoder_0.db
+include decoder_0.scr
+compile -map_effort low
+write -o decoder_0.db
+
+read decoder_1.db
+include decoder_1.scr
+compile -map_effort low
+write -o decoder_1.db
+
+read decoder_2.db
+include decoder_2.scr
+compile -map_effort low
+write -o decoder_2.db
+
+read top.db
+read decoder_0.db
+read decoder_1.db
+read decoder_2.db
+
+Current_design control
+compile -map_effort low

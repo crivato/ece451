@@ -1,0 +1,1 @@
+create_clock -name "clk" -period 19.1 -waveform {   "0" "9.3" } {   "clk" }
