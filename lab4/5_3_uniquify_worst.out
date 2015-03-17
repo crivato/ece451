@@ -1,0 +1,120 @@
+ 
+****************************************
+Report : timing
+        -path end
+        -delay max
+        -nworst 100
+        -max_paths 100
+Design : control
+Version: X-2005.09
+Date   : Mon Mar 16 21:25:29 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+Endpoint                         Path Delay     Path Required     Slack
+------------------------------------------------------------------------
+notphi1_1 (out)                     0.27 f            0.20        -0.07
+notphi1_1 (out)                     0.26 r            0.20        -0.06
+phi1_1 (out)                        0.00 f            0.20         0.20
+phi1_1 (out)                        0.00 r            0.20         0.20
+phi1_2 (out)                        0.00 f            0.20         0.20
+phi1_2 (out)                        0.00 r            0.20         0.20
+phi1_3 (out)                        0.00 f            0.20         0.20
+phi1_3 (out)                        0.00 r            0.20         0.20
+phi2_1 (out)                        0.00 f            0.20         0.20
+phi2_1 (out)                        0.00 r            0.20         0.20
+WriteEn[0] (out)                    1.72 f            2.05         0.33
+WriteEn[2] (out)                    1.70 f            2.05         0.35
+WriteEn[0] (out)                    1.70 f            2.05         0.35
+WriteEn[1] (out)                    1.70 f            2.05         0.35
+WriteEn[2] (out)                    1.58 r            2.05         0.47
+WriteEn[0] (out)                    1.58 r            2.05         0.47
+WriteEn[1] (out)                    1.58 r            2.05         0.47
+WriteEn[0] (out)                    1.56 r            2.05         0.49
+WriteEn[2] (out)                    1.35 f            2.05         0.70
+WriteEn[3] (out)                    1.35 f            2.05         0.70
+WriteEn[1] (out)                    1.35 f            2.05         0.70
+WriteEn[3] (out)                    1.34 f            2.05         0.71
+WriteEn[3] (out)                    1.32 r            2.05         0.73
+WriteEn[2] (out)                    1.31 r            2.05         0.74
+WriteEn[3] (out)                    1.31 r            2.05         0.74
+WriteEn[1] (out)                    1.31 r            2.05         0.74
+WriteEn[0] (out)                    0.43 f            2.30         1.87
+WriteEn[1] (out)                    0.43 f            2.30         1.87
+WriteEn[2] (out)                    0.43 f            2.30         1.87
+WriteEn[3] (out)                    0.43 f            2.30         1.87
+shl (out)                           0.73 r            3.55         2.82
+shr (out)                           0.73 r            3.55         2.82
+shl (out)                           0.66 f            3.55         2.89
+shr (out)                           0.66 f            3.55         2.89
+notshl (out)                        0.59 f            3.55         2.96
+notshr (out)                        0.59 f            3.55         2.96
+notshl (out)                        0.51 r            3.55         3.04
+notshr (out)                        0.51 r            3.55         3.04
+N[3] (out)                          2.70 f            6.05         3.35
+N[3] (out)                          2.59 f            6.05         3.46
+N[3] (out)                          2.56 f            6.05         3.49
+N[3] (out)                          2.55 r            6.05         3.50
+N[3] (out)                          2.47 r            6.05         3.58
+N[3] (out)                          2.43 r            6.05         3.62
+N[3] (out)                          2.34 r            6.05         3.71
+N[3] (out)                          2.31 f            6.05         3.74
+N[3] (out)                          2.29 r            6.05         3.76
+N[3] (out)                          2.28 r            6.05         3.77
+N[3] (out)                          2.25 r            6.05         3.80
+N[3] (out)                          2.25 f            6.05         3.80
+N[3] (out)                          2.24 f            6.05         3.81
+N[3] (out)                          2.19 f            6.05         3.86
+N[2] (out)                          1.85 r            6.05         4.20
+N[2] (out)                          1.83 f            6.05         4.22
+N[2] (out)                          1.79 f            6.05         4.26
+N[2] (out)                          1.79 r            6.05         4.26
+N[2] (out)                          1.70 r            6.05         4.35
+N[2] (out)                          1.69 f            6.05         4.36
+N[2] (out)                          1.61 r            6.05         4.44
+N[2] (out)                          1.60 f            6.05         4.45
+N[3] (out)                          1.51 r            6.05         4.54
+N[0] (out)                          1.39 f            6.05         4.66
+N[3] (out)                          1.38 f            6.05         4.67
+N[3] (out)                          1.53 r            6.30         4.77
+N[0] (out)                          1.28 f            6.05         4.77
+N[2] (out)                          1.26 f            6.05         4.79
+N[0] (out)                          1.25 f            6.05         4.80
+N[0] (out)                          1.23 r            6.05         4.82
+N[0] (out)                          1.15 r            6.05         4.90
+N[1] (out)                          1.14 r            6.05         4.91
+N[0] (out)                          1.11 r            6.05         4.94
+N[2] (out)                          1.10 r            6.05         4.95
+N[1] (out)                          1.06 r            6.05         4.99
+N[1] (out)                          1.05 r            6.05         5.00
+N[1] (out)                          1.03 f            6.05         5.02
+N[1] (out)                          0.91 f            6.05         5.14
+N[1] (out)                          0.90 f            6.05         5.15
+N[1] (out)                          0.23 r            6.30         6.07
+N[2] (out)                          0.22 r            6.30         6.08
+N[0] (out)                          0.21 r            6.30         6.09
+DSelect (out)                       0.73 r            7.35         6.62
+zeroSelect (out)                    0.73 r            7.35         6.62
+DSelect (out)                       0.66 f            7.35         6.69
+zeroSelect (out)                    0.66 f            7.35         6.69
+ASelect (out)                       0.59 f            7.35         6.76
+BSelect (out)                       0.59 f            7.35         6.76
+ASelect (out)                       0.51 r            7.35         6.84
+BSelect (out)                       0.51 r            7.35         6.84
+L[1] (out)                          2.70 f            9.55         6.85
+L[2] (out)                          2.66 f            9.55         6.89
+L[1] (out)                          2.59 f            9.55         6.96
+L[2] (out)                          2.56 r            9.55         6.99
+L[1] (out)                          2.56 f            9.55         6.99
+L[2] (out)                          2.55 f            9.55         7.00
+L[1] (out)                          2.53 r            9.55         7.02
+L[2] (out)                          2.53 f            9.55         7.02
+L[2] (out)                          2.49 r            9.55         7.06
+L[1] (out)                          2.46 r            9.55         7.09
+L[2] (out)                          2.45 r            9.55         7.10
+L[1] (out)                          2.42 r            9.55         7.13
+
+1
+design_analyzer> 

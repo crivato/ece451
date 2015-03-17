@@ -1,0 +1,237 @@
+ 
+****************************************
+Report : area
+Design : control
+Version: X-2005.09
+Date   : Mon Mar 16 21:05:12 2015
+****************************************
+
+Library(s) Used:
+
+    gtech (File: /CMC/tools/synopsys/syn_vX-2005.09/libraries/syn/gtech.db)
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:               55
+Number of nets:                81
+Number of cells:               43
+Number of references:          10
+
+Combinational area:       1517.040283
+Noncombinational area:    2751.839355
+Net Interconnect area:       2.386782  
+
+Total cell area:          4268.879883
+Total area:               4271.266602
+
+Information: This design contains unmapped logic. (RPT-7)
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : control
+Version: X-2005.09
+Date   : Mon Mar 16 21:05:12 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: opsel_reg[0]
+              (positive level-sensitive latch clocked by phi2)
+  Endpoint: DSelect (output port clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock phi2 (rise edge)                   9.55       9.55
+  clock network delay (ideal)              0.00       9.55
+  opsel_reg[0]/G (latsp2)                  0.00       9.55 r
+  opsel_reg[0]/Q (latsp2)                  0.73      10.28 r
+  DSelect (out)                            0.00      10.28 r
+  data arrival time                                  10.28
+
+  clock phi1 (rise edge)                  19.10      19.10
+  clock network delay (ideal)              0.00      19.10
+  output external delay                   -2.20      16.90
+  data required time                                 16.90
+  -----------------------------------------------------------
+  data required time                                 16.90
+  data arrival time                                 -10.28
+  -----------------------------------------------------------
+  slack (MET)                                         6.62
+
+
+  Startpoint: waddr_reg[1]
+              (positive level-sensitive latch clocked by phi1)
+  Endpoint: WriteEn[0] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  waddr_reg[1]/G (latsp2)                  0.00       0.00 r
+  waddr_reg[1]/Q (latsp2)                  0.86       0.86 r
+  I3/a[1] (decoder)                        0.00       0.86 r
+  I3/C24/Z (GTECH_OR2)                     0.00       0.86 r
+  I3/I_2/Z (GTECH_NOT)                     0.00       0.86 f
+  I3/C16/Z_0 (*SELECT_OP_2.4_2.1_4)        0.00       0.86 f
+  I3/x[0] (decoder)                        0.00       0.86 f
+  WriteEn[0] (out)                         0.00       0.86 f
+  data arrival time                                   0.86
+
+  clock phi2 (rise edge)                   9.55       9.55
+  clock network delay (ideal)              0.00       9.55
+  output external delay                   -7.50       2.05
+  data required time                                  2.05
+  -----------------------------------------------------------
+  data required time                                  2.05
+  data arrival time                                  -0.86
+  -----------------------------------------------------------
+  slack (MET)                                         1.19
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: notphi1_1 (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  phi1 (in)                                0.00       0.00 r
+  U51/NQ (invp1)                           0.27       0.27 f
+  notphi1_1 (out)                          0.00       0.27 f
+  data arrival time                                   0.27
+
+  max_delay                                0.20       0.20
+  output external delay                    0.00       0.20
+  data required time                                  0.20
+  -----------------------------------------------------------
+  data required time                                  0.20
+  data arrival time                                  -0.27
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.07
+
+
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : control
+Version: X-2005.09
+Date   : Mon Mar 16 21:09:59 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: opsel_reg[0]
+              (positive level-sensitive latch clocked by phi2)
+  Endpoint: DSelect (output port clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock phi2 (rise edge)                   9.55       9.55
+  clock network delay (ideal)              0.00       9.55
+  opsel_reg[0]/G (latsp2)                  0.00       9.55 r
+  opsel_reg[0]/Q (latsp2)                  0.73      10.28 r
+  DSelect (out)                            0.00      10.28 r
+  data arrival time                                  10.28
+
+  clock phi1 (rise edge)                  19.10      19.10
+  clock network delay (ideal)              0.00      19.10
+  output external delay                   -2.20      16.90
+  data required time                                 16.90
+  -----------------------------------------------------------
+  data required time                                 16.90
+  data arrival time                                 -10.28
+  -----------------------------------------------------------
+  slack (MET)                                         6.62
+
+
+  Startpoint: waddr_reg[1]
+              (positive level-sensitive latch clocked by phi1)
+  Endpoint: WriteEn[0] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  waddr_reg[1]/G (latsp2)                  0.00       0.00 r
+  waddr_reg[1]/Q (latsp2)                  0.86       0.86 r
+  I3/a[1] (decoder)                        0.00       0.86 r
+  I3/C24/Z (GTECH_OR2)                     0.00       0.86 r
+  I3/I_2/Z (GTECH_NOT)                     0.00       0.86 f
+  I3/C16/Z_0 (*SELECT_OP_2.4_2.1_4)        0.00       0.86 f
+  I3/x[0] (decoder)                        0.00       0.86 f
+  WriteEn[0] (out)                         0.00       0.86 f
+  data arrival time                                   0.86
+
+  clock phi2 (rise edge)                   9.55       9.55
+  clock network delay (ideal)              0.00       9.55
+  output external delay                   -7.50       2.05
+  data required time                                  2.05
+  -----------------------------------------------------------
+  data required time                                  2.05
+  data arrival time                                  -0.86
+  -----------------------------------------------------------
+  slack (MET)                                         1.19
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: notphi1_1 (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  phi1 (in)                                0.00       0.00 r
+  U51/NQ (invp1)                           0.27       0.27 f
+  notphi1_1 (out)                          0.00       0.27 f
+  data arrival time                                   0.27
+
+  max_delay                                0.20       0.20
+  output external delay                    0.00       0.20
+  data required time                                  0.20
+  -----------------------------------------------------------
+  data required time                                  0.20
+  data arrival time                                  -0.27
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.07
+

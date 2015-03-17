@@ -1,0 +1,128 @@
+ 
+****************************************
+Report : area
+Design : control
+Version: X-2005.09
+Date   : Mon Mar 16 21:33:17 2015
+****************************************
+
+Library(s) Used:
+
+    ece451_cells (File: /cad2/ece451/synopsys/ece451_cells.db)
+
+Number of ports:               55
+Number of nets:                88
+Number of cells:               58
+Number of references:          10
+
+Combinational area:       2875.319824
+Noncombinational area:    2751.839355
+Net Interconnect area:       2.141498  
+
+Total cell area:          5627.159668
+Total area:               5629.300781
+1
+design_analyzer>  
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : control
+Version: X-2005.09
+Date   : Mon Mar 16 21:33:17 2015
+****************************************
+
+Operating Conditions: nom_pvt   Library: ece451_cells
+Wire Load Model Mode: top
+
+  Startpoint: opsel_reg[0]
+              (positive level-sensitive latch clocked by phi2)
+  Endpoint: DSelect (output port clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock phi2 (rise edge)                   9.55       9.55
+  clock network delay (ideal)              0.00       9.55
+  opsel_reg[0]/G (latsp2)                  0.00       9.55 r
+  opsel_reg[0]/Q (latsp2)                  0.73      10.28 r
+  DSelect (out)                            0.00      10.28 r
+  data arrival time                                  10.28
+
+  clock phi1 (rise edge)                  19.10      19.10
+  clock network delay (ideal)              0.00      19.10
+  output external delay                   -2.20      16.90
+  data required time                                 16.90
+  -----------------------------------------------------------
+  data required time                                 16.90
+  data arrival time                                 -10.28
+  -----------------------------------------------------------
+  slack (MET)                                         6.62
+
+
+  Startpoint: waddr_reg[0]
+              (positive level-sensitive latch clocked by phi1)
+  Endpoint: WriteEn[0] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  waddr_reg[0]/G (latsp2)                  0.00       0.00 r
+  waddr_reg[0]/Q (latsp2)                  0.85       0.85 r
+  I3/U37/NQ (invp1)                        0.29       1.14 f
+  I3/U35/Q (an3p1)                         0.58       1.72 f
+  WriteEn[0] (out)                         0.00       1.72 f
+  data arrival time                                   1.72
+
+  clock phi2 (rise edge)                   9.55       9.55
+  clock network delay (ideal)              0.00       9.55
+  output external delay                   -7.50       2.05
+  data required time                                  2.05
+  -----------------------------------------------------------
+  data required time                                  2.05
+  data arrival time                                  -1.72
+  -----------------------------------------------------------
+  slack (MET)                                         0.33
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: notphi1_1 (output port)
+  Path Group: default
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  control            q35_27k               ece451_cells
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  phi1 (in)                                0.00       0.00 r
+  U107/NQ (invp1)                          0.27       0.27 f
+  notphi1_1 (out)                          0.00       0.27 f
+  data arrival time                                   0.27
+
+  max_delay                                0.20       0.20
+  output external delay                    0.00       0.20
+  data required time                                  0.20
+  -----------------------------------------------------------
+  data required time                                  0.20
+  data arrival time                                  -0.27
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.07
+
+
+1
+design_analyzer> 
