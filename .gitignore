@@ -10,7 +10,6 @@
 #sue
 *.sim
 *.sp
-*.out
 *.sp3
 *.tr0
 *.dict
