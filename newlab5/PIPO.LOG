@@ -1,0 +1,124 @@
+
+********************************************************************************
+Product   : Virtuoso(R) STREAM Out
+Program   : @(#)$CDS: pipo.exe version 5.1.0 04/26/2009 23:45 (cicln04) $
+SubVersion: sub-version 5.10.41.500.6.134
+Started at: 29-Mar-2015  22:49:57
+User Name : garland1
+Host Name : ug179.eecg
+Directory : /nfs/ug/homes-0/g/garland1/ece451/ece451/newlab5
+CADENCE Design Systems, Inc.
+********************************************************************************
+
+     1. translating cellview (control layout)
+WARNING (267): The Cadence design contains layer `59' which is not defined in the technology file. This layer will be ignored.
+WARNING (347): Failed to get the Stream layer rules for the layer-purpose pair `prBoundary:drawing'. All objects on this LPP will be dropped.
+WARNING (347): Failed to get the Stream layer rules for the layer-purpose pair `Row:label'. All objects on this LPP will be dropped.
+WARNING (347): Failed to get the Stream layer rules for the layer-purpose pair `Row:drawing'. All objects on this LPP will be dropped.
+WARNING (347): Failed to get the Stream layer rules for the layer-purpose pair `prBoundary:boundary'. All objects on this LPP will be dropped.
+
+			Individual Cell Statistics
+
+CellView          Rectangles Polygons   Paths Ellipses Labels Instances Arrays  Nodes
+*************************************************************************************
+control/layout          6850      663       0       0     402       0       0      0
+
+
+                    Statistics Of Layers
+
+
+Cadence    Cadence    Stream   Stream
+ Layer     Purpose    Layer   Datatype Rectangles Polygons Paths  Ellipses  Labels   Nodes
+-------------------------------------------------------------------------------------------
+met3       pin        73        0         9        0        0        0        0        0       
+poly       drawing    11        0         0        251      0        0        0        0       
+met1       drawing    18        0         453      349      0        0        0        0       
+L60        drawing    60        0         76       0        0        0        0        0       
+met2       pin        72        0         46       0        0        0        0        0       
+L55        drawing    55        0         402      0        0        0        402      0       
+ndev       drawing    15        0         152      0        0        0        0        0       
+L27        drawing    27        0         76       0        0        0        0        0       
+pdev       drawing    14        0         152      0        0        0        0        0       
+met3       drawing    23        0         424      0        0        0        0        0       
+nw         drawing    3         0         76       0        0        0        0        0       
+L2         drawing    2         0         76       0        0        0        0        0       
+cont       drawing    16        0         3119     0        0        0        0        0       
+via2       drawing    21        0         250      0        0        0        0        0       
+via        drawing    22        0         277      0        0        0        0        0       
+met2       drawing    24        0         961      0        0        0        0        0       
+L4         drawing    4         0         301      63       0        0        0        0       
+
+
+   Summary Of Objects
+
+------------------------
+    6850 Rectangles
+     663 Polygons
+       0 Paths
+       0 Ellipses
+     402 Labels
+       0 Instances
+       0 Arrays
+       1 Cells
+       0 Nodes
+
+
+00:00:00 Elapsed time
+00:00:00 CPU time
+
+    3106 Kbytes of memory
+
+*** There were 0 error and 5 warning messages ***
+
+The setup file's contents :
+
+streamOutKeys = list(nil
+	'runDir			"."
+	'libName		"design"
+	'primaryCell		"control"
+	'viewName		"layout"
+	'outFile		"control.gds"
+	'scale			0.001000
+	'units			"micron"
+	'compression		"none"
+	'hierDepth		32
+	'convertToGeo		nil
+	'maxVertices		200
+	'refLib			nil
+	'libVersion		"5.0"
+	'checkPolygon		nil
+	'snapToGrid		nil
+	'simMosaicToArray	t
+	'caseSensitivity	"preserve"
+	'textCaseSensitivity	"preserve"
+	'lineToZeroPath		"path"
+	'convertDot	"ignore"
+	'rectToBox		nil
+	'convertPathToPoly	nil
+	'keepPcell	nil
+	'replaceBusBitChar	nil
+	'useParentXYforText	nil
+	'reportPrecision	nil
+	'runQuiet		nil
+	'comprehensiveLog		nil
+	'ignorePcellEvalFail		nil
+	'translateTopDown		nil
+	'errFile		"PIPO.LOG"
+	'NOUnmappingLayerWarning		nil
+	'techFileChoice		nil
+	'pcellSuffix		"DbId"
+	'respectGDSIILimits		nil
+	'dumpPcellInfo		nil
+	'genListHier		nil
+	'cellMapTable		""
+	'layerTable		""
+	'textFontTable		""
+	'convertPin		"geometry"
+	'pinInfo		0
+	'pinTextMapTable	""
+	'propMapTable		""
+	'propSeparator		","
+	'userSkillFile		""
+	'rodDir			""
+	'refLibList		""
+)

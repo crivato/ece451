@@ -1,0 +1,4 @@
+DEFINE ece451_cells /cad2/ece451/dfII/ece451_cells
+DEFINE ece451_pads /cad2/ece451/dfII/ece451_pads
+DEFINE avTech /CMC/tools/cadence/ASSURA.linux/tools/assura/etc/avtech/avTech
+DEFINE design /nfs/ug/homes-0/g/garland1/ece451/ece451/newlab5/design

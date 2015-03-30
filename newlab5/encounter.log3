@@ -1,0 +1,244 @@
+Checking out Encounter license ...
+Encounter_Digital_Impl_Sys_XL 9.1 license checkout succeeded.
+You can run 2 CPU jobs with the base license that is currently checked out.
+If required, use the setMultiCpuUsage command to enable multi-CPU processing.
+**ERROR: (ENCOAX-148):	Could not open shared library libfeoax22.so : liboaDesign.so: cannot open shared object file: No such file or directory
+
+**ERROR: (ENCOAX-148):	OA features will be disabled in this session.
+
+
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2010.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: Encounter v09.12-s159_1 (32bit) 07/15/2010 13:17 (Linux 2.6)
+@(#)CDS: NanoRoute v09.12-s013 NR100629-2344/USR64-UB (database version 2.30, 102.1.1) {superthreading v1.15}
+@(#)CDS: CeltIC v09.12-s012_1 (32bit) 07/01/2010 02:29:05 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: AAE 09.12-e022 (32bit) 07/15/2010 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CTE 09.12-s069_1 (32bit) Jul 15 2010 05:39:06 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CPE v09.12-s009
+--- Starting "Encounter v09.12-s159_1" on Sun Mar 29 23:14:01 2015 (mem=46.6M) ---
+--- Running on ug179.eecg (x86_64 w/Linux 3.2.0-4-amd64) ---
+This version was compiled on Thu Jul 15 13:17:03 PDT 2010.
+Set DBUPerIGU to 1000.
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+*** Memory pool thread-safe mode activated.
+<CMD> loadConfig control.conf 0
+Reading config file - control.conf
+<CMD> commitConfig
+
+Loading Lef file ../../../../../../cad/cad2/ece451/se/ece451_cells.lef...
+WARNING (LEFPARS-2007): NAMESCASESENSITIVE statement is obsolete in version 5.6 and later.
+The LEF parser will ignore this statement.
+To avoid this warning in the future, remove this statement from the LEF file with version 5.6 or later. See file ../../../../../../cad/cad2/ece451/se/ece451_cells.lef at line 1.
+**WARN: (ENCLF-108):	There is no overlap layer defined in any lef file
+so you are unable to create rectilinear partition in a hierarchical flow.
+Set DBUPerIGU to M2 pitch 1400.
+Initializing default via types and wire widths ...
+WARNING (LEFPARS-2002): NAMESCASESENSITIVE is a required statement on LEF file with version 5.5 and earlier.
+Without NAMESCASESENSITIVE defined, the LEF file is technically incorrect.
+Refer to the LEF/DEF 5.5 or earlier Language Reference manual on how to define this statement. See file ../../../../../../cad/cad2/ece451/se/ece451_cells.lef at line 13679.
+WARNING (LEFPARS-2003): BUSBITCHARS is a required statement on LEF file with version 5.5 and earlier.
+Without BUSBITCHARS defined, the LEF file is technically incorrect.
+Refer to the LEF/DEF 5.5 or earlier Language Reference manual on how to define this statement. See file ../../../../../../cad/cad2/ece451/se/ece451_cells.lef at line 13679.
+WARNING (LEFPARS-2004): DIVIDERCHAR is a required statement on LEF file with version 5.5 and earlier.
+Without DIVIDECHAR defined, the LEF file is technically incorrect.
+Refer to the LEF/DEF 5.5 or earlier Language Reference manual on how to define this statement. See file ../../../../../../cad/cad2/ece451/se/ece451_cells.lef at line 13679.
+**ERROR: (ENCLF-81):	No MANUFACTURINGGRID value was given. It is set to
+minimum LEF unit of 0.001 um. If this value is not right, a MANUFACTURINGGRID
+statement must be added in the technology lef file.
+
+Power Planner/ViaGen version 8.1.46 promoted on 02/17/2009.
+viaInitial starts at Sun Mar 29 23:14:47 2015
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN1 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN2 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN3 GENERATE
+viaInitial ends at Sun Mar 29 23:14:47 2015
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist 'control_syn.v'
+Inserting temporary buffers to remove assignment statements.
+Reading verilog netlist '../../../../../../cad/cad2/ece451/verilog/ece451_cells.v'
+
+*** Memory Usage v0.159.2.9 (Current mem = 275.559M, initial mem = 46.633M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=275.6M) ***
+Set top cell to control.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp6.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp8.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrsp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrsp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdsp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdsp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp6.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp8.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latrp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latrp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latsp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latsp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo4p2.
+*** End library_loading (cpu=0.00min, mem=0.1M, fe_cpu=0.10min, fe_mem=275.7M) ***
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell control ...
+*** Netlist is unique.
+** info: there are 103 modules.
+** info: there are 76 stdCell insts.
+
+*** Memory Usage v0.159.2.9 (Current mem = 276.207M, initial mem = 46.633M) ***
+*info - Done with setDoAssign with 11 assigns removed and 0 assigns could not be removed.
+*info: set bottom ioPad orient R0
+**WARN: (ENCRM-128):	Total 1 bad sites (size is not multiple of H/V pitch).
+Horizontal Layer M1 offset = 700 (guessed)
+Vertical Layer M2 offset = 700 (derived)
+Suggestion: specify LAYER OFFSET in LEF file
+Reason: hard to extract LAYER OFFSET from standard cells
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF.
+Set Input Pin Transition Delay as 0.1 ps.
+PreRoute Cap Scale Factor :        1.00
+PreRoute Res Scale Factor :        1.00
+PostRoute Cap Scale Factor :       1.00
+PostRoute Res Scale Factor :       1.00
+PostRoute XCap Scale Factor :      1.00
+
+PreRoute Clock Cap Scale Factor :  1.00	[Derived from postRoute_cap (effortLevel low)]
+PreRoute Clock Res Scale Factor :  1.00	[Derived from postRoute_res (effortLevel low)]
+PostRoute Clock Cap Scale Factor : 1.00	[Derived from postRoute_cap (effortLevel low)]
+PostRoute Clock Res Scale Factor : 1.00	[Derived from postRoute_res (effortLevel low)]
+<CMD> fit
+<CMD> setDrawView fplan
+<CMD> loadIoFile ioplace.ioc
+Reading IO assignment file "ioplace.ioc" ...
+<CMD> windowSelect -2.067 3.670 116.625 -3.028
+<CMD> windowSelect -21.426 36.078 133.368 -8.118
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {N[3]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin phi2_1
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {M[0]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {M[0]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {N[3]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {M[0]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {M[1]}
+<CMD> deselectAll
+<CMD> selectObject IO_Pin {M[3]}
+<CMD> deselectAll
+
+*** Memory Usage v0.159.2.9 (Current mem = 277.156M, initial mem = 46.633M) ***
+--- Ending "Encounter" (totcpu=0:00:57.9, real=0:25:03, mem=277.2M) ---
