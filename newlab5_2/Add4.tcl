@@ -70,5 +70,5 @@ setvector clock 00
 s 300
 setvector control 0010000
 s 300
-ana Phi1 Phi2 Fiint control CTRL_SHIFTER CTRL_Ri CTRL_MUX L M N notCin D RAMIN R S Fi notCout
+ana Phi1 Phi2 control CTRL_SHIFTER CTRL_Ri CTRL_MUX L M N notCin D RAMIN R S Fi notCout
 
