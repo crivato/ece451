@@ -1,0 +1,937 @@
+Warning: Some timing arcs have been disabled for breaking timing loops
+	or because of constant propagation. Use the 'report_disable_timing'
+	command to get the list of these disabled timing arcs. (PTE-003)
+Information: Inferring 33 clock-gating checks. (PTE-017)
+****************************************
+Report : timing
+	-path full
+	-delay max
+	-max_paths 10
+Design : control
+Version: X-2005.06
+Date   : Sun Apr  5 17:00:14 2015
+****************************************
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U95 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U97/NQ (na2p1)                           0.39 &     2.31 r
+  U53/Q (an2p3)                            0.28 &     2.59 r
+  U95/B (na3p2)                            0.00 &     2.59 r
+  data arrival time                                   2.59
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.00       5.40
+  U95/C (na3p2)                                       5.40 r
+  clock gating setup time                  0.00       5.40
+  data required time                                  5.40
+  ---------------------------------------------------------------
+  data required time                                  5.40
+  data arrival time                                  -2.59
+  ---------------------------------------------------------------
+  slack (MET)                                         2.81
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U94 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U97/NQ (na2p1)                           0.39 &     2.31 r
+  U53/Q (an2p3)                            0.28 &     2.59 r
+  U94/B (na3p2)                            0.00 &     2.59 r
+  data arrival time                                   2.59
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.00       5.40
+  U94/C (na3p2)                                       5.40 r
+  clock gating setup time                  0.00       5.40
+  data required time                                  5.40
+  ---------------------------------------------------------------
+  data required time                                  5.40
+  data arrival time                                  -2.59
+  ---------------------------------------------------------------
+  slack (MET)                                         2.81
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U91 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U102/NQ (na3p1)                          0.34 &     2.27 r
+  U100/NQ (invp1)                          0.27 &     2.54 f
+  U91/B (na2p3)                            0.00 &     2.55 f
+  data arrival time                                   2.55
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.01       5.41
+  U91/A (na2p3)                                       5.41 r
+  clock gating setup time                  0.00       5.41
+  data required time                                  5.41
+  ---------------------------------------------------------------
+  data required time                                  5.41
+  data arrival time                                  -2.55
+  ---------------------------------------------------------------
+  slack (MET)                                         2.86
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U111 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U102/NQ (na3p1)                          0.34 &     2.27 r
+  U100/NQ (invp1)                          0.27 &     2.54 f
+  U111/B (na2p1)                           0.00 &     2.55 f
+  data arrival time                                   2.55
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.01       5.41
+  U111/A (na2p1)                                      5.41 r
+  clock gating setup time                  0.00       5.41
+  data required time                                  5.41
+  ---------------------------------------------------------------
+  data required time                                  5.41
+  data arrival time                                  -2.55
+  ---------------------------------------------------------------
+  slack (MET)                                         2.86
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U89 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U97/NQ (na2p1)                           0.39 &     2.31 r
+  U101/NQ (invp1)                          0.22 &     2.53 f
+  U89/B (na2p3)                            0.00 &     2.53 f
+  data arrival time                                   2.53
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.00       5.40
+  U89/A (na2p3)                                       5.40 r
+  clock gating setup time                  0.00       5.40
+  data required time                                  5.40
+  ---------------------------------------------------------------
+  data required time                                  5.40
+  data arrival time                                  -2.53
+  ---------------------------------------------------------------
+  slack (MET)                                         2.87
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U93 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U97/NQ (na2p1)                           0.39 &     2.31 r
+  U93/B (na3p2)                            0.00 &     2.32 r
+  data arrival time                                   2.32
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.00       5.40
+  U93/C (na3p2)                                       5.40 r
+  clock gating setup time                  0.00       5.40
+  data required time                                  5.40
+  ---------------------------------------------------------------
+  data required time                                  5.40
+  data arrival time                                  -2.32
+  ---------------------------------------------------------------
+  slack (MET)                                         3.09
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U110 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U102/NQ (na3p1)                          0.34 &     2.27 r
+  U110/B (na2p1)                           0.00 &     2.27 r
+  data arrival time                                   2.27
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.01       5.41
+  U110/A (na2p1)                                      5.41 r
+  clock gating setup time                  0.00       5.41
+  data required time                                  5.41
+  ---------------------------------------------------------------
+  data required time                                  5.41
+  data arrival time                                  -2.27
+  ---------------------------------------------------------------
+  slack (MET)                                         3.14
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U92 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U102/NQ (na3p1)                          0.34 &     2.27 r
+  U92/A (na3p2)                            0.00 &     2.27 r
+  data arrival time                                   2.27
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.01       5.41
+  U92/C (na3p2)                                       5.41 r
+  clock gating setup time                  0.00       5.41
+  data required time                                  5.41
+  ---------------------------------------------------------------
+  data required time                                  5.41
+  data arrival time                                  -2.27
+  ---------------------------------------------------------------
+  slack (MET)                                         3.14
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U92 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U115/NQ (na3p1)                          0.26 &     2.19 r
+  U92/B (na3p2)                            0.00 &     2.19 r
+  data arrival time                                   2.19
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.01       5.41
+  U92/C (na3p2)                                       5.41 r
+  clock gating setup time                  0.00       5.41
+  data required time                                  5.41
+  ---------------------------------------------------------------
+  data required time                                  5.41
+  data arrival time                                  -2.19
+  ---------------------------------------------------------------
+  slack (MET)                                         3.22
+
+
+  Startpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Endpoint: U114 (rising clock gating-check end-point clocked by phi2)
+  Path Group: **clock_gating_default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                 0.00       0.02 r
+  opcode_reg[1]/Q (latrp1)                 0.78 &     0.80 r
+  U54/Q (an2p3)                            0.27 &     1.07 r
+  U105/NQ (na2p1)                          0.22 &     1.29 f
+  U99/NQ (na2p1)                           0.25 &     1.54 r
+  U96/NQ (no3p1)                           0.39 &     1.93 f
+  U97/NQ (na2p1)                           0.39 &     2.31 r
+  U114/B (na3p1)                           0.00 &     2.31 r
+  data arrival time                                   2.31
+
+  clock phi2 (rise edge)                   5.40       5.40
+  clock network delay (propagated)         0.24       5.64
+  U114/C (na3p1)                                      5.64 r
+  clock gating setup time                  0.00       5.64
+  data required time                                  5.64
+  ---------------------------------------------------------------
+  data required time                                  5.64
+  data arrival time                                  -2.31
+  ---------------------------------------------------------------
+  slack (MET)                                         3.33
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: notphi1_1 (output port)
+  Path Group: **default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock source latency                     0.00       0.00
+  phi1 (in)                                0.00 &     0.00 r
+  U22/NQ (invp3)                           0.09 &     0.09 f
+  notphi1_1 (out)                          0.00 &     0.09 f
+  data arrival time                                   0.09
+
+  max_delay                                0.20       0.20
+  output external delay                    0.00       0.20
+  data required time                                  0.20
+  ---------------------------------------------------------------
+  data required time                                  0.20
+  data arrival time                                  -0.09
+  ---------------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: notphi1_2 (output port)
+  Path Group: **default**
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock source latency                     0.00       0.00
+  phi1 (in)                                0.00 &     0.00 r
+  U22/NQ (invp3)                           0.09 &     0.09 f
+  notphi1_2 (out)                          0.00 &     0.09 f
+  data arrival time                                   0.09
+
+  max_delay                                0.20       0.20
+  output external delay                    0.00       0.20
+  data required time                                  0.20
+  ---------------------------------------------------------------
+  data required time                                  0.20
+  data arrival time                                  -0.09
+  ---------------------------------------------------------------
+  slack (MET)                                         0.11
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: BRdEn[1] (output port clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock source latency                     0.00       0.00
+  phi1 (in)                                0.00 &     0.00 r
+  U73/NQ (invp6)                           0.09 &     0.09 f
+  U72/NQ (no2p2)                           0.06 &     0.15 r
+  BRdEn[1] (out)                           0.00 &     0.15 r
+  data arrival time                                   0.15
+
+  clock phi1 (fall edge)                   5.15       5.15
+  output external delay                   -5.00       0.15
+  data required time                                  0.15
+  ---------------------------------------------------------------
+  data required time                                  0.15
+  data arrival time                                  -0.15
+  ---------------------------------------------------------------
+  slack (MET)                                         0.00
+
+
+  Startpoint: ctrl[3] (input port)
+  Endpoint: waddr_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock (input port clock) (rise edge)     0.00       0.00
+  input external delay                     0.00       0.00 r
+  ctrl[3] (in)                             0.00 &     0.00 r
+  waddr_reg[1]/D (latrp1)                  0.00 &     0.00 r
+  data arrival time                                   0.00
+
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.00       0.00
+  waddr_reg[1]/G (latrp1)                             0.00 r
+  time borrowed from endpoint              0.00       0.00
+  data required time                                  0.00
+  ---------------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -0.00
+  ---------------------------------------------------------------
+  slack (MET)                                         0.00
+
+  Time Borrowing Information
+  ---------------------------------------------------
+  phi1 nominal pulse width                 5.15 
+  library setup time                      -0.18 
+  ---------------------------------------------------
+  max time borrow                          4.97 
+  actual time borrow                       0.00 
+  ---------------------------------------------------
+
+
+  Startpoint: ctrl[1] (input port)
+  Endpoint: shctl_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock (input port clock) (rise edge)     0.00       0.00
+  input external delay                     0.00       0.00 r
+  ctrl[1] (in)                             0.00 &     0.00 r
+  shctl_reg[1]/D (latrp1)                  0.00 &     0.00 r
+  data arrival time                                   0.00
+
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.01       0.01
+  shctl_reg[1]/G (latrp1)                             0.01 r
+  time borrowed from endpoint              0.00       0.01
+  data required time                                  0.01
+  ---------------------------------------------------------------
+  data required time                                  0.01
+  data arrival time                                  -0.00
+  ---------------------------------------------------------------
+  slack (MET)                                         0.01
+
+  Time Borrowing Information
+  ---------------------------------------------------
+  phi1 nominal pulse width                 5.15 
+  library setup time                      -0.18 
+  ---------------------------------------------------
+  max time borrow                          4.97 
+  actual time borrow                       0.00 
+  ---------------------------------------------------
+
+
+  Startpoint: ctrl[0] (input port)
+  Endpoint: shctl_reg[0]
+               (positive level-sensitive latch clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock (input port clock) (rise edge)     0.00       0.00
+  input external delay                     0.00       0.00 r
+  ctrl[0] (in)                             0.00 &     0.00 r
+  shctl_reg[0]/D (latrp1)                  0.00 &     0.00 r
+  data arrival time                                   0.00
+
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.01       0.01
+  shctl_reg[0]/G (latrp1)                             0.01 r
+  time borrowed from endpoint              0.00       0.01
+  data required time                                  0.01
+  ---------------------------------------------------------------
+  data required time                                  0.01
+  data arrival time                                  -0.00
+  ---------------------------------------------------------------
+  slack (MET)                                         0.01
+
+  Time Borrowing Information
+  ---------------------------------------------------
+  phi1 nominal pulse width                 5.15 
+  library setup time                      -0.18 
+  ---------------------------------------------------
+  max time borrow                          4.97 
+  actual time borrow                       0.00 
+  ---------------------------------------------------
+
+
+  Startpoint: ctrl[2] (input port)
+  Endpoint: waddr_reg[0]
+               (positive level-sensitive latch clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock (input port clock) (rise edge)     0.00       0.00
+  input external delay                     0.00       0.00 r
+  ctrl[2] (in)                             0.00 &     0.00 r
+  waddr_reg[0]/D (latrp1)                  0.00 &     0.00 r
+  data arrival time                                   0.00
+
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.01       0.01
+  waddr_reg[0]/G (latrp1)                             0.01 r
+  time borrowed from endpoint              0.00       0.01
+  data required time                                  0.01
+  ---------------------------------------------------------------
+  data required time                                  0.01
+  data arrival time                                  -0.00
+  ---------------------------------------------------------------
+  slack (MET)                                         0.01
+
+  Time Borrowing Information
+  ---------------------------------------------------
+  phi1 nominal pulse width                 5.15 
+  library setup time                      -0.18 
+  ---------------------------------------------------
+  max time borrow                          4.97 
+  actual time borrow                       0.00 
+  ---------------------------------------------------
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: BRdEn[3] (output port clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock source latency                     0.00       0.00
+  phi1 (in)                                0.00 &     0.00 r
+  U77/NQ (invp6)                           0.09 &     0.09 f
+  U76/NQ (no2p2)                           0.06 &     0.14 r
+  BRdEn[3] (out)                           0.00 &     0.14 r
+  data arrival time                                   0.14
+
+  clock phi1 (fall edge)                   5.15       5.15
+  output external delay                   -5.00       0.15
+  data required time                                  0.15
+  ---------------------------------------------------------------
+  data required time                                  0.15
+  data arrival time                                  -0.14
+  ---------------------------------------------------------------
+  slack (MET)                                         0.01
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: BRdEn[2] (output port clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock source latency                     0.00       0.00
+  phi1 (in)                                0.00 &     0.00 r
+  U75/NQ (invp6)                           0.08 &     0.08 f
+  U74/NQ (no2p2)                           0.05 &     0.13 r
+  BRdEn[2] (out)                           0.00 &     0.13 r
+  data arrival time                                   0.13
+
+  clock phi1 (fall edge)                   5.15       5.15
+  output external delay                   -5.00       0.15
+  data required time                                  0.15
+  ---------------------------------------------------------------
+  data required time                                  0.15
+  data arrival time                                  -0.13
+  ---------------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: ctrl[5] (input port)
+  Endpoint: opcode_reg[1]
+               (positive level-sensitive latch clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock (input port clock) (rise edge)     0.00       0.00
+  input external delay                     0.00       0.00 r
+  ctrl[5] (in)                             0.00 &     0.00 r
+  opcode_reg[1]/D (latrp1)                 0.00 &     0.00 r
+  data arrival time                                   0.00
+
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[1]/G (latrp1)                            0.02 r
+  time borrowed from endpoint              0.00       0.02
+  data required time                                  0.02
+  ---------------------------------------------------------------
+  data required time                                  0.02
+  data arrival time                                  -0.00
+  ---------------------------------------------------------------
+  slack (MET)                                         0.02
+
+  Time Borrowing Information
+  ---------------------------------------------------
+  phi1 nominal pulse width                 5.15 
+  library setup time                      -0.18 
+  ---------------------------------------------------
+  max time borrow                          4.97 
+  actual time borrow                       0.00 
+  ---------------------------------------------------
+
+
+  Startpoint: ctrl[4] (input port)
+  Endpoint: opcode_reg[0]
+               (positive level-sensitive latch clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock (input port clock) (rise edge)     0.00       0.00
+  input external delay                     0.00       0.00 r
+  ctrl[4] (in)                             0.00 &     0.00 r
+  opcode_reg[0]/D (latrp1)                 0.00 &     0.00 r
+  data arrival time                                   0.00
+
+  clock phi1 (rise edge)                   0.00       0.00
+  clock network delay (propagated)         0.02       0.02
+  opcode_reg[0]/G (latrp1)                            0.02 r
+  time borrowed from endpoint              0.00       0.02
+  data required time                                  0.02
+  ---------------------------------------------------------------
+  data required time                                  0.02
+  data arrival time                                  -0.00
+  ---------------------------------------------------------------
+  slack (MET)                                         0.02
+
+  Time Borrowing Information
+  ---------------------------------------------------
+  phi1 nominal pulse width                 5.15 
+  library setup time                      -0.18 
+  ---------------------------------------------------
+  max time borrow                          4.97 
+  actual time borrow                       0.00 
+  ---------------------------------------------------
+
+
+  Startpoint: phi1 (clock source 'phi1')
+  Endpoint: ARdEn[3] (output port clocked by phi1)
+  Path Group: phi1
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi1 (rise edge)                   0.00       0.00
+  clock source latency                     0.00       0.00
+  phi1 (in)                                0.00 &     0.00 r
+  U85/NQ (invp6)                           0.08 &     0.08 f
+  U84/NQ (no2p2)                           0.05 &     0.13 r
+  ARdEn[3] (out)                           0.00 &     0.13 r
+  data arrival time                                   0.13
+
+  clock phi1 (fall edge)                   5.15       5.15
+  output external delay                   -5.00       0.15
+  data required time                                  0.15
+  ---------------------------------------------------------------
+  data required time                                  0.15
+  data arrival time                                  -0.13
+  ---------------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: M[0] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi2 (rise edge)                   5.40       5.40
+  clock source latency                     0.00       5.40
+  phi2 (in)                                0.00 &     5.40 r
+  U92/NQ (na3p2)                           0.07 &     5.47 f
+  M[0] (out)                               0.00 &     5.47 f
+  data arrival time                                   5.47
+
+  clock phi2 (fall edge)                  14.79      14.79
+  output external delay                   -9.30       5.49
+  data required time                                  5.49
+  ---------------------------------------------------------------
+  data required time                                  5.49
+  data arrival time                                  -5.47
+  ---------------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: M[3] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi2 (rise edge)                   5.40       5.40
+  clock source latency                     0.00       5.40
+  phi2 (in)                                0.00 &     5.40 r
+  U93/NQ (na3p2)                           0.07 &     5.47 f
+  M[3] (out)                               0.00 &     5.47 f
+  data arrival time                                   5.47
+
+  clock phi2 (fall edge)                  14.79      14.79
+  output external delay                   -9.30       5.49
+  data required time                                  5.49
+  ---------------------------------------------------------------
+  data required time                                  5.49
+  data arrival time                                  -5.47
+  ---------------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: L[1] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi2 (rise edge)                   5.40       5.40
+  clock source latency                     0.00       5.40
+  phi2 (in)                                0.00 &     5.40 r
+  U94/NQ (na3p2)                           0.06 &     5.46 f
+  L[1] (out)                               0.00 &     5.46 f
+  data arrival time                                   5.46
+
+  clock phi2 (fall edge)                  14.79      14.79
+  output external delay                   -9.30       5.49
+  data required time                                  5.49
+  ---------------------------------------------------------------
+  data required time                                  5.49
+  data arrival time                                  -5.46
+  ---------------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: L[2] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi2 (rise edge)                   5.40       5.40
+  clock source latency                     0.00       5.40
+  phi2 (in)                                0.00 &     5.40 r
+  U95/NQ (na3p2)                           0.06 &     5.46 f
+  L[2] (out)                               0.00 &     5.46 f
+  data arrival time                                   5.46
+
+  clock phi2 (fall edge)                  14.79      14.79
+  output external delay                   -9.30       5.49
+  data required time                                  5.49
+  ---------------------------------------------------------------
+  data required time                                  5.49
+  data arrival time                                  -5.46
+  ---------------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: M[2] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi2 (rise edge)                   5.40       5.40
+  clock source latency                     0.00       5.40
+  phi2 (in)                                0.00 &     5.40 r
+  U90/NQ (na2p3)                           0.06 &     5.46 f
+  M[2] (out)                               0.00 &     5.46 f
+  data arrival time                                   5.46
+
+  clock phi2 (fall edge)                  14.79      14.79
+  output external delay                   -9.30       5.49
+  data required time                                  5.49
+  ---------------------------------------------------------------
+  data required time                                  5.49
+  data arrival time                                  -5.46
+  ---------------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: L[3] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi2 (rise edge)                   5.40       5.40
+  clock source latency                     0.00       5.40
+  phi2 (in)                                0.00 &     5.40 r
+  U91/NQ (na2p3)                           0.06 &     5.46 f
+  L[3] (out)                               0.00 &     5.46 f
+  data arrival time                                   5.46
+
+  clock phi2 (fall edge)                  14.79      14.79
+  output external delay                   -9.30       5.49
+  data required time                                  5.49
+  ---------------------------------------------------------------
+  data required time                                  5.49
+  data arrival time                                  -5.46
+  ---------------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: M[1] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock phi2 (rise edge)                   5.40       5.40
+  clock source latency                     0.00       5.40
+  phi2 (in)                                0.00 &     5.40 r
+  U89/NQ (na2p3)                           0.05 &     5.45 f
+  M[1] (out)                               0.00 &     5.45 f
+  data arrival time                                   5.45
+
+  clock phi2 (fall edge)                  14.79      14.79
+  output external delay                   -9.30       5.49
+  data required time                                  5.49
+  ---------------------------------------------------------------
+  data required time                                  5.49
+  data arrival time                                  -5.45
+  ---------------------------------------------------------------
+  slack (MET)                                         0.04
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: WriteEn[1] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock source latency                     0.00       0.00
+  phi2 (in)                                0.00 &     0.00 f
+  U87/NQ (na3p3)                           0.12 &     0.12 r
+  U18/NQ (invp3)                           0.06 &     0.18 f
+  WriteEn[1] (out)                         0.00 &     0.18 f
+  data arrival time                                   0.18
+
+  max_delay                                2.10       2.10
+  output external delay                   -1.80       0.30
+  data required time                                  0.30
+  ---------------------------------------------------------------
+  data required time                                  0.30
+  data arrival time                                  -0.18
+  ---------------------------------------------------------------
+  slack (MET)                                         0.12
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: WriteEn[2] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock source latency                     0.00       0.00
+  phi2 (in)                                0.00 &     0.00 f
+  U88/NQ (na3p3)                           0.12 &     0.12 r
+  U17/NQ (invp3)                           0.06 &     0.18 f
+  WriteEn[2] (out)                         0.00 &     0.18 f
+  data arrival time                                   0.18
+
+  max_delay                                2.10       2.10
+  output external delay                   -1.80       0.30
+  data required time                                  0.30
+  ---------------------------------------------------------------
+  data required time                                  0.30
+  data arrival time                                  -0.18
+  ---------------------------------------------------------------
+  slack (MET)                                         0.12
+
+
+  Startpoint: phi2 (clock source 'phi2')
+  Endpoint: WriteEn[0] (output port clocked by phi2)
+  Path Group: phi2
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock source latency                     0.00       0.00
+  phi2 (in)                                0.00 &     0.00 r
+  U86/NQ (na3p3)                           0.11 &     0.11 f
+  U19/NQ (invp3)                           0.06 &     0.17 r
+  WriteEn[0] (out)                         0.00 &     0.17 r
+  data arrival time                                   0.17
+
+  max_delay                                2.10       2.10
+  output external delay                   -1.80       0.30
+  data required time                                  0.30
+  ---------------------------------------------------------------
+  data required time                                  0.30
+  data arrival time                                  -0.17
+  ---------------------------------------------------------------
+  slack (MET)                                         0.13
+
+
+1

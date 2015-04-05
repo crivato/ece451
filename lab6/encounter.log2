@@ -1,0 +1,195 @@
+Checking out Encounter license ...
+Encounter_Digital_Impl_Sys_XL 9.1 license checkout succeeded.
+You can run 2 CPU jobs with the base license that is currently checked out.
+If required, use the setMultiCpuUsage command to enable multi-CPU processing.
+**ERROR: (ENCOAX-148):	Could not open shared library libfeoax22.so : liboaDesign.so: cannot open shared object file: No such file or directory
+
+**ERROR: (ENCOAX-148):	OA features will be disabled in this session.
+
+
+*******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2010.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+@(#)CDS: Encounter v09.12-s159_1 (32bit) 07/15/2010 13:17 (Linux 2.6)
+@(#)CDS: NanoRoute v09.12-s013 NR100629-2344/USR64-UB (database version 2.30, 102.1.1) {superthreading v1.15}
+@(#)CDS: CeltIC v09.12-s012_1 (32bit) 07/01/2010 02:29:05 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: AAE 09.12-e022 (32bit) 07/15/2010 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CTE 09.12-s069_1 (32bit) Jul 15 2010 05:39:06 (Linux 2.6.9-89.0.19.ELsmp)
+@(#)CDS: CPE v09.12-s009
+--- Starting "Encounter v09.12-s159_1" on Sun Apr  5 16:50:59 2015 (mem=46.6M) ---
+--- Running on ug179.eecg (x86_64 w/Linux 3.2.0-4-amd64) ---
+This version was compiled on Thu Jul 15 13:17:03 PDT 2010.
+Set DBUPerIGU to 1000.
+Set net toggle Scale Factor to 1.00
+Set Shrink Factor to 1.00000
+*** Memory pool thread-safe mode activated.
+<CMD> encMessage warning 0
+Suppress "**WARN ..." messages.
+<CMD> encMessage debug 0
+<CMD> encMessage info 0
+Reading config file - control.enc.dat/control.conf
+**WARN: (ENCLF-108):	There is no overlap layer defined in any lef file
+so you are unable to create rectilinear partition in a hierarchical flow.
+**ERROR: (ENCLF-81):	No MANUFACTURINGGRID value was given. It is set to
+minimum LEF unit of 0.001 um. If this value is not right, a MANUFACTURINGGRID
+statement must be added in the technology lef file.
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN1 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN2 GENERATE
+**WARN: (ENCPP-557):	a single-layer VIARULE GENERATE for turn-vias is obsolete and is being ignored. You should remove this statement from your LEF file.
+	VIARULE TURN3 GENERATE
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell an4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao211p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell ao222p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp6.
+**WARN: (ENCSYC-2):	Timing is not defined for cell bufp8.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrsp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdrsp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdsp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell fdsp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp6.
+**WARN: (ENCSYC-2):	Timing is not defined for cell invp8.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latrp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latrp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latsp1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell latsp2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx21p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell mx41p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell na4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell no4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or3p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell or4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xn4p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p2.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p3.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo2p4.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo4p1.
+**WARN: (ENCSYC-2):	Timing is not defined for cell xo4p2.
+*** End library_loading (cpu=0.00min, mem=0.0M, fe_cpu=0.09min, fe_mem=275.8M) ***
+**WARN: (ENCRM-128):	Total 1 bad sites (size is not multiple of H/V pitch).
+Loading preference file control.enc.dat/enc.pref.tcl ...
+Loading mode file control.enc.dat/control.mode ...
+**WARN: (ENCRM-128):	Total 1 bad sites (size is not multiple of H/V pitch).
+loading place ...
+loading route ...
+<CMD> windowSelect -3.072 33.949 161.867 -19.153
+<CMD> deselectAll
+default_rc_corner
+Performce RC Extraction ...
+<CMD> extractRC -outfile control.cap
+Extraction called for design 'control' of instances=76 and nets=111 using extraction engine 'preRoute' .
+**WARN: (ENCEXT-3530):	Use of command 'setDesignMode -process <process_node>' prior to extraction is recommended for maximum accuracy and optimal automatic threshold setting.
+Default RC Extraction called for design control.
+**WARN: (ENCEXT-6166):	Using capacitance table file without EXTENDED section is not recommended and will result in lower accuracy for clock nets in preRoute extraction and for all nets when using postRoute extraction -effortLevel low. Regeneration of full capacitance table is recommended.
+RCMode: Default
+Capacitance Scaling Factor   : 1.00000
+Resistance Scaling Factor    : 1.00000
+Clock Cap. Scaling Factor    : 1.00000
+Clock Res Scaling Factor     : 1.00000
+Shrink Factor                : 1.00000
+Default RC extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Default RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 277.562M)
+<CMD> rcOut -spef control_routed.spef
+RC Out has the following PVT Info:
+   RC-typical , Operating temperature 25 C
+Dumping Spef file.....
+**WARN: (ENCEXT-2882):	Unable to find resistance for via 'M2_M3' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+**WARN: (ENCEXT-2882):	Unable to find resistance for via 'M2_M1' in capacitance table or LEF files. Check the capacitance table and LEF files. Assigning default value of 4.0 ohms.
+***** SPEF Out Finished (CPU Time: 0:00:00.0  MEM: 277.562M)
+
+*** Memory Usage v0.159.2.9 (Current mem = 277.637M, initial mem = 46.633M) ***
+--- Ending "Encounter" (totcpu=0:00:11.1, real=0:02:23, mem=277.6M) ---

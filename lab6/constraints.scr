@@ -1,0 +1,24 @@
+create_clock -name "phi1" -period 15.04 -waveform { "0.0" "5.15" } { "phi1" }
+create_clock -name "phi2" -period 15.04 -waveform { "5.40" "14.79" } { "phi2" } 
+
+set_output_delay -clock phi1 -clock_fall -max 3.2 \
+    { "ASelect" "zeroSelect" "BSelect" "DSelect" }
+
+set_max_delay 0.2 -from { "phi1" } -to { "notphi1_1" "notphi1_2" }
+
+set_output_delay -clock phi1 -clock_fall -max 5.0 { ARdEn }
+
+set_output_delay -clock phi1 -clock_fall -max 5.0 { BRdEn }
+
+set_output_delay -clock phi2 -clock_fall -max 1.8 { WriteEn }
+
+set_max_delay 2.1 -from { "phi2" } -to { WriteEn }
+
+set_output_delay -clock phi2 -clock_fall -max 3.3 \
+    { "shl" "notshl" "shr" "notshr" }
+
+set_output_delay -clock phi2 -clock_fall -max 5.8 { N }
+
+set_output_delay -clock phi2 -clock_fall -max 9.3 { L }
+
+set_output_delay -clock phi2 -clock_fall -max 9.3 { M }
