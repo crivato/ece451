@@ -1,0 +1,22 @@
+\o Program:		@(#)$CDS: libManager.exe version Exp 03/23/2009 19:17 (ocelot-linux) $
+\o Sub version:		sub-version none
+\o Arguments:		-unmapped -mpssession icfb26204 -mpshost ug179.eecg 
+\o Working Directory:	ug179.eecg:/nfs/ug/homes-0/g/garland1/ece451/ece451/newlab5_2
+\o Warning: envSetVal: incorrect number of toggle values for variable
+\o 	'selectMatches'.  Should be 4.
+\o Cell filter set to ""
+\o View filter set to ""
+No main selection
+\o Library Manager customization server connected.
+MPS service: map window
+\o Log file is "/nfs/ug/homes-0/g/garland1/ece451/ece451/newlab5_2/libManager.log.26311".
+Opening libManager window.
+MPS request: update library list
+MPS request: update library list
+MPS request: update library list
+MPS request: update library list
+MPS request: update library list
+Main selection: design control layout
+\o Opening design file through session server.
+MPS request: edit design
+MPS request: update library list

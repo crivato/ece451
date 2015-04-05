@@ -1,0 +1,37 @@
+#######################################################
+#                                                     #
+#  Encounter Command Logging File                     #
+#  Created on Sat Apr  4 21:46:55 2015                #
+#                                                     #
+#######################################################
+
+#@(#)CDS: Encounter v09.12-s159_1 (32bit) 07/15/2010 13:17 (Linux 2.6)
+#@(#)CDS: NanoRoute v09.12-s013 NR100629-2344/USR64-UB (database version 2.30, 102.1.1) {superthreading v1.15}
+#@(#)CDS: CeltIC v09.12-s012_1 (32bit) 07/01/2010 02:29:05 (Linux 2.6.9-89.0.19.ELsmp)
+#@(#)CDS: AAE 09.12-e022 (32bit) 07/15/2010 (Linux 2.6.9-89.0.19.ELsmp)
+#@(#)CDS: CTE 09.12-s069_1 (32bit) Jul 15 2010 05:39:06 (Linux 2.6.9-89.0.19.ELsmp)
+#@(#)CDS: CPE v09.12-s009
+
+loadConfig control.conf 0
+commitConfig
+fit
+setDrawView fplan
+windowSelect -1.293 112.325 145.055 -29.712
+defIn control.def
+selectWire 2.8000 2.8000 142.8000 3.9500 1 VDD
+deselectAll
+selectWire 2.8000 14.2500 142.8000 16.5500 1 VSS
+deselectAll
+selectWire 2.8000 26.8500 142.8000 29.1500 1 VDD
+deselectAll
+selectWire 2.8000 39.4500 142.8000 41.7500 1 VSS
+deselectAll
+selectWire 2.8000 52.0500 142.8000 54.3500 1 VDD
+deselectAll
+selectWire 2.8000 2.8000 142.8000 3.9500 1 VDD
+windowSelect 1.957 80.011 73.766 14.639
+windowSelect -21.549 105.362 263.733 -55.457
+deselectAll
+selectWire 2.8000 39.4500 142.8000 41.7500 1 VSS
+deselectAll
+selectWire 2.8000 64.6500 142.8000 65.8000 1 VSS

@@ -1,0 +1,9 @@
+Reading GDS file /nfs/ug/homes-0/g/garland1/ece451/ece451/newlab5_2/control.gds
+Current Time: Sat Apr  4 21:17:38 2015
+GDS file modification time: Sat Apr  4 21:17:09 2015
+Snapping (rounding) GDS-II input to 0.01 grid.
+Library written using GDS-II Release 5.0
+Library name: DESIGN.DB
+Warning, GDS Import round off error in cell "control".
+	Maximum error = 0.005 microns
+

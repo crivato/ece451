@@ -1,0 +1,126 @@
+######################################################
+#                                                    #
+#  Cadence Design Systems, Inc.                      #
+#  Cadence(R) Encounter(TM) IO Assignments           #
+#                                                    #
+######################################################
+
+Version: 2
+
+
+# Bottom IOs: are ordered from left to right
+Offset: 3.000
+Pin: notshl	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: shl	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: shr	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: notshr	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: phi1_1	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: notFBEn[0] S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: FBEn[0]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: WriteEn[0]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: ARdEn[0]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: BRdEn[0]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: notFBEn[1] S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: FBEn[1]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: WriteEn[1]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: ARdEn[1]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: BRdEn[1]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: notFBEn[2] S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: FBEn[2]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: WriteEn[2]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: ARdEn[2]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: BRdEn[2]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: notFBEn[3] S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: FBEn[3]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: WriteEn[3]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: ARdEn[3]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: BRdEn[3]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: BSelect	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: DSelect	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: phi1_3	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: notphi1_2	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: ASelect	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: zeroSelect	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: phi1_2	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: notphi1_1	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: L[3]	S 2 0.6000 0.6000
+Skip: 4.0000
+Pin: L[2]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: L[1]	S 2 0.6000 0.6000
+Skip: 4.0000
+Pin: L[0]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: M[3]	S 2 0.6000 0.6000
+Skip: 4.0000
+Pin: M[2]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: M[1]	S 2 0.6000 0.6000
+Skip: 4.0000
+Pin: M[0]	S 2 0.6000 0.6000
+Skip: 2.8000
+Pin: phi2_1	S 2 0.6000 0.6000
+Skip: 6.0000
+Pin: N[3]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: N[2]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: N[1]	S 2 0.6000 0.6000
+Skip: 2.0000
+Pin: N[0]	S 2 0.6000 0.6000
+Skip: 2.0000
+
+# Lefts IOs: are ordered from bottom to top
+Offset: 3.0
+Pin: ctrl[0]	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: ctrl[1]	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: ctrl[2]	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: ctrl[3]	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: ctrl[4]	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: ctrl[5]	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: ctrl[6]	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: phi1	W 3 0.6000 0.6000
+Skip: 2.8000
+Pin: phi2	W 3 0.6000 0.6000
+Skip: 2.8000
+
