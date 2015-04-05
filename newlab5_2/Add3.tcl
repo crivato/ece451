@@ -49,7 +49,6 @@ setvector clock 01
 s 1000
 setvector clock 00
 s 300
-setvector D 1011
 setvector control 0000000
 s 300
 setvector clock 10

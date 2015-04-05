@@ -23,7 +23,7 @@ vector CTRL_Ri {ARdEn[3:0]} {BRdEn[3:0]} {FBEn[3:0]} {WriteEn[3:0]} {WriteEn[3:0
 vector CTRL_MUX ASelect zeroSelect BSelect DSelect
 w CLOCK control ARdEn BRdEn WriteEn FBEn N L M shl notshl shr notshr D Fi
 setvector clock 00
-setvector D 0110
+setvector D 0010
 s 300
 setvector control 0000000
 s 300
@@ -49,7 +49,7 @@ setvector clock 01
 s 1000
 setvector clock 00
 s 300
-setvector D 1011
+setvector D 0011
 setvector control 0000000
 s 300
 setvector clock 10
