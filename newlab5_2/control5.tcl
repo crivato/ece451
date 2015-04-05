@@ -1,5 +1,3 @@
-l SR
-l SL
 h vdd
 l gnd
 stepsize 1000
@@ -16,7 +14,7 @@ vector Fi {Fi[3:0]}
 vector D {D[3:0]}
 w CLOCK control ARdEn BRdEn WriteEn FBEn N L M shl notshl shr notshr D Fi
 setvector clock 00
-setvector D 0111
+setvector D 0000
 s 400
 setvector control 0000000
 s 400
@@ -54,6 +52,7 @@ setvector clock 01
 s 1000
 setvector clock 00
 s 400
+setvector D 1111
 setvector control 0000000
 s 400
 setvector clock 10
@@ -62,3 +61,4 @@ setvector clock 00
 s 400
 setvector control 0110000
 s 400
+ana Phi1 Phi2 L M N zeroSelect DSelect D Fi
